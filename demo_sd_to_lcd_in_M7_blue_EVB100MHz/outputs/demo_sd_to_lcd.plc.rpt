@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<report title="Capital Micro Design Report" version="1.0">
+<section title="Placement Report">
+   <subject title="Status Summary">
+       <table>
+           <tr>
+               <td>Running status</td>
+               <td>Successful</td>
+           </tr>
+           <tr>
+               <td>Time stamp</td>
+               <td>Mon Apr 27 13:43:55 2015</td>
+           </tr>
+           <tr>
+               <td>Primace version</td>
+               <td>7.3</td>
+           </tr>
+           <tr>
+               <td>Device name</td>
+               <td>M7A12N0F484C7</td>
+           </tr>
+           <tr>
+               <td>Top module name</td>
+               <td>demo_sd_to_lcd</td>
+           </tr>
+           <tr>
+               <td>Input design file</td>
+               <td> outputs/demo_sd_to_lcd.amv</td>
+           </tr>
+           <tr>
+               <td>Input aoc constraint file</td>
+               <td>demo_sd_to_lcd.aoc</td>
+           </tr>
+           <tr>
+               <td>Output design file</td>
+               <td>outputs/demo_sd_to_lcd.apv</td>
+           </tr>
+           <tr>
+               <td>Output annotation file</td>
+               <td>outputs/demo_sd_to_lcd.apx</td>
+           </tr>
+       </table>
+   </subject>
+   <subject title="Resource Usage Summary">
+       <table>
+           <tr>
+               <th>Resource</th>
+               <th>Usage</th>
+           </tr>
+           <tr>
+               <td>Total logic elements</td>
+               <td>307/11520( 2.66% )</td>
+           </tr>
+           <tr>
+               <td>-- combinational with no register</td>
+               <td>270</td>
+           </tr>
+           <tr>
+               <td>-- register only</td>
+               <td>319</td>
+           </tr>
+           <tr>
+               <td>-- combinational with a register</td>
+               <td>37</td>
+           </tr>
+           <tr>
+               <td>Logic elements by mode</td>
+               <td></td>
+           </tr>
+           <tr>
+               <td>-- normal mode</td>
+               <td>299</td>
+           </tr>
+           <tr>
+               <td>-- lut4 number</td>
+               <td>299</td>
+           </tr>
+           <tr>
+               <td>-- arithmetic carry chain mode</td>
+               <td>8</td>
+           </tr>
+           <tr>
+               <td>Total registers</td>
+               <td>356/8610( 4.13%)</td>
+           </tr>
+           <tr>
+               <td>-- dedicated logic registers</td>
+               <td>356/7680( 4.64%)</td>
+           </tr>
+           <tr>
+               <td>-- I/O registers</td>
+               <td>0/930(0.00%)</td>
+           </tr>
+           <tr>
+               <td>I/O pins</td>
+               <td>69/310( 22.26%)</td>
+           </tr>
+           <tr>
+               <td>-- clock pins</td>
+               <td>1/8( 12.50%)</td>
+           </tr>
+           <tr>
+               <td>Total PLBs(partially or completely used)</td>
+               <td>136/960( 14.17% )</td>
+           </tr>
+           <tr>
+               <td>Maximum fan-out node</td>
+               <td>u_pll_pll_u0</td>
+           </tr>
+           <tr>
+               <td>Maximum fan-out</td>
+               <td>275</td>
+           </tr>
+           <tr>
+               <td>Highest non-global fan-out signal</td>
+               <td>rstn_final__reg</td>
+           </tr>
+           <tr>
+               <td>Highest non-global fan-out</td>
+               <td>362</td>
+           </tr>
+           <tr>
+               <td>Total fan-out</td>
+               <td>2747</td>
+           </tr>
+           <tr>
+               <td>Average fan-out</td>
+               <td>4.04</td>
+           </tr>
+           <tr>
+               <td>Total  mac blocks</td>
+               <td>0/48(0.00%)</td>
+           </tr>
+           <tr>
+               <td>Total embedded memory blocks</td>
+               <td>8/144(5.56%)</td>
+           </tr>
+       </table>
+   </subject>
+   <subject title="I/O Bank Usage Summary">
+       <table>
+           <tr>
+               <th>I/O Bank</th>
+               <th>Usage</th>
+           </tr>
+           <tr>
+               <td>1</td>
+               <td>0/310(0.00%)</td>
+           </tr>
+       </table>
+   </subject>
+   <subject title="QoR Summary">
+       <table>
+           <tr>
+               <th>Item</th>
+               <th>Value</th>
+           </tr>
+           <tr>
+               <td>Global placer net length</td>
+               <td>6.41</td>
+           </tr>
+           <tr>
+               <td>Detail placer net length</td>
+               <td>5.85</td>
+           </tr>
+       </table>
+   </subject>
+</section>
+</report>

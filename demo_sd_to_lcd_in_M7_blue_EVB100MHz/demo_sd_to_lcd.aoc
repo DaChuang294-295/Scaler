@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aoc version="2.3" device="M7A12N0F484C7">
+	<ioConstraint>
+		<IO signal_name="clk_i" location="IO41_CLK[1]_2" inst_name="io_cell_clk_i_inst" direction="input" operation_mode="clock"/>
+		<IO signal_name="clk_out_n" location="IO_09N_CLK[3]_11" inst_name="u_lvds_u_lvds_tx_clk" direction="output" operation_mode="normal" lvds="true"/>
+		<IO signal_name="clk_out_p" location="IO_09P_CLK[2]_11" inst_name="u_lvds_u_lvds_tx_clk" direction="output" operation_mode="normal" lvds="true"/>
+		<IO signal_name="display_sel" location="IO_15N_11" inst_name="io_cell_display_sel_inst" direction="input" operation_mode="normal"/>
+		<IO signal_name="rstn_i" location="IO_11N_11" inst_name="io_cell_rstn_i_inst" direction="input" operation_mode="normal"/>
+		<IO signal_name="spi_miso" location="IO_03P_12" inst_name="io_cell_spi_miso_inst" direction="input" operation_mode="normal"/>
+		<IO signal_name="spi_mosi" location="IO_01P_12" inst_name="io_cell_spi_mosi_inst" direction="output" operation_mode="normal"/>
+		<IO signal_name="spi_sck" location="IO_01N_12" inst_name="io_cell_spi_sck_inst" direction="output" operation_mode="normal"/>
+		<IO signal_name="spi_ssn" location="IO_00N_12" inst_name="io_cell_spi_ssn_inst" direction="output" operation_mode="normal"/>
+		<IO signal_name="tx_out_n_0_" location="IO_18N_11" inst_name="u_lvds_u_lvds_tx_0" direction="output" operation_mode="normal" lvds="true"/>
+		<IO signal_name="tx_out_n_1_" location="IO_19N_11" inst_name="u_lvds_u_lvds_tx_1" direction="output" operation_mode="normal" lvds="true"/>
+		<IO signal_name="tx_out_n_2_" location="IO_17N_11" inst_name="u_lvds_u_lvds_tx_2" direction="output" operation_mode="normal" lvds="true"/>
+		<IO signal_name="tx_out_n_3_" location="IO_13N_11" inst_name="u_lvds_u_lvds_tx_3" direction="output" operation_mode="normal" lvds="true"/>
+		<IO signal_name="tx_out_p_0_" location="IO_18P_11" inst_name="u_lvds_u_lvds_tx_0" direction="output" operation_mode="normal" lvds="true"/>
+		<IO signal_name="tx_out_p_1_" location="IO_19P_11" inst_name="u_lvds_u_lvds_tx_1" direction="output" operation_mode="normal" lvds="true"/>
+		<IO signal_name="tx_out_p_2_" location="IO_17P_11" inst_name="u_lvds_u_lvds_tx_2" direction="output" operation_mode="normal" lvds="true"/>
+		<IO signal_name="tx_out_p_3_" location="IO_13P_11" inst_name="u_lvds_u_lvds_tx_3" direction="output" operation_mode="normal" lvds="true"/>
+	</ioConstraint>
+	<dedicatedIo>
+		<DIO signal_name="DQ6" location="IO_00_DQ6_5" inst_name="dedicated_io_cell_u207_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ2" location="IO_00_DQ2_5" inst_name="dedicated_io_cell_u207_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ0" location="IO_01_DQ0_5" inst_name="dedicated_io_cell_u211_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ11" location="IO_01_DQ11_5" inst_name="dedicated_io_cell_u211_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ13" location="IO_02_DQ13_5" inst_name="dedicated_io_cell_u213_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ15" location="IO_02_DQ15_5" inst_name="dedicated_io_cell_u213_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ9" location="IO_03_DQ9_5" inst_name="dedicated_io_cell_u215_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DM1" location="IO_03_DM1_5" inst_name="dedicated_io_cell_u215_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQS0" location="IO_04_DQS0_5" inst_name="dedicated_io_cell_u219_inst" direction="inout" operation_mode="dedicated" dqsds="true" io_standard="DIFF_HSTL_15_II"/>
+		<DIO signal_name="DQS0N" location="IO_04_DQS0N_5" inst_name="dedicated_io_cell_u219_inst" direction="inout" operation_mode="dedicated" dqsds="true" io_standard="DIFF_HSTL_15_II"/>
+		<DIO signal_name="DQ7" location="IO_05_DQ7_5" inst_name="dedicated_io_cell_u221_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DM0" location="IO_05_DM0_5" inst_name="dedicated_io_cell_u221_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQS1" location="IO_06_DQS1_5" inst_name="dedicated_io_cell_u223_inst" direction="inout" operation_mode="dedicated" dqsds="true" io_standard="DIFF_HSTL_15_II"/>
+		<DIO signal_name="DQS1N" location="IO_06_DQS1N_5" inst_name="dedicated_io_cell_u223_inst" direction="inout" operation_mode="dedicated" dqsds="true" io_standard="DIFF_HSTL_15_II"/>
+		<DIO signal_name="VREF0" location="IO_07_VREF0_5" inst_name="dedicated_io_cell_u227_inst" direction="input" operation_mode="dedicated" ddrmc="true"/>
+		<DIO signal_name="DQ12" location="IO_07_DQ12_5" inst_name="dedicated_io_cell_u227_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ14" location="IO_08_DQ14_5" inst_name="dedicated_io_cell_u229_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ10" location="IO_08_DQ10_5" inst_name="dedicated_io_cell_u229_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ8" location="IO_09_DQ8_5" inst_name="dedicated_io_cell_u231_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ1" location="IO_09_DQ1_5" inst_name="dedicated_io_cell_u231_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ3" location="IO_10_DQ3_5" inst_name="dedicated_io_cell_u235_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ5" location="IO_10_DQ5_5" inst_name="dedicated_io_cell_u235_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="DQ4" location="IO_11_DQ4_5" inst_name="dedicated_io_cell_u237_inst" direction="inout" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="CKE" location="IO_11_CKE_5" inst_name="dedicated_io_cell_u237_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="BA1" location="IO_12_BA1_5" inst_name="dedicated_io_cell_u240_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A4" location="IO_12_A4_5" inst_name="dedicated_io_cell_u240_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="CAL" location="IO_13_CAL_5" inst_name="dedicated_io_cell_u243_inst" direction="output" operation_mode="dedicated" ddrmc="true"/>
+		<DIO signal_name="A6" location="IO_13_A6_5" inst_name="dedicated_io_cell_u243_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A8" location="IO_14_A8_5" inst_name="dedicated_io_cell_u245_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A11" location="IO_14_A11_5" inst_name="dedicated_io_cell_u245_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A14" location="IO_15_A14_5" inst_name="dedicated_io_cell_u247_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A1" location="IO_15_A1_5" inst_name="dedicated_io_cell_u247_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A12" location="IO_16_A12_5" inst_name="dedicated_io_cell_u251_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A10" location="IO_16_A10_5" inst_name="dedicated_io_cell_u251_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="CLK" location="IO_17_CLK_5" inst_name="dedicated_io_cell_u253_inst" direction="output" operation_mode="dedicated" dqsds="true" io_standard="DIFF_HSTL_15_II"/>
+		<DIO signal_name="CLKN" location="IO_17_CLKN_5" inst_name="dedicated_io_cell_u253_inst" direction="output" operation_mode="dedicated" dqsds="true" io_standard="DIFF_HSTL_15_II"/>
+		<DIO signal_name="RASN" location="IO_18_RASN_5" inst_name="dedicated_io_cell_u255_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="CASN" location="IO_18_CASN_5" inst_name="dedicated_io_cell_u255_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="VREF1" location="IO_19_VREF1_5" inst_name="dedicated_io_cell_u259_inst" direction="input" operation_mode="dedicated" ddrmc="true"/>
+		<DIO signal_name="WEN" location="IO_19_WEN_5" inst_name="dedicated_io_cell_u259_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A9" location="IO_20_A9_5" inst_name="dedicated_io_cell_u261_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A13" location="IO_20_A13_5" inst_name="dedicated_io_cell_u261_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A2" location="IO_21_A2_5" inst_name="dedicated_io_cell_u263_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="RESETN" location="IO_21_RESETN_5" inst_name="dedicated_io_cell_u263_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A7" location="IO_22_A7_5" inst_name="dedicated_io_cell_u267_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A5" location="IO_22_A5_5" inst_name="dedicated_io_cell_u267_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A0" location="IO_23_A0_5" inst_name="dedicated_io_cell_u269_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="A3" location="IO_23_A3_5" inst_name="dedicated_io_cell_u269_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="BA0" location="IO_24_BA0_5" inst_name="dedicated_io_cell_u271_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="BA2" location="IO_24_BA2_5" inst_name="dedicated_io_cell_u271_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="ODT" location="IO_25_ODT_5" inst_name="dedicated_io_cell_u275_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="CSN" location="IO_25_CSN_5" inst_name="dedicated_io_cell_u275_inst" direction="output" operation_mode="dedicated" ddrmc="true" io_standard="HSTL_15_II"/>
+		<DIO signal_name="UART2_RXD_I" location="IO00_UART2_RXD_10" inst_name="dedicated_io_cell_u318_inst" direction="input" operation_mode="dedicated"/>
+		<DIO signal_name="UART2_TXD_O" location="IO01_UART2_TXD_10" inst_name="dedicated_io_cell_u319_inst" direction="output" operation_mode="dedicated"/>
+	</dedicatedIo>
+	<pairedIoConstraint>
+		<Pair PAD0="DQS0" PAD1="DQS0N" pairType="DQS"/>
+		<Pair PAD0="DQS1" PAD1="DQS1N" pairType="DQS"/>
+		<Pair PAD0="CLK" PAD1="CLKN" pairType="DQS"/>
+		<Pair PAD0="tx_out_p_0_" PAD1="tx_out_n_0_" pairType="LVDS"/>
+		<Pair PAD0="tx_out_p_1_" PAD1="tx_out_n_1_" pairType="LVDS"/>
+		<Pair PAD0="tx_out_p_2_" PAD1="tx_out_n_2_" pairType="LVDS"/>
+		<Pair PAD0="tx_out_p_3_" PAD1="tx_out_n_3_" pairType="LVDS"/>
+		<Pair PAD0="clk_out_p" PAD1="clk_out_n" pairType="LVDS"/>
+	</pairedIoConstraint>
+</aoc>
+

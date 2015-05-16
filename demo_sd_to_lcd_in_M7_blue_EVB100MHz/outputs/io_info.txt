@@ -1,0 +1,2 @@
+#@total I/O slot pin number	@total clock I/O slot pin number	@used normal I/O pin number	@used clock I/O pin number
+310	8	69	1
