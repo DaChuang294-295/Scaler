@@ -1,0 +1,1386 @@
+Info: Pushed output mux into adder: cal1.u129
+Transfer Internal ADTTRIBUF: cal1_I590 to mx2a
+Transfer Internal ADTTRIBUF: cal1_I591 to mx2a
+Transfer Internal ADTTRIBUF: cal1_I592 to mx2a
+Transfer Internal ADTTRIBUF: cal1_I593 to mx2a
+Transfer Internal ADTTRIBUF: cal1_I594 to mx2a
+Transfer Internal ADTTRIBUF: cal1_I595 to mx2a
+Transfer Internal ADTTRIBUF: cal1_I596 to mx2a
+Transfer Internal ADTTRIBUF: cal1_I597 to mx2a
+Transfer Internal ADTTRIBUF: cal1_I598 to mx2a
+Transfer Internal ADTTRIBUF: cal1_I599 to mx2a
+Transfer Internal ADTTRIBUF: cal1_I600 to mx2a
+Broken combinational loop between u3634:OUT and u6810:I0.
+Broken combinational loop between u6789:Y and u6810:IN.
+Broken combinational loop between u6776:O and u6810:I0.
+Broken combinational loop between u6776:O and u6810:D0.
+Broken combinational loop between u6776:O and u6810:I0.
+Broken combinational loop between u3662:O and u4168_or2_41_:IN.
+Broken combinational loop between u3672:O and u4168_or2_41_:I0.
+Broken combinational loop between u3662:O and u4168_or2_41_:I0.
+Broken combinational loop between u6796:O and u4510:I1.
+
+
+Isyn command line: 
+F:/capital_micro/primace7.3\bin\magic.exe -c "*setlib F:/capital_micro/primace7.3\data\lib\magic_lib_m7a.v; *r outputs/scaler_pre_magic.v; *magic; *mload -dl; *w outputs/scaler_post_magic.v"
+
+[ alias q quit ]...
+[ alias h history ]...
+[ *setlib /home/sjang/magic/agalib.v ]...
+Extra_FileCheck():  File "/home/sjang/magic/agalib.v" does not exist.
+ABC command line: "*setlib F:/capital_micro/primace7.3\data\lib\magic_lib_m7a.v; *r outputs/scaler_pre_magic.v; *magic; *mload -dl; *w outputs/scaler_post_magic.v".
+
+Cannot open file "abc.rc".
+Cannot open file "..\abc.rc".
+Cannot open file "..\..\abc.rc".
+Setting "F:/capital_micro/primace7.3\data\lib\magic_lib_m7a.v" as the current library.
++--------------------------------------------------------+
+|                     Magic 01-14-2014                   |
+|               Agate Synthesis Technology               |
+|        Copyright (c) Agate Logic Inc., 2006-2014       |
++--------------------------------------------------------+
+
+@INFO: Spec=scaler_pre_magic.v, Design=scaler, Compiled Sep  9 2014 10:42:04, area_mode=0, quick=0, scorr=0, mode=0, verbose=0... =====
+[ *plut ]...
+# The area/delay of k-variable LUTs:
+# k    area     delay
+1      1.00   1000.00
+2      1.00   1000.00
+3      1.00   1000.00
+4      1.00   1000.00
+[ *st; *pss ia; ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   98 (  98)  and =   6002  edge =  12004  0.00%  lev = 125 
+[ *logic; *st; *pss ia; ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   98 (  98)  and =   6002  edge =  12004  0.00%  lev = 125 
+[ *if; *pss; *mps -b ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   98 (  98)  and =   7074  edge =   6650  0.00%  lev = 60 
+LUT =  2206  1+ =  2206  2+ =  2206   0=0 1=0 2=756 3=662 4=788 Ave = 3.01  Area = 2206  Delay = 59900
+scaler, Lv=60, A=2206.00, LT=2206, MX=4, D=59.90, DD=59.90, PI=446, PO=2140, FF=283, BX=381, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=60, A=2927.00, LT=2980, MX=4, D=59.90, DD=59.90, PI=446, PO=2140, FF=283, BX=381, (st/mp/lg)=(0,0,1) T=(0.2, 0.2) <-bst(d,a)
+@INFO: Copying first mapped netlist...
+$INFO: first mapped network (not legalized)....
+CO drivers: Pos = 677 (CI = 438).  Neg = 1242 (CI = 4).  Both = 66 (CI = 65).
+Special input stats: 1x = 436  2x = 513  3x = 11  47x = 1   (PI = 97  BoxOut = 23  Const = 49  Buffer = 108)
+Legalization: added 120 PI buffers and duplicated 583 nodes with high fanouts (total = 703).
+$INFO: legalized....
+[ *pss; *mps ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   98 (  98)  node =   2980  edge =   8328  0.00%  lev = 60 
+LUT =  2980  1+ =  2927  2+ =  2698   0=53 1=229 2=987 3=719 4=992 Ave = 2.79  Area = 2927  Delay = 59900
+scaler, Lv=60, A=2927.00, LT=2980, MX=4, D=59.90, DD=59.90, PI=446, PO=2140, FF=283, BX=381, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=60, A=2927.00, LT=2980, MX=4, D=59.90, DD=59.90, PI=446, PO=2140, FF=283, BX=381, (st/mp/lg)=(0,0,1) T=(0.0, 0.2) 
+$INFO: strash it again....
+[ *st; *pss; ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   98 (  98)  and =   6760  edge =  13520  0.00%  lev = 129 
+[ *fraig; *pss; ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   4545  edge =   9090  0.00%  lev = 125 
+[ *sw -lv; *pss -i ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   4545  edge =   9090  0.00%  lev = 125 
+INSTANCE STATISTICS for "scaler" (box count = 95):
+ 14 :                      CS_REG_PRIM    116    I=   5  O=   1  N=      5  A=     14  lib  seq    
+ 16 :                     CS_REGA_PRIM    167    I=   5  O=   1  N=      5  A=     14  lib  seq    
+ 42 :              scaler_ipc_adder_11      9    I=  23  O=  12  N=     66  A=    102      comb box
+ 43 :              scaler_ipc_adder_12     11    I=  25  O=  13  N=     72  A=    111      comb box
+ 44 :              scaler_ipc_adder_14      1    I=  29  O=  15  N=     84  A=    129      comb box
+ 45 :              scaler_ipc_adder_17     34    I=  35  O=  18  N=    102  A=    156      comb box
+ 46 :              scaler_ipc_adder_18     34    I=  37  O=  19  N=    108  A=    165      comb box
+ 47 :              scaler_ipc_adder_34      1    I=  69  O=  35  N=    204  A=    309      comb box
+ 48 :               scaler_ipc_adder_7      3    I=  15  O=   8  N=     42  A=     66      comb box
+ 49 :               scaler_ipc_adder_8      2    I=  17  O=   9  N=     48  A=     75      comb box
+$INFO: mapped after fraig, options=....
+[ *if ; *pss; *mps ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   5376  edge =   4875  0.00%  lev = 52 
+LUT =  1610  1+ =  1610  2+ =  1610   0=0 1=0 2=549 3=467 4=594 Ave = 3.03  Area = 1610  Delay = 40694
+scaler, Lv=52, A=1610.00, LT=1610, MX=4, D=40.69, DD=40.69, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=52, A=2536.00, LT=2585, MX=4, D=40.69, DD=40.69, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.3, 0.5) 
+
+@@@@@@@@@@  1 1 1 1 @@@@@@@@@@
+[ *bidec; *dch -f; *if ; *mps -b; *pss ]...
+scaler, Lv=51, A=1399.00, LT=1399, MX=4, D=39.19, DD=39.19, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=51, A=2326.00, LT=2375, MX=4, D=39.19, DD=39.19, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.3, 0.7) <-bst(d,a)
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   4893  edge =   4182  0.00%  lev = 51 
+LUT =  1399  1+ =  1399  2+ =  1399   0=0 1=0 2=488 3=438 4=473 Ave = 2.99  Area = 1399  Delay = 39194
+[          *if ; *mps -b ]...
+scaler, Lv=51, A=1402.00, LT=1402, MX=4, D=39.19, DD=39.19, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=51, A=2329.00, LT=2378, MX=4, D=39.19, DD=39.19, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.1, 0.8) 
+[ *dch -f; *if ; *mps -b ]...
+scaler, Lv=51, A=1406.00, LT=1406, MX=4, D=39.19, DD=39.19, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=51, A=2334.00, LT=2383, MX=4, D=39.19, DD=39.19, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 1.0) 
+[ *dch -f; *if ; *mps -b ]...
+scaler, Lv=51, A=1408.00, LT=1408, MX=4, D=39.19, DD=39.19, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=51, A=2335.00, LT=2384, MX=4, D=39.19, DD=39.19, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 1.1) 
+[ *dch -f; *if ; *mps -b ]...
+scaler, Lv=51, A=1408.00, LT=1408, MX=4, D=39.19, DD=39.19, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=51, A=2336.00, LT=2385, MX=4, D=39.19, DD=39.19, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 1.3) 
+[ *bidec; *dch -f; *if ; *mps -b ]...
+scaler, Lv=49, A=1380.00, LT=1380, MX=4, D=38.09, DD=38.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=49, A=2308.00, LT=2357, MX=4, D=38.09, DD=38.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 1.6) <-bst(d,a)
+[ *bidec; *dch -f; *if ; *mps -b ]...
+scaler, Lv=49, A=1370.00, LT=1370, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=49, A=2298.00, LT=2347, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 1.8) <-bst(d,a)
+<*C>scaler, Lv=49, A=1370.00, LT=1370, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< C>scaler, Lv=49, A=2298.00, LT=2347, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=49, A=1370.00, LT=1370, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< A>scaler, Lv=49, A=2298.00, LT=2347, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=49, A=1370.00, LT=1370, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=49, A=2298.00, LT=2347, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-AREA(temp)ntk loaded...
+[ C]scaler, Lv=49, A=1370.00, LT=1370, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ C]scaler, Lv=49, A=2298.00, LT=2347, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*A]scaler, Lv=49, A=1370.00, LT=1370, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ A]scaler, Lv=49, A=2298.00, LT=2347, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ D]scaler, Lv=49, A=1370.00, LT=1370, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=49, A=2298.00, LT=2347, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ *mps ]...
+scaler, Lv=49, A=1370.00, LT=1370, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=49, A=2298.00, LT=2347, MX=4, D=37.09, DD=37.09, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 1.8) 
+
+@@@@@@@@@@  2 2 2 2 @@@@@@@@@@
+[ *bidec;  *dch -f; *if ; *mps -b ]...
+scaler, Lv=48, A=1362.00, LT=1362, MX=4, D=36.69, DD=36.69, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=48, A=2290.00, LT=2339, MX=4, D=36.69, DD=36.69, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 2.0) <-bst(d,a)
+[ *bidec;  *dch -f; *if ; *mps -b ]...
+scaler, Lv=48, A=1361.00, LT=1361, MX=4, D=36.69, DD=36.69, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=48, A=2289.00, LT=2338, MX=4, D=36.69, DD=36.69, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 2.2) <-bst(d,a)
+[ *shrink; *dch -f; *if  -e -C 32; *mps -b ]...
+scaler, Lv=47, A=1348.00, LT=1348, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=47, A=2273.00, LT=2322, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 2.4) <-bst(d,a)
+[ *shrink; *dch -f; *if  -e -C 32; *mps -b ]...
+scaler, Lv=47, A=1342.00, LT=1342, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=47, A=2267.00, LT=2316, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 2.7) <-bst(d,a)
+<*C>scaler, Lv=47, A=1342.00, LT=1342, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< C>scaler, Lv=47, A=2267.00, LT=2316, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=47, A=1342.00, LT=1342, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< A>scaler, Lv=47, A=2267.00, LT=2316, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=47, A=1342.00, LT=1342, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=47, A=2267.00, LT=2316, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-AREA(temp)ntk loaded...
+[ C]scaler, Lv=47, A=1342.00, LT=1342, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ C]scaler, Lv=47, A=2267.00, LT=2316, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*A]scaler, Lv=47, A=1342.00, LT=1342, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ A]scaler, Lv=47, A=2267.00, LT=2316, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ D]scaler, Lv=47, A=1342.00, LT=1342, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=47, A=2267.00, LT=2316, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ *mps ]...
+scaler, Lv=47, A=1342.00, LT=1342, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=47, A=2267.00, LT=2316, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 2.7) 
+[ *logic; *pss; *mps ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1404  edge =   4198  0.00%  lev = 47 
+LUT =  1404  1+ =  1402  2+ =  1342   0=2 1=60 2=394 3=442 4=506 Ave = 2.99  Area = 1402  Delay = 35794
+scaler, Lv=47, A=1402.00, LT=1404, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=47, A=2267.00, LT=2316, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 2.7) 
+[ *sw -lv; *mps -b ]...
+Warning: Model                         scaler: Comb sweep removed 9 objects and 9 comb box fanins.   Time =     0.00 sec
+scaler, Lv=47, A=1393.00, LT=1395, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=47, A=2259.00, LT=2308, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 2.7) <-bst(d,a)
+
+@@@@@@@@@@  3 3 3 3 @@@@@@@@@@
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps ]...
+The network has 8 nodes changed by "*mfs".
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1387  edge =   4151  0.00%  lev = 47 
+LUT =  1387  1+ =  1385  2+ =  1326   0=2 1=59 2=388 3=436 4=502 Ave = 2.99  Area = 1385  Delay = 35794
+scaler, Lv=47, A=1385.00, LT=1387, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=47, A=2251.00, LT=2300, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 2.9) 
+[ *sw -lv; *mps ]...
+scaler, Lv=47, A=1385.00, LT=1387, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=47, A=2251.00, LT=2300, MX=4, D=35.79, DD=35.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 2.9) 
+[ *st; *if ; *mps -b ]...
+scaler, Lv=45, A=1328.00, LT=1328, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2252.00, LT=2302, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.1, 2.9) <-bst(d,a)
+[ *bidec; *dch -f; *if ; *mps -b ]...
+scaler, Lv=45, A=1332.00, LT=1332, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2259.00, LT=2309, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 3.1) 
+[ *bidec; *dch -f; *if ; *mps -b ]...
+scaler, Lv=45, A=1362.00, LT=1362, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2289.00, LT=2339, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 3.4) 
+[ *logic; *mps; *mfs; *mps -b ]...
+scaler, Lv=45, A=1421.00, LT=1423, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2289.00, LT=2339, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 3.4) 
+The network has 2 nodes changed by "*mfs".
+scaler, Lv=45, A=1421.00, LT=1423, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2289.00, LT=2339, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.1, 3.5) 
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network has 1 nodes changed by "*mfs".
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1422  edge =   4235  0.00%  lev = 45 
+LUT =  1422  1+ =  1420  2+ =  1361   0=2 1=59 2=394 3=480 4=487 Ave = 2.98  Area = 1420  Delay = 34794
+scaler, Lv=45, A=1420.00, LT=1422, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2288.00, LT=2338, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 3.6) 
+<*C>scaler, Lv=45, A=1420.00, LT=1422, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< C>scaler, Lv=45, A=2288.00, LT=2338, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=45, A=1328.00, LT=1328, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< A>scaler, Lv=45, A=2252.00, LT=2302, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=45, A=1328.00, LT=1328, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=45, A=2252.00, LT=2302, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-AREA(temp)ntk loaded...
+[ C]scaler, Lv=45, A=1328.00, LT=1328, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ C]scaler, Lv=45, A=2252.00, LT=2302, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*A]scaler, Lv=45, A=1328.00, LT=1328, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ A]scaler, Lv=45, A=2252.00, LT=2302, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ D]scaler, Lv=45, A=1328.00, LT=1328, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=45, A=2252.00, LT=2302, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+
+@@@@@@@@@@  4 4 4 4 @@@@@@@@@@
+[ *logic; *pss; *mps ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1389  edge =   4126  0.00%  lev = 45 
+LUT =  1389  1+ =  1387  2+ =  1328   0=2 1=59 2=408 3=429 4=491 Ave = 2.97  Area = 1387  Delay = 34794
+scaler, Lv=45, A=1387.00, LT=1389, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2252.00, LT=2302, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 3.7) 
+[ *sw -lv; *mps -b ]...
+Warning: Model                         scaler: Comb sweep removed 1 objects and 1 comb box fanins.   Time =     0.00 sec
+scaler, Lv=45, A=1386.00, LT=1388, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2251.00, LT=2301, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 3.7) <-bst(d,a)
+[ *st; *if ; *mps -b ]...
+scaler, Lv=45, A=1327.00, LT=1327, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2251.00, LT=2301, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.1, 3.7) 
+[ *logic; *mps; *mfs; *mps -b ]...
+scaler, Lv=45, A=1386.00, LT=1388, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2251.00, LT=2301, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 3.7) 
+The network has 4 nodes changed by "*mfs".
+scaler, Lv=45, A=1385.00, LT=1387, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2250.00, LT=2300, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.1, 3.8) <-bst(d,a)
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network is not changed by "*mfs".
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1387  edge =   4115  0.00%  lev = 45 
+LUT =  1387  1+ =  1385  2+ =  1326   0=2 1=59 2=409 3=430 4=487 Ave = 2.97  Area = 1385  Delay = 34794
+scaler, Lv=45, A=1385.00, LT=1387, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2250.00, LT=2300, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 4.0) 
+[ *st; *if ; *mps -b ]...
+scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 4.0) <-bst(d,a)
+[ *logic; *mps; *mfs; *mps -b ]...
+scaler, Lv=45, A=1384.00, LT=1386, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 4.1) 
+The network is not changed by "*mfs".
+scaler, Lv=45, A=1384.00, LT=1386, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.1, 4.2) 
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network is not changed by "*mfs".
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1386  edge =   4115  0.00%  lev = 45 
+LUT =  1386  1+ =  1384  2+ =  1325   0=2 1=59 2=394 3=456 4=475 Ave = 2.97  Area = 1384  Delay = 34794
+scaler, Lv=45, A=1384.00, LT=1386, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 4.3) 
+<*C>scaler, Lv=45, A=1384.00, LT=1386, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< C>scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< A>scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-AREA(temp)ntk loaded...
+[ C]scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ C]scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*A]scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ A]scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ D]scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+
+@@@@@@@@@@    T   r   y       M   o   r   e   @@@@@@@@@@
+[ *mps; *pss; *mload -a ]...
+scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 4.3) 
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   5707  edge =   4056  0.00%  lev = 45 
+LUT =  1325  1+ =  1325  2+ =  1325   0=0 1=0 2=394 3=456 4=475 Ave = 3.06  Area = 1325  Delay = 34794
+<*C>scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< C>scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< A>scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best area mode, best-AREA(temp)ntk loaded...
+[ C]scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ C]scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*A]scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ A]scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ D]scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ *st;     *dch -f; *if -C 12 ; *mps -b ]...
+Abc2_CommandSt(): Root model is already strashed.
+scaler, Lv=45, A=1356.00, LT=1356, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2282.00, LT=2332, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 4.5) 
+[          *dch -f; *if -C 12 ; *mps -b ]...
+scaler, Lv=45, A=1341.00, LT=1341, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2268.00, LT=2318, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 4.7) 
+[ *bidec;  *dch -f; *if -C 12 ; *mps -b ]...
+scaler, Lv=45, A=1332.00, LT=1332, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2259.00, LT=2309, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 5.0) 
+[ *bidec;  *dch -f; *if -C 12 ; *mps -b ]...
+scaler, Lv=45, A=1333.00, LT=1333, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2260.00, LT=2310, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 5.2) 
+[ *bidec;  *dch -f; *if -C 12 ; *mps -b ]...
+scaler, Lv=45, A=1346.00, LT=1346, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2273.00, LT=2323, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 5.4) 
+[ *shrink; *dch -f; *if -C 12 ; *mps -b ]...
+scaler, Lv=45, A=1338.00, LT=1338, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2265.00, LT=2315, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 5.6) 
+[ *shrink; *dch -f; *if -C 12 ; *mps -b ]...
+scaler, Lv=45, A=1352.00, LT=1352, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2279.00, LT=2329, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 5.8) 
+[ *mps; *mload ; *mps; *pss ]...
+scaler, Lv=45, A=1352.00, LT=1352, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2279.00, LT=2329, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 5.8) 
+<*C>scaler, Lv=45, A=1352.00, LT=1352, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< C>scaler, Lv=45, A=2279.00, LT=2329, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< A>scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-AREA(temp)ntk loaded...
+[ C]scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ C]scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*A]scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ A]scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ D]scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 5.9) 
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   5707  edge =   4056  0.00%  lev = 45 
+LUT =  1325  1+ =  1325  2+ =  1325   0=0 1=0 2=394 3=456 4=475 Ave = 3.06  Area = 1325  Delay = 34794
+[          *dch -f; *if -e ; *mps -b ]...
+scaler, Lv=46, A=1352.00, LT=1352, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=46, A=2275.00, LT=2325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 6.1) 
+[          *dch -f; *if -e ; *mps -b ]...
+scaler, Lv=45, A=1336.00, LT=1336, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2260.00, LT=2310, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 6.2) 
+[ *bidec;  *dch -f; *if -e ; *mps -b ]...
+scaler, Lv=46, A=1331.00, LT=1331, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=46, A=2255.00, LT=2305, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 6.4) 
+[ *shrink; *dch -f; *if -e ; *mps -b ]...
+scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 6.6) <-bst(d,a)
+[ *mps; *mload ; *mps; *pss ]...
+scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 6.7) 
+<*C>scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< C>scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< A>scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-AREA(temp)ntk loaded...
+[ C]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ C]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*A]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ A]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ D]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 6.7) 
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   4966  edge =   4076  0.00%  lev = 45 
+LUT =  1321  1+ =  1321  2+ =  1321   0=0 1=0 2=377 3=454 4=490 Ave = 3.09  Area = 1321  Delay = 34794
+[ *bidec;  *dch -f; *if -C 32; *mps -b ]...
+scaler, Lv=45, A=1325.00, LT=1325, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2252.00, LT=2302, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.3, 6.9) 
+[ *bidec;  *dch -f; *if -C 32; *mps -b ]...
+scaler, Lv=45, A=1335.00, LT=1335, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2262.00, LT=2312, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 7.2) 
+[ *shrink; *dch -f; *if -C 32; *mps -b ]...
+scaler, Lv=45, A=1329.00, LT=1329, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2256.00, LT=2306, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 7.4) 
+[ *shrink; *dch -f; *if -C 32; *mps -b ]...
+scaler, Lv=45, A=1342.00, LT=1342, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2269.00, LT=2319, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 7.6) 
+[ *shrink; *dch -f; *if -C 32; *mps -b ]...
+scaler, Lv=45, A=1326.00, LT=1326, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2253.00, LT=2303, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 7.8) 
+[ *mps; *mload ; *mps; *pss ]...
+scaler, Lv=45, A=1326.00, LT=1326, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2253.00, LT=2303, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 7.8) 
+<*C>scaler, Lv=45, A=1326.00, LT=1326, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< C>scaler, Lv=45, A=2253.00, LT=2303, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< A>scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-AREA(temp)ntk loaded...
+[ C]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ C]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*A]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ A]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ D]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 7.8) 
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   4966  edge =   4076  0.00%  lev = 45 
+LUT =  1321  1+ =  1321  2+ =  1321   0=0 1=0 2=377 3=454 4=490 Ave = 3.09  Area = 1321  Delay = 34794
+
+@@@@@@@@@@  w w w w @@@@@@@@@@
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+Abc2_CommandMfs(): Root model should be in the logic form.
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   4966  edge =   4076  0.00%  lev = 45 
+LUT =  1321  1+ =  1321  2+ =  1321   0=0 1=0 2=377 3=454 4=490 Ave = 3.09  Area = 1321  Delay = 34794
+scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 7.8) 
+[ *sw -lv; *mps ]...
+scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 7.8) 
+[ *st; *if -C 32; *mps -b ]...
+Abc2_CommandSt(): Root model is already strashed.
+scaler, Lv=45, A=1322.00, LT=1322, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2249.00, LT=2299, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 7.9) 
+[ *bidec; *dch -f; *if -C 32; *mps -b ]...
+scaler, Lv=45, A=1324.00, LT=1324, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2251.00, LT=2301, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 8.1) 
+[ *bidec; *dch -f; *if -C 32; *mps -b ]...
+scaler, Lv=45, A=1327.00, LT=1327, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2254.00, LT=2304, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 8.4) 
+[ *logic; *mps; *mfs; *mps -b ]...
+scaler, Lv=45, A=1386.00, LT=1388, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2254.00, LT=2304, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 8.4) 
+The network is not changed by "*mfs".
+scaler, Lv=45, A=1386.00, LT=1388, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2254.00, LT=2304, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.1, 8.5) 
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network has 1 nodes changed by "*mfs".
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1387  edge =   4077  0.00%  lev = 45 
+LUT =  1387  1+ =  1385  2+ =  1326   0=2 1=59 2=410 3=466 4=450 Ave = 2.94  Area = 1385  Delay = 34794
+scaler, Lv=45, A=1385.00, LT=1387, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2253.00, LT=2303, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 8.6) 
+[ *mps; *mload ; *mps; *pss ]...
+scaler, Lv=45, A=1385.00, LT=1387, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2253.00, LT=2303, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 8.6) 
+<*C>scaler, Lv=45, A=1385.00, LT=1387, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< C>scaler, Lv=45, A=2253.00, LT=2303, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< A>scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-AREA(temp)ntk loaded...
+[ C]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ C]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*A]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ A]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ D]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 8.7) 
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   4966  edge =   4076  0.00%  lev = 45 
+LUT =  1321  1+ =  1321  2+ =  1321   0=0 1=0 2=377 3=454 4=490 Ave = 3.09  Area = 1321  Delay = 34794
+
+@@@@@@@@@@  x x x x x @@@@@@@@@@
+[ *mps; *logic; *pss; *mps ]...
+scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 8.7) 
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1382  edge =   4135  0.00%  lev = 45 
+LUT =  1382  1+ =  1380  2+ =  1321   0=2 1=59 2=377 3=454 4=490 Ave = 2.99  Area = 1380  Delay = 34794
+scaler, Lv=45, A=1380.00, LT=1382, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 8.7) 
+[ *sw -lv; *pss; *mps -b ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1382  edge =   4135  0.00%  lev = 45 
+LUT =  1382  1+ =  1380  2+ =  1321   0=2 1=59 2=377 3=454 4=490 Ave = 2.99  Area = 1380  Delay = 34794
+scaler, Lv=45, A=1380.00, LT=1382, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 8.7) 
+[ *mfs -L 3 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network has 3 nodes changed by "*mfs".
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1379  edge =   4124  0.00%  lev = 46 
+LUT =  1379  1+ =  1377  2+ =  1318   0=2 1=59 2=377 3=453 4=488 Ave = 2.99  Area = 1377  Delay = 35794
+scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 8.8) <-bst(a)
+[ *sw -lv; *pss; *mps ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1379  edge =   4124  0.00%  lev = 46 
+LUT =  1379  1+ =  1377  2+ =  1318   0=2 1=59 2=377 3=453 4=488 Ave = 2.99  Area = 1377  Delay = 35794
+scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 8.9) 
+[ *st; *if -C 32; *pss; *mps -b ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   5718  edge =   4048  0.00%  lev = 46 
+LUT =  1320  1+ =  1320  2+ =  1320   0=0 1=0 2=382 3=468 4=470 Ave = 3.07  Area = 1320  Delay = 35593
+scaler, Lv=46, A=1320.00, LT=1320, MX=4, D=35.59, DD=35.59, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=46, A=2244.00, LT=2294, MX=4, D=35.59, DD=35.59, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.1, 8.9) 
+[ *bidec; *dch -f; *if -C 32; *pss; *mps -b ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   4944  edge =   4044  0.00%  lev = 45 
+LUT =  1329  1+ =  1329  2+ =  1329   0=0 1=0 2=406 3=460 4=463 Ave = 3.04  Area = 1329  Delay = 34794
+scaler, Lv=45, A=1329.00, LT=1329, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2256.00, LT=2306, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 9.2) 
+[ *bidec; *dch -f; *if -C 32; *pss; *mps -b ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   4923  edge =   4038  0.00%  lev = 45 
+LUT =  1331  1+ =  1331  2+ =  1331   0=0 1=0 2=414 3=458 4=459 Ave = 3.03  Area = 1331  Delay = 34794
+scaler, Lv=45, A=1331.00, LT=1331, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2258.00, LT=2308, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 9.4) 
+[ *logic; *pss; *mfs; *mps -b ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1392  edge =   4097  0.00%  lev = 45 
+LUT =  1392  1+ =  1390  2+ =  1331   0=2 1=59 2=414 3=458 4=459 Ave = 2.94  Area = 1390  Delay = 34794
+The network is not changed by "*mfs".
+scaler, Lv=45, A=1390.00, LT=1392, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2258.00, LT=2308, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.1, 9.5) 
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network has 1 nodes changed by "*mfs".
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1391  edge =   4095  0.00%  lev = 45 
+LUT =  1391  1+ =  1389  2+ =  1330   0=2 1=59 2=413 3=458 4=459 Ave = 2.94  Area = 1389  Delay = 34794
+scaler, Lv=45, A=1389.00, LT=1391, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 9.7) 
+[ *mps; *mload ; *mps; *pss ]...
+scaler, Lv=45, A=1389.00, LT=1391, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 9.7) 
+<*C>scaler, Lv=45, A=1389.00, LT=1391, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< C>scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-DELAY-ntk loaded...
+[ C]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ C]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ A]scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ A]scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*D]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 9.7) 
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  and =   4966  edge =   4076  0.00%  lev = 45 
+LUT =  1321  1+ =  1321  2+ =  1321   0=0 1=0 2=377 3=454 4=490 Ave = 3.09  Area = 1321  Delay = 34794
+
+@@@@@@@@@@  y y y y @@@@@@@@@@
+[ *logic; *pss; *mps ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1382  edge =   4135  0.00%  lev = 45 
+LUT =  1382  1+ =  1380  2+ =  1321   0=2 1=59 2=377 3=454 4=490 Ave = 2.99  Area = 1380  Delay = 34794
+scaler, Lv=45, A=1380.00, LT=1382, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 9.7) 
+[ *sw -lv; *mps -b ]...
+scaler, Lv=45, A=1380.00, LT=1382, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 9.7) 
+[ *mfs -L 3 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network has 3 nodes changed by "*mfs".
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1379  edge =   4124  0.00%  lev = 46 
+LUT =  1379  1+ =  1377  2+ =  1318   0=2 1=59 2=377 3=453 4=488 Ave = 2.99  Area = 1377  Delay = 35794
+scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 9.9) 
+[ *sw -lv; *mps ]...
+scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 9.9) 
+[ *st; *if -C 32; *mps -b ]...
+scaler, Lv=46, A=1320.00, LT=1320, MX=4, D=35.59, DD=35.59, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=46, A=2244.00, LT=2294, MX=4, D=35.59, DD=35.59, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.1, 9.9) 
+[ *bidec; *dch -f; *if -C 32; *mps -b ]...
+scaler, Lv=45, A=1329.00, LT=1329, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2256.00, LT=2306, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 10.2) 
+[ *bidec; *dch -f; *if -C 32; *mps -b ]...
+scaler, Lv=45, A=1331.00, LT=1331, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2258.00, LT=2308, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 10.4) 
+[ *logic; *mps; *mfs; *mps -b ]...
+scaler, Lv=45, A=1390.00, LT=1392, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2258.00, LT=2308, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 10.4) 
+The network is not changed by "*mfs".
+scaler, Lv=45, A=1390.00, LT=1392, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2258.00, LT=2308, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.1, 10.5) 
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network has 1 nodes changed by "*mfs".
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1391  edge =   4095  0.00%  lev = 45 
+LUT =  1391  1+ =  1389  2+ =  1330   0=2 1=59 2=413 3=458 4=459 Ave = 2.94  Area = 1389  Delay = 34794
+scaler, Lv=45, A=1389.00, LT=1391, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.2, 10.7) 
+[ *mload -a; *mps; ]...
+<*C>scaler, Lv=45, A=1389.00, LT=1391, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< C>scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best area mode, best-AREA(temp)ntk loaded...
+[ C]scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ C]scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*A]scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ A]scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ D]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 10.7) 
+[ *mps; *mload -d; *mps ]...
+scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 10.7) 
+<*C>scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< C>scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-DELAY-ntk loaded...
+[ C]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ C]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ A]scaler, Lv=46, A=1377.00, LT=1379, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ A]scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*D]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 10.7) 
+
+@@@@@@@@@@  E n d   T r y   M o r e @@@@@@@@@@
+
+@@@@@@@@@@  7 a 7 a @@@@@@@@@@
+[ *plut ]...
+# The area/delay of k-variable LUTs:
+# k    area     delay
+1      1.00   1000.00
+2      1.00   1000.00
+3      1.00   1000.00
+4      1.00   1000.00
+5      2.00   2000.00
+6      2.00   2000.00
+7      2.00   2000.00
+[ *st; *if -S 44; *mps ]...
+Abc2_CommandSt(): Root model is already strashed.
+scaler, Lv=45, A=1319.00, LT=1230, MX=7, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2246.00, LT=2207, MX=7, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.3, 11.0) 
+[         *dch -f; *if -S 44; *mps ]...
+scaler, Lv=45, A=1331.00, LT=1240, MX=7, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2257.00, LT=2216, MX=7, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.5, 11.5) 
+[         *dch -f; *if -S 44; *mps ]...
+scaler, Lv=45, A=1328.00, LT=1236, MX=7, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2255.00, LT=2213, MX=7, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.5, 12.0) 
+[ *bidec; *dch -f; *if -S 44; *mps ]...
+scaler, Lv=45, A=1335.00, LT=1242, MX=7, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2262.00, LT=2219, MX=7, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.7, 12.7) 
+[ *bidec; *dch -f; *if -S 44; *mps ]...
+scaler, Lv=45, A=1327.00, LT=1232, MX=7, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2254.00, LT=2209, MX=7, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.7, 13.4) 
+[ *bidec; *dch -f; *if -S 44 -z; *mps -b ]...
+scaler, Lv=45, A=1335.00, LT=1335, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2262.00, LT=2312, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.7, 14.1) 
+[ *bidec; *dch -f; *if -S 44 -z; *mps -b ]...
+scaler, Lv=45, A=1331.00, LT=1331, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.7, 14.8) 
+[ *bidec; *dch -f; *if -S 44 -z; *mps -b ]...
+scaler, Lv=45, A=1330.00, LT=1330, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) ...
+scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.7, 15.5) 
+[ *logic; *pss; *mps -b ]...
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   1391  edge =   4123  0.00%  lev = 45 
+LUT =  1391  1+ =  1389  2+ =  1330   0=2 1=59 2=396 3=464 4=470 Ave = 2.96  Area = 1389  Delay = 34794
+scaler, Lv=45, A=1389.00, LT=1391, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 15.5) 
+[ *logic ]...
+Abc2_CommandLogic(): Root model is already in the logic form.
+[ *legal -v; *pss; *mps ]...
+Special input stats: 1x = 412  2x = 285  3x = 1  4x = 2  6x = 2  8x = 2  10x = 2  12x = 2  14x = 2  16x = 2  18x = 2  20x = 2  22x = 2  24x = 2  26x = 2  28x = 2  30x = 2  45x = 1   (PI = 107  BoxOut = 21  Const = 48  Buffer = 505)
+Legalization: added 128 PI buffers and duplicated 788 nodes with high fanouts (total = 916).
+scaler          : pi = 446 po =2140 ff =   283  box =   95 (  95)  node =   2307  edge =   5683  0.00%  lev = 45 
+LUT =  2307  1+ =  2257  2+ =  1617   0=50 1=640 2=479 3=467 4=671 Ave = 2.46  Area = 2257  Delay = 34794
+scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 15.5) 
+[ *mps ]...
+scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) ...
+scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) T=(0.0, 15.5) 
+
+@@@@@@@@@@  T h e   F i n a l   Q o R   S u m m a r y @@@@@@@@@@
+scaler, PI=446, PO=2140, A(2927.00, 2257.00, 2242.00), D(59.90, 34.79, 35.79), DL(59.90, 34.79, 34.79), W(8328, 5683, 5678), FF(283, 283, 283), TM=0.00 secs, Mem=0.00 M, 
+
+[RPT0], scaler_pre_magic.v, MD=DL, A, 2927.00, 2257.00, 2242.00, D, 59.90, 34.79, 35.79, PI=446, PO=2140, FF, 283, 283, 283, BX, 381, 378, 378, TIM, 0.0, Mem, 0.0, 
+
+<*C>scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< C>scaler, Lv=45, A=2257.00, LT=2307, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< A>scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+< D>scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+< D>scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-DELAY-ntk loaded...
+[ C]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ C]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ A]scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ A]scaler, Lv=46, A=2242.00, LT=2292, MX=4, D=35.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[*D]scaler, Lv=45, A=1321.00, LT=1321, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(1,1,0) 
+[ D]scaler, Lv=45, A=2245.00, LT=2295, MX=4, D=34.79, DD=34.79, PI=446, PO=2140, FF=283, BX=378, (st/mp/lg)=(0,0,1) 
+[ *logic -v ]...
+CO drivers: Pos = 790 (CI = 416).  Neg = 657 (CI = 5).  Both = 55 (CI = 53).
+[ *legal -v ]...
+Special input stats: 1x = 412  2x = 285  3x = 1  4x = 2  6x = 2  8x = 2  10x = 2  12x = 2  14x = 2  16x = 2  18x = 2  20x = 2  22x = 2  24x = 2  26x = 2  28x = 2  30x = 2  45x = 1   (PI = 107  BoxOut = 21  Const = 48  Buffer = 506)
+Legalization: added 128 PI buffers and duplicated 785 nodes with high fanouts (total = 913).
+
+Magic Lut summary:
+
+LUT-0, 		Total number : 50
+LUT-1, 		Total number : 641
+LUT-2, 		Total number : 454
+LUT-3, 		Total number : 458
+LUT-4, 		Total number : 692
+Warning: S20119: Block 'M7S_EMB18K(fifo1_ram_inst_2_u_emb18k_0)' is floating, removed.
+Warning: S20119: Block 'M7S_EMB18K(fifo1_ram_inst_2_u_emb18k_1)' is floating, removed.
+
+
+Carry block check summary:
+
+All the carry blocks are legal.
+
+Clock Net Summary:
+
+ii1187|dx_net: 9
+ii1188|dx_net: 18
+io_cell_clka_inst|id_q_net: 201
+io_cell_clkb_inst|id_q_net: 107
+
+Net Fanout Summary:
+
+
+Command line options : -dev M7A12N0F256I7 -v outputs/scaler.asv -top scaler -vo outputs/scaler.amv -whitebox -isyn -keep_latch -keep_floating -optimize_primitives -aoc outputs/scaler_ast.aoc -min_ce_fanout 4 -carry_opt -magic -mode best_timing -use_dsp auto -simple_hierarchy outputs/scaler_simp_hier.v
+
+design network
+pi num : 113
+po num : 19
+pio num : 0
+comb num : 1506
+reg num : 0
+macro num : 2317
+instance num : 2602
+depth : 70.0
+
+mapped network
+pi num : 113
+po num : 19
+pio num : 0
+lut num : 2078
+reg num : 283
+macro num : 2100
+instance num : 2517
+depth(take delay of carry as 0.1) : 54.0
+depth (take delay of macro as 1) : 316
+
+
+critical path : 
+	Path point coefcal1_yDividend__reg[15]/qx
+	Path point ii1348/f3
+	Path point ii1348/co
+	Path point ii1349/ci
+	Path point ii1349/co
+	Path point ii1350/ci
+	Path point ii1350/co
+	Path point ii1351/ci
+	Path point ii1351/co
+	Path point ii1352/ci
+	Path point ii1352/co
+	Path point ii1353/ci
+	Path point ii1353/co
+	Path point ii1354/ci
+	Path point ii1354/co
+	Path point ii1355/ci
+	Path point ii1355/co
+	Path point ii1356/ci
+	Path point ii1356/co
+	Path point ii1357/ci
+	Path point ii1357/co
+	Path point ii1358/ci
+	Path point ii1358/co
+	Path point ii1359/ci
+	Path point ii1359/co
+	Path point ii1360/ci
+	Path point ii1360/co
+	Path point ii1361/ci
+	Path point ii1361/co
+	Path point ii1362/ci
+	Path point ii1362/co
+	Path point ii1363/ci
+	Path point ii1363/co
+	Path point ii1364/ci
+	Path point ii1364/co
+	Path point VCC_0_inst_carry_buffer_3083_/ci
+	Path point VCC_0_inst_carry_buffer_3083_/co
+	Path point VCC_0_inst_carry_buffer_3083__dup/ci
+	Path point VCC_0_inst_carry_buffer_3083__dup/s
+	Path point ii1424/f0
+	Path point ii1424/co
+	Path point ii1425/ci
+	Path point ii1425/co
+	Path point ii1426/ci
+	Path point ii1426/co
+	Path point ii1427/ci
+	Path point ii1427/co
+	Path point ii1428/ci
+	Path point ii1428/co
+	Path point ii1429/ci
+	Path point ii1429/co
+	Path point ii1430/ci
+	Path point ii1430/co
+	Path point ii1431/ci
+	Path point ii1431/co
+	Path point ii1432/ci
+	Path point ii1432/co
+	Path point ii1433/ci
+	Path point ii1433/co
+	Path point ii1434/ci
+	Path point ii1434/co
+	Path point ii1435/ci
+	Path point ii1435/co
+	Path point ii1436/ci
+	Path point ii1436/co
+	Path point ii1437/ci
+	Path point ii1437/co
+	Path point ii1438/ci
+	Path point ii1438/co
+	Path point ii1439/ci
+	Path point ii1439/co
+	Path point VCC_0_inst_carry_buffer_3084_/ci
+	Path point VCC_0_inst_carry_buffer_3084_/co
+	Path point VCC_0_inst_carry_buffer_3084__dup/ci
+	Path point VCC_0_inst_carry_buffer_3084__dup/s
+	Path point ii1501/f3
+	Path point ii1501/dx
+	Path point ii1502/f2
+	Path point ii1502/co
+	Path point ii1503/ci
+	Path point ii1503/co
+	Path point ii1504/ci
+	Path point ii1504/co
+	Path point ii1505/ci
+	Path point ii1505/co
+	Path point ii1506/ci
+	Path point ii1506/co
+	Path point ii1507/ci
+	Path point ii1507/co
+	Path point ii1508/ci
+	Path point ii1508/co
+	Path point ii1509/ci
+	Path point ii1509/co
+	Path point ii1510/ci
+	Path point ii1510/co
+	Path point ii1511/ci
+	Path point ii1511/co
+	Path point ii1512/ci
+	Path point ii1512/co
+	Path point ii1513/ci
+	Path point ii1513/co
+	Path point ii1514/ci
+	Path point ii1514/co
+	Path point ii1515/ci
+	Path point ii1515/co
+	Path point ii1516/ci
+	Path point ii1516/co
+	Path point VCC_0_inst_carry_buffer_3085_/ci
+	Path point VCC_0_inst_carry_buffer_3085_/co
+	Path point VCC_0_inst_carry_buffer_3085__dup/ci
+	Path point VCC_0_inst_carry_buffer_3085__dup/s
+	Path point ii1577/f0
+	Path point ii1577/co
+	Path point ii1578/ci
+	Path point ii1578/co
+	Path point ii1579/ci
+	Path point ii1579/co
+	Path point ii1580/ci
+	Path point ii1580/co
+	Path point ii1581/ci
+	Path point ii1581/co
+	Path point ii1582/ci
+	Path point ii1582/co
+	Path point ii1583/ci
+	Path point ii1583/co
+	Path point ii1584/ci
+	Path point ii1584/co
+	Path point ii1585/ci
+	Path point ii1585/co
+	Path point ii1586/ci
+	Path point ii1586/co
+	Path point ii1587/ci
+	Path point ii1587/co
+	Path point ii1588/ci
+	Path point ii1588/co
+	Path point ii1589/ci
+	Path point ii1589/co
+	Path point ii1590/ci
+	Path point ii1590/co
+	Path point ii1591/ci
+	Path point ii1591/co
+	Path point ii1592/ci
+	Path point ii1592/co
+	Path point VCC_0_inst_carry_buffer_3086_/ci
+	Path point VCC_0_inst_carry_buffer_3086_/co
+	Path point VCC_0_inst_carry_buffer_3086__dup/ci
+	Path point VCC_0_inst_carry_buffer_3086__dup/s
+	Path point ii1656/f3
+	Path point ii1656/dx
+	Path point ii1657/f2
+	Path point ii1657/co
+	Path point ii1659/ci
+	Path point ii1659/co
+	Path point ii1661/ci
+	Path point ii1661/co
+	Path point ii1662/ci
+	Path point ii1662/co
+	Path point ii1663/ci
+	Path point ii1663/co
+	Path point ii1664/ci
+	Path point ii1664/co
+	Path point ii1665/ci
+	Path point ii1665/co
+	Path point ii1666/ci
+	Path point ii1666/co
+	Path point ii1667/ci
+	Path point ii1667/co
+	Path point ii1668/ci
+	Path point ii1668/co
+	Path point ii1669/ci
+	Path point ii1669/co
+	Path point ii1670/ci
+	Path point ii1670/co
+	Path point ii1671/ci
+	Path point ii1671/co
+	Path point ii1672/ci
+	Path point ii1672/co
+	Path point ii1673/ci
+	Path point ii1673/co
+	Path point VCC_0_inst_carry_buffer_3087_/ci
+	Path point VCC_0_inst_carry_buffer_3087_/co
+	Path point VCC_0_inst_carry_buffer_3087__dup/ci
+	Path point VCC_0_inst_carry_buffer_3087__dup/s
+	Path point ii1735/f3
+	Path point ii1735/dx
+	Path point ii1736/f2
+	Path point ii1736/co
+	Path point ii1738/ci
+	Path point ii1738/co
+	Path point ii1740/ci
+	Path point ii1740/co
+	Path point ii1742/ci
+	Path point ii1742/co
+	Path point ii1743/ci
+	Path point ii1743/co
+	Path point ii1744/ci
+	Path point ii1744/co
+	Path point ii1745/ci
+	Path point ii1745/co
+	Path point ii1746/ci
+	Path point ii1746/co
+	Path point ii1747/ci
+	Path point ii1747/co
+	Path point ii1748/ci
+	Path point ii1748/co
+	Path point ii1749/ci
+	Path point ii1749/co
+	Path point ii1750/ci
+	Path point ii1750/co
+	Path point ii1751/ci
+	Path point ii1751/co
+	Path point ii1752/ci
+	Path point ii1752/co
+	Path point ii1753/ci
+	Path point ii1753/co
+	Path point VCC_0_inst_carry_buffer_3088_/ci
+	Path point VCC_0_inst_carry_buffer_3088_/co
+	Path point VCC_0_inst_carry_buffer_3088__dup/ci
+	Path point VCC_0_inst_carry_buffer_3088__dup/s
+	Path point ii1776/f0
+	Path point ii1776/co
+	Path point ii1814/ci
+	Path point ii1814/co
+	Path point ii1815/ci
+	Path point ii1815/co
+	Path point ii1816/ci
+	Path point ii1816/co
+	Path point ii1817/ci
+	Path point ii1817/co
+	Path point ii1818/ci
+	Path point ii1818/co
+	Path point ii1819/ci
+	Path point ii1819/co
+	Path point ii1820/ci
+	Path point ii1820/co
+	Path point ii1821/ci
+	Path point ii1821/co
+	Path point ii1822/ci
+	Path point ii1822/co
+	Path point ii1823/ci
+	Path point ii1823/co
+	Path point ii1824/ci
+	Path point ii1824/co
+	Path point ii1825/ci
+	Path point ii1825/co
+	Path point ii1826/ci
+	Path point ii1826/co
+	Path point ii1827/ci
+	Path point ii1827/co
+	Path point ii1828/ci
+	Path point ii1828/co
+	Path point VCC_0_inst_carry_buffer_3089_/ci
+	Path point VCC_0_inst_carry_buffer_3089_/co
+	Path point VCC_0_inst_carry_buffer_3089__dup/ci
+	Path point VCC_0_inst_carry_buffer_3089__dup/s
+	Path point ii1894/f0
+	Path point ii1894/co
+	Path point ii1895/ci
+	Path point ii1895/co
+	Path point ii1896/ci
+	Path point ii1896/co
+	Path point ii1897/ci
+	Path point ii1897/co
+	Path point ii1898/ci
+	Path point ii1898/co
+	Path point ii1899/ci
+	Path point ii1899/co
+	Path point ii1900/ci
+	Path point ii1900/co
+	Path point ii1902/ci
+	Path point ii1902/co
+	Path point ii1903/ci
+	Path point ii1903/co
+	Path point ii1904/ci
+	Path point ii1904/co
+	Path point ii1905/ci
+	Path point ii1905/co
+	Path point ii1906/ci
+	Path point ii1906/co
+	Path point ii1907/ci
+	Path point ii1907/co
+	Path point ii1908/ci
+	Path point ii1908/co
+	Path point ii1909/ci
+	Path point ii1909/co
+	Path point ii1910/ci
+	Path point ii1910/co
+	Path point VCC_0_inst_carry_buffer_3090_/ci
+	Path point VCC_0_inst_carry_buffer_3090_/co
+	Path point VCC_0_inst_carry_buffer_3090__dup/ci
+	Path point VCC_0_inst_carry_buffer_3090__dup/s
+	Path point ii1976/f0
+	Path point ii1976/co
+	Path point ii1977/ci
+	Path point ii1977/co
+	Path point ii1978/ci
+	Path point ii1978/co
+	Path point ii1979/ci
+	Path point ii1979/co
+	Path point ii1980/ci
+	Path point ii1980/co
+	Path point ii1981/ci
+	Path point ii1981/co
+	Path point ii1982/ci
+	Path point ii1982/co
+	Path point ii1983/ci
+	Path point ii1983/co
+	Path point ii1984/ci
+	Path point ii1984/co
+	Path point ii1985/ci
+	Path point ii1985/co
+	Path point ii1986/ci
+	Path point ii1986/co
+	Path point ii1987/ci
+	Path point ii1987/co
+	Path point ii1988/ci
+	Path point ii1988/co
+	Path point ii1989/ci
+	Path point ii1989/co
+	Path point ii1990/ci
+	Path point ii1990/co
+	Path point ii1991/ci
+	Path point ii1991/co
+	Path point VCC_0_inst_carry_buffer_3091_/ci
+	Path point VCC_0_inst_carry_buffer_3091_/co
+	Path point VCC_0_inst_carry_buffer_3091__dup/ci
+	Path point VCC_0_inst_carry_buffer_3091__dup/s
+	Path point ii2061/f2
+	Path point ii2061/dx
+	Path point ii2062/f2
+	Path point ii2062/co
+	Path point ii2064/ci
+	Path point ii2064/co
+	Path point ii2066/ci
+	Path point ii2066/co
+	Path point ii2068/ci
+	Path point ii2068/co
+	Path point ii2070/ci
+	Path point ii2070/co
+	Path point ii2072/ci
+	Path point ii2072/co
+	Path point ii2074/ci
+	Path point ii2074/co
+	Path point ii2077/ci
+	Path point ii2077/co
+	Path point ii2078/ci
+	Path point ii2078/co
+	Path point ii2079/ci
+	Path point ii2079/co
+	Path point ii2080/ci
+	Path point ii2080/co
+	Path point ii2081/ci
+	Path point ii2081/co
+	Path point ii2082/ci
+	Path point ii2082/co
+	Path point ii2083/ci
+	Path point ii2083/co
+	Path point VCC_0_inst_carry_buffer_3092_/ci
+	Path point VCC_0_inst_carry_buffer_3092_/co
+	Path point VCC_0_inst_carry_buffer_3092__dup/ci
+	Path point VCC_0_inst_carry_buffer_3092__dup/s
+	Path point ii2151/f2
+	Path point ii2151/dx
+	Path point ii2152/f2
+	Path point ii2152/co
+	Path point ii2154/ci
+	Path point ii2154/co
+	Path point ii2156/ci
+	Path point ii2156/co
+	Path point ii2158/ci
+	Path point ii2158/co
+	Path point ii2159/ci
+	Path point ii2159/co
+	Path point ii2160/ci
+	Path point ii2160/co
+	Path point ii2161/ci
+	Path point ii2161/co
+	Path point ii2162/ci
+	Path point ii2162/co
+	Path point ii2163/ci
+	Path point ii2163/co
+	Path point ii2164/ci
+	Path point ii2164/co
+	Path point VCC_0_inst_carry_buffer_3093_/ci
+	Path point VCC_0_inst_carry_buffer_3093_/co
+	Path point VCC_0_inst_carry_buffer_3093__dup/ci
+	Path point VCC_0_inst_carry_buffer_3093__dup/s
+	Path point ii2187/f0
+	Path point ii2187/co
+	Path point ii2230/ci
+	Path point ii2230/co
+	Path point ii2231/ci
+	Path point ii2231/co
+	Path point ii2232/ci
+	Path point ii2232/co
+	Path point ii2233/ci
+	Path point ii2233/co
+	Path point ii2234/ci
+	Path point ii2234/co
+	Path point ii2235/ci
+	Path point ii2235/co
+	Path point ii2236/ci
+	Path point ii2236/co
+	Path point ii2237/ci
+	Path point ii2237/co
+	Path point ii2238/ci
+	Path point ii2238/co
+	Path point ii2239/ci
+	Path point ii2239/co
+	Path point ii2240/ci
+	Path point ii2240/co
+	Path point ii2241/ci
+	Path point ii2241/co
+	Path point ii2242/ci
+	Path point ii2242/co
+	Path point ii2243/ci
+	Path point ii2243/co
+	Path point ii2244/ci
+	Path point ii2244/co
+	Path point VCC_0_inst_carry_buffer_3094_/ci
+	Path point VCC_0_inst_carry_buffer_3094_/co
+	Path point VCC_0_inst_carry_buffer_3094__dup/ci
+	Path point VCC_0_inst_carry_buffer_3094__dup/s
+	Path point ii2315/f0
+	Path point ii2315/co
+	Path point ii2316/ci
+	Path point ii2316/co
+	Path point ii2317/ci
+	Path point ii2317/co
+	Path point ii2318/ci
+	Path point ii2318/co
+	Path point ii2319/ci
+	Path point ii2319/co
+	Path point ii2320/ci
+	Path point ii2320/co
+	Path point ii2321/ci
+	Path point ii2321/co
+	Path point ii2322/ci
+	Path point ii2322/co
+	Path point ii2323/ci
+	Path point ii2323/co
+	Path point ii2324/ci
+	Path point ii2324/co
+	Path point ii2325/ci
+	Path point ii2325/co
+	Path point ii2326/ci
+	Path point ii2326/co
+	Path point ii2328/ci
+	Path point ii2328/co
+	Path point ii2329/ci
+	Path point ii2329/co
+	Path point ii2330/ci
+	Path point ii2330/co
+	Path point ii2331/ci
+	Path point ii2331/co
+	Path point VCC_0_inst_carry_buffer_3095_/ci
+	Path point VCC_0_inst_carry_buffer_3095_/co
+	Path point VCC_0_inst_carry_buffer_3095__dup/ci
+	Path point VCC_0_inst_carry_buffer_3095__dup/s
+	Path point ii2403/f0
+	Path point ii2403/co
+	Path point ii2404/ci
+	Path point ii2404/co
+	Path point ii2405/ci
+	Path point ii2405/co
+	Path point ii2406/ci
+	Path point ii2406/co
+	Path point ii2407/ci
+	Path point ii2407/co
+	Path point ii2408/ci
+	Path point ii2408/co
+	Path point ii2409/ci
+	Path point ii2409/co
+	Path point ii2410/ci
+	Path point ii2410/co
+	Path point ii2411/ci
+	Path point ii2411/co
+	Path point ii2412/ci
+	Path point ii2412/co
+	Path point ii2413/ci
+	Path point ii2413/co
+	Path point ii2414/ci
+	Path point ii2414/co
+	Path point ii2415/ci
+	Path point ii2415/co
+	Path point ii2416/ci
+	Path point ii2416/co
+	Path point ii2417/ci
+	Path point ii2417/co
+	Path point ii2418/ci
+	Path point ii2418/co
+	Path point VCC_0_inst_carry_buffer_3096_/ci
+	Path point VCC_0_inst_carry_buffer_3096_/co
+	Path point VCC_0_inst_carry_buffer_3096__dup/ci
+	Path point VCC_0_inst_carry_buffer_3096__dup/s
+	Path point ii2491/f0
+	Path point ii2491/co
+	Path point ii2492/ci
+	Path point ii2492/co
+	Path point ii2493/ci
+	Path point ii2493/co
+	Path point ii2494/ci
+	Path point ii2494/co
+	Path point ii2495/ci
+	Path point ii2495/co
+	Path point ii2496/ci
+	Path point ii2496/co
+	Path point ii2497/ci
+	Path point ii2497/co
+	Path point ii2498/ci
+	Path point ii2498/co
+	Path point ii2499/ci
+	Path point ii2499/co
+	Path point ii2500/ci
+	Path point ii2500/co
+	Path point ii2501/ci
+	Path point ii2501/co
+	Path point ii2502/ci
+	Path point ii2502/co
+	Path point ii2503/ci
+	Path point ii2503/co
+	Path point ii2504/ci
+	Path point ii2504/co
+	Path point ii2505/ci
+	Path point ii2505/co
+	Path point ii2506/ci
+	Path point ii2506/co
+	Path point VCC_0_inst_carry_buffer_3097_/ci
+	Path point VCC_0_inst_carry_buffer_3097_/co
+	Path point VCC_0_inst_carry_buffer_3097__dup/ci
+	Path point VCC_0_inst_carry_buffer_3097__dup/s
+	Path point ii2602/f0
+	Path point ii2602/co
+	Path point ii2603/ci
+	Path point ii2603/co
+	Path point ii2604/ci
+	Path point ii2604/co
+	Path point ii2605/ci
+	Path point ii2605/co
+	Path point ii2606/ci
+	Path point ii2606/co
+	Path point ii2607/ci
+	Path point ii2607/co
+	Path point ii2608/ci
+	Path point ii2608/co
+	Path point ii2609/ci
+	Path point ii2609/co
+	Path point ii2610/ci
+	Path point ii2610/co
+	Path point ii2611/ci
+	Path point ii2611/co
+	Path point ii2612/ci
+	Path point ii2612/co
+	Path point ii2613/ci
+	Path point ii2613/co
+	Path point ii2614/ci
+	Path point ii2614/co
+	Path point ii2615/ci
+	Path point ii2615/co
+	Path point ii2616/ci
+	Path point ii2616/co
+	Path point ii2617/ci
+	Path point ii2617/co
+	Path point VCC_0_inst_carry_buffer_3098_/ci
+	Path point VCC_0_inst_carry_buffer_3098_/co
+	Path point VCC_0_inst_carry_buffer_3098__dup/ci
+	Path point VCC_0_inst_carry_buffer_3098__dup/s
+	Path point ii2644/f1
+	Path point ii2644/dx
+	Path point ii2646/f1
+	Path point ii2646/co
+	Path point ii2648/ci
+	Path point ii2648/co
+	Path point ii2650/ci
+	Path point ii2650/co
+	Path point ii2652/ci
+	Path point ii2652/co
+	Path point ii2654/ci
+	Path point ii2654/co
+	Path point ii2656/ci
+	Path point ii2656/co
+	Path point ii2658/ci
+	Path point ii2658/co
+	Path point ii2660/ci
+	Path point ii2660/s
+	Path point ii2677/f2
+	Path point ii2677/co
+	Path point ii2678/ci
+	Path point ii2678/s
+	Path point ii2707/f2
+	Path point ii2707/dx
+	Path point ii2708/f0
+	Path point ii2708/dx
+	Path point ii2710/f1
+	Path point ii2710/dx
+	Path point cal1_jmp1Normal__reg/di
+
+
+
+-----------------------Result summary:-----------------------
+
+
+Primitive summary:
+
+Primitive Name : GND, 		Total number : 1
+Primitive Name : LUT4, 		Total number : 773
+Primitive Name : LUT4C, 		Total number : 1305
+Primitive Name : M7A_MAC, 		Total number : 16
+Primitive Name : M7S_DGPIO, 		Total number : 132
+Primitive Name : M7S_EMB18K, 		Total number : 6
+Primitive Name : REG, 		Total number : 283
+Primitive Name : VCC, 		Total number : 1
+
+Lut summary:
+
+LUT-0, 		Total number : 87
+LUT-1, 		Total number : 398
+LUT-2, 		Total number : 454
+LUT-3, 		Total number : 461
+LUT-4, 		Total number : 678
+
+Wire summary:
+
+Total wire number : 10782
+Average fanout : 3.24
+Average Lut fanout : 2.06
+Average Reg fanout : 10.43
+
+Control signal summary:
+
+Total REG number : 283.
+
+Total CE control signal number : 8.
+	CE control signal: ii1329|dx_net, fanout: 28.
+	CE control signal: ii4092|dx_net, fanout: 34.
+	CE control signal: ii4093|dx_net, fanout: 11.
+	CE control signal: ii4536|dx_net, fanout: 28.
+	CE control signal: ii4591|dx_net, fanout: 12.
+	CE control signal: ii4618|dx_net, fanout: 17.
+	CE control signal: ii4684|dx_net, fanout: 17.
+	CE control signal: io_cell_iHsyn_inst|id_q_net, fanout: 12.
+
+Total SET control signal number : 1.
+	SET control signal: io_cell_rst_inst|id_q_net, fanout: 12.
+
+Total RST control signal number : 3.
+	RST control signal: ii4590|dx_net, fanout: 29.
+	RST control signal: ii4656|dx_net, fanout: 29.
+	RST control signal: io_cell_rst_inst|id_q_net, fanout: 97.
+
+
+Primace 7.3 AST was successful!
+2 warning(s), 0 error(s).
+CPU Time: 21.730 seconds, Peak Memory: 81 MB

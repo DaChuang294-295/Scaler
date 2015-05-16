@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project_status>
+    <project_file_status size="809" time_stamp="1429454351896" checksum="80059e1221c0035a734b60a5e2d081cf"/>
+    <file_signature size="0" time_stamp="0" checksum="" name="debug/Default/scaler.aoc"/>
+    <file_signature size="17813" time_stamp="1429416507512" checksum="f3e7dcac9d9acbb3cd80e7846e6fe104" name="scaler.aoc"/>
+    <file_signature size="11181" time_stamp="1429437183569" checksum="0b4cf37cf93459379237a7efe31d9377" name="src/Cal_v1.v"/>
+    <file_signature size="3056" time_stamp="1429416151774" checksum="861e144f10946a006756c28b9998db7b" name="src/coefcal_v3.v"/>
+    <file_signature size="2138" time_stamp="1427704014000" checksum="1f64d11e7270cc373f4fdd31324533c6" name="src/divider_v2.v"/>
+    <file_signature size="12593" time_stamp="1428902157991" checksum="0385536bc330d36ca4a0e27815573c41" name="src/emb_12_2k.v"/>
+    <file_signature size="6414" time_stamp="1429414896264" checksum="e37b732f14c51975a3149c5c943e290f" name="src/inputCtrl.v"/>
+    <file_signature size="8826" time_stamp="1429437838960" checksum="79e2eae053d2fb734f74958b47e5e3a5" name="src/ramFifo.v"/>
+    <file_signature size="6196" time_stamp="1429453668055" checksum="ddb26211ba117eb77d4abc7e25833749" name="src/scaler1.0.v"/>
+    <file_signature size="5660" time_stamp="1429458402209" checksum="cb02078829637b0812b1b8f65e7caa9a" name="src/scaler_tb.v"/>
+    <file_signature size="4259" time_stamp="1429458388647" checksum="fb1a958bcfa69db6727ec75e30448965" name="src/scaler_tb2.v"/>
+    <flow_status>
+        <status status="NeedRun" flow="frontend"/>
+        <status status="NeedRun" flow="synthesis"/>
+        <status status="NeedRun" flow="placer"/>
+        <status status="NeedRun" flow="router"/>
+        <status status="NeedRun" flow="bitgen"/>
+        <status status="NeedRun" flow="timer"/>
+        <status status="NeedRun" flow="ixplorer"/>
+        <status profile="Default" status="NeedRun" flow="signal_monitor"/>
+    </flow_status>
+    <io_editor_enabled value="false"/>
+    <ixplorer clock="" count="-1" msecs="-1" scan_high="-1" scan_low="-1" target_fmax="-1"/>
+    <pin_alias/>
+    <opened_file>
+        <file name="$(PRJ_DIR)/src/Cal_v1.v"/>
+        <file name="$(PRJ_DIR)/src/ramFifo.v"/>
+        <file name="$(PRJ_DIR)/src/scaler_tb.v"/>
+        <file name="$(PRJ_DIR)/src/coefcal_v3.v"/>
+        <file name="$(PRJ_DIR)/src/scaler1.0.v"/>
+        <file name="$(PRJ_DIR)/src/scaler_tb2.v"/>
+    </opened_file>
+</project_status>

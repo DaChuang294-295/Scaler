@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project_status>
+    <project_file_status size="745" time_stamp="1429457862103" checksum="b96f02ac4344289259c34037e68e025b"/>
+    <file_signature size="0" time_stamp="0" checksum="" name="debug/Default/scaler.aoc"/>
+    <file_signature size="15901" time_stamp="1429434098937" checksum="09f44a90bb03e541e8faaa5658c482f0" name="scaler.aoc"/>
+    <file_signature size="11181" time_stamp="1429453611727" checksum="8def881e1b34667ed858936f3c981a92" name="src/Cal_v1.v"/>
+    <file_signature size="3056" time_stamp="1429453623243" checksum="861e144f10946a006756c28b9998db7b" name="src/coefcal_v3.v"/>
+    <file_signature size="2138" time_stamp="1427704014000" checksum="1f64d11e7270cc373f4fdd31324533c6" name="src/divider_v2.v"/>
+    <file_signature size="13229" time_stamp="1428720372593" checksum="831ec2abfebeedc46a4ec2060cd95f27" name="src/emb_16_2k.v"/>
+    <file_signature size="6414" time_stamp="1429420851292" checksum="e37b732f14c51975a3149c5c943e290f" name="src/inputCtrl.v"/>
+    <file_signature size="8200" time_stamp="1429436992476" checksum="85f27b42c1595355cac9ccfdb7592243" name="src/ramFifo.v"/>
+    <file_signature size="6196" time_stamp="1429435401768" checksum="dc98dfc8f754990c276fc10443fdd283" name="src/scaler1.0.v"/>
+    <file_signature size="4237" time_stamp="1429458386980" checksum="2d9822f8a5ba5a40c642a8740f74ecbc" name="src/scaler_tb2.v"/>
+    <flow_status>
+        <status status="NeedRun" flow="frontend"/>
+        <status status="NeedRun" flow="synthesis"/>
+        <status status="NeedRun" flow="placer"/>
+        <status status="NeedRun" flow="router"/>
+        <status status="NeedRun" flow="bitgen"/>
+        <status status="NeedRun" flow="timer"/>
+        <status status="NeedRun" flow="ixplorer"/>
+        <status profile="Default" status="NeedRun" flow="signal_monitor"/>
+    </flow_status>
+    <io_editor_enabled value="false"/>
+    <ixplorer clock="" count="-1" msecs="-1" scan_high="-1" scan_low="-1" target_fmax="-1"/>
+    <pin_alias/>
+    <opened_file>
+        <file name="$(PRJ_DIR)/src/scaler_tb2.v"/>
+    </opened_file>
+</project_status>

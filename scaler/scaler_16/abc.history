@@ -1,0 +1,4 @@
+unset progressbar
+alias q quit
+alias h history
+*setlib /home/sjang/magic/agalib.v

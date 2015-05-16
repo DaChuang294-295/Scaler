@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AgateProject version="3.2">
+    <name>final_scaler_v3</name>
+    <device>M7A12N0F256I7</device>
+    <topModule>scaler</topModule>
+    <tbTopModule>tb</tbTopModule>
+    <tbTopDesignInstName>Cal</tbTopDesignInstName>
+    <MonitorSignal>Default|Default</MonitorSignal>
+    <files>
+        <file>$(PRJ_DIR)/src/coefcal_v3.v</file>
+        <file>$(PRJ_DIR)/src/scaler1.0.v</file>
+        <file>$(PRJ_DIR)/src/inputCtrl.v</file>
+        <file>$(PRJ_DIR)/src/ramFifo.v</file>
+        <file isTestBench="1">$(PRJ_DIR)/src/scaler_tb.v</file>
+        <file isTestBench="1">$(PRJ_DIR)/src/scaler_tb2.v</file>
+        <file>$(PRJ_DIR)/src/emb_12_2k.v</file>
+        <file>$(PRJ_DIR)/src/divider_v2.v</file>
+        <file>$(PRJ_DIR)/src/Cal_v1.v</file>
+    </files>
+</AgateProject>

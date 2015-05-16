@@ -1,0 +1,275 @@
+# Reading F:/modeltech_10.1a/tcl/vsim/pref.tcl 
+# //  ModelSim SE 10.1a Feb 22 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do scaler_rtl_sim.do 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is Hamish_Lin@HAMISH_LIN-PC.
+# 
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is Hamish_Lin@HAMISH_LIN-PC.
+# 
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is Hamish_Lin@HAMISH_LIN-PC.
+# 
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is Hamish_Lin@HAMISH_LIN-PC.
+# 
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is Hamish_Lin@HAMISH_LIN-PC.
+# 
+# vlib rtl_work
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# 
+# vmap -c work rtl_work
+# Modifying modelsim.ini
+# ** Warning: vmap will not overwrite local modelsim.ini.
+#          MODELSIM set to modelsim.ini.
+#          modelsim.ini was modified because copy failed
+#          The MODELSIM environment variable is used to find the modelsim.ini
+#          file, so this local copy will not be used.
+# vlog -vlog01compat -work work f:/capital_micro/primace7.3/data/lib/m7s_sim.v
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# -- Compiling module DELAY_BUF
+# -- Compiling module GBUF
+# -- Compiling module RBUF
+# -- Compiling module GND
+# -- Compiling module VCC
+# -- Compiling module LUT4
+# -- Compiling module LUT4C
+# -- Compiling module REGS
+# -- Compiling module REG
+# -- Compiling module LBUF
+# -- Compiling module CARRY_SKIP_OUT
+# -- Compiling module CFG_CARRY_SKIP_IN
+# -- Compiling module CFG_DYN_SWITCH
+# -- Compiling module CFG_DYN_SWITCH_S3
+# -- Compiling module CFGMUX2S
+# -- Compiling module CONST
+# -- Compiling module GBUF_GATE
+# -- Compiling module RBUF_GATE
+# -- Compiling module CLK_GATING
+# -- Compiling module M7A_MAC
+# -- Compiling module mac_dff_async
+# -- Compiling module mac_dff_sync
+# -- Compiling module M7S_EMB5K
+# -- Compiling module M7S_DGPIO
+# -- Compiling module M7S_DLL
+# -- Compiling module M7S_PLL
+# -- Compiling module PLL_SIM
+# -- Compiling module M7A_SPRAM
+# -- Compiling module M7S_EMB18K
+# -- Compiling module M7A_FIFO_CTRL
+# -- Compiling module M7A_ASYN_FIFO_SIM
+# -- Compiling module M7A_SYN_FIFO_SIM
+# -- Compiling module M7S_IO_CAL
+# -- Compiling module M7A_IO_DDRSG
+# -- Compiling module M7S_IO_DDR
+# -- Compiling module M7S_IO_DQS
+# -- Compiling module M7S_IO_LVDS
+# -- Compiling module M7S_IO_PCISG
+# -- Compiling module M7S_IO_VREF
+# -- Compiling module M7S_POR
+# -- Compiling module IBUF
+# -- Compiling module OBUF
+# -- Compiling module TBUF
+# -- Compiling module BIBUF
+# -- Compiling module CLKBUF
+# -- Compiling module IBUFDS
+# -- Compiling module OBUFDS
+# -- Compiling module TBUFDS
+# -- Compiling module BIBUFDS
+# -- Compiling module CLKBUFDS
+# -- Compiling module DDR_IO
+# -- Compiling module OSC
+# 
+# Top level modules:
+# 	DELAY_BUF
+# 	GBUF
+# 	RBUF
+# 	GND
+# 	VCC
+# 	LUT4
+# 	LUT4C
+# 	REGS
+# 	REG
+# 	LBUF
+# 	CARRY_SKIP_OUT
+# 	CFG_CARRY_SKIP_IN
+# 	CFG_DYN_SWITCH
+# 	CFG_DYN_SWITCH_S3
+# 	CFGMUX2S
+# 	CONST
+# 	GBUF_GATE
+# 	RBUF_GATE
+# 	CLK_GATING
+# 	M7A_MAC
+# 	M7S_DGPIO
+# 	M7S_DLL
+# 	M7S_PLL
+# 	M7A_SPRAM
+# 	M7S_EMB18K
+# 	M7S_IO_CAL
+# 	M7A_IO_DDRSG
+# 	M7S_IO_DDR
+# 	M7S_IO_DQS
+# 	M7S_IO_LVDS
+# 	M7S_IO_PCISG
+# 	M7S_IO_VREF
+# 	M7S_POR
+# 	IBUF
+# 	OBUF
+# 	TBUF
+# 	BIBUF
+# 	CLKBUF
+# 	IBUFDS
+# 	OBUFDS
+# 	TBUFDS
+# 	BIBUFDS
+# 	CLKBUFDS
+# 	DDR_IO
+# 	OSC
+# vlog -vlog01compat -work work f:/capital_micro/primace7.3/data/lib/M7S_SOC.v +incdir+F:/capital_micro/primace7.3/data/lib
+# vlog -vlog01compat -work work  "D:/final_scaler_v3_test/src/coefcal_v3.v" "D:/final_scaler_v3_test/src/scaler1.0.v" "D:/final_scaler_v3_test/src/inputCtrl.v" "D:/final_scaler_v3_test/src/ramFifo.v" "D:/final_scaler_v3_test/src/emb_12_2k.v" "D:/final_scaler_v3_test/src/divider_v2.v" "D:/final_scaler_v3_test/src/Cal_v1.v" "D:/final_scaler_v3_test/src/scaler_tb.v" "D:/final_scaler_v3_test/src/scaler_tb2.v" +initreg+0
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# -- Compiling module coefCal
+# -- Compiling module scaler
+# -- Compiling module inputCtrl
+# -- Compiling module ramFifo
+# -- Compiling module emb_12_2k
+# -- Compiling module mdivider
+# -- Compiling module Cal
+# -- Compiling module tb
+# -- Compiling module tb2
+# 
+# Top level modules:
+# 	tb
+# 	tb2
+# vsim -voptargs=+acc work.tb 
+# vsim -voptargs=+acc work.tb 
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# ** Warning: D:/final_scaler_v3_test/src/coefcal_v3.v(101): (vopt-2685) [TFMPC] - Too few port connections for 'divide_inst1'.  Expected 6, found 4.
+# 
+# ** Warning: D:/final_scaler_v3_test/src/coefcal_v3.v(101): (vopt-2718) [TFMPC] - Missing connection for port 'error'.
+# 
+# ** Warning: D:/final_scaler_v3_test/src/coefcal_v3.v(101): (vopt-2718) [TFMPC] - Missing connection for port 'remainder'.
+# 
+# ** Warning: D:/final_scaler_v3_test/src/coefcal_v3.v(108): (vopt-2685) [TFMPC] - Too few port connections for 'divide_inst2'.  Expected 6, found 4.
+# 
+# ** Warning: D:/final_scaler_v3_test/src/coefcal_v3.v(108): (vopt-2718) [TFMPC] - Missing connection for port 'error'.
+# 
+# ** Warning: D:/final_scaler_v3_test/src/coefcal_v3.v(108): (vopt-2718) [TFMPC] - Missing connection for port 'remainder'.
+# 
+# ** Warning: f:/capital_micro/primace7.3/data/lib/m7s_sim.v(6540): (vopt-2576) [BSOB] - Bit-select into 'temp_word_b' is out of bounds.
+# 
+# ** Warning: f:/capital_micro/primace7.3/data/lib/m7s_sim.v(6540): (vopt-2576) [BSOB] - Bit-select into 'temp_word_b' is out of bounds.
+# 
+# ** Warning: f:/capital_micro/primace7.3/data/lib/m7s_sim.v(6712): (vopt-2576) [BSOB] - Bit-select into 'i_q_tmp_a' is out of bounds.
+# 
+# ** Warning: f:/capital_micro/primace7.3/data/lib/m7s_sim.v(6712): (vopt-2576) [BSOB] - Bit-select into 'i_q_tmp_a' is out of bounds.
+# 
+# Loading work.tb(fast)
+# Loading work.scaler(fast)
+# Loading work.coefCal(fast)
+# Loading work.mdivider(fast)
+# Loading work.inputCtrl(fast)
+# Loading work.ramFifo(fast)
+# Loading work.emb_12_2k(fast)
+# Loading work.M7S_EMB18K(fast)
+# Loading work.M7A_FIFO_CTRL(fast)
+# Loading work.M7A_SYN_FIFO_SIM(fast)
+# Loading work.M7S_EMB5K(fast)
+# Loading work.Cal(fast)
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(118): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'cea'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(16).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_0A
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(118): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'ceb'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(22).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_0A
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(118): [PCDPC] - Port size (12 or 12) does not match connection size (32) for port 'db'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(25).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_0A
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(139): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'cea'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(16).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_0B
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(139): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'ceb'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(22).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_0B
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(139): [PCDPC] - Port size (12 or 12) does not match connection size (32) for port 'db'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(25).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_0B
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(160): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'cea'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(16).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_1A
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(160): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'ceb'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(22).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_1A
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(160): [PCDPC] - Port size (12 or 12) does not match connection size (32) for port 'db'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(25).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_1A
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(181): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'cea'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(16).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_1B
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(181): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'ceb'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(22).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_1B
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(181): [PCDPC] - Port size (12 or 12) does not match connection size (32) for port 'db'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(25).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_1B
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(202): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'cea'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(16).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_2A
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(202): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'ceb'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(22).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_2A
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(202): [PCDPC] - Port size (12 or 12) does not match connection size (32) for port 'db'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(25).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_2A
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(223): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'cea'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(16).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_2B
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(223): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'ceb'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(22).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_2B
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(223): [PCDPC] - Port size (12 or 12) does not match connection size (32) for port 'db'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(25).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_2B
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(244): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'cea'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(16).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_3A
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(244): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'ceb'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(22).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_3A
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(244): [PCDPC] - Port size (12 or 12) does not match connection size (32) for port 'db'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(25).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_3A
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(265): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'cea'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(16).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_3B
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(265): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'ceb'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(22).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_3B
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/ramFifo.v(265): [PCDPC] - Port size (12 or 12) does not match connection size (32) for port 'db'. The port definition is at: D:/final_scaler_v3_test/src/emb_12_2k.v(25).
+# 
+#         Region: /tb/uut/fifo1/ram_inst_3B
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/scaler1.0.v(182): [PCDPC] - Port size (11 or 11) does not match connection size (24) for port 'ramAddrIn'. The port definition is at: D:/final_scaler_v3_test/src/Cal_v1.v(80).
+# 
+#         Region: /tb/uut/cal1
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/scaler1.0.v(182): [PCDPC] - Port size (2 or 2) does not match connection size (3) for port 'fifoNum'. The port definition is at: D:/final_scaler_v3_test/src/Cal_v1.v(84).
+# 
+#         Region: /tb/uut/cal1
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/scaler1.0.v(182): [PCDPC] - Port size (11 or 11) does not match connection size (32) for port 'inXNum'. The port definition is at: D:/final_scaler_v3_test/src/Cal_v1.v(87).
+# 
+#         Region: /tb/uut/cal1
+# ** Warning: (vsim-3015) D:/final_scaler_v3_test/src/scaler1.0.v(182): [PCDPC] - Port size (11 or 11) does not match connection size (32) for port 'inYNum'. The port definition is at: D:/final_scaler_v3_test/src/Cal_v1.v(88).
+# 
+#         Region: /tb/uut/cal1
+# add wave -r /*
+run 100000000000ns
+# Break key hit 
+# Break in Module M7S_EMB5K at f:/capital_micro/primace7.3/data/lib/m7s_sim.v line 6646

@@ -1,0 +1,67 @@
+library verilog;
+use verilog.vl_types.all;
+entity M7S_DLL is
+    generic(
+        cfg_dllpd_sel   : vl_logic_vector(0 to 1) := (Hi0, Hi0);
+        cfg_mrst_sel    : vl_logic_vector(0 to 1) := (Hi0, Hi0);
+        dll_sel         : string  := "auto";
+        dll_bypass      : vl_logic := Hi0;
+        dll_msel0       : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi0);
+        dll_msel1       : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi0);
+        dll_msel2       : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi0);
+        dll_msel3       : vl_logic_vector(0 to 3) := (Hi0, Hi0, Hi0, Hi0);
+        dll_lfm         : vl_logic := Hi0;
+        dll_cpsel       : vl_logic_vector(0 to 1) := (Hi0, Hi0);
+        dll_ibufsel     : vl_logic_vector(0 to 1) := (Hi0, Hi0);
+        dll_mfb0_trm    : vl_logic_vector(0 to 2) := (Hi0, Hi0, Hi0);
+        dll_mfb16_trm   : vl_logic_vector(0 to 2) := (Hi0, Hi0, Hi0);
+        dll_ldrange     : vl_logic := Hi0;
+        dll_fle_en      : vl_logic := Hi0;
+        dll_force_lock  : vl_logic := Hi0;
+        dll_atest_en    : vl_logic := Hi0;
+        dll_dtest_en    : vl_logic := Hi0;
+        dll_atest_sel   : vl_logic := Hi0;
+        dll_dtest_sel   : vl_logic := Hi0;
+        dll_bk          : vl_logic_vector(0 to 1) := (Hi0, Hi0);
+        dyn_dll_rst     : vl_logic := Hi0;
+        dyn_dll_pwrdown : vl_logic := Hi1;
+        cfg_dllphase0_ctrl: vl_logic := Hi0
+    );
+    port(
+        clkin           : in     vl_logic;
+        pwrdown         : in     vl_logic;
+        dllrst          : in     vl_logic;
+        fp_dll_rst      : in     vl_logic;
+        clkout0         : out    vl_logic;
+        clkout1         : out    vl_logic;
+        clkout2         : out    vl_logic;
+        dll_msel0_user  : in     vl_logic_vector(3 downto 0);
+        clkout3         : out    vl_logic;
+        locked          : out    vl_logic
+    );
+    attribute mti_svvh_generic_type : integer;
+    attribute mti_svvh_generic_type of cfg_dllpd_sel : constant is 1;
+    attribute mti_svvh_generic_type of cfg_mrst_sel : constant is 1;
+    attribute mti_svvh_generic_type of dll_sel : constant is 1;
+    attribute mti_svvh_generic_type of dll_bypass : constant is 1;
+    attribute mti_svvh_generic_type of dll_msel0 : constant is 1;
+    attribute mti_svvh_generic_type of dll_msel1 : constant is 1;
+    attribute mti_svvh_generic_type of dll_msel2 : constant is 1;
+    attribute mti_svvh_generic_type of dll_msel3 : constant is 1;
+    attribute mti_svvh_generic_type of dll_lfm : constant is 1;
+    attribute mti_svvh_generic_type of dll_cpsel : constant is 1;
+    attribute mti_svvh_generic_type of dll_ibufsel : constant is 1;
+    attribute mti_svvh_generic_type of dll_mfb0_trm : constant is 1;
+    attribute mti_svvh_generic_type of dll_mfb16_trm : constant is 1;
+    attribute mti_svvh_generic_type of dll_ldrange : constant is 1;
+    attribute mti_svvh_generic_type of dll_fle_en : constant is 1;
+    attribute mti_svvh_generic_type of dll_force_lock : constant is 1;
+    attribute mti_svvh_generic_type of dll_atest_en : constant is 1;
+    attribute mti_svvh_generic_type of dll_dtest_en : constant is 1;
+    attribute mti_svvh_generic_type of dll_atest_sel : constant is 1;
+    attribute mti_svvh_generic_type of dll_dtest_sel : constant is 1;
+    attribute mti_svvh_generic_type of dll_bk : constant is 1;
+    attribute mti_svvh_generic_type of dyn_dll_rst : constant is 1;
+    attribute mti_svvh_generic_type of dyn_dll_pwrdown : constant is 1;
+    attribute mti_svvh_generic_type of cfg_dllphase0_ctrl : constant is 1;
+end M7S_DLL;

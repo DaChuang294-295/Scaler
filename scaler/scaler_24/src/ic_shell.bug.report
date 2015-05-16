@@ -1,0 +1,29 @@
+Calling system status ====================================
+rusage.ru_ixrss:        0
+rusage.ru_idrss:        0
+rusage.ru_isrss:        0
+rusage.ru_maxrss:       60376
+Runtime Statistics
+------------------
+Machine name: Hamish_Lin-PC
+User time      1.2 seconds
+System time    0.2 seconds
+
+Average resident text size       =     0K
+Average resident data+stack size =     0K
+Maximum resident size            = 30190K
+
+Virtual text size                = 27061K
+Virtual data size                = 57037K
+    data size initialized        =  5387K
+    data size uninitialized      =  9810K
+    data size sbrk               = 41840K
+Virtual memory limit             =     0K (0K)
+
+Major page faults = 16046
+Minor page faults = 0
+Swaps = 0
+Input blocks = 0
+Output blocks = 0
+Context switch (voluntary) = 0
+Context switch (involuntary) = 0

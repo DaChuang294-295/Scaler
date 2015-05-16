@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<report title="Capital Micro Design Report" version="1.0">
+
+  <section title="Synthesis Report">
+    <subject title="Status Summary">
+      <table>
+        <tr>
+          <td>Running status</td>
+          <td>Successful</td>
+        </tr>
+        <tr>
+          <td>Time stamp</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Primace version</td>
+          <td>7.3</td>
+        </tr>
+        <tr>
+          <td>Device name</td>
+          <td>M7A12N0F256I7</td>
+        </tr>
+        <tr>
+          <td>Top module name</td>
+          <td>scaler</td>
+        </tr>
+        <tr>
+          <td>Input design file</td>
+          <td>outputs/scaler.asv</td>
+        </tr>
+        <tr>
+          <td>Output design file</td>
+          <td>outputs/scaler.amv</td>
+        </tr>
+        <tr>
+          <td>Output annotation file</td>
+          <td>outputs/scaler.ama</td>
+        </tr>
+      </table>
+    </subject>
+    <subject title="Resource Usage Summary">
+      <table>
+        <tr>
+          <th>Resources</th>
+          <th>Usage</th>
+        </tr>
+        <tr>
+          <td>Total LUT4(s)</td>
+          <td>2024</td>
+        </tr>
+        <tr>
+          <td>Total LUT4C(s)</td>
+          <td>1377</td>
+        </tr>
+        <tr>
+          <td>Total REG(s)</td>
+          <td>293</td>
+        </tr>
+        <tr>
+          <td>Total I/O pins</td>
+          <td>148</td>
+        </tr>
+        <tr>
+          <td>Total EMB(s)</td>
+          <td>32</td>
+        </tr>
+        <tr>
+          <td>Total MAC(s)</td>
+          <td>16</td>
+        </tr>
+        <tr>
+          <td>Total 8051(s)</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Total PLL(s)</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Total SPRAM(s)</td>
+          <td>0</td>
+        </tr>
+      </table>
+    </subject>
+  </section>
+
+</report>

@@ -1,0 +1,123 @@
+# Reading F:/modeltech_10.1a/tcl/vsim/pref.tcl 
+# //  ModelSim SE 10.1a Feb 22 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do scaler_rtl_sim.do 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap -c work rtl_work
+# Modifying modelsim.ini
+# ** Warning: vmap will not overwrite local modelsim.ini.
+#          MODELSIM set to modelsim.ini.
+#          modelsim.ini was modified because copy failed
+#          The MODELSIM environment variable is used to find the modelsim.ini
+#          file, so this local copy will not be used.
+# vlog -vlog01compat -work work F:/capital_micro/primace7.3/data/lib/m7s_sim.v
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# -- Compiling module DELAY_BUF
+# -- Compiling module GBUF
+# -- Compiling module RBUF
+# -- Compiling module GND
+# -- Compiling module VCC
+# -- Compiling module LUT4
+# -- Compiling module LUT4C
+# -- Compiling module REGS
+# -- Compiling module REG
+# -- Compiling module LBUF
+# -- Compiling module CARRY_SKIP_OUT
+# -- Compiling module CFG_CARRY_SKIP_IN
+# -- Compiling module CFG_DYN_SWITCH
+# -- Compiling module CFG_DYN_SWITCH_S3
+# -- Compiling module CFGMUX2S
+# -- Compiling module CONST
+# -- Compiling module GBUF_GATE
+# -- Compiling module RBUF_GATE
+# -- Compiling module CLK_GATING
+# -- Compiling module M7A_MAC
+# -- Compiling module mac_dff_async
+# -- Compiling module mac_dff_sync
+# -- Compiling module M7S_EMB5K
+# -- Compiling module M7S_DGPIO
+# -- Compiling module M7S_DLL
+# -- Compiling module M7S_PLL
+# -- Compiling module PLL_SIM
+# -- Compiling module M7A_SPRAM
+# -- Compiling module M7S_EMB18K
+# -- Compiling module M7A_FIFO_CTRL
+# -- Compiling module M7A_ASYN_FIFO_SIM
+# -- Compiling module M7A_SYN_FIFO_SIM
+# -- Compiling module M7S_IO_CAL
+# -- Compiling module M7A_IO_DDRSG
+# -- Compiling module M7S_IO_DDR
+# -- Compiling module M7S_IO_DQS
+# -- Compiling module M7S_IO_LVDS
+# -- Compiling module M7S_IO_PCISG
+# -- Compiling module M7S_IO_VREF
+# -- Compiling module M7S_POR
+# -- Compiling module IBUF
+# -- Compiling module OBUF
+# -- Compiling module TBUF
+# -- Compiling module BIBUF
+# -- Compiling module CLKBUF
+# -- Compiling module IBUFDS
+# -- Compiling module OBUFDS
+# -- Compiling module TBUFDS
+# -- Compiling module BIBUFDS
+# -- Compiling module CLKBUFDS
+# -- Compiling module DDR_IO
+# -- Compiling module OSC
+# 
+# Top level modules:
+# 	DELAY_BUF
+# 	GBUF
+# 	RBUF
+# 	GND
+# 	VCC
+# 	LUT4
+# 	LUT4C
+# 	REGS
+# 	REG
+# 	LBUF
+# 	CARRY_SKIP_OUT
+# 	CFG_CARRY_SKIP_IN
+# 	CFG_DYN_SWITCH
+# 	CFG_DYN_SWITCH_S3
+# 	CFGMUX2S
+# 	CONST
+# 	GBUF_GATE
+# 	RBUF_GATE
+# 	CLK_GATING
+# 	M7A_MAC
+# 	M7S_DGPIO
+# 	M7S_DLL
+# 	M7S_PLL
+# 	M7A_SPRAM
+# 	M7S_EMB18K
+# 	M7S_IO_CAL
+# 	M7A_IO_DDRSG
+# 	M7S_IO_DDR
+# 	M7S_IO_DQS
+# 	M7S_IO_LVDS
+# 	M7S_IO_PCISG
+# 	M7S_IO_VREF
+# 	M7S_POR
+# 	IBUF
+# 	OBUF
+# 	TBUF
+# 	BIBUF
+# 	CLKBUF
+# 	IBUFDS
+# 	OBUFDS
+# 	TBUFDS
+# 	BIBUFDS
+# 	CLKBUFDS
+# 	DDR_IO
+# 	OSC

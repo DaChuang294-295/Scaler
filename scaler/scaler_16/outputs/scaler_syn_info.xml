@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<designinfo>
+
+  <topmodule>
+    <port direction="output" name="HS" pmname="HS"/>
+    <port direction="output" name="VS" pmname="VS"/>
+    <port direction="input" name="clka" pmname="clka"/>
+    <port direction="input" name="clkb" pmname="clkb"/>
+    <port direction="input" name="dInEn" pmname="dInEn"/>
+    <port direction="input" name="dIn[0]" pmname="dIn[0]"/>
+    <port direction="input" name="dIn[10]" pmname="dIn[10]"/>
+    <port direction="input" name="dIn[11]" pmname="dIn[11]"/>
+    <port direction="input" name="dIn[12]" pmname="dIn[12]"/>
+    <port direction="input" name="dIn[13]" pmname="dIn[13]"/>
+    <port direction="input" name="dIn[14]" pmname="dIn[14]"/>
+    <port direction="input" name="dIn[15]" pmname="dIn[15]"/>
+    <port direction="input" name="dIn[1]" pmname="dIn[1]"/>
+    <port direction="input" name="dIn[2]" pmname="dIn[2]"/>
+    <port direction="input" name="dIn[3]" pmname="dIn[3]"/>
+    <port direction="input" name="dIn[4]" pmname="dIn[4]"/>
+    <port direction="input" name="dIn[5]" pmname="dIn[5]"/>
+    <port direction="input" name="dIn[6]" pmname="dIn[6]"/>
+    <port direction="input" name="dIn[7]" pmname="dIn[7]"/>
+    <port direction="input" name="dIn[8]" pmname="dIn[8]"/>
+    <port direction="input" name="dIn[9]" pmname="dIn[9]"/>
+    <port direction="output" name="dOutEn" pmname="dOutEn"/>
+    <port direction="output" name="dOut[0]" pmname="dOut[0]"/>
+    <port direction="output" name="dOut[10]" pmname="dOut[10]"/>
+    <port direction="output" name="dOut[11]" pmname="dOut[11]"/>
+    <port direction="output" name="dOut[12]" pmname="dOut[12]"/>
+    <port direction="output" name="dOut[13]" pmname="dOut[13]"/>
+    <port direction="output" name="dOut[14]" pmname="dOut[14]"/>
+    <port direction="output" name="dOut[15]" pmname="dOut[15]"/>
+    <port direction="output" name="dOut[1]" pmname="dOut[1]"/>
+    <port direction="output" name="dOut[2]" pmname="dOut[2]"/>
+    <port direction="output" name="dOut[3]" pmname="dOut[3]"/>
+    <port direction="output" name="dOut[4]" pmname="dOut[4]"/>
+    <port direction="output" name="dOut[5]" pmname="dOut[5]"/>
+    <port direction="output" name="dOut[6]" pmname="dOut[6]"/>
+    <port direction="output" name="dOut[7]" pmname="dOut[7]"/>
+    <port direction="output" name="dOut[8]" pmname="dOut[8]"/>
+    <port direction="output" name="dOut[9]" pmname="dOut[9]"/>
+    <port direction="input" name="en" pmname="en"/>
+    <port direction="input" name="iHsyn" pmname="iHsyn"/>
+    <port direction="input" name="iVsyn" pmname="iVsyn"/>
+    <port direction="input" name="inXRes[0]" pmname="inXRes[0]"/>
+    <port direction="input" name="inXRes[10]" pmname="inXRes[10]"/>
+    <port direction="input" name="inXRes[1]" pmname="inXRes[1]"/>
+    <port direction="input" name="inXRes[2]" pmname="inXRes[2]"/>
+    <port direction="input" name="inXRes[3]" pmname="inXRes[3]"/>
+    <port direction="input" name="inXRes[4]" pmname="inXRes[4]"/>
+    <port direction="input" name="inXRes[5]" pmname="inXRes[5]"/>
+    <port direction="input" name="inXRes[6]" pmname="inXRes[6]"/>
+    <port direction="input" name="inXRes[7]" pmname="inXRes[7]"/>
+    <port direction="input" name="inXRes[8]" pmname="inXRes[8]"/>
+    <port direction="input" name="inXRes[9]" pmname="inXRes[9]"/>
+    <port direction="input" name="inYRes[0]" pmname="inYRes[0]"/>
+    <port direction="input" name="inYRes[10]" pmname="inYRes[10]"/>
+    <port direction="input" name="inYRes[1]" pmname="inYRes[1]"/>
+    <port direction="input" name="inYRes[2]" pmname="inYRes[2]"/>
+    <port direction="input" name="inYRes[3]" pmname="inYRes[3]"/>
+    <port direction="input" name="inYRes[4]" pmname="inYRes[4]"/>
+    <port direction="input" name="inYRes[5]" pmname="inYRes[5]"/>
+    <port direction="input" name="inYRes[6]" pmname="inYRes[6]"/>
+    <port direction="input" name="inYRes[7]" pmname="inYRes[7]"/>
+    <port direction="input" name="inYRes[8]" pmname="inYRes[8]"/>
+    <port direction="input" name="inYRes[9]" pmname="inYRes[9]"/>
+    <port direction="input" name="outXRes[0]" pmname="outXRes[0]"/>
+    <port direction="input" name="outXRes[10]" pmname="outXRes[10]"/>
+    <port direction="input" name="outXRes[11]" pmname="outXRes[11]"/>
+    <port direction="input" name="outXRes[1]" pmname="outXRes[1]"/>
+    <port direction="input" name="outXRes[2]" pmname="outXRes[2]"/>
+    <port direction="input" name="outXRes[3]" pmname="outXRes[3]"/>
+    <port direction="input" name="outXRes[4]" pmname="outXRes[4]"/>
+    <port direction="input" name="outXRes[5]" pmname="outXRes[5]"/>
+    <port direction="input" name="outXRes[6]" pmname="outXRes[6]"/>
+    <port direction="input" name="outXRes[7]" pmname="outXRes[7]"/>
+    <port direction="input" name="outXRes[8]" pmname="outXRes[8]"/>
+    <port direction="input" name="outXRes[9]" pmname="outXRes[9]"/>
+    <port direction="input" name="outYRes[0]" pmname="outYRes[0]"/>
+    <port direction="input" name="outYRes[10]" pmname="outYRes[10]"/>
+    <port direction="input" name="outYRes[11]" pmname="outYRes[11]"/>
+    <port direction="input" name="outYRes[1]" pmname="outYRes[1]"/>
+    <port direction="input" name="outYRes[2]" pmname="outYRes[2]"/>
+    <port direction="input" name="outYRes[3]" pmname="outYRes[3]"/>
+    <port direction="input" name="outYRes[4]" pmname="outYRes[4]"/>
+    <port direction="input" name="outYRes[5]" pmname="outYRes[5]"/>
+    <port direction="input" name="outYRes[6]" pmname="outYRes[6]"/>
+    <port direction="input" name="outYRes[7]" pmname="outYRes[7]"/>
+    <port direction="input" name="outYRes[8]" pmname="outYRes[8]"/>
+    <port direction="input" name="outYRes[9]" pmname="outYRes[9]"/>
+    <port direction="input" name="rst" pmname="rst"/>
+    <port direction="input" name="xBgn[0]" pmname="xBgn[0]"/>
+    <port direction="input" name="xBgn[10]" pmname="xBgn[10]"/>
+    <port direction="input" name="xBgn[1]" pmname="xBgn[1]"/>
+    <port direction="input" name="xBgn[2]" pmname="xBgn[2]"/>
+    <port direction="input" name="xBgn[3]" pmname="xBgn[3]"/>
+    <port direction="input" name="xBgn[4]" pmname="xBgn[4]"/>
+    <port direction="input" name="xBgn[5]" pmname="xBgn[5]"/>
+    <port direction="input" name="xBgn[6]" pmname="xBgn[6]"/>
+    <port direction="input" name="xBgn[7]" pmname="xBgn[7]"/>
+    <port direction="input" name="xBgn[8]" pmname="xBgn[8]"/>
+    <port direction="input" name="xBgn[9]" pmname="xBgn[9]"/>
+    <port direction="input" name="xEnd[0]" pmname="xEnd[0]"/>
+    <port direction="input" name="xEnd[10]" pmname="xEnd[10]"/>
+    <port direction="input" name="xEnd[1]" pmname="xEnd[1]"/>
+    <port direction="input" name="xEnd[2]" pmname="xEnd[2]"/>
+    <port direction="input" name="xEnd[3]" pmname="xEnd[3]"/>
+    <port direction="input" name="xEnd[4]" pmname="xEnd[4]"/>
+    <port direction="input" name="xEnd[5]" pmname="xEnd[5]"/>
+    <port direction="input" name="xEnd[6]" pmname="xEnd[6]"/>
+    <port direction="input" name="xEnd[7]" pmname="xEnd[7]"/>
+    <port direction="input" name="xEnd[8]" pmname="xEnd[8]"/>
+    <port direction="input" name="xEnd[9]" pmname="xEnd[9]"/>
+    <port direction="input" name="yBgn[0]" pmname="yBgn[0]"/>
+    <port direction="input" name="yBgn[10]" pmname="yBgn[10]"/>
+    <port direction="input" name="yBgn[1]" pmname="yBgn[1]"/>
+    <port direction="input" name="yBgn[2]" pmname="yBgn[2]"/>
+    <port direction="input" name="yBgn[3]" pmname="yBgn[3]"/>
+    <port direction="input" name="yBgn[4]" pmname="yBgn[4]"/>
+    <port direction="input" name="yBgn[5]" pmname="yBgn[5]"/>
+    <port direction="input" name="yBgn[6]" pmname="yBgn[6]"/>
+    <port direction="input" name="yBgn[7]" pmname="yBgn[7]"/>
+    <port direction="input" name="yBgn[8]" pmname="yBgn[8]"/>
+    <port direction="input" name="yBgn[9]" pmname="yBgn[9]"/>
+    <port direction="input" name="yEnd[0]" pmname="yEnd[0]"/>
+    <port direction="input" name="yEnd[10]" pmname="yEnd[10]"/>
+    <port direction="input" name="yEnd[1]" pmname="yEnd[1]"/>
+    <port direction="input" name="yEnd[2]" pmname="yEnd[2]"/>
+    <port direction="input" name="yEnd[3]" pmname="yEnd[3]"/>
+    <port direction="input" name="yEnd[4]" pmname="yEnd[4]"/>
+    <port direction="input" name="yEnd[5]" pmname="yEnd[5]"/>
+    <port direction="input" name="yEnd[6]" pmname="yEnd[6]"/>
+    <port direction="input" name="yEnd[7]" pmname="yEnd[7]"/>
+    <port direction="input" name="yEnd[8]" pmname="yEnd[8]"/>
+    <port direction="input" name="yEnd[9]" pmname="yEnd[9]"/>
+    <inst modulename="Cal_DATA_WIDTH16_ADDRESS_WIDTH11_SCALE_FRAC_WIDTH6_SCALE_INT_WIDTH2_INPUT_RES_WIDTH11_OUTPUT_RES_WIDTH11" name="cal1" pmname="Cal_DATA_WIDTH16_ADDRESS_WIDTH11_SCALE_FRAC_WIDTH6_SCALE_INT_WIDTH2_INPUT_RES_WIDTH11_OUTPUT_RES_WIDTH11:cal1" type="combination"/>
+    <inst modulename="coefCal_INPUT_RES_WIDTH11_OUTPUT_RES_WIDTH11_SCALE_BITS8" name="coefcal1" pmname="coefCal_INPUT_RES_WIDTH11_OUTPUT_RES_WIDTH11_SCALE_BITS8:coefcal1" type="combination">
+      <inst modulename="mdivider_1" name="divide_inst1" pmname="mdivider_1:divide_inst1" type="combination"/>
+      <inst modulename="mdivider_2" name="divide_inst2" pmname="mdivider_2:divide_inst2" type="combination"/>
+    </inst>
+    <inst modulename="ramFifo_DATA_WIDTH16_ADDRESS_WIDTH11" name="fifo1" pmname="ramFifo_DATA_WIDTH16_ADDRESS_WIDTH11:fifo1" type="combination">
+      <inst modulename="emb_16_2k_1" name="ram_inst_0" pmname="emb_16_2k_1:ram_inst_0" type="combination"/>
+      <inst modulename="emb_16_2k_2" name="ram_inst_1" pmname="emb_16_2k_2:ram_inst_1" type="combination"/>
+      <inst modulename="emb_16_2k_3" name="ram_inst_2" pmname="emb_16_2k_3:ram_inst_2" type="combination"/>
+      <inst modulename="emb_16_2k_4" name="ram_inst_3" pmname="emb_16_2k_4:ram_inst_3" type="combination"/>
+    </inst>
+    <inst modulename="inputCtrl_DATA_WIDTH16_INPUT_RES_WIDTH11_SCALE_FRAC_WIDTH6_SCALE_INT_WIDTH2_ADDRESS_WIDTH11" name="inputctrl1" pmname="inputCtrl_DATA_WIDTH16_INPUT_RES_WIDTH11_SCALE_FRAC_WIDTH6_SCALE_INT_WIDTH2_ADDRESS_WIDTH11:inputctrl1" type="combination"/>
+  </topmodule>
+
+  <modulelist>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/final_scaler_v3/outputs/../src/Cal_v1.v" lineno="11" name="Cal_DATA_WIDTH16_ADDRESS_WIDTH11_SCALE_FRAC_WIDTH6_SCALE_INT_WIDTH2_INPUT_RES_WIDTH11_OUTPUT_RES_WIDTH11"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/final_scaler_v3/outputs/../src/coefcal_v3.v" lineno="10" name="coefCal_INPUT_RES_WIDTH11_OUTPUT_RES_WIDTH11_SCALE_BITS8"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/final_scaler_v3/outputs/../src/emb_16_2k.v" lineno="14" name="emb_16_2k_1"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/final_scaler_v3/outputs/../src/emb_16_2k.v" lineno="14" name="emb_16_2k_2"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/final_scaler_v3/outputs/../src/emb_16_2k.v" lineno="14" name="emb_16_2k_3"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/final_scaler_v3/outputs/../src/emb_16_2k.v" lineno="14" name="emb_16_2k_4"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/final_scaler_v3/outputs/../src/inputCtrl.v" lineno="9" name="inputCtrl_DATA_WIDTH16_INPUT_RES_WIDTH11_SCALE_FRAC_WIDTH6_SCALE_INT_WIDTH2_ADDRESS_WIDTH11"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/final_scaler_v3/outputs/../src/divider_v2.v" lineno="3" name="mdivider_1"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/final_scaler_v3/outputs/../src/divider_v2.v" lineno="3" name="mdivider_2"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/final_scaler_v3/outputs/../src/ramFifo.v" lineno="9" name="ramFifo_DATA_WIDTH16_ADDRESS_WIDTH11"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/final_scaler_v3/outputs/../src/scaler1.0.v" isTop="top" lineno="8" name="scaler"/>
+  </modulelist>
+
+</designinfo>
