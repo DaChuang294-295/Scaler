@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<designinfo>
+
+  <topmodule>
+    <port direction="input" name="clk_i" pmname="clk_i"/>
+    <port direction="output" name="clk_out_n" pmname="clk_out_n"/>
+    <port direction="output" name="clk_out_p" pmname="clk_out_p"/>
+    <port direction="input" name="display_sel" pmname="display_sel"/>
+    <port direction="input" name="rstn_i" pmname="rstn_i"/>
+    <port direction="input" name="spi_miso" pmname="spi_miso"/>
+    <port direction="output" name="spi_mosi" pmname="spi_mosi"/>
+    <port direction="output" name="spi_sck" pmname="spi_sck"/>
+    <port direction="output" name="spi_ssn" pmname="spi_ssn"/>
+    <port direction="output" name="tx_out_n[0]" pmname="tx_out_n[0]"/>
+    <port direction="output" name="tx_out_n[1]" pmname="tx_out_n[1]"/>
+    <port direction="output" name="tx_out_n[2]" pmname="tx_out_n[2]"/>
+    <port direction="output" name="tx_out_n[3]" pmname="tx_out_n[3]"/>
+    <port direction="output" name="tx_out_p[0]" pmname="tx_out_p[0]"/>
+    <port direction="output" name="tx_out_p[1]" pmname="tx_out_p[1]"/>
+    <port direction="output" name="tx_out_p[2]" pmname="tx_out_p[2]"/>
+    <port direction="output" name="tx_out_p[3]" pmname="tx_out_p[3]"/>
+    <inst modulename="mcu_armcm3" name="u_arm" pmname="mcu_armcm3:u_arm" type="combination"/>
+    <inst modulename="colorbar_gen" name="u_colorgen" pmname="colorbar_gen:u_colorgen" type="combination"/>
+    <inst modulename="lvds_tx_v1" name="u_lvds" pmname="lvds_tx_v1:u_lvds" type="combination"/>
+    <inst modulename="pll_v1" name="u_pll" pmname="pll_v1:u_pll" type="combination"/>
+    <inst modulename="sdram_to_RGB" name="u_sdram_to_RGB" pmname="sdram_to_RGB:u_sdram_to_RGB" type="combination">
+      <inst modulename="emb_v1_1" name="u_1kx16_0" pmname="emb_v1_1:u_1kx16_0" type="combination"/>
+      <inst modulename="emb_v1_2" name="u_1kx16_1" pmname="emb_v1_2:u_1kx16_1" type="combination"/>
+      <inst modulename="ahb_master" name="u_ahb_master" pmname="ahb_master:u_ahb_master" type="combination"/>
+    </inst>
+  </topmodule>
+
+  <modulelist>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="ahb_master"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="colorbar_gen"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" isTop="top" lineno="0" name="demo_sd_to_lcd"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="emb_v1_1"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="emb_v1_2"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="lvds_tx_v1"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="mcu_armcm3"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="pll_v1"/>
+    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="sdram_to_RGB"/>
+  </modulelist>
+
+</designinfo>

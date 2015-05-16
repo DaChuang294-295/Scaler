@@ -1,0 +1,775 @@
+
+
+Isyn command line: 
+f:/capital_micro/primace7.3\bin\magic.exe -c "*setlib f:/capital_micro/primace7.3\data\lib\magic_lib_m7a.v; *r outputs/demo_sd_to_lcd_pre_magic.v; *magic; *mload -dl; *w outputs/demo_sd_to_lcd_post_magic.v"
+
+[ alias q quit ]...
+[ alias h history ]...
+[ *setlib /home/sjang/magic/agalib.v ]...
+Extra_FileCheck():  File "/home/sjang/magic/agalib.v" does not exist.
+ABC command line: "*setlib f:/capital_micro/primace7.3\data\lib\magic_lib_m7a.v; *r outputs/demo_sd_to_lcd_pre_magic.v; *magic; *mload -dl; *w outputs/demo_sd_to_lcd_post_magic.v".
+
+Cannot open file "abc.rc".
+Cannot open file "..\abc.rc".
+Cannot open file "..\..\abc.rc".
+Setting "f:/capital_micro/primace7.3\data\lib\magic_lib_m7a.v" as the current library.
++--------------------------------------------------------+
+|                     Magic 01-14-2014                   |
+|               Agate Synthesis Technology               |
+|        Copyright (c) Agate Logic Inc., 2006-2014       |
++--------------------------------------------------------+
+
+@INFO: Spec=demo_sd_to_lcd_pre_magic.v, Design=demo_sd_to_lcd, Compiled Sep  9 2014 10:42:04, area_mode=0, quick=0, scorr=0, mode=0, verbose=0... =====
+[ *plut ]...
+# The area/delay of k-variable LUTs:
+# k    area     delay
+1      1.00   1000.00
+2      1.00   1000.00
+3      1.00   1000.00
+4      1.00   1000.00
+[ *st; *pss ia; ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =   1052  edge =   2104  0.00%  lev = 16 
+[ *logic; *st; *pss ia; ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =   1052  edge =   2104  0.00%  lev = 16 
+[ *if; *pss; *mps -b ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =   1140  edge =   1127  0.00%  lev = 6 
+LUT =   355  1+ =   355  2+ =   355   0=0 1=0 2=87 3=119 4=149 Ave = 3.17  Area = 355  Delay = 6000
+demo_sd_to_lcd, Lv=6, A=355.00, LT=355, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=6, A=362.00, LT=364, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 0.1) <-bst(d,a)
+@INFO: Copying first mapped netlist...
+$INFO: first mapped network (not legalized)....
+CO drivers: Pos = 336 (CI = 285).  Neg = 146 (CI = 0).  Both = 8 (CI = 8).
+$INFO: legalized....
+[ *pss; *mps ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    364  edge =   1134  0.00%  lev = 6 
+LUT =   364  1+ =   362  2+ =   355   0=2 1=7 2=87 3=119 4=149 Ave = 3.12  Area = 362  Delay = 6000
+demo_sd_to_lcd, Lv=6, A=362.00, LT=364, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=6, A=362.00, LT=364, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.1) 
+$INFO: strash it again....
+[ *st; *pss; ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    993  edge =   1986  0.00%  lev = 18 
+[ *fraig; *pss; ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    956  edge =   1912  0.00%  lev = 18 
+[ *sw -lv; *pss -i ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    956  edge =   1912  0.00%  lev = 18 
+INSTANCE STATISTICS for "demo_sd_to_lcd" (box count = 1):
+ 16 :                     CS_REGA_PRIM    356    I=   5  O=   1  N=      5  A=     14  lib  seq    
+ 33 :       demo_sd_to_lcd_ipc_adder_8      1    I=  17  O=   9  N=     48  A=     75      comb box
+$INFO: mapped after fraig, options=....
+[ *if ; *pss; *mps ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =   1064  edge =   1112  0.00%  lev = 6 
+LUT =   350  1+ =   350  2+ =   350   0=0 1=0 2=75 3=138 4=137 Ave = 3.18  Area = 350  Delay = 6000
+demo_sd_to_lcd, Lv=6, A=350.00, LT=350, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=6, A=359.00, LT=361, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 0.2) 
+
+@@@@@@@@@@  1 1 1 1 @@@@@@@@@@
+[ *bidec; *dch -f; *if ; *mps -b; *pss ]...
+demo_sd_to_lcd, Lv=5, A=319.00, LT=319, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=328.00, LT=330, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 0.2) <-bst(d,a)
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    990  edge =   1005  0.00%  lev = 5 
+LUT =   319  1+ =   319  2+ =   319   0=0 1=0 2=63 3=145 4=111 Ave = 3.15  Area = 319  Delay = 5000
+[          *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=319.00, LT=319, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=328.00, LT=330, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.2) 
+[ *dch -f; *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=318.00, LT=318, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=328.00, LT=330, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.3) 
+[ *dch -f; *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=310.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=320.00, LT=322, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.3) <-bst(d,a)
+[ *dch -f; *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=311.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=321.00, LT=323, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.4) 
+[ *bidec; *dch -f; *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=312.00, LT=312, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=322.00, LT=324, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 0.4) 
+[ *bidec; *dch -f; *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=308, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=318.00, LT=320, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 0.5) <-bst(d,a)
+<*C>demo_sd_to_lcd, Lv=5, A=308.00, LT=308, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< C>demo_sd_to_lcd, Lv=5, A=318.00, LT=320, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=5, A=308.00, LT=308, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< A>demo_sd_to_lcd, Lv=5, A=318.00, LT=320, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=308.00, LT=308, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< D>demo_sd_to_lcd, Lv=5, A=318.00, LT=320, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-AREA(temp)ntk loaded...
+[ C]demo_sd_to_lcd, Lv=5, A=308.00, LT=308, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ C]demo_sd_to_lcd, Lv=5, A=318.00, LT=320, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*A]demo_sd_to_lcd, Lv=5, A=308.00, LT=308, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ A]demo_sd_to_lcd, Lv=5, A=318.00, LT=320, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ D]demo_sd_to_lcd, Lv=5, A=308.00, LT=308, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ D]demo_sd_to_lcd, Lv=5, A=318.00, LT=320, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ *mps ]...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=308, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=318.00, LT=320, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.5) 
+
+@@@@@@@@@@  2 2 2 2 @@@@@@@@@@
+[ *bidec;  *dch -f; *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=309.00, LT=309, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=319.00, LT=321, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 0.6) 
+[ *bidec;  *dch -f; *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=306.00, LT=306, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=316.00, LT=318, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 0.6) <-bst(d,a)
+[ *shrink; *dch -f; *if  -e -C 32; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 0.7) <-bst(d,a)
+[ *shrink; *dch -f; *if  -e -C 32; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 0.7) 
+<*C>demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< C>demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< A>demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< D>demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-AREA(temp)ntk loaded...
+[ C]demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ C]demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*A]demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ A]demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ D]demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ D]demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ *mps ]...
+demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.7) 
+[ *logic; *pss; *mps ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    314  edge =    990  0.00%  lev = 5 
+LUT =   314  1+ =   312  2+ =   305   0=2 1=7 2=50 3=137 4=118 Ave = 3.15  Area = 312  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.7) 
+[ *sw -lv; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.7) 
+
+@@@@@@@@@@  3 3 3 3 @@@@@@@@@@
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps ]...
+The network has 7 nodes changed by "*mfs".
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    308  edge =    969  0.00%  lev = 6 
+LUT =   308  1+ =   306  2+ =   298   0=2 1=8 2=48 3=135 4=115 Ave = 3.15  Area = 306  Delay = 6000
+demo_sd_to_lcd, Lv=6, A=306.00, LT=308, MX=4, D=6.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=6, A=309.00, LT=311, MX=4, D=6.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.8) 
+[ *sw -lv; *mps ]...
+demo_sd_to_lcd, Lv=6, A=306.00, LT=308, MX=4, D=6.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=6, A=309.00, LT=311, MX=4, D=6.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.8) 
+[ *st; *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.8) <-bst(a)
+[ *bidec; *dch -f; *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=6, A=298.00, LT=298, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=6, A=308.00, LT=310, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 0.8) 
+[ *bidec; *dch -f; *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=6, A=299.00, LT=299, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=6, A=309.00, LT=311, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 0.9) 
+[ *logic; *mps; *mfs; *mps -b ]...
+demo_sd_to_lcd, Lv=6, A=306.00, LT=308, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=6, A=309.00, LT=311, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.9) 
+The network has 1 nodes changed by "*mfs".
+demo_sd_to_lcd, Lv=8, A=305.00, LT=307, MX=4, D=8.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=8, A=308.00, LT=310, MX=4, D=8.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.9) 
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network is not changed by "*mfs".
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    307  edge =    960  0.00%  lev = 8 
+LUT =   307  1+ =   305  2+ =   298   0=2 1=7 2=52 3=135 4=111 Ave = 3.13  Area = 305  Delay = 8000
+demo_sd_to_lcd, Lv=8, A=305.00, LT=307, MX=4, D=8.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=8, A=308.00, LT=310, MX=4, D=8.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.9) 
+<*C>demo_sd_to_lcd, Lv=8, A=305.00, LT=307, MX=4, D=8.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< C>demo_sd_to_lcd, Lv=8, A=308.00, LT=310, MX=4, D=8.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< A>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< D>demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-DELAY-ntk loaded...
+[ C]demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ C]demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ A]demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ A]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*D]demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ D]demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+
+@@@@@@@@@@  4 4 4 4 @@@@@@@@@@
+[ *logic; *pss; *mps ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    314  edge =    990  0.00%  lev = 5 
+LUT =   314  1+ =   312  2+ =   305   0=2 1=7 2=50 3=137 4=118 Ave = 3.15  Area = 312  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.9) 
+[ *sw -lv; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.9) 
+[ *st; *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=306.00, LT=306, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=316.00, LT=318, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.9) 
+[ *logic; *mps; *mfs; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=313.00, LT=315, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=316.00, LT=318, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 0.9) 
+The network has 6 nodes changed by "*mfs".
+demo_sd_to_lcd, Lv=6, A=308.00, LT=310, MX=4, D=6.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=6, A=311.00, LT=313, MX=4, D=6.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.0) 
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network is not changed by "*mfs".
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    310  edge =    966  0.00%  lev = 6 
+LUT =   310  1+ =   308  2+ =   301   0=2 1=7 2=54 3=137 4=110 Ave = 3.12  Area = 308  Delay = 6000
+demo_sd_to_lcd, Lv=6, A=308.00, LT=310, MX=4, D=6.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=6, A=311.00, LT=313, MX=4, D=6.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.0) 
+[ *st; *if ; *mps -b ]...
+demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.0) 
+[ *logic; *mps; *mfs; *mps -b ]...
+demo_sd_to_lcd, Lv=6, A=304.00, LT=306, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.0) 
+The network is not changed by "*mfs".
+demo_sd_to_lcd, Lv=6, A=304.00, LT=306, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.0) 
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network is not changed by "*mfs".
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    306  edge =    963  0.00%  lev = 6 
+LUT =   306  1+ =   304  2+ =   297   0=2 1=7 2=46 3=140 4=111 Ave = 3.15  Area = 304  Delay = 6000
+demo_sd_to_lcd, Lv=6, A=304.00, LT=306, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.0) 
+<*C>demo_sd_to_lcd, Lv=6, A=304.00, LT=306, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< C>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< A>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< D>demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-DELAY-ntk loaded...
+[ C]demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ C]demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ A]demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ A]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*D]demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ D]demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+
+@@@@@@@@@@    T   r   y       M   o   r   e   @@@@@@@@@@
+[ *mps; *pss; *mload -a ]...
+demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.0) 
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    966  edge =    983  0.00%  lev = 5 
+LUT =   305  1+ =   305  2+ =   305   0=0 1=0 2=50 3=137 4=118 Ave = 3.22  Area = 305  Delay = 5000
+<*C>demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< C>demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< A>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< D>demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best area mode, best-AREA(temp)ntk loaded...
+[ C]demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ C]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*A]demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ A]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ D]demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ D]demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ *st;     *dch -f; *if -C 12 ; *mps -b ]...
+Abc2_CommandSt(): Root model is already strashed.
+demo_sd_to_lcd, Lv=6, A=299.00, LT=299, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=6, A=309.00, LT=311, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 1.1) 
+[          *dch -f; *if -C 12 ; *mps -b ]...
+demo_sd_to_lcd, Lv=6, A=301.00, LT=301, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=6, A=311.00, LT=313, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.1) 
+[ *bidec;  *dch -f; *if -C 12 ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 1.2) 
+[ *bidec;  *dch -f; *if -C 12 ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=308, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=318.00, LT=320, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 1.3) 
+[ *bidec;  *dch -f; *if -C 12 ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=304.00, LT=304, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=314.00, LT=316, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 1.3) <-bst(d)
+[ *shrink; *dch -f; *if -C 12 ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=304.00, LT=304, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=314.00, LT=316, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 1.4) 
+[ *shrink; *dch -f; *if -C 12 ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.4) <-bst(d)
+[ *mps; *mload ; *mps; *pss ]...
+demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.4) 
+<*C>demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< C>demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< A>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< D>demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-DELAY-ntk loaded...
+[ C]demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ C]demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ A]demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ A]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*D]demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ D]demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.4) 
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    946  edge =    967  0.00%  lev = 5 
+LUT =   302  1+ =   302  2+ =   302   0=0 1=0 2=54 3=133 4=115 Ave = 3.20  Area = 302  Delay = 5000
+[          *dch -f; *if -e ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=303.00, LT=303, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=313.00, LT=315, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.5) 
+[          *dch -f; *if -e ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=303.00, LT=303, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=313.00, LT=315, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.5) 
+[ *bidec;  *dch -f; *if -e ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=300.00, LT=300, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=310.00, LT=312, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 1.6) <-bst(d)
+[ *shrink; *dch -f; *if -e ; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.6) 
+[ *mps; *mload ; *mps; *pss ]...
+demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.6) 
+<*C>demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< C>demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< A>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=300.00, LT=300, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< D>demo_sd_to_lcd, Lv=5, A=310.00, LT=312, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-DELAY-ntk loaded...
+[ C]demo_sd_to_lcd, Lv=5, A=300.00, LT=300, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ C]demo_sd_to_lcd, Lv=5, A=310.00, LT=312, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ A]demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ A]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*D]demo_sd_to_lcd, Lv=5, A=300.00, LT=300, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ D]demo_sd_to_lcd, Lv=5, A=310.00, LT=312, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+demo_sd_to_lcd, Lv=5, A=300.00, LT=300, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=310.00, LT=312, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.6) 
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    964  edge =    973  0.00%  lev = 5 
+LUT =   300  1+ =   300  2+ =   300   0=0 1=0 2=46 3=135 4=119 Ave = 3.24  Area = 300  Delay = 5000
+[ *bidec;  *dch -f; *if -C 32; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=300.00, LT=300, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=310.00, LT=312, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 1.7) 
+[ *bidec;  *dch -f; *if -C 32; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=299.00, LT=299, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 1.7) <-bst(d)
+[ *shrink; *dch -f; *if -C 32; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=305.00, LT=305, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=315.00, LT=317, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 1.8) 
+[ *shrink; *dch -f; *if -C 32; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 1.9) 
+[ *shrink; *dch -f; *if -C 32; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=304.00, LT=304, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=314.00, LT=316, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 1.9) 
+[ *mps; *mload ; *mps; *pss ]...
+demo_sd_to_lcd, Lv=5, A=304.00, LT=304, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=314.00, LT=316, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.9) 
+<*C>demo_sd_to_lcd, Lv=5, A=304.00, LT=304, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< C>demo_sd_to_lcd, Lv=5, A=314.00, LT=316, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< A>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=299.00, LT=299, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< D>demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-DELAY-ntk loaded...
+[ C]demo_sd_to_lcd, Lv=5, A=299.00, LT=299, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ C]demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ A]demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ A]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*D]demo_sd_to_lcd, Lv=5, A=299.00, LT=299, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ D]demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+demo_sd_to_lcd, Lv=5, A=299.00, LT=299, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.9) 
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    945  edge =    965  0.00%  lev = 5 
+LUT =   299  1+ =   299  2+ =   299   0=0 1=0 2=51 3=129 4=119 Ave = 3.23  Area = 299  Delay = 5000
+
+@@@@@@@@@@  w w w w @@@@@@@@@@
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+Abc2_CommandMfs(): Root model should be in the logic form.
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    945  edge =    965  0.00%  lev = 5 
+LUT =   299  1+ =   299  2+ =   299   0=0 1=0 2=51 3=129 4=119 Ave = 3.23  Area = 299  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=299.00, LT=299, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.9) 
+[ *sw -lv; *mps ]...
+demo_sd_to_lcd, Lv=5, A=299.00, LT=299, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.9) 
+[ *st; *if -C 32; *mps -b ]...
+Abc2_CommandSt(): Root model is already strashed.
+demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 1.9) 
+[ *bidec; *dch -f; *if -C 32; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=307.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=317.00, LT=319, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 2.0) 
+[ *bidec; *dch -f; *if -C 32; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=302.00, LT=302, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 2.0) 
+[ *logic; *mps; *mfs; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=312.00, LT=314, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.1) 
+The network has 5 nodes changed by "*mfs".
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=311.00, LT=313, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.1) 
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network is not changed by "*mfs".
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    310  edge =    965  0.00%  lev = 5 
+LUT =   310  1+ =   308  2+ =   301   0=2 1=7 2=58 3=130 4=113 Ave = 3.11  Area = 308  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=311.00, LT=313, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.1) 
+[ *mps; *mload ; *mps; *pss ]...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=311.00, LT=313, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.1) 
+<*C>demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< C>demo_sd_to_lcd, Lv=5, A=311.00, LT=313, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< A>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=299.00, LT=299, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< D>demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-DELAY-ntk loaded...
+[ C]demo_sd_to_lcd, Lv=5, A=299.00, LT=299, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ C]demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ A]demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ A]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*D]demo_sd_to_lcd, Lv=5, A=299.00, LT=299, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ D]demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+demo_sd_to_lcd, Lv=5, A=299.00, LT=299, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.1) 
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    945  edge =    965  0.00%  lev = 5 
+LUT =   299  1+ =   299  2+ =   299   0=0 1=0 2=51 3=129 4=119 Ave = 3.23  Area = 299  Delay = 5000
+
+@@@@@@@@@@  x x x x x @@@@@@@@@@
+[ *mps; *logic; *pss; *mps ]...
+demo_sd_to_lcd, Lv=5, A=299.00, LT=299, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.1) 
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    308  edge =    972  0.00%  lev = 5 
+LUT =   308  1+ =   306  2+ =   299   0=2 1=7 2=51 3=129 4=119 Ave = 3.16  Area = 306  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=306.00, LT=308, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.1) 
+[ *sw -lv; *pss; *mps -b ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    308  edge =    972  0.00%  lev = 5 
+LUT =   308  1+ =   306  2+ =   299   0=2 1=7 2=51 3=129 4=119 Ave = 3.16  Area = 306  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=306.00, LT=308, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=309.00, LT=311, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.1) 
+[ *mfs -L 3 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network has 5 nodes changed by "*mfs".
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    307  edge =    966  0.00%  lev = 5 
+LUT =   307  1+ =   305  2+ =   298   0=2 1=7 2=50 3=133 4=115 Ave = 3.15  Area = 305  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.1) <-bst(d)
+[ *sw -lv; *pss; *mps ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    307  edge =    966  0.00%  lev = 5 
+LUT =   307  1+ =   305  2+ =   298   0=2 1=7 2=50 3=133 4=115 Ave = 3.15  Area = 305  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.1) 
+[ *st; *if -C 32; *pss; *mps -b ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    994  edge =    958  0.00%  lev = 5 
+LUT =   298  1+ =   298  2+ =   298   0=0 1=0 2=49 3=136 4=113 Ave = 3.21  Area = 298  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=298.00, LT=298, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.1) 
+[ *bidec; *dch -f; *if -C 32; *pss; *mps -b ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    955  edge =    960  0.00%  lev = 5 
+LUT =   298  1+ =   298  2+ =   298   0=0 1=0 2=46 3=140 4=112 Ave = 3.22  Area = 298  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=298.00, LT=298, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 2.2) 
+[ *bidec; *dch -f; *if -C 32; *pss; *mps -b ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  and =    965  edge =    969  0.00%  lev = 5 
+LUT =   301  1+ =   301  2+ =   301   0=0 1=0 2=46 3=143 4=112 Ave = 3.22  Area = 301  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=301.00, LT=301, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=311.00, LT=313, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 2.3) 
+[ *logic; *pss; *mfs; *mps -b ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    310  edge =    976  0.00%  lev = 5 
+LUT =   310  1+ =   308  2+ =   301   0=2 1=7 2=46 3=143 4=112 Ave = 3.15  Area = 308  Delay = 5000
+The network has 4 nodes changed by "*mfs".
+demo_sd_to_lcd, Lv=8, A=305.00, LT=307, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=8, A=308.00, LT=310, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.3) 
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network is not changed by "*mfs".
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    307  edge =    961  0.00%  lev = 8 
+LUT =   307  1+ =   305  2+ =   297   0=2 1=8 2=46 3=143 4=108 Ave = 3.13  Area = 305  Delay = 8000
+demo_sd_to_lcd, Lv=8, A=305.00, LT=307, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=8, A=308.00, LT=310, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.3) 
+[ *mps; *mload ; *mps; *pss ]...
+demo_sd_to_lcd, Lv=8, A=305.00, LT=307, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=8, A=308.00, LT=310, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.3) 
+<*C>demo_sd_to_lcd, Lv=8, A=305.00, LT=307, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< C>demo_sd_to_lcd, Lv=8, A=308.00, LT=310, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< A>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-DELAY-ntk loaded...
+[ C]demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ C]demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ A]demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ A]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*D]demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ D]demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.3) 
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    307  edge =    966  0.00%  lev = 5 
+LUT =   307  1+ =   305  2+ =   298   0=2 1=7 2=50 3=133 4=115 Ave = 3.15  Area = 305  Delay = 5000
+
+@@@@@@@@@@  y y y y @@@@@@@@@@
+[ *logic; *pss; *mps ]...
+Abc2_CommandLogic(): Root model is already in the logic form.
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    307  edge =    966  0.00%  lev = 5 
+LUT =   307  1+ =   305  2+ =   298   0=2 1=7 2=50 3=133 4=115 Ave = 3.15  Area = 305  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.3) 
+[ *sw -lv; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.3) 
+[ *mfs -L 3 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network is not changed by "*mfs".
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    307  edge =    966  0.00%  lev = 5 
+LUT =   307  1+ =   305  2+ =   298   0=2 1=7 2=50 3=133 4=115 Ave = 3.15  Area = 305  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.3) 
+[ *sw -lv; *mps ]...
+demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.3) 
+[ *st; *if -C 32; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=298.00, LT=298, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.4) 
+[ *bidec; *dch -f; *if -C 32; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=298.00, LT=298, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 2.4) 
+[ *bidec; *dch -f; *if -C 32; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=301.00, LT=301, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=311.00, LT=313, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 2.5) 
+[ *logic; *mps; *mfs; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=311.00, LT=313, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.5) 
+The network has 4 nodes changed by "*mfs".
+demo_sd_to_lcd, Lv=8, A=305.00, LT=307, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=8, A=308.00, LT=310, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.5) 
+[ *mfs -L 2 -ae -F 50 -D 200 -M 1000; *pss; *mps -b ]...
+The network is not changed by "*mfs".
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    307  edge =    961  0.00%  lev = 8 
+LUT =   307  1+ =   305  2+ =   297   0=2 1=8 2=46 3=143 4=108 Ave = 3.13  Area = 305  Delay = 8000
+demo_sd_to_lcd, Lv=8, A=305.00, LT=307, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=8, A=308.00, LT=310, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.5) 
+[ *mload -a; *mps; ]...
+<*C>demo_sd_to_lcd, Lv=8, A=305.00, LT=307, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< C>demo_sd_to_lcd, Lv=8, A=308.00, LT=310, MX=4, D=8.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< A>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best area mode, best-AREA(temp)ntk loaded...
+[ C]demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ C]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*A]demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ A]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ D]demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ D]demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.5) 
+[ *mps; *mload -d; *mps ]...
+demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.5) 
+<*C>demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< C>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+< A>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-DELAY-ntk loaded...
+[ C]demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ C]demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ A]demo_sd_to_lcd, Lv=6, A=297.00, LT=297, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) 
+[ A]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*D]demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ D]demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 2.5) 
+
+@@@@@@@@@@  E n d   T r y   M o r e @@@@@@@@@@
+
+@@@@@@@@@@  7 a 7 a @@@@@@@@@@
+[ *plut ]...
+# The area/delay of k-variable LUTs:
+# k    area     delay
+1      1.00   1000.00
+2      1.00   1000.00
+3      1.00   1000.00
+4      1.00   1000.00
+5      2.00   2000.00
+6      2.00   2000.00
+7      2.00   2000.00
+[ *st; *if -S 44; *mps ]...
+demo_sd_to_lcd, Lv=5, A=301.00, LT=269, MX=7, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=311.00, LT=281, MX=7, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 2.6) 
+[         *dch -f; *if -S 44; *mps ]...
+demo_sd_to_lcd, Lv=5, A=303.00, LT=269, MX=7, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=313.00, LT=281, MX=7, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.2, 2.7) 
+[         *dch -f; *if -S 44; *mps ]...
+demo_sd_to_lcd, Lv=5, A=304.00, LT=266, MX=7, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=314.00, LT=278, MX=7, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.1, 2.9) 
+[ *bidec; *dch -f; *if -S 44; *mps ]...
+demo_sd_to_lcd, Lv=5, A=301.00, LT=267, MX=7, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=311.00, LT=279, MX=7, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.2, 3.0) 
+[ *bidec; *dch -f; *if -S 44; *mps ]...
+demo_sd_to_lcd, Lv=5, A=301.00, LT=265, MX=7, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=311.00, LT=277, MX=7, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.2, 3.2) 
+[ *bidec; *dch -f; *if -S 44 -z; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=303.00, LT=303, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=313.00, LT=315, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.2, 3.4) 
+[ *bidec; *dch -f; *if -S 44 -z; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=308.00, LT=308, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=318.00, LT=320, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.2, 3.6) 
+[ *bidec; *dch -f; *if -S 44 -z; *mps -b ]...
+demo_sd_to_lcd, Lv=5, A=306.00, LT=306, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(1,1,0) ...
+demo_sd_to_lcd, Lv=5, A=316.00, LT=318, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.2, 3.8) 
+[ *logic; *pss; *mps -b ]...
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    315  edge =   1002  0.00%  lev = 5 
+LUT =   315  1+ =   313  2+ =   306   0=2 1=7 2=52 3=125 4=129 Ave = 3.18  Area = 313  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=313.00, LT=315, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=316.00, LT=318, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 3.8) 
+[ *logic ]...
+Abc2_CommandLogic(): Root model is already in the logic form.
+[ *legal -v; *pss; *mps ]...
+Special input stats: 1x = 8   (PI = 0  BoxOut = 0  Const = 0  Buffer = 4)
+Legalization: added 0 PI buffers and duplicated 3 nodes with high fanouts (total = 3).
+demo_sd_to_lcd  : pi =  91 po = 554 ff =   356  box =    1 (   1)  node =    318  edge =   1014  0.00%  lev = 5 
+LUT =   318  1+ =   316  2+ =   309   0=2 1=7 2=52 3=125 4=132 Ave = 3.19  Area = 316  Delay = 5000
+demo_sd_to_lcd, Lv=5, A=316.00, LT=318, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=316.00, LT=318, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 3.8) 
+[ *mps ]...
+demo_sd_to_lcd, Lv=5, A=316.00, LT=318, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) ...
+demo_sd_to_lcd, Lv=5, A=316.00, LT=318, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) T=(0.0, 3.8) 
+
+@@@@@@@@@@  T h e   F i n a l   Q o R   S u m m a r y @@@@@@@@@@
+demo_sd_to_lcd, PI=91, PO=554, A(362.00, 316.00, 307.00), D(6.00, 5.00, 6.00), DL(6.00, 5.00, 6.00), W(1134, 1014, 974), FF(356, 356, 356), TM=0.00 secs, Mem=0.00 M, 
+
+[RPT0], demo_sd_to_lcd_pre_magic.v, MD=DL, A, 362.00, 316.00, 307.00, D, 6.00, 5.00, 6.00, PI=91, PO=554, FF, 356, 356, 356, BX, 357, 357, 357, TIM, 0.0, Mem, 0.0, 
+
+<*C>demo_sd_to_lcd, Lv=5, A=316.00, LT=318, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< C>demo_sd_to_lcd, Lv=5, A=316.00, LT=318, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< A>demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+< D>demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+@INFO: Loading the best delay mode, best-DELAY-ntk loaded...
+[ C]demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ C]demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ A]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ A]demo_sd_to_lcd, Lv=6, A=307.00, LT=309, MX=4, D=6.00, DD=6.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[*D]demo_sd_to_lcd, Lv=5, A=305.00, LT=307, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ D]demo_sd_to_lcd, Lv=5, A=308.00, LT=310, MX=4, D=5.00, DD=5.00, PI=91, PO=554, FF=356, BX=357, (st/mp/lg)=(0,0,1) 
+[ *logic -v ]...
+Abc2_CommandLogic(): Root model is already in the logic form.
+[ *legal -v ]...
+Special input stats: 1x = 8   (PI = 0  BoxOut = 0  Const = 0  Buffer = 4)
+Legalization: added 0 PI buffers and duplicated 3 nodes with high fanouts (total = 3).
+
+Magic Lut summary:
+
+LUT-0, 		Total number : 2
+LUT-1, 		Total number : 7
+LUT-2, 		Total number : 50
+LUT-3, 		Total number : 133
+LUT-4, 		Total number : 118
+
+
+Carry block check summary:
+
+All the carry blocks are legal.
+
+Clock Net Summary:
+
+io_cell_clk_i_inst|id_q_net: 2
+u_arm_dll_u0|clkout0_net: 1
+u_lvds_pll_u0|clkout0_net: 108
+u_pll_pll_u0|clkout0_net: 3
+u_pll_pll_u0|clkout1_net: 275
+
+Net Fanout Summary:
+
+
+Command line options : -dev M7A12N0F484C7 -v outputs/demo_sd_to_lcd.asv -top demo_sd_to_lcd -vo outputs/demo_sd_to_lcd.amv -whitebox -isyn -fca -keep_latch -keep_floating -optimize_primitives -aoc outputs/demo_sd_to_lcd_ast.aoc -min_ce_fanout 4 -carry_opt -magic -mode best_timing -use_dsp auto -simple_hierarchy outputs/demo_sd_to_lcd_simp_hier.v
+
+design network
+pi num : 4
+po num : 13
+pio num : 0
+comb num : 8
+reg num : 0
+macro num : 320
+instance num : 683
+depth : 5.0
+
+mapped network
+pi num : 4
+po num : 13
+pio num : 0
+lut num : 307
+reg num : 356
+macro num : 319
+instance num : 717
+depth(take delay of carry as 0.1) : 5.0
+depth (take delay of macro as 1) : 11
+
+
+critical path : 
+	Path point u_sdram_to_RGB_emb_addr_rd__reg[0]/qx
+	Path point ii0539/f3
+	Path point ii0539/dx
+	Path point ii0542/f1
+	Path point ii0542/dx
+	Path point ii0545/f2
+	Path point ii0545/dx
+	Path point ii0547/f1
+	Path point ii0547/dx
+	Path point ii0548/f1
+	Path point ii0548/dx
+	Path point u_sdram_to_RGB_emb_addr_rd__reg[8]/di
+
+
+
+-----------------------Result summary:-----------------------
+
+
+Primitive summary:
+
+Primitive Name : GND, 		Total number : 1
+Primitive Name : LUT4, 		Total number : 299
+Primitive Name : LUT4C, 		Total number : 8
+Primitive Name : M7S_DGPIO, 		Total number : 7
+Primitive Name : M7S_DLL, 		Total number : 1
+Primitive Name : M7S_EMB5K, 		Total number : 8
+Primitive Name : M7S_IO_CAL, 		Total number : 1
+Primitive Name : M7S_IO_DDR, 		Total number : 20
+Primitive Name : M7S_IO_DQS, 		Total number : 3
+Primitive Name : M7S_IO_LVDS, 		Total number : 5
+Primitive Name : M7S_IO_PCISG, 		Total number : 2
+Primitive Name : M7S_IO_VREF, 		Total number : 2
+Primitive Name : M7S_PLL, 		Total number : 2
+Primitive Name : M7S_SOC, 		Total number : 1
+Primitive Name : REG, 		Total number : 356
+Primitive Name : VCC, 		Total number : 1
+
+Lut summary:
+
+LUT-1, 		Total number : 6
+LUT-2, 		Total number : 50
+LUT-3, 		Total number : 133
+LUT-4, 		Total number : 118
+
+Wire summary:
+
+Total wire number : 2764
+Average fanout : 3.59
+Average Lut fanout : 2.02
+Average Reg fanout : 4.20
+
+Control signal summary:
+
+Total REG number : 356.
+
+Total CE control signal number : 9.
+	CE control signal: u_sdram_to_RGB_dma_start_xfer__reg|qx_net, fanout: 11.
+	CE control signal: u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net, fanout: 9.
+	CE control signal: ii0480|dx_net, fanout: 10.
+	CE control signal: ii0514|dx_net, fanout: 4.
+	CE control signal: ii0589|dx_net, fanout: 16.
+	CE control signal: ii0633|dx_net, fanout: 32.
+	CE control signal: ii0642|dx_net, fanout: 22.
+	CE control signal: ii0709|dx_net, fanout: 30.
+	CE control signal: ii0742|dx_net, fanout: 8.
+
+Total SET control signal number : 1.
+	SET control signal: rstn_final__reg|qx_net, fanout: 2.
+
+Total RST control signal number : 2.
+	RST control signal: rstn_final__reg|qx_net, fanout: 353.
+	RST control signal: ii0452|dx_net, fanout: 1.
+
+
+Primace 7.3 AST was successful!
+0 warning(s), 0 error(s).
+CPU Time: 5.324 seconds, Peak Memory: 23 MB

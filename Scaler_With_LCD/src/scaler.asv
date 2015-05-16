@@ -1,0 +1,10 @@
+(*
+  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:4",
+  agate_format    = "VLOG"
+*)
+module DELAY_BUF(in, out);
+input in;
+output out;
+
+endmodule
+

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project_status>
+    <project_file_status size="2407" time_stamp="1429597927216" checksum="fe1cdb7f349c802e800803bc8b9cbfd9"/>
+    <file_signature size="89" time_stamp="1430122597294" checksum="249fed97ecfc2b6a7167dddcc471640a" name="constraint/myconstraint.sdc"/>
+    <file_signature size="0" time_stamp="0" checksum="" name="debug/Default/demo_sd_to_lcd.aoc"/>
+    <file_signature size="12374" time_stamp="1429799143001" checksum="7974d6e604bf19a6621c708c5f1968f4" name="demo_sd_to_lcd.aoc"/>
+    <file_signature size="16915" time_stamp="1401787967000" checksum="5bb626326d31ecd1783f07d3dfb16392" name="src/ahb_master.v"/>
+    <file_signature size="1380" time_stamp="1401787967000" checksum="b67a23ecc41794cc1d7f61a09d693a32" name="src/colorbar_gen.v"/>
+    <file_signature size="4279" time_stamp="1430122597138" checksum="0e9b4942678a8d98c8df92910ab018dd" name="src/demo_sd_to_lcd.v"/>
+    <file_signature size="5521" time_stamp="1401787967000" checksum="47cee5dc270dc2744d051001a167fbe2" name="src/emb_v1.v"/>
+    <file_signature size="845" time_stamp="1401880532000" checksum="4d06e28e75474735bb71db6dd2606f1e" name="src/gbuf_v1_1.v"/>
+    <file_signature size="29375" time_stamp="1429613248986" checksum="b7798de821b3b9f5703029dcd7668837" name="src/lcd_demo_m7.hex"/>
+    <file_signature size="10764" time_stamp="1429614287171" checksum="1a7da9c7a504239e6a2843d744e72411" name="src/lvds_tx_v1.v"/>
+    <file_signature size="7883" time_stamp="1401878531000" checksum="eea213eeadf18e2ed09bb13d2827a5c4" name="src/mcu_armcm3.v"/>
+    <file_signature size="3994" time_stamp="1429625423142" checksum="e24e94f0fed534e1ccdd9dbd7d8788ff" name="src/pll_v1.v"/>
+    <file_signature size="827" time_stamp="1401880152000" checksum="8fc8f83c6599cc972067857cc878e442" name="src/por_v1_1.v"/>
+    <file_signature size="9279" time_stamp="1401879890000" checksum="f778135a986b11aa729513598b4f1a41" name="src/sdram_to_RGB.v"/>
+    <flow_status>
+        <status status="NeedRun" flow="frontend"/>
+        <status status="NeedRun" flow="synthesis"/>
+        <status status="NeedRun" flow="placer"/>
+        <status status="NeedRun" flow="router"/>
+        <status status="NeedRun" flow="bitgen"/>
+        <status status="NeedRun" flow="timer"/>
+        <status status="NeedRun" flow="ixplorer"/>
+        <status profile="Default" status="NeedRun" flow="signal_monitor"/>
+    </flow_status>
+    <io_editor_enabled value="false"/>
+    <ixplorer clock="" count="-1" msecs="-1" scan_high="-1" scan_low="-1" target_fmax="-1"/>
+    <pin_alias/>
+    <opened_file>
+        <file name="$(PRJ_DIR)/src/sdram_to_RGB.v"/>
+        <file name="$(PRJ_DIR)/src/mcu_armcm3.v"/>
+    </opened_file>
+</project_status>

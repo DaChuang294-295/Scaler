@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<report title="Capital Micro Design Report" version="1.0">
+<section title="Routing Report">
+   <subject title="Status Summary">
+       <table>
+           <tr>
+               <td>Running status</td>
+               <td>Successful</td>
+           </tr>
+           <tr>
+               <td>Time stamp</td>
+               <td>Mon Apr 27 13:44:06 2015</td>
+           </tr>
+           <tr>
+               <td>Primace version</td>
+               <td>7.3</td>
+           </tr>
+           <tr>
+               <td>Device name</td>
+               <td> M7A12N0F484C7</td>
+           </tr>
+           <tr>
+               <td>Top module name</td>
+               <td> demo_sd_to_lcd</td>
+           </tr>
+           <tr>
+               <td>Input design file</td>
+               <td> netlist/chip_syn.apv</td>
+           </tr>
+           <tr>
+               <td>Input annotation file</td>
+               <td>outputs/demo_sd_to_lcd.apx</td>
+           </tr>
+           <tr>
+               <td>Output annotation file</td>
+               <td>outputs/demo_sd_to_lcd.apa</td>
+           </tr>
+           <tr>
+               <td>Output design file</td>
+               <td>outputs/demo_sd_to_lcd.arv</td>
+           </tr>
+       </table>
+   </subject>
+   <subject title="Interconnect Resource Usage Summary">
+       <table>
+           <tr>
+               <th>Resource</th>
+               <th>Usage</th>
+           </tr>
+           <tr>
+               <td>Total nets</td>
+               <td>1577</td>
+           </tr>
+           <tr>
+               <td>Failed nets</td>
+               <td>0</td>
+           </tr>
+           <tr>
+               <td>Interconnect Resources</td>
+               <td>2.37</td>
+           </tr>
+           <tr>
+               <td>Total Elapsed Time</td>
+               <td>6 seconds</td>
+           </tr>
+           <tr>
+               <td>Peak Mem</td>
+               <td>109 MB</td>
+           </tr>
+           <tr>
+               <td>Iteration Num</td>
+               <td>4</td>
+           </tr>
+           <tr>
+               <td>Average Fanout</td>
+               <td>2.363348</td>
+           </tr>
+       </table>
+   </subject>
+</section>
+</report>

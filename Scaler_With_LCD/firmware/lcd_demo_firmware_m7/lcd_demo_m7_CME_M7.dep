@@ -1,0 +1,81 @@
+Dependencies for Project 'lcd_demo_m7', Target 'CME_M7': (DO NOT MODIFY !)
+F (.\main.c)(0x553628ED)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\lib_arm_files-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Capital-Micro\M7-o .\outputs\main.o --omf_browse .\outputs\main.crf --depend .\outputs\main.d)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_conf.h)(0x551BE44C)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x4EB0D286)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_misc.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7.h)(0x551BE44C)
+I (C:\Keil\ARM\CMSIS\Include\core_cm3.h)(0x50062982)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x4EB0D284)
+I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x50595C8C)
+I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDA945C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\system_cmem7.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_spi.h)(0x5374BD90)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_uart.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_ddr.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_gpio.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_retarget.h)(0x551BE44C)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x4EB0D286)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\mmc_sd.h)(0x53842EDD)
+F (.\lib_arm_files\cmem7_gpio.c)(0x551BE44C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\lib_arm_files-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Capital-Micro\M7-o .\outputs\cmem7_gpio.o --omf_browse .\outputs\cmem7_gpio.crf --depend .\outputs\cmem7_gpio.d)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_gpio.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7.h)(0x551BE44C)
+I (C:\Keil\ARM\CMSIS\Include\core_cm3.h)(0x50062982)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x4EB0D284)
+I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x50595C8C)
+I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDA945C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\system_cmem7.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_conf.h)(0x551BE44C)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x4EB0D286)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_misc.h)(0x551BE44C)
+F (.\lib_arm_files\cmem7_misc.c)(0x551BE44C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\lib_arm_files-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Capital-Micro\M7-o .\outputs\cmem7_misc.o --omf_browse .\outputs\cmem7_misc.crf --depend .\outputs\cmem7_misc.d)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_misc.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7.h)(0x551BE44C)
+I (C:\Keil\ARM\CMSIS\Include\core_cm3.h)(0x50062982)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x4EB0D284)
+I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x50595C8C)
+I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDA945C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\system_cmem7.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_conf.h)(0x551BE44C)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x4EB0D286)
+F (.\lib_arm_files\cmem7_spi.c)(0x5374892A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\lib_arm_files-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Capital-Micro\M7-o .\outputs\cmem7_spi.o --omf_browse .\outputs\cmem7_spi.crf --depend .\outputs\cmem7_spi.d)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_spi.h)(0x5374BD90)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7.h)(0x551BE44C)
+I (C:\Keil\ARM\CMSIS\Include\core_cm3.h)(0x50062982)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x4EB0D284)
+I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x50595C8C)
+I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDA945C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\system_cmem7.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_conf.h)(0x551BE44C)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x4EB0D286)
+F (.\lib_arm_files\cmem7_uart.c)(0x551BE44C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\lib_arm_files-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Capital-Micro\M7-o .\outputs\cmem7_uart.o --omf_browse .\outputs\cmem7_uart.crf --depend .\outputs\cmem7_uart.d)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_uart.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7.h)(0x551BE44C)
+I (C:\Keil\ARM\CMSIS\Include\core_cm3.h)(0x50062982)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x4EB0D284)
+I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x50595C8C)
+I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDA945C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\system_cmem7.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_conf.h)(0x551BE44C)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x4EB0D286)
+F (.\lib_arm_files\system_cmem7.c)(0x55360C1F)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\lib_arm_files-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Capital-Micro\M7-o .\outputs\system_cmem7.o --omf_browse .\outputs\system_cmem7.crf --depend .\outputs\system_cmem7.d)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7.h)(0x551BE44C)
+I (C:\Keil\ARM\CMSIS\Include\core_cm3.h)(0x50062982)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x4EB0D284)
+I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x50595C8C)
+I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDA945C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\system_cmem7.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_misc.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_conf.h)(0x551BE44C)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x4EB0D286)
+F (.\lib_arm_files\startup_cmem7.s)(0x551BE4B0)(--cpu Cortex-M3 -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Capital-Micro\M7--list .\outputs\startup_cmem7.lst --xref -o .\outputs\startup_cmem7.o --depend .\outputs\startup_cmem7.d)
+F (.\lib_arm_files\cmem7_ddr.c)(0x551BE44C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I.\lib_arm_files-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Capital-Micro\M7-o .\outputs\cmem7_ddr.o --omf_browse .\outputs\cmem7_ddr.crf --depend .\outputs\cmem7_ddr.d)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_ddr.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7.h)(0x551BE44C)
+I (C:\Keil\ARM\CMSIS\Include\core_cm3.h)(0x50062982)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x4EB0D284)
+I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x50595C8C)
+I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x4FDA945C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\system_cmem7.h)(0x551BE44C)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_conf.h)(0x551BE44C)
+I (C:\Keil\ARM\ARMCC\include\string.h)(0x4EB0D286)
+I (E:\yangyang\demo\sd_lcd_in_blue_M7_EVB\demo_sd_to_lcd_nto\firmware\lcd_demo_firmware_m7\lib_arm_files\cmem7_misc.h)(0x551BE44C)
