@@ -878,3 +878,995 @@ command: cstool "scripts/pack.tcl"
 command: cstool "scripts/route.tcl"
 Router successed. See outputs/router.log for detailed information
 ======== Router was successed. 0 warning(s), 0 error(s) ========
+======== Synthesis started at 周二 五月 19 19:55:06 2015 ========
+command: ast_frontend "-agate_log_mode" "-f" "../scripts/syn.tcl"
+-----------------------------------------------------------------------------
+Primace AST_Frontend Tool Version 7.3 Build 20150130
+Copyright (C) 2005-2015 Capital Microelectronics Co., Ltd. All rights reserved.
+-----------------------------------------------------------------------------
+Info: S6001: Run started on Tuesday, 19 May 15, at 19:55:06.
+Info: COM_INFO_000: The "INCENTIA" environment variable rather than "DESIGNCRAFT" is set. Using INCENTIA instead ...
+Info: COM_INFO_000: Processing command script file '../scripts/syn.tcl'...
+Info: CMD_INFO_005: Create a new user variable 'is_gui_platform' = true. 
+Info: CMD_INFO_005: Create a new user variable 'reportprogress' = reportProgress.exe. 
+Info: CMD_INFO_005: Create a new user variable 'win_platform' = true. 
+Info: CMD_INFO_005: Create a new user variable 'syn_dir' = F:/capital_micro/primace7.3/ast_frontend/. 
+Info: CMD_INFO_005: Create a new user variable 'output_dir' = .. 
+Info: CMD_INFO_005: Create a new user variable 'design_name' = demo_sd_to_lcd. 
+Info: CMD_INFO_005: Create a new user variable 'outfile' = ./demo_sd_to_lcd.asv. 
+Info: CMD_INFO_005: Create a new user variable 'bbox_lib' = syn_black_box_m7s.v. 
+Info: CMD_INFO_005: Create a new user variable 'syn_vlog_src_in' = ../src/ahb_master.v ../src/colorbar_gen.v ../src/demo_sd_to_lcd.v ../src/emb_v1.v ../src/lvds_tx_v1.v ../src/mcu_armcm3.v ../src/pll_v1.v ../src/sdram_to_RGB.v ../src/por_v1_1.v ../src/gbuf_v1_1.v ../src/Cal_v1.v ../src/coefcal_v3.v ../src/divider_v2.v ../src/emb_16_2k.v ../src/inputCtrl.v ../src/ramFifo.v ../src/scaler1.0.v ../src/scalerForM7.v. 
+Info: CMD_INFO_005: Create a new user variable 'extract_latch' = true. 
+Info: CMD_INFO_005: Create a new user variable 'fca_en' = true. 
+Info: CMD_INFO_005: Create a new user variable 'resource_expand_bits' = 6. 
+Info: CMD_INFO_005: Create a new user variable 'fcc_en' = true. 
+Info: CMD_INFO_005: Create a new user variable 'extract_ram' = false. 
+Info: CMD_INFO_005: Create a new user variable 'extract_mem_size' = 3. 
+Info: CMD_INFO_005: Create a new user variable 'keep_hierarchy_en' = 0. 
+Info: CMD_INFO_004: Sourcing file F:/capital_micro/primace7.3/ast_frontend//agate/syn_base.tcl. 
+Info: CMD_INFO_005: Create a new user variable 'enable_low' = 0. 
+Info: CMD_INFO_005: Create a new user variable 'syn_db' = cswitch_ast_frontend_griffin_2.0_cygwin.db. 
+Info: CMD_INFO_005: Create a new user variable 'dontuseprims' = F:/capital_micro/primace7.3/ast_frontend//agate/dontuse_latch.tcl. 
+Info: CMD_INFO_005: Create a new user variable 'fcm_en' = true. 
+Info: CMD_INFO_005: Create a new user variable 'push_register_en' = false. 
+Info: CMD_INFO_005: Create a new user variable 'expand_en' = 0. 
+Info: CMD_INFO_005: Create a new user variable 'bbox_en' = 1. 
+Info: CMD_INFO_005: Create a new user variable 'gate_netlist_en' = 1. 
+Info: CMD_INFO_005: Create a new user variable 'bbox_param' = bbox. 
+Info: CMD_INFO_005: Create a new user variable 'gate_netlist_param' = gate_netlist. 
+Info: CMD_INFO_005: Create a new user variable 'mux_opt_en' = false. 
+Info: CMD_INFO_005: Create a new user variable 'ipc_set_en' = true. 
+Info: COM_INFO_000: Reading file 'F:/capital_micro/primace7.3/ast_frontend//agate/cswitch_ast_frontend_griffin_2.0_cygwin.db'.
+Info: CMD_INFO_005: Create a new user variable 'failed' = 0. 
+Info: CMD_INFO_005: Create a new user variable 'optmode' = 0. 
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ahb_master.v'.
+Info: COM_INFO_000: Depositing template 'ahb_master'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/colorbar_gen.v'.
+Info: COM_INFO_000: Depositing template 'colorbar_gen'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/demo_sd_to_lcd.v'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/emb_v1.v'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/lvds_tx_v1.v'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/mcu_armcm3.v'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/pll_v1.v'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/sdram_to_RGB.v'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/por_v1_1.v'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/gbuf_v1_1.v'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/Cal_v1.v'.
+Info: COM_INFO_000: Depositing template 'Cal'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v'.
+Info: COM_INFO_000: Depositing template 'coefCal'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/emb_16_2k.v'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/inputCtrl.v'.
+Info: COM_INFO_000: Depositing template 'inputCtrl'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v'.
+Info: COM_INFO_000: Depositing template 'ramFifo'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/scaler1.0.v'.
+Info: COM_INFO_000: Depositing template 'scaler'.
+Info: COM_INFO_000: Reading file 'g:/大创/Scaler/Scaler_With_LCD/outputs/../src/scalerForM7.v'.
+Info: COM_INFO_000: Depositing template 'scalerForM7'.
+Warning: RTLW_MXASGN_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:59: mixing blocking assignment with non-blocking assignment to a signal (work) could induce incorrect logic.  It is not recommended.. 
+Warning: RTLW_MXASGN_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:61: mixing blocking assignment with non-blocking assignment to a signal (work) could induce incorrect logic.  It is not recommended.. 
+Warning: RTLW_XSYN_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:62: bad code style for circuit synthesis:  . 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:55: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:55: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'work' (bit-0) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'work' (bit-0) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'inEn' (bit-0) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-0) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-1) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-2) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-3) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-4) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-5) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-6) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-7) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-8) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-9) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-10) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-11) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-12) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-13) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-14) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-15) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-16) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-17) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-18) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-19) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-20) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-21) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-22) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-23) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-24) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-25) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-26) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-27) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-28) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-29) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-30) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-31) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_XASYNCINIT_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:50: In this procedure block, variable 'test' (bit-32) is not initialized in asynchronous branch(es) even though the process is controlled by asynchronous controls. 
+Warning: RTLW_IPCK_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/coefcal_v3.v:64: cannot find clock signal of the process. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:56: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:56: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:56: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:56: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:60: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:60: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:60: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:60: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_IPCK_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:48: cannot find clock signal of the process. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:74: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:74: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:74: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:74: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_IPCK_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:66: cannot find clock signal of the process. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:217: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:217: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:217: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:219: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:219: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:219: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:221: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:221: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:221: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:226: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:226: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:226: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:228: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:228: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_ASYNL_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:228: Synthesizing sequential elements with asynchronous load/data.  Pay attention to the results from the sequential mapper. If no direct implementation (with asynchronous load/data) is available, it may cause simulation mismatches.. 
+Warning: RTLW_IPCK_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/ramFifo.v:206: cannot find clock signal of the process. 
+Warning: RTLW_IPCK_001: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/scalerForM7.v:42: cannot find clock signal of the process. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Warning: COM_WARN_000: g:/大创/Scaler/Scaler_With_LCD/outputs/../src/divider_v2.v:46: variable 'shift_dividend' is missing from the sensitivity list.
+Warning: RTLW_MISSEN_001: Simulation mismatch may be resulted. 
+Info: COM_INFO_000: Done design import.
+Info: CMD_INFO_002: Creating DB... 
+Info: CMD_INFO_003: Done DB conversion. 
+Info: COM_INFO_000: Current design is 'ahb_master'!
+Info: COM_INFO_000: Reading file 'F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v'.
+Info: COM_INFO_000: Done design import.
+Info: CMD_INFO_002: Creating DB... 
+Info: CMD_INFO_003: Done DB conversion. 
+Info: COM_INFO_000: Current design is 'DELAY_BUF'!
+Info: CMD_INFO_005: Create a new user variable 'opt_cmd' = optimize. 
+Info: COM_INFO_000: Current design is 'demo_sd_to_lcd'!
+Info: CMD_INFO_004: Sourcing file F:/capital_micro/primace7.3/ast_frontend//agate/dontuse_latch.tcl. 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_PG_LOGIC_PRIM" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_FC_LOGIC_PRIM" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_LUT4_PRIM_CFA0" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_LUT4_PRIM_F0CA" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_MPQ_10GE" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_MPQ_FC" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_MPQ_TE" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_MPQ_BP" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/mpq2ser" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/mem_ctl" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_TX_LOGIC_PRIM_TXD_REG_TYPELAT_TXE_REG_TYPENONE" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_TX_LOGIC_PRIM_TXD_REG_TYPEREG_TXE_REG_TYPEREG" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_TX_LOGIC_PRIM_TXD_REG_TYPEREG_TXE_REG_TYPEREGA" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_TX_LOGIC_PRIM_TXD_REG_TYPEREG_TXE_REG_TYPENONE" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_TX_LOGIC_PRIM_TXD_REG_TYPEREGA_TXE_REG_TYPELAT" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_TX_LOGIC_PRIM_TXD_REG_TYPEREGA_TXE_REG_TYPEREGA" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_TX_LOGIC_PRIM_TXD_REG_TYPEREGA_TXE_REG_TYPEREG" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_TX_LOGIC_PRIM_TXD_REG_TYPEREGA_TXE_REG_TYPENONE" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_TX_LOGIC_PRIM_TXD_REG_TYPENONE_TXE_REG_TYPELAT" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_TX_LOGIC_PRIM_TXD_REG_TYPENONE_TXE_REG_TYPEREG" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_TX_LOGIC_PRIM_TXD_REG_TYPENONE_TXE_REG_TYPEREGA" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_TX_LOGIC_PRIM_TXD_REG_TYPENONE_TXE_REG_TYPENONE" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_SPRAM_FIFO_PRIM" 
+Warning: GET_WARN_3: No library_cell matches search pattern "cswitch_typical/CS_SPRAM_PRIM" 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [31]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [30]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [29]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [28]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [27]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [26]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [25]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [24]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [23]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [22]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [21]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [20]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [19]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [18]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [17]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [16]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [15]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [14]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [13]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [12]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [11]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [10]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [9]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [8]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [7]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [6]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [5]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [4]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [3]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [2]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [1]'. 
+Warning: NTL_WARN_039: Open output port 'gpio_0_oe_o [0]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [31]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [30]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [29]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [28]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [27]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [26]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [25]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [24]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [23]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [22]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [21]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [20]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [19]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [18]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [17]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [16]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [15]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [14]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [13]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [12]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [11]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [10]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [9]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [8]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [7]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [6]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [5]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [4]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [3]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [2]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [1]'. 
+Warning: NTL_WARN_039: Open input port 'gpio_0_in_i [0]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_mastlock'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_prot [3]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_prot [2]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_prot [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_prot [0]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_size [2]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_size [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_size [0]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_sel'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [31]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [30]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [29]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [28]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [27]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [26]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [25]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [24]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [23]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [22]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [21]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [20]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [19]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [18]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [17]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [16]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [15]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [14]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [13]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [12]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [11]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [10]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [9]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [8]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [7]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [6]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [5]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [4]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [3]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [2]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_addr [0]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_write'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_burst [2]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_burst [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_burst [0]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_trans [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_trans [0]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [31]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [30]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [29]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [28]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [27]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [26]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [25]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [24]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [23]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [22]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [21]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [20]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [19]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [18]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [17]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [16]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [15]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [14]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [13]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [12]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [11]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [10]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [9]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [8]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [7]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [6]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [5]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [4]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [3]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [2]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp0_s_ahb_wdata [0]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_readyout'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_resp'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [31]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [30]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [29]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [28]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [27]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [26]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [25]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [24]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [23]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [22]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [21]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [20]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [19]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [18]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [17]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [16]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [15]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [14]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [13]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [12]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [11]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [10]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [9]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [8]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [7]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [6]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [5]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [4]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [3]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [2]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [1]'. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_rdata [0]'. 
+Warning: NTL_WARN_038: u_arm (cell: mcu_armcm3) in design 'demo_sd_to_lcd' has 177 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:119: Instantiating black box module 'M7S_PLL'. 
+Warning: NTL_WARN_037: u_lvds_tx_clk port 'id_q_0' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_IO_LVDS' port width. 
+Warning: NTL_WARN_037: u_lvds_tx_clk port 'id_q_1' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_IO_LVDS' port width. 
+Warning: NTL_WARN_037: u_lvds_tx_clk port 'od_d_1' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_IO_LVDS' port width. 
+Warning: NTL_WARN_037: u_lvds_tx_clk port 'od_d_0' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_IO_LVDS' port width. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [3]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [2]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [1]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [3]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [2]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [1]'. 
+Warning: NTL_WARN_039: Open output port 'io_reg_clk'. 
+Warning: NTL_WARN_039: Open input port 'geclk270'. 
+Warning: NTL_WARN_039: Open input port 'geclk180'. 
+Warning: NTL_WARN_039: Open input port 'od_d_1 [3]'. 
+Warning: NTL_WARN_039: Open input port 'od_d_1 [2]'. 
+Warning: NTL_WARN_039: Open input port 'od_d_1 [1]'. 
+Warning: NTL_WARN_039: Open input port 'od_d_0 [3]'. 
+Warning: NTL_WARN_039: Open input port 'od_d_0 [2]'. 
+Warning: NTL_WARN_039: Open input port 'od_d_0 [1]'. 
+Warning: NTL_WARN_038: u_lvds_tx_clk (cell: M7S_IO_LVDS) in design 'lvds_tx_v1' has 15 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:178: Instantiating black box module 'M7S_IO_LVDS'. 
+Warning: NTL_WARN_037: u_lvds_tx_0 port 'id_q_0' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_IO_LVDS' port width. 
+Warning: NTL_WARN_037: u_lvds_tx_0 port 'id_q_1' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_IO_LVDS' port width. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [3]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [2]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [1]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [3]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [2]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [1]'. 
+Warning: NTL_WARN_039: Open output port 'io_reg_clk'. 
+Warning: NTL_WARN_039: Open input port 'geclk270'. 
+Warning: NTL_WARN_039: Open input port 'geclk180'. 
+Warning: NTL_WARN_038: u_lvds_tx_0 (cell: M7S_IO_LVDS) in design 'lvds_tx_v1' has 9 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:229: Instantiating black box module 'M7S_IO_LVDS'. 
+Warning: NTL_WARN_037: u_lvds_tx_1 port 'id_q_0' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_IO_LVDS' port width. 
+Warning: NTL_WARN_037: u_lvds_tx_1 port 'id_q_1' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_IO_LVDS' port width. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [3]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [2]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [1]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [3]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [2]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [1]'. 
+Warning: NTL_WARN_039: Open output port 'io_reg_clk'. 
+Warning: NTL_WARN_039: Open input port 'geclk270'. 
+Warning: NTL_WARN_039: Open input port 'geclk180'. 
+Warning: NTL_WARN_038: u_lvds_tx_1 (cell: M7S_IO_LVDS) in design 'lvds_tx_v1' has 9 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:280: Instantiating black box module 'M7S_IO_LVDS'. 
+Warning: NTL_WARN_037: u_lvds_tx_2 port 'id_q_0' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_IO_LVDS' port width. 
+Warning: NTL_WARN_037: u_lvds_tx_2 port 'id_q_1' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_IO_LVDS' port width. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [3]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [2]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [1]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [3]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [2]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [1]'. 
+Warning: NTL_WARN_039: Open output port 'io_reg_clk'. 
+Warning: NTL_WARN_039: Open input port 'geclk270'. 
+Warning: NTL_WARN_039: Open input port 'geclk180'. 
+Warning: NTL_WARN_038: u_lvds_tx_2 (cell: M7S_IO_LVDS) in design 'lvds_tx_v1' has 9 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:331: Instantiating black box module 'M7S_IO_LVDS'. 
+Warning: NTL_WARN_037: u_lvds_tx_3 port 'id_q_0' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_IO_LVDS' port width. 
+Warning: NTL_WARN_037: u_lvds_tx_3 port 'id_q_1' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_IO_LVDS' port width. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [3]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [2]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_1 [1]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [3]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [2]'. 
+Warning: NTL_WARN_039: Open output port 'id_q_0 [1]'. 
+Warning: NTL_WARN_039: Open output port 'io_reg_clk'. 
+Warning: NTL_WARN_039: Open input port 'geclk270'. 
+Warning: NTL_WARN_039: Open input port 'geclk180'. 
+Warning: NTL_WARN_038: u_lvds_tx_3 (cell: M7S_IO_LVDS) in design 'lvds_tx_v1' has 9 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:382: Instantiating black box module 'M7S_IO_LVDS'. 
+Warning: NTL_WARN_037: u_ahb_master port 'dma_wdata' width in design 'demo_sd_to_lcd' is unmatched with the cell 'ahb_master' port width. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [31]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [30]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [29]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [28]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [27]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [26]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [25]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [24]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [23]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [22]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [21]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [20]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [19]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [18]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [17]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [16]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [15]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [14]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [13]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [12]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [11]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [10]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [9]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [8]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [7]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [6]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [5]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [4]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [3]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [2]'. 
+Warning: NTL_WARN_039: Open input port 'dma_wdata [1]'. 
+Warning: NTL_WARN_038: u_ahb_master (cell: ahb_master) in design 'sdram_to_RGB' has 31 open port(s). 
+Warning: NTL_WARN_037: u_emb5k_0 port 'da' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_EMB5K' port width. 
+Warning: NTL_WARN_039: Open input port 'da [17]'. 
+Warning: NTL_WARN_039: Open input port 'da [16]'. 
+Warning: NTL_WARN_039: Open input port 'da [15]'. 
+Warning: NTL_WARN_039: Open input port 'da [14]'. 
+Warning: NTL_WARN_039: Open input port 'da [13]'. 
+Warning: NTL_WARN_039: Open input port 'da [12]'. 
+Warning: NTL_WARN_039: Open input port 'da [11]'. 
+Warning: NTL_WARN_039: Open input port 'da [10]'. 
+Warning: NTL_WARN_039: Open input port 'da [9]'. 
+Warning: NTL_WARN_039: Open input port 'da [8]'. 
+Warning: NTL_WARN_039: Open input port 'da [7]'. 
+Warning: NTL_WARN_039: Open input port 'da [6]'. 
+Warning: NTL_WARN_039: Open input port 'da [5]'. 
+Warning: NTL_WARN_039: Open input port 'da [4]'. 
+Warning: NTL_WARN_039: Open input port 'da [3]'. 
+Warning: NTL_WARN_039: Open input port 'da [2]'. 
+Warning: NTL_WARN_039: Open input port 'da [1]'. 
+Warning: NTL_WARN_038: u_emb5k_0 (cell: M7S_EMB5K) in design 'emb_v1' has 17 open port(s). 
+Warning: NTL_WARN_037: u_emb5k_0 port 'da' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_EMB5K' port width. 
+Warning: NTL_WARN_039: Open input port 'da [17]'. 
+Warning: NTL_WARN_039: Open input port 'da [16]'. 
+Warning: NTL_WARN_039: Open input port 'da [15]'. 
+Warning: NTL_WARN_039: Open input port 'da [14]'. 
+Warning: NTL_WARN_039: Open input port 'da [13]'. 
+Warning: NTL_WARN_039: Open input port 'da [12]'. 
+Warning: NTL_WARN_039: Open input port 'da [11]'. 
+Warning: NTL_WARN_039: Open input port 'da [10]'. 
+Warning: NTL_WARN_039: Open input port 'da [9]'. 
+Warning: NTL_WARN_039: Open input port 'da [8]'. 
+Warning: NTL_WARN_039: Open input port 'da [7]'. 
+Warning: NTL_WARN_039: Open input port 'da [6]'. 
+Warning: NTL_WARN_039: Open input port 'da [5]'. 
+Warning: NTL_WARN_039: Open input port 'da [4]'. 
+Warning: NTL_WARN_039: Open input port 'da [3]'. 
+Warning: NTL_WARN_039: Open input port 'da [2]'. 
+Warning: NTL_WARN_039: Open input port 'da [1]'. 
+Warning: NTL_WARN_038: u_emb5k_0 (cell: M7S_EMB5K) in design 'emb_v1' has 17 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:71: Instantiating black box module 'M7S_EMB5K'. 
+Warning: NTL_WARN_037: u_emb5k_1 port 'da' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_EMB5K' port width. 
+Warning: NTL_WARN_039: Open input port 'da [17]'. 
+Warning: NTL_WARN_039: Open input port 'da [16]'. 
+Warning: NTL_WARN_039: Open input port 'da [15]'. 
+Warning: NTL_WARN_039: Open input port 'da [14]'. 
+Warning: NTL_WARN_039: Open input port 'da [13]'. 
+Warning: NTL_WARN_039: Open input port 'da [12]'. 
+Warning: NTL_WARN_039: Open input port 'da [11]'. 
+Warning: NTL_WARN_039: Open input port 'da [10]'. 
+Warning: NTL_WARN_039: Open input port 'da [9]'. 
+Warning: NTL_WARN_039: Open input port 'da [8]'. 
+Warning: NTL_WARN_039: Open input port 'da [7]'. 
+Warning: NTL_WARN_039: Open input port 'da [6]'. 
+Warning: NTL_WARN_039: Open input port 'da [5]'. 
+Warning: NTL_WARN_039: Open input port 'da [4]'. 
+Warning: NTL_WARN_039: Open input port 'da [3]'. 
+Warning: NTL_WARN_039: Open input port 'da [2]'. 
+Warning: NTL_WARN_039: Open input port 'da [1]'. 
+Warning: NTL_WARN_038: u_emb5k_1 (cell: M7S_EMB5K) in design 'emb_v1' has 17 open port(s). 
+Warning: NTL_WARN_037: u_emb5k_1 port 'da' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_EMB5K' port width. 
+Warning: NTL_WARN_039: Open input port 'da [17]'. 
+Warning: NTL_WARN_039: Open input port 'da [16]'. 
+Warning: NTL_WARN_039: Open input port 'da [15]'. 
+Warning: NTL_WARN_039: Open input port 'da [14]'. 
+Warning: NTL_WARN_039: Open input port 'da [13]'. 
+Warning: NTL_WARN_039: Open input port 'da [12]'. 
+Warning: NTL_WARN_039: Open input port 'da [11]'. 
+Warning: NTL_WARN_039: Open input port 'da [10]'. 
+Warning: NTL_WARN_039: Open input port 'da [9]'. 
+Warning: NTL_WARN_039: Open input port 'da [8]'. 
+Warning: NTL_WARN_039: Open input port 'da [7]'. 
+Warning: NTL_WARN_039: Open input port 'da [6]'. 
+Warning: NTL_WARN_039: Open input port 'da [5]'. 
+Warning: NTL_WARN_039: Open input port 'da [4]'. 
+Warning: NTL_WARN_039: Open input port 'da [3]'. 
+Warning: NTL_WARN_039: Open input port 'da [2]'. 
+Warning: NTL_WARN_039: Open input port 'da [1]'. 
+Warning: NTL_WARN_038: u_emb5k_1 (cell: M7S_EMB5K) in design 'emb_v1' has 17 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:103: Instantiating black box module 'M7S_EMB5K'. 
+Warning: NTL_WARN_037: u_emb5k_2 port 'da' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_EMB5K' port width. 
+Warning: NTL_WARN_039: Open input port 'da [17]'. 
+Warning: NTL_WARN_039: Open input port 'da [16]'. 
+Warning: NTL_WARN_039: Open input port 'da [15]'. 
+Warning: NTL_WARN_039: Open input port 'da [14]'. 
+Warning: NTL_WARN_039: Open input port 'da [13]'. 
+Warning: NTL_WARN_039: Open input port 'da [12]'. 
+Warning: NTL_WARN_039: Open input port 'da [11]'. 
+Warning: NTL_WARN_039: Open input port 'da [10]'. 
+Warning: NTL_WARN_039: Open input port 'da [9]'. 
+Warning: NTL_WARN_039: Open input port 'da [8]'. 
+Warning: NTL_WARN_039: Open input port 'da [7]'. 
+Warning: NTL_WARN_039: Open input port 'da [6]'. 
+Warning: NTL_WARN_039: Open input port 'da [5]'. 
+Warning: NTL_WARN_039: Open input port 'da [4]'. 
+Warning: NTL_WARN_039: Open input port 'da [3]'. 
+Warning: NTL_WARN_039: Open input port 'da [2]'. 
+Warning: NTL_WARN_039: Open input port 'da [1]'. 
+Warning: NTL_WARN_038: u_emb5k_2 (cell: M7S_EMB5K) in design 'emb_v1' has 17 open port(s). 
+Warning: NTL_WARN_037: u_emb5k_2 port 'da' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_EMB5K' port width. 
+Warning: NTL_WARN_039: Open input port 'da [17]'. 
+Warning: NTL_WARN_039: Open input port 'da [16]'. 
+Warning: NTL_WARN_039: Open input port 'da [15]'. 
+Warning: NTL_WARN_039: Open input port 'da [14]'. 
+Warning: NTL_WARN_039: Open input port 'da [13]'. 
+Warning: NTL_WARN_039: Open input port 'da [12]'. 
+Warning: NTL_WARN_039: Open input port 'da [11]'. 
+Warning: NTL_WARN_039: Open input port 'da [10]'. 
+Warning: NTL_WARN_039: Open input port 'da [9]'. 
+Warning: NTL_WARN_039: Open input port 'da [8]'. 
+Warning: NTL_WARN_039: Open input port 'da [7]'. 
+Warning: NTL_WARN_039: Open input port 'da [6]'. 
+Warning: NTL_WARN_039: Open input port 'da [5]'. 
+Warning: NTL_WARN_039: Open input port 'da [4]'. 
+Warning: NTL_WARN_039: Open input port 'da [3]'. 
+Warning: NTL_WARN_039: Open input port 'da [2]'. 
+Warning: NTL_WARN_039: Open input port 'da [1]'. 
+Warning: NTL_WARN_038: u_emb5k_2 (cell: M7S_EMB5K) in design 'emb_v1' has 17 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:135: Instantiating black box module 'M7S_EMB5K'. 
+Warning: NTL_WARN_037: u_emb5k_3 port 'da' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_EMB5K' port width. 
+Warning: NTL_WARN_039: Open input port 'da [17]'. 
+Warning: NTL_WARN_039: Open input port 'da [16]'. 
+Warning: NTL_WARN_039: Open input port 'da [15]'. 
+Warning: NTL_WARN_039: Open input port 'da [14]'. 
+Warning: NTL_WARN_039: Open input port 'da [13]'. 
+Warning: NTL_WARN_039: Open input port 'da [12]'. 
+Warning: NTL_WARN_039: Open input port 'da [11]'. 
+Warning: NTL_WARN_039: Open input port 'da [10]'. 
+Warning: NTL_WARN_039: Open input port 'da [9]'. 
+Warning: NTL_WARN_039: Open input port 'da [8]'. 
+Warning: NTL_WARN_039: Open input port 'da [7]'. 
+Warning: NTL_WARN_039: Open input port 'da [6]'. 
+Warning: NTL_WARN_039: Open input port 'da [5]'. 
+Warning: NTL_WARN_039: Open input port 'da [4]'. 
+Warning: NTL_WARN_039: Open input port 'da [3]'. 
+Warning: NTL_WARN_039: Open input port 'da [2]'. 
+Warning: NTL_WARN_039: Open input port 'da [1]'. 
+Warning: NTL_WARN_038: u_emb5k_3 (cell: M7S_EMB5K) in design 'emb_v1' has 17 open port(s). 
+Warning: NTL_WARN_037: u_emb5k_3 port 'da' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_EMB5K' port width. 
+Warning: NTL_WARN_039: Open input port 'da [17]'. 
+Warning: NTL_WARN_039: Open input port 'da [16]'. 
+Warning: NTL_WARN_039: Open input port 'da [15]'. 
+Warning: NTL_WARN_039: Open input port 'da [14]'. 
+Warning: NTL_WARN_039: Open input port 'da [13]'. 
+Warning: NTL_WARN_039: Open input port 'da [12]'. 
+Warning: NTL_WARN_039: Open input port 'da [11]'. 
+Warning: NTL_WARN_039: Open input port 'da [10]'. 
+Warning: NTL_WARN_039: Open input port 'da [9]'. 
+Warning: NTL_WARN_039: Open input port 'da [8]'. 
+Warning: NTL_WARN_039: Open input port 'da [7]'. 
+Warning: NTL_WARN_039: Open input port 'da [6]'. 
+Warning: NTL_WARN_039: Open input port 'da [5]'. 
+Warning: NTL_WARN_039: Open input port 'da [4]'. 
+Warning: NTL_WARN_039: Open input port 'da [3]'. 
+Warning: NTL_WARN_039: Open input port 'da [2]'. 
+Warning: NTL_WARN_039: Open input port 'da [1]'. 
+Warning: NTL_WARN_038: u_emb5k_3 (cell: M7S_EMB5K) in design 'emb_v1' has 17 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:167: Instantiating black box module 'M7S_EMB5K'. 
+Warning: NTL_WARN_037: dll_u0 port 'dll_msel0_user' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_DLL' port width. 
+Warning: NTL_WARN_039: Open input port 'dllrst'. 
+Warning: NTL_WARN_039: Open input port 'dll_msel0_user [3]'. 
+Warning: NTL_WARN_039: Open input port 'dll_msel0_user [2]'. 
+Warning: NTL_WARN_039: Open input port 'dll_msel0_user [1]'. 
+Warning: NTL_WARN_038: dll_u0 (cell: M7S_DLL) in design 'mcu_armcm3' has 4 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:134: Instantiating black box module 'M7S_DLL'. 
+Warning: NTL_WARN_037: u_soc port 'fp1_m_ahb_prot' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_m_ahb_size' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_m_ahb_addr' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_m_ahb_burst' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_m_ahb_trans' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_m_ahb_wdata' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_m_ahb_rdata' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_s_ahb_prot' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_s_ahb_size' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_s_ahb_addr' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_s_ahb_burst' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_s_ahb_trans' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_s_ahb_wdata' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp1_s_ahb_rdata' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_037: u_soc port 'fp_INTNMI' width in design 'demo_sd_to_lcd' is unmatched with the cell 'M7S_SOC' port width. 
+Warning: NTL_WARN_039: Open input port 'fp0_s_ahb_resp'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_prot [3]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_prot [2]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_prot [1]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_size [2]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_size [1]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [31]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [30]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [29]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [28]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [27]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [26]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [25]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [24]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [23]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [22]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [21]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [20]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [19]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [18]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [17]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [16]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [15]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [14]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [13]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [12]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [11]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [10]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [9]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [8]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [7]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [6]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [5]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [4]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [3]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [2]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_addr [1]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_burst [2]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_burst [1]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_trans [1]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [31]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [30]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [29]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [28]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [27]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [26]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [25]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [24]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [23]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [22]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [21]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [20]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [19]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [18]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [17]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [16]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [15]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [14]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [13]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [12]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [11]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [10]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [9]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [8]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [7]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [6]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [5]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [4]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [3]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [2]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_m_ahb_wdata [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [31]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [30]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [29]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [28]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [27]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [26]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [25]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [24]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [23]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [22]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [21]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [20]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [19]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [18]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [17]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [16]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [15]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [14]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [13]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [12]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [11]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [10]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [9]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [8]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [7]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [6]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [5]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [4]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [3]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [2]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_m_ahb_rdata [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_prot [3]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_prot [2]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_prot [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_size [2]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_size [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [31]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [30]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [29]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [28]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [27]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [26]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [25]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [24]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [23]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [22]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [21]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [20]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [19]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [18]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [17]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [16]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [15]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [14]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [13]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [12]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [11]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [10]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [9]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [8]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [7]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [6]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [5]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [4]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [3]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [2]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_addr [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_burst [2]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_burst [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_trans [1]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [31]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [30]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [29]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [28]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [27]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [26]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [25]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [24]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [23]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [22]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [21]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [20]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [19]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [18]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [17]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [16]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [15]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [14]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [13]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [12]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [11]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [10]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [9]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [8]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [7]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [6]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [5]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [4]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [3]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [2]'. 
+Warning: NTL_WARN_039: Open output port 'fp1_s_ahb_wdata [1]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_resp'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [31]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [30]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [29]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [28]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [27]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [26]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [25]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [24]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [23]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [22]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [21]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [20]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [19]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [18]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [17]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [16]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [15]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [14]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [13]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [12]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [11]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [10]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [9]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [8]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [7]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [6]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [5]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [4]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [3]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [2]'. 
+Warning: NTL_WARN_039: Open input port 'fp1_s_ahb_rdata [1]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [15]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [14]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [13]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [12]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [11]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [10]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [9]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [8]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [7]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [6]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [5]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [4]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [3]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [2]'. 
+Warning: NTL_WARN_039: Open input port 'fp_INTNMI [1]'. 
+Warning: NTL_WARN_038: u_soc (cell: M7S_SOC) in design 'mcu_armcm3' has 219 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:246: Instantiating black box module 'M7S_SOC'. 
+Warning: NTL_WARN_039: Open input port 'pllrst'. 
+Warning: NTL_WARN_038: pll_u0 (cell: M7S_PLL) in design 'pll_v1' has 1 open port(s). 
+Warning: NTL_WARN_043: F:/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:98: Instantiating black box module 'M7S_PLL'. 
+Info: NTL_INFO_014: Instance 'pll_u0' of empty design 'M7S_PLL' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_lvds_tx_clk' of empty design 'M7S_IO_LVDS' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_lvds_tx_0' of empty design 'M7S_IO_LVDS' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_lvds_tx_1' of empty design 'M7S_IO_LVDS' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_lvds_tx_2' of empty design 'M7S_IO_LVDS' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_lvds_tx_3' of empty design 'M7S_IO_LVDS' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_emb5k_0' of empty design 'M7S_EMB5K' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_emb5k_1' of empty design 'M7S_EMB5K' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_emb5k_2' of empty design 'M7S_EMB5K' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_emb5k_3' of empty design 'M7S_EMB5K' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_emb5k_0' of empty design 'M7S_EMB5K' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_emb5k_1' of empty design 'M7S_EMB5K' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_emb5k_2' of empty design 'M7S_EMB5K' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_emb5k_3' of empty design 'M7S_EMB5K' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'dll_u0' of empty design 'M7S_DLL' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'u_soc' of empty design 'M7S_SOC' cannot be expanded! 
+Info: NTL_INFO_014: Instance 'pll_u0' of empty design 'M7S_PLL' cannot be expanded! 
+Warning: NTL_WARN_041: Template 'ahb_master' is removed. 
+Warning: NTL_WARN_041: Template 'colorbar_gen' is removed. 
+Info: COM_INFO_000: Linking priority: *designs* cswitch_typical (cswitch_ast_frontend_griffin_2.0_cygwin.db:cswitch_typical)
+Warning: OPT_W_018: Instance 'u_sdram_to_RGB/u_ahb_master/u64' of design 'ahb_master_ipc_sub_block_8_1' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/dma_addr__reg[1]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/ahm_error__reg' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/prefetch_wdata_pop__reg' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[0]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[1]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[2]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[3]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[4]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[5]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[6]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[7]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[8]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[9]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[10]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[11]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[12]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[13]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[14]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[15]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[16]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[17]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[18]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[19]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[20]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[21]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[22]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[23]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[24]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[25]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[26]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[27]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[28]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[29]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[30]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_in_r__reg[31]' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_pop__reg' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_005: Register 'u_sdram_to_RGB/u_ahb_master/wdata_sel__reg' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Warning: OPT_W_003: Design instance 'u_sdram_to_RGB/u_ahb_master/u63' in 'demo_sd_to_lcd' is removed due to non-observable output. 
+Info: OPT_I_007: Port 'CO' in design 'ahb_master_ipc_add_block_8_0' is detected floating without fanouts. 
+Primace 7.3 AST_Frontend was successful!
+855 warning(s), 0 error(s).
+CPU Time: 11.029 seconds, Peak Memory: 70 MB
+command: ast "-dev" "M7A12N0F484C7" "-v" "outputs/demo_sd_to_lcd.asv" "-top" "demo_sd_to_lcd" "-vo" "outputs/demo_sd_to_lcd.amv" "-whitebox" "-isyn" "-fca" "-keep_latch" "-keep_floating" "-optimize_primitives" "-aoc" "outputs/demo_sd_to_lcd_ast.aoc" "-min_ce_fanout" "4" "-carry_opt" "-magic" "-mode" "best_timing" "-use_dsp" "auto" "-simple_hierarchy" "outputs/demo_sd_to_lcd_simp_hier.v"
+-----------------------------------------------------------------------------
+Primace AST Tool Version 7.3 Build 20150130
+Copyright (C) 2005-2015 Capital Microelectronics Co., Ltd. All rights reserved.
+-----------------------------------------------------------------------------
+Info: S10001: Reading technology library file F:/capital_micro/primace7.3\data\lib\generic.v...
+Info: S10001: Reading technology library file F:/capital_micro/primace7.3\data\lib\agate_lib_m7s.v...
+Info: S10101: Set top-level entity name: demo_sd_to_lcd.
+Info: S10002: Reading AOC file outputs/demo_sd_to_lcd_ast.aoc...
+Info: S10003: Reading ASV file outputs/demo_sd_to_lcd.asv...
+Info: S10205: Start advanced logic optimization.
+Info: S10206: Finish advanced logic optimization.
+Info: S10304: magic: 9.7660 second(s), total 10.4210 second(s). Peak memory 20 MB.
+Info: S10204: Generating synthesis design report...
+Info: S10004: Output AMV file: outputs/demo_sd_to_lcd.amv.
+Info: S10005: Output AMA file: outputs/demo_sd_to_lcd.ama.
+Primace 7.3 AST was successful!
+0 warning(s), 0 error(s).
+CPU Time: 12.418 seconds, Peak Memory: 24 MB
+command: agv2aoc "-v" "outputs/demo_sd_to_lcd.amv" "-o" "demo_sd_to_lcd.aoc" "-dev" "M7A12N0F484C7" "-io" "-top" "demo_sd_to_lcd"
+-----------------------------------------------------------------------------
+Primace agv2aoc Tool Version 7.3 Build 20150130
+Copyright (C) 2005-2015 Capital Microelectronics Co., Ltd. All rights reserved.
+-----------------------------------------------------------------------------
+Primace 7.3 agv2aoc was successful!
+0 warning(s), 0 error(s).
+CPU Time: 0.530 seconds, Peak Memory: 16 MB
+======== Synthesis was successed. 393 warning(s), 0 error(s) ========
+======== Synthesis started at 周二 五月 19 21:05:07 2015 ========
+command: ast_frontend "-agate_log_mode" "-f" "../scripts/syn.tcl"
+-----------------------------------------------------------------------------
+Primace AST_Frontend Tool Version 7.3 Build 20150130
+Copyright (C) 2005-2015 Capital Microelectronics Co., Ltd. All rights reserved.
+-----------------------------------------------------------------------------
+Info: S6001: Run started on Tuesday, 19 May 15, at 21:05:07.
+======== Synthesis was cancelled ========

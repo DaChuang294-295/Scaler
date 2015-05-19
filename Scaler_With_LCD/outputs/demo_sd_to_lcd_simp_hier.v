@@ -1,5 +1,5 @@
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:81",
+  agate_file_name = "/cygdrive/F/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:81",
   agate_format    = "VLOG"
 *)
 module M7S_PLL(clkin0, clkin1, fbclkin, pwrdown, pllrst, fp_pll_rst, ACTIVECK,
@@ -10,7 +10,7 @@ output ACTIVECK, CKBAD0, CKBAD1, clkout0, clkout1, clkout2, clkout3, locked;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz:0",
+  agate_file_name = "/cygdrive/g/大创/Scaler/Scaler_With_LCD/outputs/../src/pll_v1.v:14",
   agate_format    = "VLOG"
 *)
 module pll_v1(clkin0, clkout0, clkout1, locked);
@@ -20,7 +20,7 @@ output clkout0, clkout1, locked;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:54",
+  agate_file_name = "/cygdrive/F/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:54",
   agate_format    = "VLOG"
 *)
 module M7S_DLL(clkin, pwrdown, dllrst, fp_dll_rst, clkout0, clkout1, clkout2,
@@ -32,7 +32,7 @@ input  [3:0] dll_msel0_user;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:958",
+  agate_file_name = "/cygdrive/F/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:958",
   agate_format    = "VLOG"
 *)
 module M7S_SOC(c2r1_dll_clk, fp_clk_sys, fp_clk_adc, fp_clk_arm, fp_lvds_sclk,
@@ -108,7 +108,7 @@ output [31:0] fp1_s_ahb_wdata;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz:0",
+  agate_file_name = "/cygdrive/g/大创/Scaler/Scaler_With_LCD/outputs/../src/mcu_armcm3.v:15",
   agate_format    = "VLOG"
 *)
 module mcu_armcm3(fp2soc_rst_n, fp_clk_sys, fp_clk_arm, fp_clk_ddrc,
@@ -147,7 +147,7 @@ wire dll_clkout0;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz:0",
+  agate_file_name = "/cygdrive/g/大创/Scaler/Scaler_With_LCD/outputs/../src/colorbar_gen.v:1",
   agate_format    = "VLOG"
 *)
 module colorbar_gen(clk, rstn, h_valid, v_valid);
@@ -156,7 +156,7 @@ output h_valid, v_valid;
 reg [10:0] h_cnt;
 reg [9:0] v_cnt;
 reg h_valid, v_valid;
-wire i_fval, i_lval, N75, __dbP51, N76, __dbP63, __dbP86, __dbP98, __dbP109,
+wire i_fval, i_lval, N80, __dbP51, N81, __dbP63, __dbP86, __dbP98, __dbP109,
      __dbP120, n47, n49, n50, n51, n52, n53, n54, n55, n56, n57, n58, n59, n71,
      n82, n84, n85, n86, n87, n88, n89, n90, n91, n92, n93, n105, n117, n129,
      n140, n142, n196, n197, n198, n199, n200, n201, n202, n203, n204, n205,
@@ -168,7 +168,7 @@ wire i_fval, i_lval, N75, __dbP51, N76, __dbP63, __dbP86, __dbP98, __dbP109,
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz:0",
+  agate_file_name = "/cygdrive/g/大创/Scaler/Scaler_With_LCD/outputs/../src/ahb_master.v:1",
   agate_format    = "VLOG"
 *)
 module ahb_master(hclk_i, hreset_n, hready_i, hresp_i, hrdata_i, haddr_o,
@@ -212,9 +212,9 @@ wire [7:0] xfer_count_temp;
 reg ahm_error, ahm_rdata_push, ahm_xfer_done, hwrite_o, dma_eof_get, mx_done_r,
      prefetch_wdata_pop, wdata_pop, wdata_sel;
 wire hready_del, incr_mx_addr, load_mx_addr, mx_done, mx_start, premature_end,
-     rdata_get, resp_ok, tnf_finish, wdata_ahm_get, wdata_d1_get, N77, N78, N79,
-     __dbP345, __dbP394, __dbP403, __dbP412, __dbP421, __dbP430, __dbP439, N80,
-     N81, N82, N83, N84, N85, N86, __dbP604, N87, N88, N89, N90, N91, n6, n20,
+     rdata_get, resp_ok, tnf_finish, wdata_ahm_get, wdata_d1_get, N82, N83, N84,
+     __dbP345, __dbP394, __dbP403, __dbP412, __dbP421, __dbP430, __dbP439, N85,
+     N86, N87, N88, N89, N90, N91, __dbP604, N92, N93, N94, N95, N96, n6, n20,
      n21, n30, n38, n39, n40, n46, n49, n50, n53, n64, n65, n66, n70, n71, n73,
      n74, n77, n79, n80, n81, n83, n115, n116, n128, n129, n150, n151, n152,
      n166, n167, n168, n193, n194, n195, n196, n197, n198, n206, n207, n211,
@@ -295,7 +295,7 @@ wire hready_del, incr_mx_addr, load_mx_addr, mx_done, mx_start, premature_end,
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:263",
+  agate_file_name = "/cygdrive/F/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:263",
   agate_format    = "VLOG"
 *)
 module M7S_EMB5K(clka, clkb, rstna, rstnb, cea, ceb, wea, web, aa, ab, da, db,
@@ -310,7 +310,7 @@ output [17:0] q;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz:0",
+  agate_file_name = "/cygdrive/g/大创/Scaler/Scaler_With_LCD/outputs/../src/emb_v1.v:15",
   agate_format    = "VLOG"
 *)
 module emb_v1_1(clkw, cew, aw, dw, clkr, cer, ar, qr);
@@ -327,7 +327,7 @@ wire [17:0] qr3;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz:0",
+  agate_file_name = "/cygdrive/g/大创/Scaler/Scaler_With_LCD/outputs/../src/emb_v1.v:15",
   agate_format    = "VLOG"
 *)
 module emb_v1_2(clkw, cew, aw, dw, clkr, cer, ar, qr);
@@ -344,7 +344,7 @@ wire [17:0] qr3;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz:0",
+  agate_file_name = "/cygdrive/g/大创/Scaler/Scaler_With_LCD/outputs/../src/sdram_to_RGB.v:1",
   agate_format    = "VLOG"
 *)
 module sdram_to_RGB(clk_ahb, rst_ahb_n, m_ahb_mastlock, m_ahb_prot, m_ahb_size,
@@ -386,7 +386,7 @@ wire [15:0] emb_rdata_1;
 reg de_o, ahm_rdata_push_wr0, ahm_rdata_push_wr1, buffer_rd_sel, buffer_wr_sel,
      de_i_start_pulse, display_before_bmp, display_period_align, dma_start_xfer,
      dma_start_xfer_prev, other_1_beat_start_pulse, other_1_beat_valid;
-wire ahm_rdata_push, ahm_xfer_done, de_i, N99, N100, N101, N102, n50, n120,
+wire ahm_rdata_push, ahm_xfer_done, de_i, N104, N105, N106, N107, n50, n120,
      n156, n222, n223, n261, n294, n295, n296, n297, n298, n299, n300, n301,
      n302, n303, n304, n305, n306, n307, n308, n309, n310, n311, n312, n313,
      n314, n315, n316, n317, n318, n319, n320, n321, n322, n323, n324, n325,
@@ -447,7 +447,7 @@ wire ahm_rdata_push, ahm_xfer_done, de_i, N99, N100, N101, N102, n50, n120,
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:781",
+  agate_file_name = "/cygdrive/F/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:781",
   agate_format    = "VLOG"
 *)
 module M7S_IO_LVDS(id_1, id_0, id_q_1, id_q_0, align_rstn, alignwd, clk_en_1,
@@ -465,7 +465,7 @@ output [3:0] id_q_0;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz:0",
+  agate_file_name = "/cygdrive/g/大创/Scaler/Scaler_With_LCD/outputs/../src/lvds_tx_v1.v:15",
   agate_format    = "VLOG"
 *)
 module lvds_tx_v1(clk, rstn, clk_out_p, clk_out_n, tx_out_p, tx_out_n, tx_sclk,
@@ -480,7 +480,7 @@ wire pll_clkout1;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz:0",
+  agate_file_name = "/cygdrive/g/大创/Scaler/Scaler_With_LCD/outputs/../src/demo_sd_to_lcd.v:3",
   agate_format    = "VLOG"
 *)
 module demo_sd_to_lcd(clk_i, rstn_i, display_sel, spi_ssn, spi_sck, spi_mosi,

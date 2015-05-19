@@ -11,7 +11,10 @@ module demo_sd_to_lcd(
     clk_out_p,
     clk_out_n,
     tx_out_p,
-    tx_out_n
+    tx_out_n,
+	buttonIn2,
+	buttonIn3,
+	buttonIn4
 );
 
 input clk_i;
@@ -25,6 +28,9 @@ output clk_out_p;
 output clk_out_n;
 output [3:0] tx_out_p;
 output [3:0] tx_out_n;
+input buttonIn2;
+input buttonIn3;
+input buttonIn4;
 
 wire clk_200M;
 wire clk_150M;
@@ -126,7 +132,12 @@ sdram_to_RGB u_sdram_to_RGB(
     //start load signal
     .display_sel    (display_sel),
     .gpio_out       (gpio_out   ),
-
+	
+	//button change mode
+	.buttonIn2(buttonIn2),
+	.buttonIn3(buttonIn3),
+	.buttonIn4(buttonIn4),
+	
     //To LCD driving
     .tx_sclk    (tx_sclk),
     .h_valid    (h_valid),
