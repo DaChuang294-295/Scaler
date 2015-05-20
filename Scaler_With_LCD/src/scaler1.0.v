@@ -38,7 +38,10 @@ module scaler#(
 	input wire	[INPUT_RES_WIDTH-1:0] 		inXRes,		//Y输入分辨率
 	input wire	[OUTPUT_RES_WIDTH:0] 	outYRes,		//X输出分辨率
 	input wire	[OUTPUT_RES_WIDTH:0] 	outXRes		//Y输出分辨率
-	
+	//前一级输入使能；
+	//to sdram_to_RGB
+	output wire 							v_valid;	//vertical valid signal
+	output wire								h_valid;	//horizontal valid signal
 	);
 	
 	wire [SCALE_BITS-1:0]					kX;			//水平方向放大倍数的倒数
@@ -58,7 +61,7 @@ module scaler#(
 	wire 							jmp1;	//读取指针移动一位
 	wire							jmp2;	//读取指针移动两位
 	wire [2:0]  					fifoNum;
-	wire							jmp;
+	wire							jmp;	
 	
 coefCal #(
 	.INPUT_RES_WIDTH(INPUT_RES_WIDTH),
@@ -98,11 +101,14 @@ inputCtrl #(
 	.iHsyn(iHsyn),			//行同步信号
 	.iVsyn(iVsyn),			//场同步信号
 	.dIn(dIn),
+	.inXRes(inXRes),
 	.xBgn(xBgn),
 	.xEnd(xEnd),
 	.yBgn(yBgn),
 	.yEnd(yEnd),
 	.dInEn(dInEn),
+	//input from coefCal
+	.fifoNum(fifoNum),
 	//由coefCal输入
 	.En(inEn),
 	.kX(kX),
@@ -111,7 +117,10 @@ inputCtrl #(
 	.ramWrtAddr(ramWrtAddr),
 	.ramWrtEn(ramWrtEn),
 	.dataOut(ramData),
-	.jmp(jmp)
+	.jmp(jmp),
+	//output to sdram_to_RGB
+	.v_valid(v_valid),
+	.h_valid(h_valid)
 	);
 
 ramFifo #(
