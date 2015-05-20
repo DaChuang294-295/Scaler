@@ -91,7 +91,10 @@ assign	boundEn = xBgnEn&yBgnEn&xEndEn&yEndEn;
 
 //h_valid control
 always@(posedge clk or posedge rst)begin 
-	if(rst|(xNxtAddress==inXRes)|(fifoNum==3'd4)) begin
+	if(rst) begin
+		h_valid	<=	0;
+	end
+	else if ((xNxtAddress==inXRes)|(fifoNum==3'd4)) begin
 		h_valid	<=	0;
 	end
 	else if((xAddress==0)&En)begin
@@ -101,7 +104,12 @@ end//end always
 
 //列变量跳变
 always@(posedge clk or posedge rst )begin
-	if(rst|(xNxtAddress==inXRes)) begin					//如果重置或行/场同步信号为高，初始化变量
+	if(rst) begin					//如果重置或行/场同步信号为高，初始化变量
+		xAddress<=0;
+		xCal<=0;
+		xPreEn<=0;
+	end
+	else if (xNxtAddress==inXRes) begin
 		xAddress<=0;
 		xCal<=0;
 		xPreEn<=0;
@@ -125,15 +133,23 @@ always@(posedge clk or posedge rst)begin
 end
 //v_valid control
 always@(posedge clk or posedge rst)begin 
-	if(rst|(yAddress==yEnd))//reset or out of bound
+	if(rst)//reset or out of bound
 		v_valid	<=	0;
+	else if (yAddress==yEnd) begin
+		v_valid	<=	0;
+	end
 	else if(En&(yAddress==0)&(!v_valid))
 		v_valid	<=	1;
 end//end always
 
 //行变量跳变
 always@(posedge clk or posedge rst)begin
-	if(rst|(yAddress==yEnd))begin					//如果重置或场同步信号为高，初始化变量，初始化变量
+	if(rst)begin					//如果重置或场同步信号为高，初始化变量，初始化变量
+		yAddress<=0;
+		yCal<=0;
+		yPreEn<=0;
+	end
+	else if (yAddress==yEnd) begin
 		yAddress<=0;
 		yCal<=0;
 		yPreEn<=0;
