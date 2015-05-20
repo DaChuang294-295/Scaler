@@ -28,7 +28,6 @@ input wire[INPUT_RES_WIDTH-1:0]   inXRes; //Resolution of input horizontal data 
 input wire[INPUT_RES_WIDTH-1:0]   inYRes; //Resolution of input vertical data minus 1
 input wire[OUTPUT_RES_WIDTH-1:0]  outXRes;//Resolution of output horizontal data minus 1
 input wire[OUTPUT_RES_WIDTH-1:0]  outYRes;//Resolution of output vertical data minus 1
-input wire						iVsyn;
 
 //Output
 //Output to Cal&inputCtrl
@@ -52,8 +51,8 @@ begin
 	test = outXRes*(outYRes*frameRate);
 	if (rst)
 	begin
-		inEn <= 0;
-		work <= 0;
+		inEn <= 1'b0;
+		work <= 1'b0;
 	end
 	if((test)<working)
 		work = 1'b1;
@@ -61,15 +60,10 @@ begin
 		work = 1'b0;
 end
 
-always @(posedge iVsyn)
+always @(posedge clk)
 begin
-	if(iVsyn)
-	begin
-		if(en&work)
-		begin
-			inEn<=1;
-		end
-	end
+	if(en&work)
+		inEn<=1'b1;
 end
 
 reg[16:0] xDivisor;

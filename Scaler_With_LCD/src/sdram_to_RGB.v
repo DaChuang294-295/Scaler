@@ -57,7 +57,7 @@ output [7:0]    pixel_b;
 
 input			buttonIn2;
 input			buttonIn3;
-input			buttonIn
+input			buttonIn4;
 //--------------------------------
 
 reg             dma_start_xfer;
@@ -95,7 +95,10 @@ reg [15:0] emb_rdata_0_r;
 reg [15:0] emb_rdata_1_r;
 reg de_o;
 reg [15:0] emb_rdata_r;
-
+reg[9:0] yEnd;
+wire h_valid_in;
+wire v_valid_in;
+wire de_i_in;
 
 assign m_ahb_mastlock = 0;
 assign m_ahb_prot     = 4'h1;
@@ -132,20 +135,20 @@ ahb_master u_ahb_master(
     );
 
 //----------------------scaler-------------------------------\\
-scalerForM7  scaler1(
-		.clka(clk_ahb),
-		.clkb(clk_ahb ),
-		.rst(rst_ahb_n),
-		.iHsyn(iHsyn),
-		.iVsyn(iVsyn),
-		.en(en), 
-		.dIn(ahm_rdata_r), 
-		.dInEn(dInEn), 
-		.dOut(dOut), 
-		.dOutEn(dOutEn), 
-		.HS(HS), 
-		.VS(VS), 
-	);
+//scalerForM7  scaler1(
+//		.clka(clk_ahb),
+//		.clkb(clk_ahb ),
+//		.rst(rst_ahb_n),
+//		.h_valid(h_valid_in),
+//		.v_valid(v_valid_in),
+//		.en(en), 
+//		.dIn(ahm_rdata_r), 
+//		.dInEn(dInEn), 
+//		.dOut(dOut), 
+//		.dOutEn(dOutEn), 
+//		.HS(HS), 
+//		.VS(VS), 
+//	);
 
 //------------------------- Buffer Write part ----------------\
 always@(posedge clk_ahb, negedge rst_ahb_n) begin
@@ -161,10 +164,22 @@ always@(posedge clk_ahb, negedge rst_ahb_n) begin
         display_before_bmp <= gpio_out[0];
 end
 always@(posedge clk_ahb, negedge rst_ahb_n) begin
-    if(!rst_ahb_n)
+    if(!rst_ahb_n) begin
+		yEnd<=10'd767;
         display_period_align <= 0;
-    else if(v_valid_r == 2'b10)
+	end
+	else if(v_valid_r == 2'b10)	begin
         display_period_align <= 1; //align to begining of a frame
+		if(!buttonIn2) begin
+			yEnd<=10'd383;
+		end
+		else if(!buttonIn3) begin
+			yEnd<=10'd767;
+		end
+		else if(!buttonIn3) begin
+			yEnd<=10'd767;
+		end
+	end
 end
 always@(posedge clk_ahb, negedge rst_ahb_n) begin
     if(!rst_ahb_n)
@@ -181,6 +196,7 @@ always@(posedge clk_ahb, negedge rst_ahb_n) begin
         bmp_fig_cnt <= bmp_fig_cnt + 1;
 end
 
+assign de_i_in = h_valid_in & v_valid_in;
 assign de_i = h_valid & v_valid;
 always@(posedge clk_ahb, negedge rst_ahb_n) begin
     if(!rst_ahb_n)
@@ -222,11 +238,12 @@ always@(posedge clk_ahb, negedge rst_ahb_n) begin
     else
         dma_start_xfer <= dma_start_xfer_prev;
 end
-always@(posedge clk_ahb, negedge rst_ahb_n) begin
-    if(!rst_ahb_n)
+always@(posedge clk_ahb, negedge rst_ahb_n) begin    
+	if(!rst_ahb_n) begin
         addr_cnt <= {10'd1,1'b0};       //write line 1,2,3,4,...,767,  0,1,2,3,4,...
+	end
     else if(dma_start_xfer) begin       //read line  0,1,2,3,...,766,767,0,1,2,3,...
-        if(addr_cnt == {10'd767,1'b1})  //total 768 line
+        if(addr_cnt == {yEnd,1'b1})  //total 768 line
             addr_cnt <= 0;
         else
             addr_cnt <= addr_cnt + 1;

@@ -3,6 +3,7 @@
     <name>demo_sd_to_lcd_nto</name>
     <device>M7A12N0F484C7</device>
     <topModule>demo_sd_to_lcd</topModule>
+    <tbTopModule>inputCtrlTB</tbTopModule>
     <MonitorSignal>Default|Default</MonitorSignal>
     <project-parameters>
         <param name="encryptionKey"></param>
@@ -46,9 +47,17 @@
         <file>$(PRJ_DIR)/src/lvds_tx_v1.v</file>
         <file>$(PRJ_DIR)/src/mcu_armcm3.v</file>
         <file>$(PRJ_DIR)/src/pll_v1.v</file>
-        <file>$(PRJ_DIR)/src/sdram_to_RGB.v</file>
         <file>$(PRJ_DIR)/constraint/myconstraint.sdc</file>
         <file>$(PRJ_DIR)/src/por_v1_1.v</file>
         <file>$(PRJ_DIR)/src/gbuf_v1_1.v</file>
+        <file>$(PRJ_DIR)/src/Cal_v1.v</file>
+        <file>$(PRJ_DIR)/src/coefcal_v3.v</file>
+        <file>$(PRJ_DIR)/src/divider_v2.v</file>
+        <file>$(PRJ_DIR)/src/emb_16_2k.v</file>
+        <file>$(PRJ_DIR)/src/inputCtrl.v</file>
+        <file>$(PRJ_DIR)/src/ramFifo.v</file>
+        <file>$(PRJ_DIR)/src/scaler1.0.v</file>
+        <file>$(PRJ_DIR)/src/scalerForM7.v</file>
+        <file>$(PRJ_DIR)/src/sdram_to_RGB.v</file>
     </files>
 </AgateProject>

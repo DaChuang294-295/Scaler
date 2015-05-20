@@ -1,0 +1,42 @@
+library verilog;
+use verilog.vl_types.all;
+entity mcu_armcm3 is
+    port(
+        fp2soc_rst_n    : in     vl_logic;
+        fp_clk_sys      : in     vl_logic;
+        fp_clk_arm      : in     vl_logic;
+        fp_clk_ddrc     : in     vl_logic;
+        gpio_0_out_o    : out    vl_logic_vector(31 downto 0);
+        gpio_0_oe_o     : out    vl_logic_vector(31 downto 0);
+        gpio_0_in_i     : in     vl_logic_vector(31 downto 0);
+        spi0_mosi       : out    vl_logic;
+        spi0_sck        : out    vl_logic;
+        spi0_ssn        : out    vl_logic;
+        spi0_miso       : in     vl_logic;
+        clk_ahb_fp0     : in     vl_logic;
+        rst_ahb_fp0_n   : in     vl_logic;
+        fp0_m_ahb_mastlock: in     vl_logic;
+        fp0_m_ahb_prot  : in     vl_logic_vector(3 downto 0);
+        fp0_m_ahb_size  : in     vl_logic_vector(2 downto 0);
+        fp0_m_ahb_addr  : in     vl_logic_vector(31 downto 0);
+        fp0_m_ahb_write : in     vl_logic;
+        fp0_m_ahb_burst : in     vl_logic_vector(2 downto 0);
+        fp0_m_ahb_trans : in     vl_logic_vector(1 downto 0);
+        fp0_m_ahb_wdata : in     vl_logic_vector(31 downto 0);
+        fp0_m_ahb_ready : out    vl_logic;
+        fp0_m_ahb_resp  : out    vl_logic;
+        fp0_m_ahb_rdata : out    vl_logic_vector(31 downto 0);
+        fp0_s_ahb_mastlock: out    vl_logic;
+        fp0_s_ahb_prot  : out    vl_logic_vector(3 downto 0);
+        fp0_s_ahb_size  : out    vl_logic_vector(2 downto 0);
+        fp0_s_ahb_sel   : out    vl_logic;
+        fp0_s_ahb_addr  : out    vl_logic_vector(31 downto 0);
+        fp0_s_ahb_write : out    vl_logic;
+        fp0_s_ahb_burst : out    vl_logic_vector(2 downto 0);
+        fp0_s_ahb_trans : out    vl_logic_vector(1 downto 0);
+        fp0_s_ahb_wdata : out    vl_logic_vector(31 downto 0);
+        fp0_s_ahb_readyout: in     vl_logic;
+        fp0_s_ahb_resp  : in     vl_logic;
+        fp0_s_ahb_rdata : in     vl_logic_vector(31 downto 0)
+    );
+end mcu_armcm3;

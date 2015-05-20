@@ -26,8 +26,9 @@ cs_place dedicated_io_cell_u271_inst C54R12.io_top.u0_bank5_mux.u0_bank5.u271.u0
 cs_place dedicated_io_cell_u275_inst C54R13.io_top.u0_bank5_mux.u0_bank5.u275.u0_M7A_IO_DDR
 cs_place dedicated_io_cell_u318_inst C54R47.io_top.u0_bank10_mux.u0_bank10.u318.u0_M7A_IO_PCISG
 cs_place dedicated_io_cell_u319_inst C54R47.io_top.u0_bank10_mux.u0_bank10.u319.u0_M7A_IO_PCISG
+cs_place io_cell_buttonIn2_inst C29R49.io_top.u0_bank11_mux.u0_bank11.u383.u0_M7A_IO_LVDS
+cs_place io_cell_buttonIn4_inst C29R49.io_top.u0_bank11_mux.u0_bank11.u385.u0_M7A_IO_LVDS
 cs_place io_cell_clk_i_inst C0R9.io_top.u0_bank2_mux.u0_bank2.u113.u0_M7A_IO_PCISG
-cs_place io_cell_display_sel_inst C29R49.io_top.u0_bank11_mux.u0_bank11.u385.u0_M7A_IO_LVDS
 cs_place io_cell_rstn_i_inst C33R49.io_top.u0_bank11_mux.u0_bank11.u375.u0_M7A_IO_LVDS
 cs_place io_cell_spi_miso_inst C21R49.io_top.u0_bank12_mux.u0_bank12.u409.u0_M7A_IO_LVDS
 cs_place io_cell_spi_sck_inst C23R49.io_top.u0_bank12_mux.u0_bank12.u403.u0_M7A_IO_LVDS

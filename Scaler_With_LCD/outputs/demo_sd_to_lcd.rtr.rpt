@@ -9,7 +9,7 @@
            </tr>
            <tr>
                <td>Time stamp</td>
-               <td>Mon Apr 27 13:44:06 2015</td>
+               <td>Tue May 19 23:39:29 2015</td>
            </tr>
            <tr>
                <td>Primace version</td>
@@ -49,7 +49,7 @@
            </tr>
            <tr>
                <td>Total nets</td>
-               <td>1577</td>
+               <td>1558</td>
            </tr>
            <tr>
                <td>Failed nets</td>
@@ -57,23 +57,23 @@
            </tr>
            <tr>
                <td>Interconnect Resources</td>
-               <td>2.37</td>
+               <td>2.38</td>
            </tr>
            <tr>
                <td>Total Elapsed Time</td>
-               <td>6 seconds</td>
+               <td>5 seconds</td>
            </tr>
            <tr>
                <td>Peak Mem</td>
-               <td>109 MB</td>
+               <td>105 MB</td>
            </tr>
            <tr>
                <td>Iteration Num</td>
-               <td>4</td>
+               <td>6</td>
            </tr>
            <tr>
                <td>Average Fanout</td>
-               <td>2.363348</td>
+               <td>2.401155</td>
            </tr>
        </table>
    </subject>

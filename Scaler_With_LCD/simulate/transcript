@@ -1,0 +1,178 @@
+# Reading F:/modeltech_10.1a/tcl/vsim/pref.tcl 
+# error: Layout::Clairvoyance can't read "map(')": no such element in array
+# can't read "map(')": no such element in array
+#     while executing
+# "Layout::Clairvoyance" 
+# //  ModelSim SE 10.1a Feb 22 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do inputCtrl_rtl_sim.do 
+# if {[file exists rtl_work]} {
+#     vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap -c work rtl_work
+# Copying F:\modeltech_10.1a\win32/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied F:\modeltech_10.1a\win32/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# vlog -vlog01compat -work work F:/capital_micro/primace7.3/data/lib/m7s_sim.v
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# -- Compiling module DELAY_BUF
+# -- Compiling module GBUF
+# -- Compiling module RBUF
+# -- Compiling module GND
+# -- Compiling module VCC
+# -- Compiling module LUT4
+# -- Compiling module LUT4C
+# -- Compiling module REGS
+# -- Compiling module REG
+# -- Compiling module LBUF
+# -- Compiling module CARRY_SKIP_OUT
+# -- Compiling module CFG_CARRY_SKIP_IN
+# -- Compiling module CFG_DYN_SWITCH
+# -- Compiling module CFG_DYN_SWITCH_S3
+# -- Compiling module CFGMUX2S
+# -- Compiling module CONST
+# -- Compiling module GBUF_GATE
+# -- Compiling module RBUF_GATE
+# -- Compiling module CLK_GATING
+# -- Compiling module M7A_MAC
+# -- Compiling module mac_dff_async
+# -- Compiling module mac_dff_sync
+# -- Compiling module M7S_EMB5K
+# -- Compiling module M7S_DGPIO
+# -- Compiling module M7S_DLL
+# -- Compiling module M7S_PLL
+# -- Compiling module PLL_SIM
+# -- Compiling module M7A_SPRAM
+# -- Compiling module M7S_EMB18K
+# -- Compiling module M7A_FIFO_CTRL
+# -- Compiling module M7A_ASYN_FIFO_SIM
+# -- Compiling module M7A_SYN_FIFO_SIM
+# -- Compiling module M7S_IO_CAL
+# -- Compiling module M7A_IO_DDRSG
+# -- Compiling module M7S_IO_DDR
+# -- Compiling module M7S_IO_DQS
+# -- Compiling module M7S_IO_LVDS
+# -- Compiling module M7S_IO_PCISG
+# -- Compiling module M7S_IO_VREF
+# -- Compiling module M7S_POR
+# -- Compiling module IBUF
+# -- Compiling module OBUF
+# -- Compiling module TBUF
+# -- Compiling module BIBUF
+# -- Compiling module CLKBUF
+# -- Compiling module IBUFDS
+# -- Compiling module OBUFDS
+# -- Compiling module TBUFDS
+# -- Compiling module BIBUFDS
+# -- Compiling module CLKBUFDS
+# -- Compiling module DDR_IO
+# -- Compiling module OSC
+# 
+# Top level modules:
+# 	DELAY_BUF
+# 	GBUF
+# 	RBUF
+# 	GND
+# 	VCC
+# 	LUT4
+# 	LUT4C
+# 	REGS
+# 	REG
+# 	LBUF
+# 	CARRY_SKIP_OUT
+# 	CFG_CARRY_SKIP_IN
+# 	CFG_DYN_SWITCH
+# 	CFG_DYN_SWITCH_S3
+# 	CFGMUX2S
+# 	CONST
+# 	GBUF_GATE
+# 	RBUF_GATE
+# 	CLK_GATING
+# 	M7A_MAC
+# 	M7S_DGPIO
+# 	M7S_DLL
+# 	M7S_PLL
+# 	M7A_SPRAM
+# 	M7S_EMB18K
+# 	M7S_IO_CAL
+# 	M7A_IO_DDRSG
+# 	M7S_IO_DDR
+# 	M7S_IO_DQS
+# 	M7S_IO_LVDS
+# 	M7S_IO_PCISG
+# 	M7S_IO_VREF
+# 	M7S_POR
+# 	IBUF
+# 	OBUF
+# 	TBUF
+# 	BIBUF
+# 	CLKBUF
+# 	IBUFDS
+# 	OBUFDS
+# 	TBUFDS
+# 	BIBUFDS
+# 	CLKBUFDS
+# 	DDR_IO
+# 	OSC
+# vlog -vlog01compat -work work F:/capital_micro/primace7.3/data/lib/M7S_SOC.v +incdir+F:/capital_micro/primace7.3/data/lib
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# -- Compiling module M7S_SOC
+# -- Compiling module m7s_ahb_bfm
+# -- Compiling module m7s_async_fifo
+# -- Compiling module m7s_emb
+# -- Compiling module m7s_hm2pm_if_async
+# -- Compiling module m7s_ps2hs_if_async
+# -- Compiling module m7s_regram
+# -- Compiling module m7s_sync_pluse2pluse
+# -- Compiling module m7s_sync_single
+# -- Compiling module m7s_sync_trans2pluse
+# 
+# Top level modules:
+# 	M7S_SOC
+# 	m7s_sync_trans2pluse
+# vlog -vlog01compat -work work  "G:/'/Scaler/Scaler_With_LCD/src/ahb_master.v" "G:/'/Scaler/Scaler_With_LCD/src/colorbar_gen.v" "G:/'/Scaler/Scaler_With_LCD/src/demo_sd_to_lcd.v" "G:/'/Scaler/Scaler_With_LCD/src/emb_v1.v" "G:/'/Scaler/Scaler_With_LCD/src/lvds_tx_v1.v" "G:/'/Scaler/Scaler_With_LCD/src/mcu_armcm3.v" "G:/'/Scaler/Scaler_With_LCD/src/pll_v1.v" "G:/'/Scaler/Scaler_With_LCD/src/por_v1_1.v" "G:/'/Scaler/Scaler_With_LCD/src/gbuf_v1_1.v" "G:/'/Scaler/Scaler_With_LCD/src/Cal_v1.v" "G:/'/Scaler/Scaler_With_LCD/src/coefcal_v3.v" "G:/'/Scaler/Scaler_With_LCD/src/divider_v2.v" "G:/'/Scaler/Scaler_With_LCD/src/emb_16_2k.v" "G:/'/Scaler/Scaler_With_LCD/src/inputCtrl.v" "G:/'/Scaler/Scaler_With_LCD/src/ramFifo.v" "G:/'/Scaler/Scaler_With_LCD/src/scaler1.0.v" "G:/'/Scaler/Scaler_With_LCD/src/scalerForM7.v" "G:/'/Scaler/Scaler_With_LCD/src/sdram_to_RGB.v" "G:/'/Scaler/Scaler_With_LCD/src/inputCtrlTB.v" +initreg+0
+# Model Technology ModelSim SE vlog 10.1a Compiler 2012.02 Feb 22 2012
+# -- Compiling module ahb_master
+# -- Compiling module colorbar_gen
+# -- Compiling module demo_sd_to_lcd
+# -- Compiling module emb_v1
+# -- Compiling module lvds_tx_v1
+# -- Compiling module mcu_armcm3
+# -- Compiling module pll_v1
+# -- Compiling module por_v1_1
+# -- Compiling module gbuf_v1_1
+# -- Compiling module Cal
+# -- Compiling module coefCal
+# ** Error: G:/´ó´´/Scaler/Scaler_With_LCD/src/coefcal_v3.v(106): (vlog-2730) Undefined variable: 'iVsyn'.
+# 
+# ** Error: G:/´ó´´/Scaler/Scaler_With_LCD/src/coefcal_v3.v(10): Identifier must be declared with a port mode: iVsyn.
+# -- Compiling module mdivider
+# -- Compiling module emb_16_2k
+# -- Compiling module inputCtrl
+# -- Compiling module ramFifo
+# -- Compiling module scaler
+# -- Compiling module scalerForM7
+# -- Compiling module sdram_to_RGB
+# -- Compiling module inputCtrlTB
+# ** Error: G:/´ó´´/Scaler/Scaler_With_LCD/src/inputCtrlTB.v(94): (vlog-2730) Undefined variable: 'inYRes'.
+# 
+# ** Error: G:/´ó´´/Scaler/Scaler_With_LCD/src/inputCtrlTB.v(95): (vlog-2730) Undefined variable: 'outXRes'.
+# 
+# ** Error: G:/´ó´´/Scaler/Scaler_With_LCD/src/inputCtrlTB.v(96): (vlog-2730) Undefined variable: 'outYRes'.
+# 
+# ** Error: G:/´ó´´/Scaler/Scaler_With_LCD/src/inputCtrlTB.v(102): (vlog-2730) Undefined variable: 'dEn'.
+# 
+# ** Error: F:/modeltech_10.1a/win32/vlog failed.
+# Error in macro ./inputCtrl_rtl_sim.do line 9
+# F:/modeltech_10.1a/win32/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work  "G:/'/Scaler/Scaler_With_LCD/src/ahb_master.v" "G:/'/Scaler/Scaler_With_LCD/src/colorbar_gen.v" "G:/'/Sc..."

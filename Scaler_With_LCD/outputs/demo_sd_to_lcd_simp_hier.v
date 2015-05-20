@@ -13,9 +13,9 @@ endmodule
   agate_file_name = "/cygdrive/g/大创/Scaler/Scaler_With_LCD/outputs/../src/pll_v1.v:14",
   agate_format    = "VLOG"
 *)
-module pll_v1(clkin0, clkout0, clkout1, locked);
+module pll_v1(clkin0, clkout0, clkout1, clkout2, locked);
 input clkin0;
-output clkout0, clkout1, locked;
+output clkout0, clkout1, clkout2, locked;
 
 endmodule
 
@@ -156,7 +156,7 @@ output h_valid, v_valid;
 reg [10:0] h_cnt;
 reg [9:0] v_cnt;
 reg h_valid, v_valid;
-wire i_fval, i_lval, N80, __dbP51, N81, __dbP63, __dbP86, __dbP98, __dbP109,
+wire i_fval, i_lval, N79, __dbP51, N80, __dbP63, __dbP86, __dbP98, __dbP109,
      __dbP120, n47, n49, n50, n51, n52, n53, n54, n55, n56, n57, n58, n59, n71,
      n82, n84, n85, n86, n87, n88, n89, n90, n91, n92, n93, n105, n117, n129,
      n140, n142, n196, n197, n198, n199, n200, n201, n202, n203, n204, n205,
@@ -212,9 +212,9 @@ wire [7:0] xfer_count_temp;
 reg ahm_error, ahm_rdata_push, ahm_xfer_done, hwrite_o, dma_eof_get, mx_done_r,
      prefetch_wdata_pop, wdata_pop, wdata_sel;
 wire hready_del, incr_mx_addr, load_mx_addr, mx_done, mx_start, premature_end,
-     rdata_get, resp_ok, tnf_finish, wdata_ahm_get, wdata_d1_get, N82, N83, N84,
-     __dbP345, __dbP394, __dbP403, __dbP412, __dbP421, __dbP430, __dbP439, N85,
-     N86, N87, N88, N89, N90, N91, __dbP604, N92, N93, N94, N95, N96, n6, n20,
+     rdata_get, resp_ok, tnf_finish, wdata_ahm_get, wdata_d1_get, N81, N82, N83,
+     __dbP345, __dbP394, __dbP403, __dbP412, __dbP421, __dbP430, __dbP439, N84,
+     N85, N86, N87, N88, N89, N90, __dbP604, N91, N92, N93, N94, N95, n6, n20,
      n21, n30, n38, n39, n40, n46, n49, n50, n53, n64, n65, n66, n70, n71, n73,
      n74, n77, n79, n80, n81, n83, n115, n116, n128, n129, n150, n151, n152,
      n166, n167, n168, n193, n194, n195, n196, n197, n198, n206, n207, n211,
@@ -350,9 +350,10 @@ endmodule
 module sdram_to_RGB(clk_ahb, rst_ahb_n, m_ahb_mastlock, m_ahb_prot, m_ahb_size,
      m_ahb_addr, m_ahb_write, m_ahb_burst, m_ahb_trans, m_ahb_wdata,
      m_ahb_ready, m_ahb_resp, m_ahb_rdata, display_sel, gpio_out, tx_sclk,
-     h_valid, v_valid, de_o, pixel_r, pixel_g, pixel_b);
+     h_valid, v_valid, de_o, pixel_r, pixel_g, pixel_b, buttonIn2, buttonIn3,
+     buttonIn4);
 input clk_ahb, rst_ahb_n, m_ahb_ready, m_ahb_resp, display_sel, tx_sclk,
-     h_valid, v_valid;
+     h_valid, v_valid, buttonIn2, buttonIn3, buttonIn4;
 output m_ahb_mastlock, m_ahb_write, de_o;
 input  [31:0] m_ahb_rdata;
 input  [31:0] gpio_out;
@@ -379,6 +380,7 @@ reg [8:0] emb_addr_wr_r;
 reg [15:0] emb_rdata_0_r;
 reg [15:0] emb_rdata_1_r;
 reg [15:0] emb_rdata_r;
+reg [9:0] text;
 reg [1:0] v_valid_r;
 wire [31:0] ahm_rdata;
 wire [15:0] emb_rdata_0;
@@ -386,49 +388,52 @@ wire [15:0] emb_rdata_1;
 reg de_o, ahm_rdata_push_wr0, ahm_rdata_push_wr1, buffer_rd_sel, buffer_wr_sel,
      de_i_start_pulse, display_before_bmp, display_period_align, dma_start_xfer,
      dma_start_xfer_prev, other_1_beat_start_pulse, other_1_beat_valid;
-wire ahm_rdata_push, ahm_xfer_done, de_i, N104, N105, N106, N107, n50, n120,
-     n156, n222, n223, n261, n294, n295, n296, n297, n298, n299, n300, n301,
-     n302, n303, n304, n305, n306, n307, n308, n309, n310, n311, n312, n313,
-     n314, n315, n316, n317, n318, n319, n320, n321, n322, n323, n324, n325,
-     n397, n496, n530, n531, n588, n653, n654, n655, n656, n657, n658, n659,
-     n660, n661, n662, n663, n664, n665, n666, n667, n668, n669, n670, n671,
-     n672, n673, n674, n675, n676, n677, n678, n679, n680, n681, n682, n683,
-     n684, n857, n923, n924, n925, n926, n927, n928, n929, n930, n931, n932,
-     n933, n934, n935, n936, n937, n938, n939, n940, n941, n942, n943, n944,
-     n945, n946, n947, n948, n949, n950, n951, n952, n953, n954, n1021, n1022,
-     n1023, n1057, n1058, n1092, n1093, n1094, n1167, n1168, n1234, n1235,
-     n1236, n1237, n1238, n1239, n1240, n1241, n1242, n1243, n1244, n1245,
-     n1246, n1247, n1248, n1249, n1250, n1251, n1252, n1253, n1254, n1255,
-     n1256, n1257, n1258, n1259, n1260, n1261, n1262, n1263, n1264, n1265,
-     n1470, n1473, n1486, n1495, n1496, n1497, n1498, n1514, n1517, n1541,
-     n1575, n1576, n1577, n1578, n1579, n1580, n1581, n1582, n1583, n1584,
-     n1585, n1586, n1587, n1588, n1589, n1590, n1591, n1592, n1593, n1594,
-     n1595, n1596, n1640, n1641, n1642, n1643, n1644, n1645, n1646, n1647,
-     n1648, n1649, n1656, n1657, n1658, n1659, n1660, n1661, n1662, n1663,
-     n1664, n1665, n1666, n1667, n1668, n1669, n1670, n1671, n1705, n1716,
-     n1717, n1718, n1719, n1720, n1721, n1722, n1723, n1724, n1829, n1841,
-     n1842, n1843, n1844, n1845, n1846, n1847, n1848, n1849, n1850, n1945,
-     n1946, n1947, n1948, n1949, n1950, n1951, n1952, n1953, n1954, n1955,
-     n1956, n1957, n1958, n1959, n1960, n2405, n2406, n2407, n2408, n2409,
-     n2410, n2411, n2412, n2413, n2414, n2415, n2416, n2417, n2418, n2419,
-     n2420, n2421, n2422, n2423, n2424, n2425, n2426, n2427, n2428, n2429,
-     n2430, n2431, n2432, n2433, n2434, n2435, n2436, n2437, n2438, n2439,
-     n2440, n2441, n2442, n2443, n2444, n2445, n2446, n2447, n2448, n2449,
-     n2450, n2451, n2452, n2453, n2454, n2455, n2456, n2457, n2458, n2459,
-     n2460, n2461, n2462, n2463, n2464, n2465, n2466, n2467, n2468, n2469,
-     n2470, n2471, n2472, n2473, n2474, n2475, n2476, n2477, n2478, n2479,
-     n2480, n2481, n2482, n2483, n2484, n2485, n2486, n2487, n2488, n2489,
-     n2490, n2491, n2492, n2493, n2494, n2495, n2496, n2497, n2498, n2499,
-     n2500, n2501, n2502, n2503, n2504, n2505, n2506, n2507, n2508, n2509,
-     n2510, n2511, n2512, n2513, n2514, n2515, n2516, n2517, n2518, n2519,
-     n2520, n2521, n2522, n2523, n2524, n2525, n2526, n2527, n2528, n2529,
-     n2530, n2531, n2532, n2533, n2534, n2535, n2536, n2537, n2538, n2539,
-     n2540, n2541, n2542, n2543, n2544, n2545, n2546, n2547, n2548, n2549,
-     n2550, n2551, n2552, n2553, n2554, n2555, n2556, n2557, n2558, n2559,
-     n2560, n2561, n2562, n2563, n2564, n2565, n2566, n2567, n2568, n2569,
-     n2570, n2571, n2572, n2573, n2574, n2575, n2576, n2577, n2578, n2579,
-     n2580, n2581, n2582, n2583, n2584, n2585, n2586, n2587, n2588, n2589,
-     n2590, n2591, n2592, n2593;
+wire ahm_rdata_push, ahm_xfer_done, de_i, N103, N104, N105, N106, n50, n120,
+     n166, n199, n210, n254, n255, n293, n326, n327, n328, n329, n330, n331,
+     n332, n333, n334, n335, n336, n337, n338, n339, n340, n341, n342, n343,
+     n344, n345, n346, n347, n348, n349, n350, n351, n352, n353, n354, n355,
+     n356, n357, n429, n528, n562, n563, n621, n686, n687, n688, n689, n690,
+     n691, n692, n693, n694, n695, n696, n697, n698, n699, n700, n701, n702,
+     n703, n704, n705, n706, n707, n708, n709, n710, n711, n712, n713, n714,
+     n715, n716, n717, n890, n956, n957, n958, n959, n960, n961, n962, n963,
+     n964, n965, n966, n967, n968, n969, n970, n971, n972, n973, n974, n975,
+     n976, n977, n978, n979, n980, n981, n982, n983, n984, n985, n986, n987,
+     n1054, n1055, n1056, n1090, n1091, n1125, n1126, n1127, n1200, n1201,
+     n1267, n1268, n1269, n1270, n1271, n1272, n1273, n1274, n1275, n1276,
+     n1277, n1278, n1279, n1280, n1281, n1282, n1283, n1284, n1285, n1286,
+     n1287, n1288, n1289, n1290, n1291, n1292, n1293, n1294, n1295, n1296,
+     n1297, n1298, n1503, n1516, n1517, n1518, n1519, n1520, n1521, n1522,
+     n1523, n1524, n1525, n1526, n1527, n1528, n1529, n1530, n1531, n1532,
+     n1533, n1534, n1535, n1536, n1537, n1538, n1539, n1540, n1541, n1542,
+     n1543, n1544, n1545, n1546, n1566, n1575, n1576, n1577, n1578, n1594,
+     n1597, n1621, n1655, n1656, n1657, n1658, n1659, n1660, n1661, n1662,
+     n1663, n1664, n1665, n1666, n1667, n1668, n1669, n1670, n1671, n1672,
+     n1673, n1674, n1675, n1676, n1720, n1721, n1722, n1723, n1724, n1725,
+     n1726, n1727, n1728, n1729, n1736, n1737, n1738, n1739, n1740, n1741,
+     n1742, n1743, n1744, n1745, n1746, n1747, n1748, n1749, n1750, n1751,
+     n1785, n1796, n1797, n1798, n1799, n1800, n1801, n1802, n1803, n1804,
+     n1909, n1921, n1922, n1923, n1924, n1925, n1926, n1927, n1928, n1929,
+     n1930, n2025, n2026, n2027, n2028, n2029, n2030, n2031, n2032, n2033,
+     n2034, n2035, n2036, n2037, n2038, n2039, n2040, n2498, n2499, n2500,
+     n2501, n2502, n2503, n2504, n2505, n2506, n2507, n2508, n2509, n2510,
+     n2511, n2512, n2513, n2514, n2515, n2516, n2517, n2518, n2519, n2520,
+     n2521, n2522, n2523, n2524, n2525, n2526, n2527, n2528, n2529, n2530,
+     n2531, n2532, n2533, n2534, n2535, n2536, n2537, n2538, n2539, n2540,
+     n2541, n2542, n2543, n2544, n2545, n2546, n2547, n2548, n2549, n2550,
+     n2551, n2552, n2553, n2554, n2555, n2556, n2557, n2558, n2559, n2560,
+     n2561, n2562, n2563, n2564, n2565, n2566, n2567, n2568, n2569, n2570,
+     n2571, n2572, n2573, n2574, n2575, n2576, n2577, n2578, n2579, n2580,
+     n2581, n2582, n2583, n2584, n2585, n2586, n2587, n2588, n2589, n2590,
+     n2591, n2592, n2593, n2594, n2595, n2596, n2597, n2598, n2599, n2600,
+     n2601, n2602, n2603, n2604, n2605, n2606, n2607, n2608, n2609, n2610,
+     n2611, n2612, n2613, n2614, n2615, n2616, n2617, n2618, n2619, n2620,
+     n2621, n2622, n2623, n2624, n2625, n2626, n2627, n2628, n2629, n2630,
+     n2631, n2632, n2633, n2634, n2635, n2636, n2637, n2638, n2639, n2640,
+     n2641, n2642, n2643, n2644, n2645, n2646, n2647, n2648, n2649, n2650,
+     n2651, n2652, n2653, n2654, n2655, n2656, n2657, n2658, n2659, n2660,
+     n2661, n2662, n2663, n2664, n2665, n2666, n2667, n2668, n2669, n2670,
+     n2671, n2672, n2673, n2674, n2675, n2676, n2677, n2678, n2679, n2680,
+     n2681, n2682, n2683, n2684, n2685, n2686, n2687, n2688, n2689;
     ahb_master u_ahb_master (.hclk_i(clk_ahb), .hreset_n(rst_ahb_n), .hready_i(m_ahb_ready),
         .hresp_i(m_ahb_resp), .hrdata_i({m_ahb_rdata[31:0]}), .haddr_o({m_ahb_addr[31:0]}),
         .htrans_o({m_ahb_trans[1:0]}), .hwrite_o(m_ahb_write), .hsize_o({m_ahb_size[2:0]}),
@@ -438,10 +443,10 @@ wire ahm_rdata_push, ahm_xfer_done, de_i, N104, N105, N106, N107, n50, n120,
         .dma_eof(), .ahm_rdata({ahm_rdata[31:0]}), .ahm_rdata_push(ahm_rdata_push),
         .ahm_xfer_done(ahm_xfer_done));
     emb_v1_1 u_1kx16_0 (.clkw(clk_ahb), .cew(ahm_rdata_push_wr0), .aw({emb_addr_wr_r[8:0]}),
-        .dw({ahm_rdata_r[31:0]}), .clkr(tx_sclk), .cer(n1092), .ar({emb_addr_rd[9:0]}),
+        .dw({ahm_rdata_r[31:0]}), .clkr(tx_sclk), .cer(n1125), .ar({emb_addr_rd[9:0]}),
         .qr({emb_rdata_0[15:0]}));
     emb_v1_2 u_1kx16_1 (.clkw(clk_ahb), .cew(ahm_rdata_push_wr1), .aw({emb_addr_wr_r[8:0]}),
-        .dw({ahm_rdata_r[31:0]}), .clkr(tx_sclk), .cer(n1094), .ar({emb_addr_rd[9:0]}),
+        .dw({ahm_rdata_r[31:0]}), .clkr(tx_sclk), .cer(n1127), .ar({emb_addr_rd[9:0]}),
         .qr({emb_rdata_1[15:0]}));
 
 endmodule
@@ -484,8 +489,9 @@ endmodule
   agate_format    = "VLOG"
 *)
 module demo_sd_to_lcd(clk_i, rstn_i, display_sel, spi_ssn, spi_sck, spi_mosi,
-     spi_miso, clk_out_p, clk_out_n, tx_out_p, tx_out_n);
-input clk_i, rstn_i, display_sel, spi_miso;
+     spi_miso, clk_out_p, clk_out_n, tx_out_p, tx_out_n, buttonIn2, buttonIn3,
+     buttonIn4);
+input clk_i, rstn_i, display_sel, spi_miso, buttonIn2, buttonIn3, buttonIn4;
 output spi_ssn, spi_sck, spi_mosi, clk_out_p, clk_out_n;
 output [3:0] tx_out_p;
 output [3:0] tx_out_n;
@@ -507,7 +513,7 @@ wire [6:0] tx_out_2;
 wire [6:0] tx_out_3;
 reg rstn_final;
 wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_mastlock, m_ahb_ready,
-     m_ahb_resp, m_ahb_write, rstn_final_tmp, tx_sclk, v_valid, n4, n129, n370;
+     m_ahb_resp, m_ahb_write, rstn_final_tmp, tx_sclk, v_valid, n4, n129, n373;
     pll_v1 u_pll (.clkin0(clk_i), .clkout0(clk_200M), .clkout1(clk_150M),
         .locked(locked));
     mcu_armcm3 u_arm (.fp2soc_rst_n(rstn_final), .fp_clk_sys(clk_200M), .fp_clk_arm(clk_200M),
@@ -528,7 +534,8 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_mastlock, m_ahb_ready,
         .m_ahb_wdata({m_ahb_wdata[31:0]}), .m_ahb_ready(m_ahb_ready), .m_ahb_resp(m_ahb_resp),
         .m_ahb_rdata({m_ahb_rdata[31:0]}), .display_sel(display_sel), .gpio_out({gpio_out[31:0]}),
         .tx_sclk(tx_sclk), .h_valid(h_valid), .v_valid(v_valid), .de_o(de),
-        .pixel_r({pixel_r[7:0]}), .pixel_g({pixel_g[7:0]}), .pixel_b({pixel_b[7:0]}));
+        .pixel_r({pixel_r[7:0]}), .pixel_g({pixel_g[7:0]}), .pixel_b({pixel_b[7:0]}),
+        .buttonIn2(buttonIn2), .buttonIn3(buttonIn3), .buttonIn4(buttonIn4));
     lvds_tx_v1 u_lvds (.clk(clk_i), .rstn(rstn_final), .clk_out_p(clk_out_p),
         .clk_out_n(clk_out_n), .tx_out_p({tx_out_p[3:0]}), .tx_out_n({tx_out_n[3:0]}),
         .tx_sclk(tx_sclk), .tx_out({tx_out[27:0]}), .tx_data_align_rstn(rstn_final));

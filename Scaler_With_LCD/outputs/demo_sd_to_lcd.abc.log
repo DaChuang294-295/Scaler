@@ -1,0 +1,112 @@
+-----------------------------------------------------------------------------
+Primace abcgen Tool Version 7.3 Build 20150130
+Copyright (C) 2005-2015 Capital Microelectronics Co., Ltd. All rights reserved.
+-----------------------------------------------------------------------------
+Run started on Tuesday, 19 May 15, at 23:39:33
+I/00053: Input APA file: outputs/demo_sd_to_lcd.apa.
+I/00054: Input ARA file: outputs/demo_sd_to_lcd.ara.
+I/00055: Input AOC file: demo_sd_to_lcd.aoc.
+I/00056: Load Netlist file: outputs/demo_sd_to_lcd.arv.
+I/00059: Load user library: F:/capital_micro/primace7.3/data/lib/agate_lib_m7s.v.
+I/00025: Loading DeviceDB ... 
+I/00026: Loading DeviceDB finished. 
+I/00039: Processing placed cells ... 
+W/00040: Internal warning: No inverted mux found for 'sbid1_0_1_csi_logic:is_le_cin_inv'. 
+I/00041: Processing placed cells finished. 
+I/00045: Processing routed nets ... 
+I/00046: Processing routed nets finished. 
+I/00047: Processing IO constraintion ... 
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'buttonIn2(M7S_IO_LVDS)' is configed to 1'b0 according IO settings '2.5V|input'.
+I/00090: The parameter 'keep_cfg_0' of signal 'buttonIn2(M7S_IO_LVDS)' is configed to 2'b00 according IO settings 'none'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'buttonIn3(M7S_IO_LVDS)' is configed to 1'b0 according IO settings '2.5V|input'.
+I/00090: The parameter 'keep_cfg_1' of signal 'buttonIn3(M7S_IO_LVDS)' is configed to 2'b00 according IO settings 'none'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'buttonIn4(M7S_IO_LVDS)' is configed to 1'b0 according IO settings '2.5V|input'.
+I/00090: The parameter 'keep_cfg_0' of signal 'buttonIn4(M7S_IO_LVDS)' is configed to 2'b00 according IO settings 'none'.
+I/00090: The parameter 'keep_cfg' of signal 'clk_i(M7S_IO_PCISG)' is configed to 2'b00 according IO settings 'none'.
+I/00090: The parameter 'vpci_en' of signal 'clk_i(M7S_IO_PCISG)' is configed to 1'b0 according IO settings '2.5V'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'clk_out_n(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'LVDS|output'.
+I/00090: The parameter 'ndr_cfg_1' of signal 'clk_out_n(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'ns_lv_cfg_1' of signal 'clk_out_n(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fastest'.
+I/00090: The parameter 'ns_lv_fastestn_1' of signal 'clk_out_n(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'fastest'.
+I/00090: The parameter 'pdr_cfg_1' of signal 'clk_out_n(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'td_cfg' of signal 'clk_out_n(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings 'external'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'clk_out_p(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'LVDS|output'.
+I/00090: The parameter 'ndr_cfg_0' of signal 'clk_out_p(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'ns_lv_cfg_0' of signal 'clk_out_p(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fastest'.
+I/00090: The parameter 'ns_lv_fastestn_0' of signal 'clk_out_p(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'fastest'.
+I/00090: The parameter 'pdr_cfg_0' of signal 'clk_out_p(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'td_cfg' of signal 'clk_out_p(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings 'external'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'display_sel(M7S_IO_LVDS)' is configed to 1'b0 according IO settings '2.5V|input'.
+I/00090: The parameter 'keep_cfg_1' of signal 'display_sel(M7S_IO_LVDS)' is configed to 2'b00 according IO settings 'none'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'rstn_i(M7S_IO_LVDS)' is configed to 1'b0 according IO settings '2.5V|input'.
+I/00090: The parameter 'keep_cfg_1' of signal 'rstn_i(M7S_IO_LVDS)' is configed to 2'b00 according IO settings 'none'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'spi_miso(M7S_IO_LVDS)' is configed to 1'b0 according IO settings '2.5V|input'.
+I/00090: The parameter 'keep_cfg_0' of signal 'spi_miso(M7S_IO_LVDS)' is configed to 2'b00 according IO settings 'none'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'spi_mosi(M7S_IO_LVDS)' is configed to 1'b0 according IO settings '2.5V|output'.
+I/00090: The parameter 'ndr_cfg_0' of signal 'spi_mosi(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings '2.5V|8ma'.
+I/00090: The parameter 'ns_lv_cfg_0' of signal 'spi_mosi(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fast'.
+I/00090: The parameter 'ns_lv_fastestn_0' of signal 'spi_mosi(M7S_IO_LVDS)' is configed to 1'b1 according IO settings 'fast'.
+I/00090: The parameter 'pdr_cfg_0' of signal 'spi_mosi(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings '2.5V|8ma'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'spi_sck(M7S_IO_LVDS)' is configed to 1'b0 according IO settings '2.5V|output'.
+I/00090: The parameter 'ndr_cfg_1' of signal 'spi_sck(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings '2.5V|8ma'.
+I/00090: The parameter 'ns_lv_cfg_1' of signal 'spi_sck(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fast'.
+I/00090: The parameter 'ns_lv_fastestn_1' of signal 'spi_sck(M7S_IO_LVDS)' is configed to 1'b1 according IO settings 'fast'.
+I/00090: The parameter 'pdr_cfg_1' of signal 'spi_sck(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings '2.5V|8ma'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'spi_ssn(M7S_IO_LVDS)' is configed to 1'b0 according IO settings '2.5V|output'.
+I/00090: The parameter 'ndr_cfg_1' of signal 'spi_ssn(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings '2.5V|8ma'.
+I/00090: The parameter 'ns_lv_cfg_1' of signal 'spi_ssn(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fast'.
+I/00090: The parameter 'ns_lv_fastestn_1' of signal 'spi_ssn(M7S_IO_LVDS)' is configed to 1'b1 according IO settings 'fast'.
+I/00090: The parameter 'pdr_cfg_1' of signal 'spi_ssn(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings '2.5V|8ma'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'tx_out_n_0_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'LVDS|output'.
+I/00090: The parameter 'ndr_cfg_1' of signal 'tx_out_n_0_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'ns_lv_cfg_1' of signal 'tx_out_n_0_(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fastest'.
+I/00090: The parameter 'ns_lv_fastestn_1' of signal 'tx_out_n_0_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'fastest'.
+I/00090: The parameter 'pdr_cfg_1' of signal 'tx_out_n_0_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'td_cfg' of signal 'tx_out_n_0_(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings 'external'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'tx_out_n_1_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'LVDS|output'.
+I/00090: The parameter 'ndr_cfg_1' of signal 'tx_out_n_1_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'ns_lv_cfg_1' of signal 'tx_out_n_1_(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fastest'.
+I/00090: The parameter 'ns_lv_fastestn_1' of signal 'tx_out_n_1_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'fastest'.
+I/00090: The parameter 'pdr_cfg_1' of signal 'tx_out_n_1_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'td_cfg' of signal 'tx_out_n_1_(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings 'external'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'tx_out_n_2_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'LVDS|output'.
+I/00090: The parameter 'ndr_cfg_1' of signal 'tx_out_n_2_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'ns_lv_cfg_1' of signal 'tx_out_n_2_(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fastest'.
+I/00090: The parameter 'ns_lv_fastestn_1' of signal 'tx_out_n_2_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'fastest'.
+I/00090: The parameter 'pdr_cfg_1' of signal 'tx_out_n_2_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'td_cfg' of signal 'tx_out_n_2_(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings 'external'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'tx_out_n_3_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'LVDS|output'.
+I/00090: The parameter 'ndr_cfg_1' of signal 'tx_out_n_3_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'ns_lv_cfg_1' of signal 'tx_out_n_3_(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fastest'.
+I/00090: The parameter 'ns_lv_fastestn_1' of signal 'tx_out_n_3_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'fastest'.
+I/00090: The parameter 'pdr_cfg_1' of signal 'tx_out_n_3_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'td_cfg' of signal 'tx_out_n_3_(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings 'external'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'tx_out_p_0_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'LVDS|output'.
+I/00090: The parameter 'ndr_cfg_0' of signal 'tx_out_p_0_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'ns_lv_cfg_0' of signal 'tx_out_p_0_(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fastest'.
+I/00090: The parameter 'ns_lv_fastestn_0' of signal 'tx_out_p_0_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'fastest'.
+I/00090: The parameter 'pdr_cfg_0' of signal 'tx_out_p_0_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'td_cfg' of signal 'tx_out_p_0_(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings 'external'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'tx_out_p_1_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'LVDS|output'.
+I/00090: The parameter 'ndr_cfg_0' of signal 'tx_out_p_1_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'ns_lv_cfg_0' of signal 'tx_out_p_1_(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fastest'.
+I/00090: The parameter 'ns_lv_fastestn_0' of signal 'tx_out_p_1_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'fastest'.
+I/00090: The parameter 'pdr_cfg_0' of signal 'tx_out_p_1_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'td_cfg' of signal 'tx_out_p_1_(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings 'external'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'tx_out_p_2_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'LVDS|output'.
+I/00090: The parameter 'ndr_cfg_0' of signal 'tx_out_p_2_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'ns_lv_cfg_0' of signal 'tx_out_p_2_(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fastest'.
+I/00090: The parameter 'ns_lv_fastestn_0' of signal 'tx_out_p_2_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'fastest'.
+I/00090: The parameter 'pdr_cfg_0' of signal 'tx_out_p_2_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'td_cfg' of signal 'tx_out_p_2_(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings 'external'.
+I/00090: The parameter 'cml_tx_en_cfg' of signal 'tx_out_p_3_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'LVDS|output'.
+I/00090: The parameter 'ndr_cfg_0' of signal 'tx_out_p_3_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'ns_lv_cfg_0' of signal 'tx_out_p_3_(M7S_IO_LVDS)' is configed to 2'b11 according IO settings 'fastest'.
+I/00090: The parameter 'ns_lv_fastestn_0' of signal 'tx_out_p_3_(M7S_IO_LVDS)' is configed to 1'b0 according IO settings 'fastest'.
+I/00090: The parameter 'pdr_cfg_0' of signal 'tx_out_p_3_(M7S_IO_LVDS)' is configed to 4'b0000 according IO settings 'LVDS'.
+I/00090: The parameter 'td_cfg' of signal 'tx_out_p_3_(M7S_IO_LVDS)' is configed to 4'b1000 according IO settings 'external'.
+I/00050: Processing IO constraintion finished. 
+I/00052: Output ABC file to: outputs/demo_sd_to_lcd.abc.
+Primace 7.3 abcgen was successful!
+1 warning(s), 0 error(s).
+CPU Time: 1.326 seconds, Peak Memory: 177 MB

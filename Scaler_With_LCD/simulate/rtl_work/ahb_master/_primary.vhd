@@ -1,0 +1,68 @@
+library verilog;
+use verilog.vl_types.all;
+entity ahb_master is
+    generic(
+        DMA_IDLE        : vl_logic_vector(0 to 1) := (Hi0, Hi0);
+        DMA_START       : vl_logic_vector(0 to 1) := (Hi0, Hi1);
+        DMA_CHK         : vl_logic_vector(0 to 1) := (Hi1, Hi0);
+        AHB_IDLE        : vl_logic_vector(0 to 2) := (Hi0, Hi0, Hi0);
+        AHB_REQ         : vl_logic_vector(0 to 2) := (Hi0, Hi0, Hi1);
+        AHB_START       : vl_logic_vector(0 to 2) := (Hi0, Hi1, Hi0);
+        AHB_XFER        : vl_logic_vector(0 to 2) := (Hi0, Hi1, Hi1);
+        AHB_DONE        : vl_logic_vector(0 to 2) := (Hi1, Hi0, Hi0);
+        AHB_ERR         : vl_logic_vector(0 to 2) := (Hi1, Hi0, Hi1);
+        TRANS_IDLE      : vl_logic_vector(0 to 1) := (Hi0, Hi0);
+        TRANS_BUSY      : vl_logic_vector(0 to 1) := (Hi0, Hi1);
+        TRANS_NONSEQ    : vl_logic_vector(0 to 1) := (Hi1, Hi0);
+        TRANS_SEQ       : vl_logic_vector(0 to 1) := (Hi1, Hi1);
+        SINGLE          : vl_logic_vector(0 to 2) := (Hi0, Hi0, Hi0);
+        INCR            : vl_logic_vector(0 to 2) := (Hi0, Hi0, Hi1);
+        INCR4           : vl_logic_vector(0 to 2) := (Hi0, Hi1, Hi1);
+        INCR8           : vl_logic_vector(0 to 2) := (Hi1, Hi0, Hi1);
+        INCR16          : vl_logic_vector(0 to 2) := (Hi1, Hi1, Hi1)
+    );
+    port(
+        hclk_i          : in     vl_logic;
+        hreset_n        : in     vl_logic;
+        hready_i        : in     vl_logic;
+        hresp_i         : in     vl_logic;
+        hrdata_i        : in     vl_logic_vector(31 downto 0);
+        haddr_o         : out    vl_logic_vector(31 downto 0);
+        htrans_o        : out    vl_logic_vector(1 downto 0);
+        hwrite_o        : out    vl_logic;
+        hsize_o         : out    vl_logic_vector(2 downto 0);
+        hburst_o        : out    vl_logic_vector(2 downto 0);
+        hwdata_o        : out    vl_logic_vector(31 downto 0);
+        dma_start_xfer  : in     vl_logic;
+        dma_addr        : in     vl_logic_vector(31 downto 0);
+        dma_rd_wrn      : in     vl_logic;
+        dma_burst_count : in     vl_logic_vector(7 downto 0);
+        dma_fixed_burst : in     vl_logic;
+        dma_wdata       : in     vl_logic_vector(31 downto 0);
+        dma_eof         : in     vl_logic;
+        ahm_rdata       : out    vl_logic_vector(31 downto 0);
+        ahm_rdata_push  : out    vl_logic;
+        ahm_wdata_pop   : out    vl_logic;
+        ahm_xfer_done   : out    vl_logic;
+        ahm_error       : out    vl_logic
+    );
+    attribute mti_svvh_generic_type : integer;
+    attribute mti_svvh_generic_type of DMA_IDLE : constant is 1;
+    attribute mti_svvh_generic_type of DMA_START : constant is 1;
+    attribute mti_svvh_generic_type of DMA_CHK : constant is 1;
+    attribute mti_svvh_generic_type of AHB_IDLE : constant is 1;
+    attribute mti_svvh_generic_type of AHB_REQ : constant is 1;
+    attribute mti_svvh_generic_type of AHB_START : constant is 1;
+    attribute mti_svvh_generic_type of AHB_XFER : constant is 1;
+    attribute mti_svvh_generic_type of AHB_DONE : constant is 1;
+    attribute mti_svvh_generic_type of AHB_ERR : constant is 1;
+    attribute mti_svvh_generic_type of TRANS_IDLE : constant is 1;
+    attribute mti_svvh_generic_type of TRANS_BUSY : constant is 1;
+    attribute mti_svvh_generic_type of TRANS_NONSEQ : constant is 1;
+    attribute mti_svvh_generic_type of TRANS_SEQ : constant is 1;
+    attribute mti_svvh_generic_type of SINGLE : constant is 1;
+    attribute mti_svvh_generic_type of INCR : constant is 1;
+    attribute mti_svvh_generic_type of INCR4 : constant is 1;
+    attribute mti_svvh_generic_type of INCR8 : constant is 1;
+    attribute mti_svvh_generic_type of INCR16 : constant is 1;
+end ahb_master;

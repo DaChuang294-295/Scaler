@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aoc version="2.3" device="M7A12N0F484C7">
 	<ioConstraint>
+		<IO signal_name="buttonIn2" location="IO_14P_11" inst_name="io_cell_buttonIn2_inst" direction="input" operation_mode="normal"/>
+		<IO signal_name="buttonIn3" location="IO_14N_11" inst_name="io_cell_buttonIn2_inst" direction="input" operation_mode="normal"/>
+		<IO signal_name="buttonIn4" location="IO_15P11" inst_name="io_cell_buttonIn4_inst" direction="input" operation_mode="normal"/>
 		<IO signal_name="clk_i" location="IO41_CLK[1]_2" inst_name="io_cell_clk_i_inst" direction="input" operation_mode="clock"/>
 		<IO signal_name="clk_out_n" location="IO_09N_CLK[3]_11" inst_name="u_lvds_u_lvds_tx_clk" direction="output" operation_mode="normal" lvds="true"/>
 		<IO signal_name="clk_out_p" location="IO_09P_CLK[2]_11" inst_name="u_lvds_u_lvds_tx_clk" direction="output" operation_mode="normal" lvds="true"/>
-		<IO signal_name="display_sel" location="IO_15N_11" inst_name="io_cell_display_sel_inst" direction="input" operation_mode="normal"/>
+		<IO signal_name="display_sel" location="IO_15N_11" inst_name="io_cell_buttonIn4_inst" direction="input" operation_mode="normal"/>
 		<IO signal_name="rstn_i" location="IO_11N_11" inst_name="io_cell_rstn_i_inst" direction="input" operation_mode="normal"/>
 		<IO signal_name="spi_miso" location="IO_03P_12" inst_name="io_cell_spi_miso_inst" direction="input" operation_mode="normal"/>
 		<IO signal_name="spi_mosi" location="IO_01P_12" inst_name="io_cell_spi_sck_inst" direction="output" operation_mode="normal"/>

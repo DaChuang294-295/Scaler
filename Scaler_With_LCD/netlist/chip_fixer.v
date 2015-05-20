@@ -1,5 +1,8 @@
 module demo_sd_to_lcd 
 (
+buttonIn2,
+buttonIn3,
+buttonIn4,
 clk_i,
 clk_out_n,
 clk_out_p,
@@ -12,6 +15,9 @@ spi_ssn,
 tx_out_n,
 tx_out_p
 );
+input buttonIn2 ;
+input buttonIn3 ;
+input buttonIn4 ;
 input clk_i ;
 output clk_out_n ;
 output clk_out_p ;
@@ -23,6 +29,9 @@ output spi_sck ;
 output spi_ssn ;
 output [3:0] tx_out_n ;
 output [3:0] tx_out_p ;
+wire buttonIn2 ;
+wire buttonIn3 ;
+wire buttonIn4 ;
 wire clk_i ;
 wire clk_out_n ;
 wire clk_out_p ;
@@ -34,796 +43,810 @@ wire spi_sck ;
 wire spi_ssn ;
 wire [3:0] tx_out_n ;
 wire [3:0] tx_out_p ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[2]_net  ;
-wire \ii0511|dx_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr__reg[3]|qx_net  ;
-wire \ii0572|dx_net  ;
-wire \u_colorgen_v_cnt__reg[9]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[0]_net  ;
 wire \u_sdram_to_RGB_emb_rdata_1_r__reg[10]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27]|qx_net  ;
-wire \ii0643|dx_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr_r__reg[1]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31]|qx_net  ;
+wire \ii0762|co_net  ;
 wire \ii0714|dx_net  ;
-wire \ii0461|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[5]_net  ;
-wire \ii0532|dx_net  ;
-wire \u_colorgen_v_cnt__reg[5]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[3]_net  ;
 wire \ii0603|dx_net  ;
 wire \ii0593|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8]|qx_net  ;
-wire \ii0664|dx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26]|qx_net  ;
-wire \ii0735|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_0|q[2]_net  ;
-wire \u_colorgen_v_cnt__reg[1]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18]|qx_net  ;
 wire \ii0482|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[8]_net  ;
-wire \ii0553|dx_net  ;
-wire \ii0743|co_net  ;
-wire \ii0624|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22]|qx_net  ;
 wire \u_sdram_to_RGB_dma_start_xfer_prev__reg|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4]|qx_net  ;
-wire \ii0685|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14]|qx_net  ;
+wire \ii0756|dx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7]|qx_net  ;
-wire \ii0513|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29]|qx_net  ;
-wire \ii0574|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[13]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[1]_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0]|qx_net  ;
 wire \ii0645|dx_net  ;
-wire \ii0716|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[0]_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[10]|qx_net  ;
-wire \ii0463|dx_net  ;
-wire \u_sdram_to_RGB_addr_cnt__reg[9]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3]|qx_net  ;
-wire \ii0534|dx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25]|qx_net  ;
-wire \ii0605|dx_net  ;
-wire \ii0595|dx_net  ;
+wire \ii0534|dx_net  ;
 wire \u_sdram_to_RGB_dma_addr__reg[28]|qx_net  ;
-wire \ii0666|dx_net  ;
-wire \ii0737|dx_net  ;
-wire \u_sdram_to_RGB_addr_cnt__reg[5]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[3]_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[12]|qx_net  ;
-wire \ii0484|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21]|qx_net  ;
-wire \ii0555|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[24]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4]|qx_net  ;
-wire \ii0626|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1]|qx_net  ;
-wire \ii0745|co_net  ;
-wire \u_sdram_to_RGB_addr_cnt__reg[1]|qx_net  ;
 wire \ii0687|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0]|qx_net  ;
-wire \ii0515|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[19]|qx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[20]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ;
 wire \u_sdram_to_RGB_emb_rdata_1_r__reg[6]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[2]_net  ;
 wire \ii0576|dx_net  ;
-wire \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net  ;
-wire \ii0647|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_done_r__reg|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12]|qx_net  ;
-wire \ii0718|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[7]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[1]_net  ;
 wire \u_sdram_to_RGB_de_i_r__reg[1]|qx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[15]|qx_net  ;
-wire \u_colorgen_h_cnt__reg[8]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_1_r__reg[2]|qx_net  ;
 wire \ii0465|dx_net  ;
-wire \ii0536|dx_net  ;
-wire \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net  ;
-wire \ii0607|dx_net  ;
-wire \ii0597|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[3]|qx_net  ;
-wire \ii0668|dx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[8]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0]|qx_net  ;
-wire \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ;
-wire \ii0739|dx_net  ;
-wire \ii0740|dx_net  ;
-wire \u_colorgen_h_cnt__reg[4]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[8]|qx_net  ;
 wire \u_sdram_to_RGB_dma_addr__reg[11]|qx_net  ;
-wire \ii0486|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ;
-wire \ii0557|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[0]_net  ;
+wire \u_colorgen_h_cnt__reg[4]|qx_net  ;
+wire \ii0740|dx_net  ;
+wire \ii0739|dx_net  ;
 wire \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ;
-wire \ii0747|co_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[4]|qx_net  ;
 wire \ii0628|dx_net  ;
-wire \ii0689|dx_net  ;
-wire \ii0690|dx_net  ;
-wire \ii0700|dx_net  ;
-wire \u_colorgen_h_cnt__reg[0]|qx_net  ;
-wire \ii0761|dx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[6]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8]|qx_net  ;
-wire \ii0517|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[0]|qx_net  ;
-wire \ii0578|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[3]_net  ;
-wire \ii0649|dx_net  ;
-wire \ii0650|dx_net  ;
-wire \u_pll_pll_u0|clkout0_net  ;
-wire \ii0721|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[2]_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[28]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[2]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4]|qx_net  ;
-wire \ii0467|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ;
-wire \ii0538|dx_net  ;
-wire \ii0599|dx_net  ;
-wire \ii0609|dx_net  ;
-wire \ii0610|dx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[9]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]|qx_net  ;
+wire \ii0517|dx_net  ;
+wire \ii0782|dx_net  ;
 wire \ii0671|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[24]|qx_net  ;
-wire \ii0742|dx_net  ;
-wire \ii0488|dx_net  ;
-wire \ii0560|dx_net  ;
 wire \ii0559|dx_net  ;
-wire \ii0749|co_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[5]|qx_net  ;
-wire \ii0631|dx_net  ;
-wire \ii0692|dx_net  ;
-wire \ii0702|dx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[19]|qx_net  ;
+wire \ii0560|dx_net  ;
 wire \u_sdram_to_RGB_ahm_rdata_r__reg[20]|qx_net  ;
-wire \u_sdram_to_RGB_buffer_rd_sel_r__reg[0]|qx_net  ;
-wire \ii0763|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[11]_net  ;
-wire \ii0520|dx_net  ;
-wire \ii0519|dx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[1]|qx_net  ;
-wire \u_sdram_to_RGB_bmp_fig_cnt__reg[1]|qx_net  ;
-wire \ii0581|dx_net  ;
-wire \u_sdram_to_RGB_de_i_r_sclk__reg[3]|qx_net  ;
-wire \ii0652|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[15]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[19]|qx_net  ;
 wire \io_cell_spi_miso_inst|id_q_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr_r__reg[8]|qx_net  ;
 wire \ii0723|dx_net  ;
-wire \ii0469|dx_net  ;
-wire \ii0470|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[14]_net  ;
-wire \ii0541|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[11]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_1_r__reg[13]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31]|qx_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr__reg[6]|qx_net  ;
 wire \ii0612|dx_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr_r__reg[4]|qx_net  ;
-wire \ii0673|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ;
-wire \ii0501|dx_net  ;
 wire \ii0491|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26]|qx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[17]_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr__reg[2]|qx_net  ;
-wire \ii0562|dx_net  ;
-wire \u_arm_u_soc|spi0_ssn_net  ;
+wire \ii0501|dx_net  ;
 wire \u_colorgen_v_cnt__reg[8]|qx_net  ;
-wire \ii0633|dx_net  ;
-wire \u_lvds_pll_u0|clkout0_net  ;
+wire \u_arm_u_soc|spi0_ssn_net  ;
 wire \u_sdram_to_RGB_emb_addr_wr_r__reg[0]|qx_net  ;
-wire \ii0704|dx_net  ;
-wire \ii0694|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30]|qx_net  ;
-wire \u_arm_u_soc|gpio_0_out_o[1]_net  ;
-wire \ii0765|dx_net  ;
-wire \ii0522|dx_net  ;
-wire \u_colorgen_v_cnt__reg[4]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22]|qx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[21]_net  ;
-wire \ii0583|dx_net  ;
-wire \GND_0_inst|Y_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7]|qx_net  ;
 wire \ii0654|dx_net  ;
-wire \ii0725|dx_net  ;
-wire \ii0472|dx_net  ;
-wire \u_colorgen_v_cnt__reg[0]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17]|qx_net  ;
 wire \ii0543|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3]|qx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[24]_net  ;
-wire \ii0614|dx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21]|qx_net  ;
-wire \ii0675|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13]|qx_net  ;
-wire \u_arm_u_soc|spi0_mosi_net  ;
-wire \ii0503|dx_net  ;
-wire \ii0493|dx_net  ;
-wire \ii0564|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[12]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6]|qx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[27]_net  ;
-wire \ii0635|dx_net  ;
-wire \ii0696|dx_net  ;
-wire \ii0706|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[0]_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[12]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2]|qx_net  ;
-wire \ii0453|dx_net  ;
-wire \ii0767|dx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[0]_net  ;
+wire \ii0706|dx_net  ;
+wire \ii0696|dx_net  ;
 wire \u_sdram_to_RGB_addr_cnt__reg[8]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24]|qx_net  ;
-wire \ii0524|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[15]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]|qx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[27]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7]|qx_net  ;
 wire \ii0585|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[31]_net  ;
-wire \io_cell_rstn_i_inst|id_q_net  ;
-wire \ii0656|dx_net  ;
-wire \ii0727|dx_net  ;
-wire \u_colorgen_v_valid__reg|qx_net  ;
-wire \u_sdram_to_RGB_addr_cnt__reg[4]|qx_net  ;
 wire \u_arm_u_soc|fp0_m_ahb_rdata[3]_net  ;
-wire \rstn_final__reg|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[11]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[1]_net  ;
-wire \ii0474|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_1_r__reg[9]|qx_net  ;
-wire \ii0545|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19]|qx_net  ;
+wire \ii0474|dx_net  ;
 wire \u_sdram_to_RGB_dma_addr__reg[23]|qx_net  ;
-wire \ii0616|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_0|q[0]_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  ;
-wire \ii0677|dx_net  ;
-wire \u_sdram_to_RGB_addr_cnt__reg[0]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15]|qx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[6]_net  ;
 wire \u_pll_pll_u0|locked_net  ;
-wire \u_sdram_to_RGB_emb_rdata_1_r__reg[5]|qx_net  ;
-wire \ii0505|dx_net  ;
-wire \ii0495|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[18]|qx_net  ;
-wire \ii0566|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_0|q[3]_net  ;
-wire \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[6]_net  ;
+wire \ii0748|dx_net  ;
 wire \ii0637|dx_net  ;
-wire \u_sdram_to_RGB_de_i_r__reg[0]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11]|qx_net  ;
-wire \ii0698|dx_net  ;
-wire \ii0708|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[6]|qx_net  ;
-wire \u_sdram_to_RGB_other_1_beat_start_pulse__reg|qx_net  ;
-wire \ii0455|dx_net  ;
-wire \u_colorgen_h_cnt__reg[7]|qx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[14]|qx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[9]_net  ;
 wire \u_sdram_to_RGB_emb_rdata_1_r__reg[1]|qx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[9]_net  ;
 wire \ii0526|dx_net  ;
-wire \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net  ;
-wire \ii0587|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[7]|qx_net  ;
-wire \ii0658|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[2]|qx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[10]|qx_net  ;
-wire \u_colorgen_h_cnt__reg[3]|qx_net  ;
-wire \ii0730|dx_net  ;
-wire \ii0729|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[2]_net  ;
-wire \ii0476|dx_net  ;
-wire \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[9]|qx_net  ;
-wire \ii0547|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ;
-wire \ii0618|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[1]_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ;
 wire \u_sdram_to_RGB_emb_rdata_0_r__reg[3]|qx_net  ;
-wire \ii0679|dx_net  ;
 wire \ii0680|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12]|qx_net  ;
-wire \ii0497|dx_net  ;
-wire \ii0507|dx_net  ;
-wire \u_sdram_to_RGB_v_valid_r__reg[1]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[5]|qx_net  ;
+wire \ii0679|dx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[5]|qx_net  ;
 wire \ii0568|dx_net  ;
-wire \ii0639|dx_net  ;
-wire \ii0640|dx_net  ;
-wire \ii0711|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[0]_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[1]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[27]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3]|qx_net  ;
-wire \ii0457|dx_net  ;
-wire \ii0528|dx_net  ;
-wire \ii0600|dx_net  ;
-wire \ii0590|dx_net  ;
-wire \ii0589|dx_net  ;
-wire \ii0661|dx_net  ;
 wire \u_sdram_to_RGB_emb_rdata_r__reg[8]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[23]|qx_net  ;
 wire \ii0732|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_resp_net  ;
-wire \ii0478|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[3]_net  ;
-wire \VCC_0_inst|Y_net  ;
-wire \ii0549|dx_net  ;
-wire \ii0550|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[2]_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[4]|qx_net  ;
 wire \ii0621|dx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[18]|qx_net  ;
-wire \ii0682|dx_net  ;
-wire \ii0510|dx_net  ;
-wire \ii0509|dx_net  ;
 wire \ii0499|dx_net  ;
-wire \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[0]|qx_net  ;
-wire \ii0571|dx_net  ;
+wire \ii0509|dx_net  ;
+wire \ii0510|dx_net  ;
 wire \u_sdram_to_RGB_de_i_r_sclk__reg[2]|qx_net  ;
-wire \ii0642|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7]|qx_net  ;
 wire \u_sdram_to_RGB_ahm_rdata_r__reg[14]|qx_net  ;
-wire \ii0713|dx_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr_r__reg[7]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[1]_net  ;
-wire \ii0459|dx_net  ;
-wire \ii0460|dx_net  ;
-wire \ii0531|dx_net  ;
-wire \ii0592|dx_net  ;
-wire \ii0602|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[0]_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[10]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_1_r__reg[12]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30]|qx_net  ;
 wire \u_sdram_to_RGB_emb_addr_wr__reg[5]|qx_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr_r__reg[3]|qx_net  ;
 wire \ii0663|dx_net  ;
-wire \ii0734|dx_net  ;
-wire \ii0481|dx_net  ;
 wire \u_sdram_to_RGB_addr_cnt__reg[10]|qx_net  ;
-wire \u_colorgen_v_cnt__reg[7]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25]|qx_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr__reg[1]|qx_net  ;
 wire \ii0552|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[3]_net  ;
-wire \ii0623|dx_net  ;
-wire \ii0684|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21]|qx_net  ;
-wire \ii0512|dx_net  ;
 wire \u_colorgen_v_cnt__reg[3]|qx_net  ;
-wire \ii0573|dx_net  ;
-wire \ii0644|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6]|qx_net  ;
+wire \ii0763|co_net  ;
 wire \ii0715|dx_net  ;
-wire \ii0462|dx_net  ;
-wire \u_pll_pll_u0|clkout1_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16]|qx_net  ;
-wire \ii0533|dx_net  ;
-wire \u_sdram_to_RGB_de_i_start_pulse__reg|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[15]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2]|qx_net  ;
-wire \ii0604|dx_net  ;
+wire \u_pll_pll_u0|clkout1_net  ;
 wire \ii0594|dx_net  ;
-wire \ii0665|dx_net  ;
-wire \ii0736|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12]|qx_net  ;
+wire \ii0604|dx_net  ;
 wire \u_arm_u_soc|fp0_m_ahb_rdata[12]_net  ;
 wire \ii0483|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[11]|qx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_ready_net  ;
-wire \ii0744|s_net  ;
-wire \ii0554|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15]|qx_net  ;
-wire \ii0744|co_net  ;
-wire \ii0625|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[31]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ;
-wire \ii0686|dx_net  ;
-wire \u_sdram_to_RGB_addr_cnt__reg[7]|qx_net  ;
 wire \u_arm_u_soc|fp0_m_ahb_rdata[15]_net  ;
-wire \ii0514|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[14]|qx_net  ;
+wire \ii0757|dx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ;
-wire \ii0575|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[26]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[14]|qx_net  ;
 wire \ii0646|dx_net  ;
-wire \ii0717|dx_net  ;
 wire \u_sdram_to_RGB_addr_cnt__reg[3]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18]|qx_net  ;
-wire \ii0464|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[10]|qx_net  ;
 wire \u_arm_u_soc|fp0_m_ahb_rdata[18]_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[22]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_1_r__reg[8]|qx_net  ;
 wire \ii0535|dx_net  ;
-wire \ii0606|dx_net  ;
-wire \ii0596|dx_net  ;
-wire \ii0667|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[9]|qx_net  ;
-wire \ii0738|dx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_1_r__reg[4]|qx_net  ;
-wire \ii0485|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[22]_net  ;
 wire \u_sdram_to_RGB_dma_addr__reg[17]|qx_net  ;
-wire \ii0556|dx_net  ;
-wire \u_sdram_to_RGB_display_period_align__reg|qx_net  ;
-wire \ii0627|dx_net  ;
-wire \ii0745|s_net  ;
-wire \ii0746|co_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[22]_net  ;
 wire \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10]|qx_net  ;
-wire \ii0688|dx_net  ;
 wire \u_sdram_to_RGB_dma_addr__reg[5]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_1_r__reg[0]|qx_net  ;
-wire \u_lvds_pll_u0|clkout1_net  ;
-wire \u_colorgen_h_cnt__reg[6]|qx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[13]|qx_net  ;
-wire \ii0516|dx_net  ;
+wire \ii0688|dx_net  ;
 wire \u_arm_u_soc|fp0_m_ahb_rdata[25]_net  ;
-wire \u_sdram_to_RGB_bmp_fig_chg__reg[1]|qx_net  ;
-wire \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net  ;
-wire \ii0577|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[6]|qx_net  ;
-wire \ii0648|dx_net  ;
-wire \ii0719|dx_net  ;
-wire \ii0720|dx_net  ;
-wire \u_colorgen_h_cnt__reg[2]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19]|qx_net  ;
+wire \ii0577|dx_net  ;
 wire \ii0466|dx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[8]|qx_net  ;
-wire \ii0537|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6]|qx_net  ;
 wire \u_arm_u_soc|fp0_m_ahb_rdata[28]_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[2]|qx_net  ;
-wire \ii0608|dx_net  ;
-wire \ii0598|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[1]_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ;
-wire \ii0670|dx_net  ;
-wire \ii0669|dx_net  ;
 wire \ii0741|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[4]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[31]|qx_net  ;
-wire \ii0487|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2]|qx_net  ;
 wire \u_sdram_to_RGB_v_valid_r__reg[0]|qx_net  ;
-wire \ii0558|dx_net  ;
-wire \ii0748|co_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[4]_net  ;
-wire \ii0629|dx_net  ;
-wire \ii0630|dx_net  ;
 wire \u_sdram_to_RGB_other_1_beat_valid__reg|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[2]_net  ;
-wire \ii0746|s_net  ;
-wire \ii0691|dx_net  ;
-wire \ii0701|dx_net  ;
-wire \ii0762|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwrite_o__reg|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[0]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[26]|qx_net  ;
-wire \u_sdram_to_RGB_buffer_rd_sel__reg|qx_net  ;
+wire \ii0630|dx_net  ;
+wire \ii0629|dx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_0|q[1]_net  ;
+wire \u_sdram_to_RGB_buffer_rd_sel__reg|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[26]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[0]|qx_net  ;
+wire \io_cell_buttonIn2_inst|id_q_net  ;
 wire \ii0518|dx_net  ;
-wire \ii0580|dx_net  ;
-wire \ii0579|dx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[7]|qx_net  ;
-wire \ii0651|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[7]_net  ;
-wire \ii0722|dx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[22]|qx_net  ;
-wire \u_arm_u_soc|spi0_sck_net  ;
-wire \ii0468|dx_net  ;
-wire \ii0540|dx_net  ;
-wire \ii0539|dx_net  ;
-wire \ii0611|dx_net  ;
-wire \u_colorgen_h_cnt__reg[10]|qx_net  ;
-wire \u_sdram_to_RGB_bmp_fig_cnt__reg[3]|qx_net  ;
-wire \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ;
 wire \u_sdram_to_RGB_emb_rdata_r__reg[3]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[0]_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[17]|qx_net  ;
+wire \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ;
+wire \u_sdram_to_RGB_bmp_fig_cnt__reg[3]|qx_net  ;
 wire \ii0672|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg|qx_net  ;
-wire \ii0489|dx_net  ;
-wire \ii0490|dx_net  ;
-wire \ii0500|dx_net  ;
-wire \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ;
 wire \ii0561|dx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_1_r__reg[15]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[13]|qx_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr__reg[8]|qx_net  ;
-wire \ii0632|dx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[3]_net  ;
-wire \ii0693|dx_net  ;
-wire \ii0703|dx_net  ;
 wire \u_sdram_to_RGB_emb_addr_wr_r__reg[6]|qx_net  ;
-wire \ii0764|dx_net  ;
-wire \ii0747|s_net  ;
-wire \ii0449|dx_net  ;
-wire \ii0450|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[2]_net  ;
-wire \ii0521|dx_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr__reg[4]|qx_net  ;
-wire \ii0582|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_1_r__reg[11]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28]|qx_net  ;
-wire \ii0653|dx_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr_r__reg[2]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_push_wr0__reg|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_1_r__reg[11]|qx_net  ;
 wire \ii0724|dx_net  ;
-wire \ii0471|dx_net  ;
 wire \io_cell_clk_i_inst|id_q_net  ;
-wire \ii0542|dx_net  ;
-wire \u_colorgen_v_cnt__reg[6]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24]|qx_net  ;
 wire \u_sdram_to_RGB_emb_addr_wr__reg[0]|qx_net  ;
-wire \u_colorgen_h_valid__reg|qx_net  ;
 wire \ii0613|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[1]_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9]|qx_net  ;
-wire \ii0674|dx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27]|qx_net  ;
-wire \u_colorgen_v_cnt__reg[2]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[0]_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20]|qx_net  ;
-wire \ii0502|dx_net  ;
 wire \ii0492|dx_net  ;
-wire \ii0563|dx_net  ;
-wire \ii0634|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23]|qx_net  ;
+wire \ii0502|dx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[5]|qx_net  ;
-wire \ii0695|dx_net  ;
-wire \ii0705|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15]|qx_net  ;
-wire \ii0452|dx_net  ;
-wire \ii0766|dx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[3]_net  ;
-wire \ii0523|dx_net  ;
-wire \ii0748|s_net  ;
-wire \ii0584|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[14]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1]|qx_net  ;
 wire \ii0655|dx_net  ;
-wire \ii0726|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11]|qx_net  ;
-wire \ii0473|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[10]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4]|qx_net  ;
-wire \ii0544|dx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26]|qx_net  ;
-wire \ii0615|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[29]|qx_net  ;
+wire \ii0544|dx_net  ;
 wire \u_sdram_to_RGB_dma_addr__reg[30]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[2]_net  ;
-wire \ii0676|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ;
-wire \io_cell_display_sel_inst|id_q_net  ;
-wire \u_sdram_to_RGB_addr_cnt__reg[6]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[13]|qx_net  ;
-wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[1]_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ;
-wire \ii0504|dx_net  ;
-wire \ii0494|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[29]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10]|qx_net  ;
-wire \ii0565|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[25]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5]|qx_net  ;
-wire \ii0636|dx_net  ;
-wire \u_sdram_to_RGB_addr_cnt__reg[2]|qx_net  ;
-wire \ii0697|dx_net  ;
 wire \ii0707|dx_net  ;
-wire \ii0454|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1]|qx_net  ;
-wire \ii0525|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[21]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ;
+wire \ii0697|dx_net  ;
 wire \u_sdram_to_RGB_emb_rdata_1_r__reg[7]|qx_net  ;
-wire \ii0749|s_net  ;
-wire \ii0750|s_net  ;
 wire \ii0586|dx_net  ;
-wire \ii0657|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13]|qx_net  ;
-wire \ii0728|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[8]|qx_net  ;
-wire \u_colorgen_h_cnt__reg[9]|qx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[16]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_1_r__reg[3]|qx_net  ;
 wire \ii0475|dx_net  ;
-wire \u_arm_dll_u0|clkout0_net  ;
-wire \ii0546|dx_net  ;
-wire \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net  ;
-wire \ii0617|dx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_push_wr1__reg|qx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[10]_net  ;
-wire \ii0678|dx_net  ;
-wire \u_sdram_to_RGB_dma_addr__reg[4]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[9]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1]|qx_net  ;
-wire \u_colorgen_h_cnt__reg[5]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[9]|qx_net  ;
 wire \u_sdram_to_RGB_dma_addr__reg[12]|qx_net  ;
-wire \ii0506|dx_net  ;
-wire \ii0496|dx_net  ;
-wire \ii0567|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9]|qx_net  ;
-wire \u_sdram_to_RGB_bmp_fig_chg__reg[0]|qx_net  ;
+wire \u_colorgen_h_cnt__reg[5]|qx_net  ;
+wire \ii0750|dx_net  ;
+wire \ii0749|dx_net  ;
 wire \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[13]_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[5]|qx_net  ;
 wire \ii0638|dx_net  ;
-wire \ii0699|dx_net  ;
-wire \ii0709|dx_net  ;
-wire \ii0710|dx_net  ;
-wire \u_colorgen_h_cnt__reg[1]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[7]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9]|qx_net  ;
-wire \ii0527|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]|qx_net  ;
 wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_0_r__reg[1]|qx_net  ;
-wire \ii0588|dx_net  ;
-wire \ii0659|dx_net  ;
-wire \ii0660|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[16]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]|qx_net  ;
+wire \ii0527|dx_net  ;
 wire \u_sdram_to_RGB_de_o__reg|qx_net  ;
-wire \ii0731|dx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[29]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[30]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[3]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5]|qx_net  ;
-wire \ii0477|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]|qx_net  ;
-wire \u_arm_u_soc|gpio_0_out_o[0]_net  ;
-wire \ii0548|dx_net  ;
-wire \ii0620|dx_net  ;
-wire \ii0619|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[19]_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[20]_net  ;
 wire \ii0681|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[1]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[25]|qx_net  ;
-wire \ii0498|dx_net  ;
-wire \ii0508|dx_net  ;
-wire \ii0570|dx_net  ;
 wire \ii0569|dx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[6]|qx_net  ;
-wire \ii0641|dx_net  ;
-wire \ii0712|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[23]_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[21]|qx_net  ;
+wire \ii0570|dx_net  ;
 wire \u_sdram_to_RGB_buffer_wr_sel__reg|qx_net  ;
-wire \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[21]|qx_net  ;
 wire \ii0458|dx_net  ;
-wire \ii0530|dx_net  ;
+wire \ii0733|dx_net  ;
+wire \ii0622|dx_net  ;
+wire \ii0511|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[0]_net  ;
+wire \u_colorgen_v_cnt__reg[9]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr_r__reg[1]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[3]_net  ;
+wire \ii0664|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_0|q[2]_net  ;
+wire \ii0553|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[1]_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[13]|qx_net  ;
+wire \ii0764|co_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[0]_net  ;
+wire \ii0716|dx_net  ;
+wire \u_sdram_to_RGB_addr_cnt__reg[9]|qx_net  ;
+wire \ii0595|dx_net  ;
+wire \ii0605|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[3]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21]|qx_net  ;
+wire \ii0484|dx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[24]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[2]_net  ;
+wire \ii0647|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_done_r__reg|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[1]_net  ;
+wire \u_sdram_to_RGB_emb_rdata_1_r__reg[2]|qx_net  ;
+wire \ii0536|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[0]_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[4]|qx_net  ;
+wire \u_colorgen_h_cnt__reg[0]|qx_net  ;
+wire \ii0700|dx_net  ;
+wire \ii0690|dx_net  ;
+wire \ii0689|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[6]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[3]_net  ;
+wire \ii0578|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[2]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ;
+wire \ii0467|dx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[9]|qx_net  ;
+wire \ii0742|dx_net  ;
+wire \ii0631|dx_net  ;
+wire \ii0519|dx_net  ;
+wire \ii0520|dx_net  ;
+wire \u_sdram_to_RGB_de_i_r_sclk__reg[3]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[15]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr__reg[6]|qx_net  ;
+wire \ii0673|dx_net  ;
+wire \ii0562|dx_net  ;
+wire \u_lvds_pll_u0|clkout0_net  ;
+wire \u_arm_u_soc|gpio_0_out_o[1]_net  ;
+wire \u_colorgen_v_cnt__reg[4]|qx_net  ;
+wire \GND_0_inst|Y_net  ;
+wire \ii0725|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17]|qx_net  ;
+wire \ii0614|dx_net  ;
+wire \u_arm_u_soc|spi0_mosi_net  ;
+wire \ii0493|dx_net  ;
+wire \ii0503|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[15]|qx_net  ;
+wire \ii0656|dx_net  ;
+wire \u_sdram_to_RGB_addr_cnt__reg[4]|qx_net  ;
+wire \ii0545|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[18]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net  ;
+wire \u_sdram_to_RGB_other_1_beat_start_pulse__reg|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[6]|qx_net  ;
+wire \ii0708|dx_net  ;
+wire \ii0698|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21]|qx_net  ;
+wire \ii0587|dx_net  ;
+wire \ii0476|dx_net  ;
+wire \ii0751|dx_net  ;
+wire \u_sdram_to_RGB_v_valid_r__reg[1]|qx_net  ;
+wire \ii0640|dx_net  ;
+wire \ii0639|dx_net  ;
+wire \u_sdram_to_RGB_text__reg[7]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[27]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[1]|qx_net  ;
+wire \ii0528|dx_net  ;
+wire \VCC_0_inst|Y_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[4]|qx_net  ;
+wire \ii0682|dx_net  ;
+wire \ii0571|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr_r__reg[7]|qx_net  ;
+wire \ii0460|dx_net  ;
+wire \ii0459|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_1_r__reg[12]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[10]|qx_net  ;
+wire \io_cell_buttonIn3_inst|id_q_net  ;
+wire \ii0734|dx_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr__reg[1]|qx_net  ;
+wire \ii0623|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28]|qx_net  ;
+wire \ii0512|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6]|qx_net  ;
+wire \ii0776|dx_net  ;
+wire \ii0665|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27]|qx_net  ;
+wire \ii0554|dx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[31]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6]|qx_net  ;
+wire \ii0717|dx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[10]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_1_r__reg[8]|qx_net  ;
+wire \ii0596|dx_net  ;
+wire \ii0606|dx_net  ;
+wire \ii0485|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[13]|qx_net  ;
+wire \u_colorgen_h_cnt__reg[6]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net  ;
+wire \ii0648|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15]|qx_net  ;
+wire \ii0537|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[1]_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[4]_net  ;
+wire \ii0701|dx_net  ;
+wire \ii0691|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwrite_o__reg|qx_net  ;
+wire \ii0579|dx_net  ;
+wire \ii0580|dx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[7]_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[22]|qx_net  ;
+wire \ii0468|dx_net  ;
+wire \u_colorgen_h_cnt__reg[10]|qx_net  ;
+wire \ii0743|dx_net  ;
+wire \ii0632|dx_net  ;
+wire \ii0521|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr_r__reg[2]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24]|qx_net  ;
+wire \u_colorgen_h_valid__reg|qx_net  ;
+wire \ii0674|dx_net  ;
+wire \ii0563|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[14]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ;
+wire \ii0726|dx_net  ;
+wire \ii0615|dx_net  ;
+wire \io_cell_display_sel_inst|id_q_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22]|qx_net  ;
+wire \ii0494|dx_net  ;
+wire \ii0504|dx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[25]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ;
+wire \ii0657|dx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_1_r__reg[3]|qx_net  ;
+wire \ii0546|dx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[10]_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[5]|qx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[13]_net  ;
+wire \u_colorgen_h_cnt__reg[1]|qx_net  ;
+wire \ii0710|dx_net  ;
+wire \ii0709|dx_net  ;
+wire \ii0699|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[7]|qx_net  ;
+wire \ii0588|dx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[16]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ;
+wire \ii0477|dx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[20]_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[19]_net  ;
+wire \ii0752|dx_net  ;
+wire \ii0641|dx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[23]_net  ;
 wire \ii0529|dx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_r__reg[2]|qx_net  ;
-wire \u_sdram_to_RGB_bmp_fig_cnt__reg[2]|qx_net  ;
-wire \ii0601|dx_net  ;
-wire \ii0591|dx_net  ;
-wire \ii0662|dx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9]|qx_net  ;
+wire \ii0530|dx_net  ;
 wire \u_sdram_to_RGB_ahm_rdata_r__reg[16]|qx_net  ;
 wire \u_arm_u_soc|fp0_m_ahb_rdata[26]_net  ;
-wire \ii0733|dx_net  ;
-wire \ii0480|dx_net  ;
-wire \ii0479|dx_net  ;
-wire \ii0551|dx_net  ;
-wire \u_sdram_to_RGB_de_i_r_sclk__reg[0]|qx_net  ;
-wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5]|qx_net  ;
-wire \u_sdram_to_RGB_ahm_rdata_r__reg[12]|qx_net  ;
-wire \u_sdram_to_RGB_emb_rdata_1_r__reg[14]|qx_net  ;
 wire \u_sdram_to_RGB_emb_addr_wr__reg[7]|qx_net  ;
-wire \ii0622|dx_net  ;
-wire \u_sdram_to_RGB_emb_addr_wr_r__reg[5]|qx_net  ;
 wire \ii0683|dx_net  ;
-wire \u_arm_u_soc|fp0_m_ahb_rdata[29]_net  ;
 wire \u_arm_u_soc|fp0_m_ahb_rdata[30]_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[29]_net  ;
+wire \ii0572|dx_net  ;
+wire \ii0461|dx_net  ;
+wire \u_colorgen_v_cnt__reg[5]|qx_net  ;
+wire \ii0735|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18]|qx_net  ;
+wire \ii0624|dx_net  ;
+wire \ii0513|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17]|qx_net  ;
+wire \ii0777|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3]|qx_net  ;
+wire \ii0666|dx_net  ;
+wire \u_sdram_to_RGB_addr_cnt__reg[5]|qx_net  ;
+wire \ii0555|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[20]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[19]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[7]|qx_net  ;
+wire \ii0718|dx_net  ;
+wire \ii0597|dx_net  ;
+wire \ii0607|dx_net  ;
+wire \ii0486|dx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[0]|qx_net  ;
+wire \u_pll_pll_u0|clkout0_net  ;
+wire \ii0650|dx_net  ;
+wire \ii0649|dx_net  ;
+wire \u_sdram_to_RGB_text__reg[8]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[2]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[28]|qx_net  ;
+wire \ii0538|dx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[5]|qx_net  ;
+wire \ii0702|dx_net  ;
+wire \ii0692|dx_net  ;
+wire \ii0581|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr_r__reg[8]|qx_net  ;
+wire \ii0470|dx_net  ;
+wire \ii0469|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_1_r__reg[13]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[11]|qx_net  ;
+wire \ii0744|dx_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr__reg[2]|qx_net  ;
+wire \ii0633|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29]|qx_net  ;
+wire \ii0522|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7]|qx_net  ;
+wire \u_colorgen_v_cnt__reg[0]|qx_net  ;
+wire \ii0675|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28]|qx_net  ;
+wire \ii0564|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7]|qx_net  ;
+wire \u_colorgen_v_valid__reg|qx_net  ;
+wire \ii0727|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[1]_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[11]|qx_net  ;
+wire \rstn_final__reg|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_1_r__reg[9]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_0|q[0]_net  ;
+wire \ii0616|dx_net  ;
+wire \u_sdram_to_RGB_addr_cnt__reg[0]|qx_net  ;
+wire \ii0495|dx_net  ;
+wire \ii0505|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_0|q[3]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[14]|qx_net  ;
+wire \u_colorgen_h_cnt__reg[7]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[2]|qx_net  ;
+wire \ii0658|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[2]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16]|qx_net  ;
+wire \ii0547|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[1]_net  ;
+wire \ii0758|co_net  ;
+wire \ii0711|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[0]_net  ;
+wire \ii0589|dx_net  ;
+wire \ii0590|dx_net  ;
+wire \ii0600|dx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[23]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[3]_net  ;
+wire \ii0478|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[2]_net  ;
+wire \ii0753|dx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[0]|qx_net  ;
+wire \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ;
+wire \ii0642|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[1]_net  ;
+wire \ii0531|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[0]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr_r__reg[3]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[3]_net  ;
+wire \ii0684|dx_net  ;
+wire \ii0573|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24]|qx_net  ;
+wire \u_sdram_to_RGB_de_i_start_pulse__reg|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[15]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5]|qx_net  ;
+wire \ii0736|dx_net  ;
+wire \ii0625|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23]|qx_net  ;
+wire \ii0514|dx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[26]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2]|qx_net  ;
+wire \ii0778|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ;
+wire \ii0667|dx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_1_r__reg[4]|qx_net  ;
+wire \ii0556|dx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[6]|qx_net  ;
+wire \u_colorgen_h_cnt__reg[2]|qx_net  ;
+wire \ii0720|dx_net  ;
+wire \ii0719|dx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[8]|qx_net  ;
+wire \ii0598|dx_net  ;
+wire \ii0608|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]|qx_net  ;
+wire \ii0487|dx_net  ;
+wire \ii0651|dx_net  ;
+wire \ii0539|dx_net  ;
+wire \ii0540|dx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[17]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr__reg[8]|qx_net  ;
+wire \ii0703|dx_net  ;
+wire \ii0693|dx_net  ;
+wire \ii0582|dx_net  ;
+wire \ii0471|dx_net  ;
+wire \u_colorgen_v_cnt__reg[6]|qx_net  ;
+wire \ii0745|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19]|qx_net  ;
+wire \ii0634|dx_net  ;
+wire \ii0523|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[10]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ;
+wire \ii0676|dx_net  ;
+wire \u_sdram_to_RGB_addr_cnt__reg[6]|qx_net  ;
+wire \ii0565|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[21]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[8]|qx_net  ;
+wire \ii0728|dx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_push_wr1__reg|qx_net  ;
+wire \ii0617|dx_net  ;
+wire \ii0496|dx_net  ;
+wire \ii0506|dx_net  ;
+wire \u_sdram_to_RGB_bmp_fig_chg__reg[0]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[1]|qx_net  ;
+wire \ii0660|dx_net  ;
+wire \ii0659|dx_net  ;
+wire \u_sdram_to_RGB_text__reg[9]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[3]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[30]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[29]|qx_net  ;
+wire \ii0548|dx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[6]|qx_net  ;
+wire \ii0760|co_net  ;
+wire \ii0759|co_net  ;
+wire \ii0712|dx_net  ;
+wire \ii0591|dx_net  ;
+wire \ii0601|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9]|qx_net  ;
+wire \ii0479|dx_net  ;
+wire \ii0480|dx_net  ;
+wire \u_sdram_to_RGB_de_i_r_sclk__reg[0]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_1_r__reg[14]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[12]|qx_net  ;
+wire \ii0754|dx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[2]_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr__reg[3]|qx_net  ;
+wire \ii0643|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31]|qx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[5]_net  ;
+wire \ii0532|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8]|qx_net  ;
+wire \u_colorgen_v_cnt__reg[1]|qx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[8]_net  ;
+wire \ii0685|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29]|qx_net  ;
+wire \ii0574|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30]|qx_net  ;
+wire \ii0463|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13]|qx_net  ;
+wire \ii0737|dx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[12]|qx_net  ;
+wire \ii0626|dx_net  ;
+wire \u_sdram_to_RGB_addr_cnt__reg[1]|qx_net  ;
+wire \ii0515|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12]|qx_net  ;
+wire \ii0779|dx_net  ;
+wire \ii0780|dx_net  ;
+wire \u_colorgen_h_cnt__reg[8]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[15]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net  ;
+wire \ii0668|dx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[3]|qx_net  ;
+wire \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ;
+wire \ii0557|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ;
+wire \ii0721|dx_net  ;
+wire \ii0610|dx_net  ;
+wire \ii0609|dx_net  ;
+wire \ii0599|dx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[24]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0]|qx_net  ;
+wire \ii0488|dx_net  ;
+wire \u_sdram_to_RGB_buffer_rd_sel_r__reg[0]|qx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[11]_net  ;
+wire \u_sdram_to_RGB_bmp_fig_cnt__reg[1]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[1]|qx_net  ;
+wire \ii0652|dx_net  ;
+wire \ii0541|dx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[14]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr_r__reg[4]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[17]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26]|qx_net  ;
+wire \ii0694|dx_net  ;
+wire \ii0704|dx_net  ;
+wire \ii0583|dx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[21]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25]|qx_net  ;
+wire \ii0472|dx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[24]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3]|qx_net  ;
+wire \ii0746|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6]|qx_net  ;
+wire \ii0635|dx_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[27]_net  ;
+wire \ii0524|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[27]|qx_net  ;
+wire \io_cell_rstn_i_inst|id_q_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_rdata[31]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ;
+wire \ii0677|dx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_1_r__reg[5]|qx_net  ;
+wire \ii0566|dx_net  ;
+wire \u_sdram_to_RGB_de_i_r__reg[0]|qx_net  ;
+wire \ii0455|dx_net  ;
+wire \ii0759|s_net  ;
+wire \ii0760|s_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[7]|qx_net  ;
+wire \ii0729|dx_net  ;
+wire \ii0730|dx_net  ;
+wire \u_colorgen_h_cnt__reg[3]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[10]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[9]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net  ;
+wire \ii0618|dx_net  ;
+wire \ii0507|dx_net  ;
+wire \ii0497|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3]|qx_net  ;
+wire \ii0661|dx_net  ;
+wire \ii0761|s_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_resp_net  ;
+wire \ii0550|dx_net  ;
+wire \ii0549|dx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[18]|qx_net  ;
+wire \ii0761|co_net  ;
+wire \ii0713|dx_net  ;
+wire \ii0602|dx_net  ;
+wire \ii0592|dx_net  ;
+wire \ii0762|s_net  ;
+wire \ii0481|dx_net  ;
+wire \u_colorgen_v_cnt__reg[7]|qx_net  ;
+wire \ii0755|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21]|qx_net  ;
+wire \ii0644|dx_net  ;
+wire \ii0533|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20]|qx_net  ;
+wire \ii0763|s_net  ;
+wire \u_arm_u_soc|fp0_m_ahb_ready_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[11]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5]|qx_net  ;
+wire \ii0686|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ;
+wire \u_sdram_to_RGB_addr_cnt__reg[7]|qx_net  ;
+wire \ii0575|dx_net  ;
+wire \ii0464|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[22]|qx_net  ;
+wire \ii0738|dx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[9]|qx_net  ;
+wire \ii0764|s_net  ;
+wire \ii0627|dx_net  ;
+wire \u_sdram_to_RGB_display_period_align__reg|qx_net  ;
+wire \u_lvds_pll_u0|clkout1_net  ;
+wire \u_sdram_to_RGB_emb_rdata_1_r__reg[0]|qx_net  ;
+wire \ii0516|dx_net  ;
+wire \u_sdram_to_RGB_bmp_fig_chg__reg[1]|qx_net  ;
+wire \ii0781|dx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_0_r__reg[2]|qx_net  ;
+wire \ii0669|dx_net  ;
+wire \ii0670|dx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[31]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[4]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6]|qx_net  ;
+wire \ii0558|dx_net  ;
+wire \ii0765|s_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[2]_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_0|q[1]_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[7]|qx_net  ;
+wire \ii0722|dx_net  ;
+wire \u_arm_u_soc|spi0_sck_net  ;
+wire \ii0611|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[0]_net  ;
+wire \ii0500|dx_net  ;
+wire \ii0490|dx_net  ;
+wire \ii0489|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg|qx_net  ;
+wire \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[13]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_1_r__reg[15]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[3]_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[2]_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr__reg[4]|qx_net  ;
+wire \ii0653|dx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_push_wr0__reg|qx_net  ;
+wire \ii0542|dx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[1]_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[0]_net  ;
+wire \u_colorgen_v_cnt__reg[2]|qx_net  ;
+wire \ii0705|dx_net  ;
+wire \ii0695|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[3]_net  ;
+wire \ii0584|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31]|qx_net  ;
+wire \ii0473|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[2]_net  ;
+wire \ii0747|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ;
+wire \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[1]_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[13]|qx_net  ;
+wire \ii0636|dx_net  ;
+wire \u_sdram_to_RGB_addr_cnt__reg[2]|qx_net  ;
+wire \ii0525|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[16]|qx_net  ;
+wire \u_colorgen_h_cnt__reg[9]|qx_net  ;
+wire \u_arm_dll_u0|clkout0_net  ;
+wire \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net  ;
+wire \u_sdram_to_RGB_dma_addr__reg[4]|qx_net  ;
+wire \ii0678|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18]|qx_net  ;
+wire \ii0567|dx_net  ;
+wire \ii0456|dx_net  ;
+wire \ii0731|dx_net  ;
+wire \u_arm_u_soc|gpio_0_out_o[0]_net  ;
+wire \ii0619|dx_net  ;
+wire \ii0620|dx_net  ;
+wire \u_sdram_to_RGB_ahm_rdata_r__reg[25]|qx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[1]|qx_net  ;
+wire \ii0508|dx_net  ;
+wire \ii0498|dx_net  ;
+wire \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ;
+wire \u_sdram_to_RGB_bmp_fig_cnt__reg[2]|qx_net  ;
+wire \u_sdram_to_RGB_emb_rdata_r__reg[2]|qx_net  ;
+wire \ii0662|dx_net  ;
+wire \ii0551|dx_net  ;
+wire \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5]|qx_net  ;
+wire \u_sdram_to_RGB_emb_addr_wr_r__reg[5]|qx_net  ;
 LUT4 ii0589 (
 	. dx ( \ii0589|dx_net  ),
-	. f3 ( \u_arm_u_soc|fp0_m_ahb_resp_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
-	. f0 ( \ii0588|dx_net  )
-);
-defparam ii0589.PLACE_LOCATION = "C27R12.le_tile.le_guts.lp1.lut0";
-defparam ii0589.PCK_LOCATION = "C27R12.lp1.lut0";
-defparam ii0589.config_data = "F7F0";
-LUT4 ii0590 (
-	. dx ( \ii0590|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_de_i_start_pulse__reg|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_other_1_beat_valid__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg|qx_net  ),
 	. f0 ( )
 );
-defparam ii0590.PLACE_LOCATION = "C25R11.le_tile.le_guts.lp0.lut0";
-defparam ii0590.PCK_LOCATION = "C25R11.lp0.lut0";
-defparam ii0590.config_data = "0909";
+defparam ii0589.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp0.lut41";
+defparam ii0589.PCK_LOCATION = "C35R16.lp0.lut41";
+defparam ii0589.config_data = "AEAE";
+LUT4 ii0590 (
+	. dx ( \ii0590|dx_net  ),
+	. f3 ( \io_cell_buttonIn2_inst|id_q_net  ),
+	. f2 ( \io_cell_buttonIn3_inst|id_q_net  ),
+	. f1 ( \u_sdram_to_RGB_text__reg[7]|qx_net  ),
+	. f0 ( \ii0533|dx_net  )
+);
+defparam ii0590.PLACE_LOCATION = "C33R31.le_tile.le_guts.lp1.lut0";
+defparam ii0590.PCK_LOCATION = "C33R31.lp1.lut0";
+defparam ii0590.config_data = "A2F0";
 LUT4 ii0600 (
 	. dx ( \ii0600|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3]|qx_net  )
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0599|dx_net  ),
+	. f0 ( )
 );
-defparam ii0600.PLACE_LOCATION = "C27R12.le_tile.le_guts.lp1.lut41";
-defparam ii0600.PCK_LOCATION = "C27R12.lp1.lut41";
-defparam ii0600.config_data = "01FE";
+defparam ii0600.PLACE_LOCATION = "C35R12.le_tile.le_guts.lp2.lut0";
+defparam ii0600.PCK_LOCATION = "C35R12.lp2.lut0";
+defparam ii0600.config_data = "F1F1";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0671|dx_net  ),
+	. di ( \ii0685|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -843,16 +866,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21] .PLACE_LOCATION = "C39R10.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21] .PLACE_LOCATION = "C39R13.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21] .PCK_LOCATION = "C39R10.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21] .PCK_LOCATION = "C39R13.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_addr_rd__reg[4]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0541|dx_net  ),
+	. di ( \ii0552|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -874,9 +897,9 @@ defparam \u_sdram_to_RGB_emb_addr_rd__reg[4] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[4] .PLACE_LOCATION = "C29R16.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[4] .PLACE_LOCATION = "C29R15.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[4] .PCK_LOCATION = "C29R16.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[4] .PCK_LOCATION = "C29R15.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[4] .is_en_used = "false";
 M7S_IO_VREF dedicated_io_cell_u227_inst (
 	. id_q_1 ( )
@@ -1021,24 +1044,24 @@ defparam dedicated_io_cell_u227_inst.cfg_gsclk_inv_1 = 0;
 defparam dedicated_io_cell_u227_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0591 (
 	. dx ( \ii0591|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \io_cell_buttonIn2_inst|id_q_net  ),
+	. f2 ( \io_cell_buttonIn3_inst|id_q_net  ),
+	. f1 ( \u_sdram_to_RGB_text__reg[8]|qx_net  ),
+	. f0 ( \ii0533|dx_net  )
 );
-defparam ii0591.PLACE_LOCATION = "C37R11.le_tile.le_guts.lp2.lut0";
-defparam ii0591.PCK_LOCATION = "C37R11.lp2.lut0";
-defparam ii0591.config_data = "1111";
+defparam ii0591.PLACE_LOCATION = "C33R31.le_tile.le_guts.lp0.lut0";
+defparam ii0591.PCK_LOCATION = "C33R31.lp0.lut0";
+defparam ii0591.config_data = "D5F0";
 LUT4 ii0601 (
 	. dx ( \ii0601|dx_net  ),
-	. f3 ( \ii0599|dx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0594|dx_net  ),
-	. f0 ( \ii0600|dx_net  )
+	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0601.PLACE_LOCATION = "C27R12.le_tile.le_guts.lp2.lut0";
-defparam ii0601.PCK_LOCATION = "C27R12.lp2.lut0";
-defparam ii0601.config_data = "5073";
+defparam ii0601.PLACE_LOCATION = "C39R11.le_tile.le_guts.lp1.lut0";
+defparam ii0601.PCK_LOCATION = "C39R11.lp1.lut0";
+defparam ii0601.config_data = "0808";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[1]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[1]|qx_net  ),
 	. qs ( ),
@@ -1066,56 +1089,56 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[1] .PLACE_LOCATION = "C35R20.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[1] .PLACE_LOCATION = "C33R18.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[1] .PCK_LOCATION = "C35R20.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[1] .PCK_LOCATION = "C33R18.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[1] .is_en_used = "false";
 LUT4 ii0592 (
 	. dx ( \ii0592|dx_net  ),
-	. f3 ( \ii0583|dx_net  ),
-	. f2 ( \ii0591|dx_net  ),
+	. f3 ( \io_cell_buttonIn2_inst|id_q_net  ),
+	. f2 ( \io_cell_buttonIn3_inst|id_q_net  ),
+	. f1 ( \u_sdram_to_RGB_text__reg[9]|qx_net  ),
+	. f0 ( \ii0533|dx_net  )
+);
+defparam ii0592.PLACE_LOCATION = "C33R31.le_tile.le_guts.lp2.lut0";
+defparam ii0592.PCK_LOCATION = "C33R31.lp2.lut0";
+defparam ii0592.config_data = "A2F0";
+LUT4 ii0602 (
+	. dx ( \ii0602|dx_net  ),
+	. f3 ( \u_arm_u_soc|fp0_m_ahb_resp_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0592.PLACE_LOCATION = "C35R12.le_tile.le_guts.lp3.lut0";
-defparam ii0592.PCK_LOCATION = "C35R12.lp3.lut0";
-defparam ii0592.config_data = "8888";
-LUT4 ii0602 (
-	. dx ( \ii0602|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3]|qx_net  )
-);
-defparam ii0602.PLACE_LOCATION = "C27R12.le_tile.le_guts.lp0.lut0";
-defparam ii0602.PCK_LOCATION = "C27R12.lp0.lut0";
-defparam ii0602.config_data = "0001";
+defparam ii0602.PLACE_LOCATION = "C37R11.le_tile.le_guts.lp1.lut41";
+defparam ii0602.PCK_LOCATION = "C37R11.lp1.lut41";
+defparam ii0602.config_data = "8888";
 LUT4 ii0593 (
 	. dx ( \ii0593|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5]|qx_net  ),
-	. f1 ( \ii0580|dx_net  ),
-	. f0 ( \ii0581|dx_net  )
+	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  )
 );
-defparam ii0593.PLACE_LOCATION = "C29R13.le_tile.le_guts.lp0.lut41";
-defparam ii0593.PCK_LOCATION = "C29R13.lp0.lut41";
-defparam ii0593.config_data = "80C0";
+defparam ii0593.PLACE_LOCATION = "C37R10.le_tile.le_guts.lp2.lut40";
+defparam ii0593.PCK_LOCATION = "C37R10.lp2.lut40";
+defparam ii0593.config_data = "0008";
 LUT4 ii0603 (
 	. dx ( \ii0603|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4]|qx_net  ),
-	. f2 ( \ii0599|dx_net  ),
-	. f1 ( \ii0579|dx_net  ),
-	. f0 ( \ii0602|dx_net  )
+	. f3 ( \ii0593|dx_net  ),
+	. f2 ( \ii0601|dx_net  ),
+	. f1 ( \ii0602|dx_net  ),
+	. f0 ( )
 );
-defparam ii0603.PLACE_LOCATION = "C27R11.le_tile.le_guts.lp3.lut0";
-defparam ii0603.PCK_LOCATION = "C27R11.lp3.lut0";
-defparam ii0603.config_data = "C5CA";
+defparam ii0603.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp1.lut0";
+defparam ii0603.PCK_LOCATION = "C35R11.lp1.lut0";
+defparam ii0603.config_data = "AEAE";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[2]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0569|dx_net  ),
+	. di ( \ii0580|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -1137,18 +1160,18 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[2] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[2] .PLACE_LOCATION = "C29R31.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[2] .PLACE_LOCATION = "C29R31.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[2] .PCK_LOCATION = "C29R31.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[2] .PCK_LOCATION = "C29R31.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[2] .is_en_used = "false";
 REG \u_sdram_to_RGB_bmp_fig_cnt__reg[2]  (
 	. qx ( \u_sdram_to_RGB_bmp_fig_cnt__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0516|dx_net  ),
+	. di ( \ii0525|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0514|dx_net  ),
+	. en ( \ii0523|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -1168,38 +1191,38 @@ defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[2] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[2] .PLACE_LOCATION = "C37R23.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[2] .PLACE_LOCATION = "C37R24.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[2] .PCK_LOCATION = "C37R23.lp0.reg0";
+defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[2] .PCK_LOCATION = "C37R24.lp0.reg0";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[2] .is_en_used = "true";
 LUT4 ii0594 (
 	. dx ( \ii0594|dx_net  ),
-	. f3 ( \ii0592|dx_net  ),
-	. f2 ( \ii0593|dx_net  ),
-	. f1 ( \ii0584|dx_net  ),
-	. f0 ( \ii0579|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9]|qx_net  )
 );
-defparam ii0594.PLACE_LOCATION = "C33R12.le_tile.le_guts.lp3.lut0";
-defparam ii0594.PCK_LOCATION = "C33R12.lp3.lut0";
-defparam ii0594.config_data = "0100";
+defparam ii0594.PLACE_LOCATION = "C33R14.le_tile.le_guts.lp1.lut41";
+defparam ii0594.PCK_LOCATION = "C33R14.lp1.lut41";
+defparam ii0594.config_data = "8000";
 LUT4 ii0604 (
 	. dx ( \ii0604|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4]|qx_net  ),
-	. f2 ( \ii0602|dx_net  ),
-	. f1 ( ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
 	. f0 ( )
 );
-defparam ii0604.PLACE_LOCATION = "C27R12.le_tile.le_guts.lp0.lut40";
-defparam ii0604.PCK_LOCATION = "C27R12.lp0.lut40";
-defparam ii0604.config_data = "4444";
+defparam ii0604.PLACE_LOCATION = "C35R12.le_tile.le_guts.lp3.lut0";
+defparam ii0604.PCK_LOCATION = "C35R12.lp3.lut0";
+defparam ii0604.config_data = "0909";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0732|dx_net  ),
+	. di ( \ii0747|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -1219,9 +1242,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3] .le_sh0_always_en = "false
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3] .PLACE_LOCATION = "C33R13.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3] .PLACE_LOCATION = "C27R14.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3] .PCK_LOCATION = "C33R13.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3] .PCK_LOCATION = "C27R14.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30]|qx_net  ),
@@ -1250,9 +1273,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30] .PLACE_LOCATION = "C39R4.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30] .PCK_LOCATION = "C39R4.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30] .PCK_LOCATION = "C47R4.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[30] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29]|qx_net  ),
@@ -1281,9 +1304,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29] .PLACE_LOCATION = "C39R4.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29] .PLACE_LOCATION = "C39R4.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29] .PCK_LOCATION = "C39R4.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29] .PCK_LOCATION = "C39R4.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[29] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[12]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[12]|qx_net  ),
@@ -1312,16 +1335,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[12] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[12] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[12] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[12] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[12] .PLACE_LOCATION = "C33R19.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[12] .PLACE_LOCATION = "C29R18.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[12] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[12] .PCK_LOCATION = "C33R19.lp1.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[12] .PCK_LOCATION = "C29R18.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[12] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_addr_wr__reg[5]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr__reg[5]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0556|dx_net  ),
+	. di ( \ii0567|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
 	. mclk_b ( ),
@@ -1343,9 +1366,9 @@ defparam \u_sdram_to_RGB_emb_addr_wr__reg[5] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[5] .PLACE_LOCATION = "C35R16.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[5] .PLACE_LOCATION = "C19R16.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[5] .PCK_LOCATION = "C35R16.lp3.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[5] .PCK_LOCATION = "C19R16.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[5] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[10]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[10]|qx_net  ),
@@ -1374,50 +1397,50 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[10] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[10] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[10] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[10] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[10] .PLACE_LOCATION = "C25R14.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[10] .PLACE_LOCATION = "C29R13.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[10] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[10] .PCK_LOCATION = "C25R14.lp1.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[10] .PCK_LOCATION = "C29R13.lp1.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[10] .is_en_used = "false";
 LUT4 ii0595 (
 	. dx ( \ii0595|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3]|qx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0595.PLACE_LOCATION = "C25R11.le_tile.le_guts.lp2.lut0";
-defparam ii0595.PCK_LOCATION = "C25R11.lp2.lut0";
-defparam ii0595.config_data = "1E1E";
+defparam ii0595.PLACE_LOCATION = "C33R14.le_tile.le_guts.lp0.lut40";
+defparam ii0595.PCK_LOCATION = "C33R14.lp0.lut40";
+defparam ii0595.config_data = "1111";
 LUT4 ii0605 (
 	. dx ( \ii0605|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0604|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0605.PLACE_LOCATION = "C25R12.le_tile.le_guts.lp0.lut0";
-defparam ii0605.PCK_LOCATION = "C25R12.lp0.lut0";
-defparam ii0605.config_data = "1212";
+defparam ii0605.PLACE_LOCATION = "C35R15.le_tile.le_guts.lp0.lut40";
+defparam ii0605.PCK_LOCATION = "C35R15.lp0.lut40";
+defparam ii0605.config_data = "1111";
 LUT4 ii0596 (
 	. dx ( \ii0596|dx_net  ),
-	. f3 ( \ii0579|dx_net  ),
-	. f2 ( \ii0585|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5]|qx_net  ),
 	. f1 ( \ii0594|dx_net  ),
 	. f0 ( \ii0595|dx_net  )
 );
-defparam ii0596.PLACE_LOCATION = "C27R11.le_tile.le_guts.lp0.lut0";
-defparam ii0596.PCK_LOCATION = "C27R11.lp0.lut0";
-defparam ii0596.config_data = "0203";
+defparam ii0596.PLACE_LOCATION = "C33R14.le_tile.le_guts.lp2.lut0";
+defparam ii0596.PCK_LOCATION = "C33R14.lp2.lut0";
+defparam ii0596.config_data = "0080";
 LUT4 ii0606 (
 	. dx ( \ii0606|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
-	. f0 ( \ii0604|dx_net  )
+	. f3 ( \ii0597|dx_net  ),
+	. f2 ( \ii0605|dx_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0606.PLACE_LOCATION = "C25R12.le_tile.le_guts.lp1.lut0";
-defparam ii0606.PCK_LOCATION = "C25R12.lp1.lut0";
-defparam ii0606.config_data = "090C";
+defparam ii0606.PLACE_LOCATION = "C35R15.le_tile.le_guts.lp1.lut0";
+defparam ii0606.PCK_LOCATION = "C35R15.lp1.lut0";
+defparam ii0606.config_data = "8888";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2]|qx_net  ),
 	. qs ( ),
@@ -1425,7 +1448,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[2]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -1445,9 +1468,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2] .le_sh0_always_en = "f
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2] .PLACE_LOCATION = "C35R7.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2] .PLACE_LOCATION = "C35R9.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2] .PCK_LOCATION = "C35R7.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2] .PCK_LOCATION = "C35R9.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[2] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20]|qx_net  ),
@@ -1456,7 +1479,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[20]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -1476,9 +1499,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20] .PLACE_LOCATION = "C33R7.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20] .PLACE_LOCATION = "C29R11.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20] .PCK_LOCATION = "C33R7.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20] .PCK_LOCATION = "C29R11.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[20] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19]|qx_net  ),
@@ -1487,7 +1510,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[19]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -1507,9 +1530,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19] .PLACE_LOCATION = "C33R8.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19] .PLACE_LOCATION = "C37R9.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19] .PCK_LOCATION = "C33R8.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19] .PCK_LOCATION = "C37R9.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[19] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[15]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[15]|qx_net  ),
@@ -1538,30 +1561,30 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[15] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[15] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[15] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[15] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[15] .PLACE_LOCATION = "C29R19.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[15] .PLACE_LOCATION = "C33R20.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[15] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[15] .PCK_LOCATION = "C29R19.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[15] .PCK_LOCATION = "C33R20.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[15] .is_en_used = "false";
 LUT4 ii0597 (
 	. dx ( \ii0597|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7]|qx_net  )
 );
-defparam ii0597.PLACE_LOCATION = "C37R14.le_tile.le_guts.lp1.lut0";
-defparam ii0597.PCK_LOCATION = "C37R14.lp1.lut0";
-defparam ii0597.config_data = "8000";
+defparam ii0597.PLACE_LOCATION = "C39R17.le_tile.le_guts.lp1.lut40";
+defparam ii0597.PCK_LOCATION = "C39R17.lp1.lut40";
+defparam ii0597.config_data = "0001";
 LUT4 ii0607 (
 	. dx ( \ii0607|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7]|qx_net  ),
-	. f0 ( \ii0604|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5]|qx_net  ),
+	. f1 ( \ii0594|dx_net  ),
+	. f0 ( \ii0595|dx_net  )
 );
-defparam ii0607.PLACE_LOCATION = "C27R12.le_tile.le_guts.lp3.lut0";
-defparam ii0607.PCK_LOCATION = "C27R12.lp3.lut0";
-defparam ii0607.config_data = "1E0F";
+defparam ii0607.PLACE_LOCATION = "C33R14.le_tile.le_guts.lp1.lut0";
+defparam ii0607.PCK_LOCATION = "C33R14.lp1.lut0";
+defparam ii0607.config_data = "80C0";
 REG \u_sdram_to_RGB_dma_addr__reg[28]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[28]|qx_net  ),
 	. qs ( ),
@@ -1589,66 +1612,66 @@ defparam \u_sdram_to_RGB_dma_addr__reg[28] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[28] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[28] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[28] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[28] .PLACE_LOCATION = "C27R14.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[28] .PLACE_LOCATION = "C37R14.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[28] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[28] .PCK_LOCATION = "C27R14.lp2.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[28] .PCK_LOCATION = "C37R14.lp1.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[28] .is_en_used = "false";
 LUT4 ii0598 (
 	. dx ( \ii0598|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5]|qx_net  )
-);
-defparam ii0598.PLACE_LOCATION = "C29R13.le_tile.le_guts.lp2.lut0";
-defparam ii0598.PCK_LOCATION = "C29R13.lp2.lut0";
-defparam ii0598.config_data = "0001";
-LUT4 ii0608 (
-	. dx ( \ii0608|dx_net  ),
-	. f3 ( \ii0579|dx_net  ),
-	. f2 ( \ii0607|dx_net  ),
-	. f1 ( ),
-	. f0 ( )
-);
-defparam ii0608.PLACE_LOCATION = "C23R12.le_tile.le_guts.lp0.lut0";
-defparam ii0608.PCK_LOCATION = "C23R12.lp0.lut0";
-defparam ii0608.config_data = "1111";
-LUT4 ii0599 (
-	. dx ( \ii0599|dx_net  ),
-	. f3 ( \ii0583|dx_net  ),
-	. f2 ( \ii0580|dx_net  ),
-	. f1 ( \ii0597|dx_net  ),
-	. f0 ( \ii0598|dx_net  )
-);
-defparam ii0599.PLACE_LOCATION = "C35R13.le_tile.le_guts.lp3.lut0";
-defparam ii0599.PCK_LOCATION = "C35R13.lp3.lut0";
-defparam ii0599.config_data = "F531";
-LUT4 ii0609 (
-	. dx ( \ii0609|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
-	. f1 ( \ii0592|dx_net  ),
-	. f0 ( \ii0582|dx_net  )
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ),
+	. f0 ( \ii0597|dx_net  )
 );
-defparam ii0609.PLACE_LOCATION = "C35R15.le_tile.le_guts.lp2.lut40";
-defparam ii0609.PCK_LOCATION = "C35R15.lp2.lut40";
-defparam ii0609.config_data = "33BC";
+defparam ii0598.PLACE_LOCATION = "C39R17.le_tile.le_guts.lp2.lut0";
+defparam ii0598.PCK_LOCATION = "C39R17.lp2.lut0";
+defparam ii0598.config_data = "0700";
+LUT4 ii0608 (
+	. dx ( \ii0608|dx_net  ),
+	. f3 ( \ii0606|dx_net  ),
+	. f2 ( \ii0607|dx_net  ),
+	. f1 ( \ii0598|dx_net  ),
+	. f0 ( \ii0593|dx_net  )
+);
+defparam ii0608.PLACE_LOCATION = "C37R14.le_tile.le_guts.lp0.lut0";
+defparam ii0608.PCK_LOCATION = "C37R14.lp0.lut0";
+defparam ii0608.config_data = "0100";
+LUT4 ii0599 (
+	. dx ( \ii0599|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ),
+	. f2 ( \ii0596|dx_net  ),
+	. f1 ( \ii0598|dx_net  ),
+	. f0 ( \ii0593|dx_net  )
+);
+defparam ii0599.PLACE_LOCATION = "C39R14.le_tile.le_guts.lp0.lut40";
+defparam ii0599.PCK_LOCATION = "C39R14.lp0.lut40";
+defparam ii0599.config_data = "DC00";
+LUT4 ii0609 (
+	. dx ( \ii0609|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]|qx_net  ),
+	. f0 ( )
+);
+defparam ii0609.PLACE_LOCATION = "C35R13.le_tile.le_guts.lp1.lut40";
+defparam ii0609.PCK_LOCATION = "C35R13.lp1.lut40";
+defparam ii0609.config_data = "1E1E";
 LUT4 ii0610 (
 	. dx ( \ii0610|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ),
-	. f2 ( \ii0592|dx_net  ),
-	. f1 ( \ii0593|dx_net  ),
-	. f0 ( \ii0584|dx_net  )
+	. f3 ( \ii0593|dx_net  ),
+	. f2 ( \ii0599|dx_net  ),
+	. f1 ( \ii0608|dx_net  ),
+	. f0 ( \ii0609|dx_net  )
 );
-defparam ii0610.PLACE_LOCATION = "C35R15.le_tile.le_guts.lp2.lut0";
-defparam ii0610.PCK_LOCATION = "C35R15.lp2.lut0";
-defparam ii0610.config_data = "DCDE";
+defparam ii0610.PLACE_LOCATION = "C35R13.le_tile.le_guts.lp2.lut0";
+defparam ii0610.PCK_LOCATION = "C35R13.lp2.lut0";
+defparam ii0610.config_data = "0203";
 REG \u_sdram_to_RGB_emb_addr_rd__reg[5]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0543|dx_net  ),
+	. di ( \ii0554|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -1670,36 +1693,36 @@ defparam \u_sdram_to_RGB_emb_addr_rd__reg[5] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[5] .PLACE_LOCATION = "C27R17.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[5] .PLACE_LOCATION = "C29R15.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[5] .PCK_LOCATION = "C27R17.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[5] .PCK_LOCATION = "C29R15.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[5] .is_en_used = "false";
 LUT4 ii0611 (
 	. dx ( \ii0611|dx_net  ),
-	. f3 ( \ii0583|dx_net  ),
-	. f2 ( \ii0609|dx_net  ),
-	. f1 ( \ii0610|dx_net  ),
-	. f0 ( )
-);
-defparam ii0611.PLACE_LOCATION = "C35R12.le_tile.le_guts.lp1.lut0";
-defparam ii0611.PCK_LOCATION = "C35R12.lp1.lut0";
-defparam ii0611.config_data = "8080";
-LUT4 ii0612 (
-	. dx ( \ii0612|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
-	. f1 ( \ii0592|dx_net  ),
-	. f0 ( \ii0582|dx_net  )
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  )
 );
-defparam ii0612.PLACE_LOCATION = "C37R13.le_tile.le_guts.lp2.lut0";
-defparam ii0612.PCK_LOCATION = "C37R13.lp2.lut0";
-defparam ii0612.config_data = "55DA";
+defparam ii0611.PLACE_LOCATION = "C35R15.le_tile.le_guts.lp0.lut41";
+defparam ii0611.PCK_LOCATION = "C35R15.lp0.lut41";
+defparam ii0611.config_data = "8000";
+LUT4 ii0612 (
+	. dx ( \ii0612|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5]|qx_net  )
+);
+defparam ii0612.PLACE_LOCATION = "C27R14.le_tile.le_guts.lp1.lut41";
+defparam ii0612.PCK_LOCATION = "C27R14.lp1.lut41";
+defparam ii0612.config_data = "0001";
 REG \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0628|dx_net  ),
+	. di ( \ii0640|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -1721,9 +1744,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0] .le_sh0_always_en = "false"
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0] .PLACE_LOCATION = "C35R11.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0] .PLACE_LOCATION = "C37R11.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0] .PCK_LOCATION = "C35R11.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0] .PCK_LOCATION = "C37R11.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[2]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[2]|qx_net  ),
@@ -1752,9 +1775,9 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[2] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[2] .PLACE_LOCATION = "C33R17.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[2] .PLACE_LOCATION = "C29R18.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[2] .PCK_LOCATION = "C33R17.lp1.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[2] .PCK_LOCATION = "C29R18.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[2] .is_en_used = "false";
 M7S_IO_DDR dedicated_io_cell_u221_inst (
 	. id_q_1 ( )
@@ -1899,14 +1922,14 @@ defparam dedicated_io_cell_u221_inst.cfg_gsclk_inv_1 = 0;
 defparam dedicated_io_cell_u221_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0613 (
 	. dx ( \ii0613|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ),
-	. f2 ( \ii0612|dx_net  ),
-	. f1 ( \ii0599|dx_net  ),
-	. f0 ( )
+	. f3 ( \ii0594|dx_net  ),
+	. f2 ( \ii0597|dx_net  ),
+	. f1 ( \ii0611|dx_net  ),
+	. f0 ( \ii0612|dx_net  )
 );
-defparam ii0613.PLACE_LOCATION = "C37R11.le_tile.le_guts.lp0.lut0";
-defparam ii0613.PCK_LOCATION = "C37R11.lp0.lut0";
-defparam ii0613.config_data = "E4E4";
+defparam ii0613.PLACE_LOCATION = "C33R14.le_tile.le_guts.lp1.lut40";
+defparam ii0613.PCK_LOCATION = "C33R14.lp1.lut40";
+defparam ii0613.config_data = "F351";
 REG u_sdram_to_RGB_dma_start_xfer__reg (
 	. qx ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
 	. qs ( ),
@@ -1934,16 +1957,16 @@ defparam u_sdram_to_RGB_dma_start_xfer__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_dma_start_xfer__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_dma_start_xfer__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_dma_start_xfer__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_dma_start_xfer__reg.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp2.reg0";
+defparam u_sdram_to_RGB_dma_start_xfer__reg.PLACE_LOCATION = "C37R18.le_tile.le_guts.lp0.reg0";
 defparam u_sdram_to_RGB_dma_start_xfer__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_dma_start_xfer__reg.PCK_LOCATION = "C35R11.lp2.reg0";
+defparam u_sdram_to_RGB_dma_start_xfer__reg.PCK_LOCATION = "C37R18.lp0.reg0";
 defparam u_sdram_to_RGB_dma_start_xfer__reg.is_en_used = "false";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[3]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[3]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0570|dx_net  ),
+	. di ( \ii0581|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -1965,18 +1988,18 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[3] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[3] .PLACE_LOCATION = "C35R32.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[3] .PLACE_LOCATION = "C33R29.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[3] .PCK_LOCATION = "C35R32.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[3] .PCK_LOCATION = "C33R29.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[3] .is_en_used = "false";
 REG \u_sdram_to_RGB_bmp_fig_cnt__reg[3]  (
 	. qx ( \u_sdram_to_RGB_bmp_fig_cnt__reg[3]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0518|dx_net  ),
+	. di ( \ii0527|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0514|dx_net  ),
+	. en ( \ii0523|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -1996,16 +2019,16 @@ defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[3] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[3] .PLACE_LOCATION = "C37R23.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[3] .PLACE_LOCATION = "C37R23.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[3] .PCK_LOCATION = "C37R23.lp2.reg0";
+defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[3] .PCK_LOCATION = "C37R23.lp2.reg1";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[3] .is_en_used = "true";
 REG \u_colorgen_h_cnt__reg[10]  (
 	. qx ( \u_colorgen_h_cnt__reg[10]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0460|dx_net  ),
+	. di ( \ii0467|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -2027,28 +2050,28 @@ defparam \u_colorgen_h_cnt__reg[10] .le_sh0_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[10] .le_sh1_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[10] .use_reg_fdbk = "false";
 defparam \u_colorgen_h_cnt__reg[10] .is_le_clk_inv = "false";
-defparam \u_colorgen_h_cnt__reg[10] .PLACE_LOCATION = "C19R17.le_tile.le_guts.lp1.reg0";
+defparam \u_colorgen_h_cnt__reg[10] .PLACE_LOCATION = "C33R18.le_tile.le_guts.lp0.reg0";
 defparam \u_colorgen_h_cnt__reg[10] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_h_cnt__reg[10] .PCK_LOCATION = "C19R17.lp1.reg0";
+defparam \u_colorgen_h_cnt__reg[10] .PCK_LOCATION = "C33R18.lp0.reg0";
 defparam \u_colorgen_h_cnt__reg[10] .is_en_used = "false";
 LUT4 ii0614 (
 	. dx ( \ii0614|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3]|qx_net  )
 );
-defparam ii0614.PLACE_LOCATION = "C35R10.le_tile.le_guts.lp0.lut40";
-defparam ii0614.PCK_LOCATION = "C35R10.lp0.lut40";
-defparam ii0614.config_data = "4444";
+defparam ii0614.PLACE_LOCATION = "C35R13.le_tile.le_guts.lp3.lut0";
+defparam ii0614.PCK_LOCATION = "C35R13.lp3.lut0";
+defparam ii0614.config_data = "01FE";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0733|dx_net  ),
+	. di ( \ii0748|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -2068,9 +2091,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4] .le_sh0_always_en = "false
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4] .PLACE_LOCATION = "C29R13.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4] .PLACE_LOCATION = "C27R13.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4] .PCK_LOCATION = "C29R13.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4] .PCK_LOCATION = "C27R13.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31]|qx_net  ),
@@ -2099,9 +2122,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31] .PLACE_LOCATION = "C39R4.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31] .PCK_LOCATION = "C39R4.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31] .PCK_LOCATION = "C47R4.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[31] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[13]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[13]|qx_net  ),
@@ -2130,16 +2153,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[13] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[13] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[13] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[13] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[13] .PLACE_LOCATION = "C29R19.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[13] .PLACE_LOCATION = "C29R16.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[13] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[13] .PCK_LOCATION = "C29R19.lp0.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[13] .PCK_LOCATION = "C29R16.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[13] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_addr_wr__reg[6]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr__reg[6]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0557|dx_net  ),
+	. di ( \ii0568|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
 	. mclk_b ( ),
@@ -2161,9 +2184,9 @@ defparam \u_sdram_to_RGB_emb_addr_wr__reg[6] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[6] .PLACE_LOCATION = "C35R16.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[6] .PLACE_LOCATION = "C19R16.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[6] .PCK_LOCATION = "C35R16.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[6] .PCK_LOCATION = "C19R16.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[6] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[11]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[11]|qx_net  ),
@@ -2192,26 +2215,26 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[11] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[11] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[11] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[11] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[11] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[11] .PLACE_LOCATION = "C29R13.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[11] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[11] .PCK_LOCATION = "C33R12.lp1.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[11] .PCK_LOCATION = "C29R13.lp2.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[11] .is_en_used = "false";
 LUT4 ii0615 (
 	. dx ( \ii0615|dx_net  ),
-	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg|qx_net  ),
+	. f3 ( \ii0613|dx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0608|dx_net  ),
 	. f0 ( \ii0614|dx_net  )
 );
-defparam ii0615.PLACE_LOCATION = "C35R10.le_tile.le_guts.lp3.lut0";
-defparam ii0615.PCK_LOCATION = "C35R10.lp3.lut0";
-defparam ii0615.config_data = "0200";
+defparam ii0615.PLACE_LOCATION = "C35R13.le_tile.le_guts.lp0.lut0";
+defparam ii0615.PCK_LOCATION = "C35R13.lp0.lut0";
+defparam ii0615.config_data = "5073";
 REG u_colorgen_h_valid__reg (
 	. qx ( \u_colorgen_h_valid__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0474|dx_net  ),
+	. di ( \ii0480|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -2233,20 +2256,20 @@ defparam u_colorgen_h_valid__reg.le_sh0_always_en = "false";
 defparam u_colorgen_h_valid__reg.le_sh1_always_en = "false";
 defparam u_colorgen_h_valid__reg.use_reg_fdbk = "false";
 defparam u_colorgen_h_valid__reg.is_le_clk_inv = "false";
-defparam u_colorgen_h_valid__reg.PLACE_LOCATION = "C25R16.le_tile.le_guts.lp0.reg0";
+defparam u_colorgen_h_valid__reg.PLACE_LOCATION = "C33R19.le_tile.le_guts.lp0.reg1";
 defparam u_colorgen_h_valid__reg.is_le_sh1_en_not_inv = "true";
-defparam u_colorgen_h_valid__reg.PCK_LOCATION = "C25R16.lp0.reg0";
+defparam u_colorgen_h_valid__reg.PCK_LOCATION = "C33R19.lp0.reg1";
 defparam u_colorgen_h_valid__reg.is_en_used = "false";
 LUT4 ii0616 (
 	. dx ( \ii0616|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
-	. f1 ( \ii0583|dx_net  ),
-	. f0 ( \ii0591|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3]|qx_net  )
 );
-defparam ii0616.PLACE_LOCATION = "C37R13.le_tile.le_guts.lp2.lut40";
-defparam ii0616.PCK_LOCATION = "C37R13.lp2.lut40";
-defparam ii0616.config_data = "1000";
+defparam ii0616.PLACE_LOCATION = "C35R12.le_tile.le_guts.lp1.lut40";
+defparam ii0616.PCK_LOCATION = "C35R12.lp1.lut40";
+defparam ii0616.config_data = "0001";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3]|qx_net  ),
 	. qs ( ),
@@ -2254,7 +2277,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[3]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -2274,9 +2297,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3] .le_sh0_always_en = "f
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3] .PLACE_LOCATION = "C35R7.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3] .PLACE_LOCATION = "C39R11.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3] .PCK_LOCATION = "C35R7.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3] .PCK_LOCATION = "C39R11.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[3] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21]|qx_net  ),
@@ -2285,7 +2308,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[21]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -2305,20 +2328,20 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21] .PLACE_LOCATION = "C37R9.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21] .PLACE_LOCATION = "C37R9.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21] .PCK_LOCATION = "C37R9.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21] .PCK_LOCATION = "C37R9.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[21] .is_en_used = "true";
 LUT4 ii0617 (
 	. dx ( \ii0617|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg|qx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4]|qx_net  ),
+	. f2 ( \ii0613|dx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0616|dx_net  )
 );
-defparam ii0617.PLACE_LOCATION = "C37R12.le_tile.le_guts.lp2.lut41";
-defparam ii0617.PCK_LOCATION = "C37R12.lp2.lut41";
-defparam ii0617.config_data = "1111";
+defparam ii0617.PLACE_LOCATION = "C35R12.le_tile.le_guts.lp0.lut41";
+defparam ii0617.PCK_LOCATION = "C35R12.lp0.lut41";
+defparam ii0617.config_data = "C5CA";
 REG \u_sdram_to_RGB_dma_addr__reg[30]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[30]|qx_net  ),
 	. qs ( ),
@@ -2346,9 +2369,9 @@ defparam \u_sdram_to_RGB_dma_addr__reg[30] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[30] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[30] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[30] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[30] .PLACE_LOCATION = "C35R25.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[30] .PLACE_LOCATION = "C35R24.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[30] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[30] .PCK_LOCATION = "C35R25.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[30] .PCK_LOCATION = "C35R24.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[30] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[29]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[29]|qx_net  ),
@@ -2377,26 +2400,26 @@ defparam \u_sdram_to_RGB_dma_addr__reg[29] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[29] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[29] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[29] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[29] .PLACE_LOCATION = "C35R15.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[29] .PLACE_LOCATION = "C35R13.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[29] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[29] .PCK_LOCATION = "C35R15.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[29] .PCK_LOCATION = "C35R13.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[29] .is_en_used = "false";
 LUT4 ii0618 (
 	. dx ( \ii0618|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4]|qx_net  ),
+	. f2 ( \ii0616|dx_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0618.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp0.lut41";
-defparam ii0618.PCK_LOCATION = "C35R11.lp0.lut41";
-defparam ii0618.config_data = "0001";
+defparam ii0618.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp2.lut41";
+defparam ii0618.PCK_LOCATION = "C35R11.lp2.lut41";
+defparam ii0618.config_data = "4444";
 REG \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0636|dx_net  ),
+	. di ( \ii0649|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -2418,36 +2441,36 @@ defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0] .le_sh0_always_en = "false"
 defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0] .PLACE_LOCATION = "C37R12.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0] .PLACE_LOCATION = "C37R13.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0] .PCK_LOCATION = "C37R12.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0] .PCK_LOCATION = "C37R13.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0] .is_en_used = "false";
 LUT4 ii0620 (
 	. dx ( \ii0620|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1]|qx_net  ),
-	. f2 ( \ii0616|dx_net  ),
-	. f1 ( \ii0617|dx_net  ),
-	. f0 ( \ii0619|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0618|dx_net  )
 );
-defparam ii0620.PLACE_LOCATION = "C37R11.le_tile.le_guts.lp1.lut0";
-defparam ii0620.PCK_LOCATION = "C37R11.lp1.lut0";
-defparam ii0620.config_data = "7500";
+defparam ii0620.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp2.lut0";
+defparam ii0620.PCK_LOCATION = "C35R11.lp2.lut0";
+defparam ii0620.config_data = "090C";
 LUT4 ii0619 (
 	. dx ( \ii0619|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
 	. f1 ( \ii0618|dx_net  ),
 	. f0 ( )
 );
-defparam ii0619.PLACE_LOCATION = "C37R11.le_tile.le_guts.lp0.lut40";
-defparam ii0619.PCK_LOCATION = "C37R11.lp0.lut40";
-defparam ii0619.config_data = "E0E0";
+defparam ii0619.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp3.lut0";
+defparam ii0619.PCK_LOCATION = "C35R11.lp3.lut0";
+defparam ii0619.config_data = "1212";
 REG \u_sdram_to_RGB_emb_addr_rd__reg[6]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0544|dx_net  ),
+	. di ( \ii0555|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -2469,16 +2492,16 @@ defparam \u_sdram_to_RGB_emb_addr_rd__reg[6] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[6] .PLACE_LOCATION = "C27R17.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[6] .PLACE_LOCATION = "C29R16.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[6] .PCK_LOCATION = "C27R17.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[6] .PCK_LOCATION = "C29R16.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[6] .is_en_used = "false";
 REG u_sdram_to_RGB_ahm_rdata_push_wr1__reg (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_push_wr1__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0511|dx_net  ),
+	. di ( \ii0520|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -2500,26 +2523,26 @@ defparam u_sdram_to_RGB_ahm_rdata_push_wr1__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_ahm_rdata_push_wr1__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_ahm_rdata_push_wr1__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_ahm_rdata_push_wr1__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_ahm_rdata_push_wr1__reg.PLACE_LOCATION = "C33R15.le_tile.le_guts.lp1.reg0";
+defparam u_sdram_to_RGB_ahm_rdata_push_wr1__reg.PLACE_LOCATION = "C29R17.le_tile.le_guts.lp0.reg1";
 defparam u_sdram_to_RGB_ahm_rdata_push_wr1__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_ahm_rdata_push_wr1__reg.PCK_LOCATION = "C33R15.lp1.reg0";
+defparam u_sdram_to_RGB_ahm_rdata_push_wr1__reg.PCK_LOCATION = "C29R17.lp0.reg1";
 defparam u_sdram_to_RGB_ahm_rdata_push_wr1__reg.is_en_used = "false";
 LUT4 ii0621 (
 	. dx ( \ii0621|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7]|qx_net  ),
+	. f0 ( \ii0618|dx_net  )
 );
-defparam ii0621.PLACE_LOCATION = "C35R9.le_tile.le_guts.lp1.lut40";
-defparam ii0621.PCK_LOCATION = "C35R9.lp1.lut40";
-defparam ii0621.config_data = "E7E7";
+defparam ii0621.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp0.lut0";
+defparam ii0621.PCK_LOCATION = "C35R11.lp0.lut0";
+defparam ii0621.config_data = "1E0F";
 REG \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0630|dx_net  ),
+	. di ( \ii0642|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -2541,9 +2564,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1] .le_sh0_always_en = "false"
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1] .PLACE_LOCATION = "C35R11.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1] .PLACE_LOCATION = "C37R10.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1] .PCK_LOCATION = "C35R11.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1] .PCK_LOCATION = "C37R10.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[3]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[3]|qx_net  ),
@@ -2572,36 +2595,36 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[3] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[3] .PLACE_LOCATION = "C35R18.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[3] .PLACE_LOCATION = "C33R19.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[3] .PCK_LOCATION = "C35R18.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[3] .PCK_LOCATION = "C33R19.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[3] .is_en_used = "false";
 LUT4 ii0622 (
 	. dx ( \ii0622|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
+	. f3 ( \ii0593|dx_net  ),
+	. f2 ( \ii0621|dx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0622.PLACE_LOCATION = "C35R9.le_tile.le_guts.lp3.lut0";
-defparam ii0622.PCK_LOCATION = "C35R9.lp3.lut0";
-defparam ii0622.config_data = "2A2A";
+defparam ii0622.PLACE_LOCATION = "C33R11.le_tile.le_guts.lp0.lut0";
+defparam ii0622.PCK_LOCATION = "C33R11.lp0.lut0";
+defparam ii0622.config_data = "1111";
 LUT4 ii0623 (
 	. dx ( \ii0623|dx_net  ),
-	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
-	. f2 ( \u_arm_u_soc|fp0_m_ahb_resp_net  ),
-	. f1 ( \ii0621|dx_net  ),
-	. f0 ( \ii0622|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ),
+	. f2 ( \ii0606|dx_net  ),
+	. f1 ( \ii0607|dx_net  ),
+	. f0 ( \ii0598|dx_net  )
 );
-defparam ii0623.PLACE_LOCATION = "C35R9.le_tile.le_guts.lp2.lut0";
-defparam ii0623.PCK_LOCATION = "C35R9.lp2.lut0";
-defparam ii0623.config_data = "A2F3";
+defparam ii0623.PLACE_LOCATION = "C37R15.le_tile.le_guts.lp1.lut0";
+defparam ii0623.PCK_LOCATION = "C37R15.lp1.lut0";
+defparam ii0623.config_data = "DCDE";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[4]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[4]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0571|dx_net  ),
+	. di ( \ii0582|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -2623,28 +2646,28 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[4] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[4] .PLACE_LOCATION = "C33R30.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[4] .PLACE_LOCATION = "C33R29.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[4] .PCK_LOCATION = "C33R30.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[4] .PCK_LOCATION = "C33R29.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[4] .is_en_used = "false";
 LUT4 ii0624 (
 	. dx ( \ii0624|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ),
+	. f2 ( \ii0597|dx_net  ),
+	. f1 ( \ii0623|dx_net  ),
+	. f0 ( \ii0613|dx_net  )
 );
-defparam ii0624.PLACE_LOCATION = "C27R12.le_tile.le_guts.lp0.lut41";
-defparam ii0624.PCK_LOCATION = "C27R12.lp0.lut41";
-defparam ii0624.config_data = "0001";
+defparam ii0624.PLACE_LOCATION = "C37R15.le_tile.le_guts.lp0.lut0";
+defparam ii0624.PCK_LOCATION = "C37R15.lp0.lut0";
+defparam ii0624.config_data = "C040";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0734|dx_net  ),
+	. di ( \ii0749|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -2664,9 +2687,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5] .le_sh0_always_en = "false
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5] .PLACE_LOCATION = "C29R13.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5] .PLACE_LOCATION = "C27R14.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5] .PCK_LOCATION = "C29R13.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5] .PCK_LOCATION = "C27R14.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[14]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[14]|qx_net  ),
@@ -2695,16 +2718,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[14] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[14] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[14] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[14] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[14] .PLACE_LOCATION = "C33R19.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[14] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[14] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[14] .PCK_LOCATION = "C33R19.lp0.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[14] .PCK_LOCATION = "C33R16.lp3.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[14] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_addr_wr__reg[7]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr__reg[7]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0559|dx_net  ),
+	. di ( \ii0570|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
 	. mclk_b ( ),
@@ -2726,9 +2749,9 @@ defparam \u_sdram_to_RGB_emb_addr_wr__reg[7] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[7] .PLACE_LOCATION = "C35R16.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[7] .PLACE_LOCATION = "C25R17.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[7] .PCK_LOCATION = "C35R16.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[7] .PCK_LOCATION = "C25R17.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[7] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[12]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[12]|qx_net  ),
@@ -2757,20 +2780,20 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[12] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[12] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[12] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[12] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[12] .PLACE_LOCATION = "C25R14.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[12] .PLACE_LOCATION = "C29R13.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[12] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[12] .PCK_LOCATION = "C25R14.lp1.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[12] .PCK_LOCATION = "C29R13.lp3.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[12] .is_en_used = "false";
 LUT4 ii0625 (
 	. dx ( \ii0625|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4]|qx_net  ),
-	. f0 ( \ii0624|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
+	. f1 ( \ii0596|dx_net  ),
+	. f0 ( \ii0606|dx_net  )
 );
-defparam ii0625.PLACE_LOCATION = "C27R11.le_tile.le_guts.lp0.lut40";
-defparam ii0625.PCK_LOCATION = "C27R11.lp0.lut40";
-defparam ii0625.config_data = "0100";
+defparam ii0625.PLACE_LOCATION = "C37R15.le_tile.le_guts.lp1.lut40";
+defparam ii0625.PCK_LOCATION = "C37R15.lp1.lut40";
+defparam ii0625.config_data = "5D5A";
 M7S_IO_DDR dedicated_io_cell_u269_inst (
 	. id_q_1 ( )
 ,
@@ -2914,14 +2937,14 @@ defparam dedicated_io_cell_u269_inst.cfg_gsclk_inv_1 = 1;
 defparam dedicated_io_cell_u269_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0626 (
 	. dx ( \ii0626|dx_net  ),
-	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ),
-	. f1 ( \ii0625|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
+	. f1 ( \ii0596|dx_net  ),
+	. f0 ( \ii0606|dx_net  )
 );
-defparam ii0626.PLACE_LOCATION = "C27R11.le_tile.le_guts.lp1.lut0";
-defparam ii0626.PCK_LOCATION = "C27R11.lp1.lut0";
-defparam ii0626.config_data = "8080";
+defparam ii0626.PLACE_LOCATION = "C35R15.le_tile.le_guts.lp0.lut0";
+defparam ii0626.PCK_LOCATION = "C35R15.lp0.lut0";
+defparam ii0626.config_data = "3B3C";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4]|qx_net  ),
 	. qs ( ),
@@ -2929,7 +2952,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[4]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -2949,9 +2972,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4] .le_sh0_always_en = "f
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4] .PLACE_LOCATION = "C33R7.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4] .PLACE_LOCATION = "C29R11.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4] .PCK_LOCATION = "C33R7.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4] .PCK_LOCATION = "C29R11.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[4] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22]|qx_net  ),
@@ -2960,7 +2983,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[22]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -2980,16 +3003,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22] .PLACE_LOCATION = "C35R7.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22] .PLACE_LOCATION = "C37R9.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22] .PCK_LOCATION = "C35R7.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22] .PCK_LOCATION = "C37R9.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[22] .is_en_used = "true";
 REG u_sdram_to_RGB_dma_start_xfer_prev__reg (
 	. qx ( \u_sdram_to_RGB_dma_start_xfer_prev__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0535|dx_net  ),
+	. di ( \ii0545|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -3011,20 +3034,20 @@ defparam u_sdram_to_RGB_dma_start_xfer_prev__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_dma_start_xfer_prev__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_dma_start_xfer_prev__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_dma_start_xfer_prev__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_dma_start_xfer_prev__reg.PLACE_LOCATION = "C45R11.le_tile.le_guts.lp2.reg0";
+defparam u_sdram_to_RGB_dma_start_xfer_prev__reg.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp3.reg0";
 defparam u_sdram_to_RGB_dma_start_xfer_prev__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_dma_start_xfer_prev__reg.PCK_LOCATION = "C45R11.lp2.reg0";
+defparam u_sdram_to_RGB_dma_start_xfer_prev__reg.PCK_LOCATION = "C35R16.lp3.reg0";
 defparam u_sdram_to_RGB_dma_start_xfer_prev__reg.is_en_used = "false";
 LUT4 ii0627 (
 	. dx ( \ii0627|dx_net  ),
-	. f3 ( \ii0588|dx_net  ),
-	. f2 ( \ii0620|dx_net  ),
-	. f1 ( \ii0623|dx_net  ),
-	. f0 ( \ii0626|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ),
+	. f2 ( \ii0625|dx_net  ),
+	. f1 ( \ii0626|dx_net  ),
+	. f0 ( )
 );
-defparam ii0627.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp0.lut40";
-defparam ii0627.PCK_LOCATION = "C35R11.lp0.lut40";
-defparam ii0627.config_data = "B010";
+defparam ii0627.PLACE_LOCATION = "C37R15.le_tile.le_guts.lp2.lut0";
+defparam ii0627.PCK_LOCATION = "C37R15.lp2.lut0";
+defparam ii0627.config_data = "E0E0";
 REG \u_sdram_to_RGB_dma_addr__reg[31]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[31]|qx_net  ),
 	. qs ( ),
@@ -3052,20 +3075,20 @@ defparam \u_sdram_to_RGB_dma_addr__reg[31] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[31] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[31] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[31] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[31] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[31] .PLACE_LOCATION = "C43R15.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[31] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[31] .PCK_LOCATION = "C33R12.lp3.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[31] .PCK_LOCATION = "C43R15.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[31] .is_en_used = "false";
 LUT4 ii0628 (
 	. dx ( \ii0628|dx_net  ),
-	. f3 ( \ii0611|dx_net  ),
-	. f2 ( \ii0613|dx_net  ),
-	. f1 ( \ii0615|dx_net  ),
-	. f0 ( \ii0627|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0628.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp1.lut0";
-defparam ii0628.PCK_LOCATION = "C35R11.lp1.lut0";
-defparam ii0628.config_data = "70FF";
+defparam ii0628.PLACE_LOCATION = "C37R11.le_tile.le_guts.lp2.lut0";
+defparam ii0628.PCK_LOCATION = "C37R11.lp2.lut0";
+defparam ii0628.config_data = "4444";
 M7S_IO_DDR dedicated_io_cell_u211_inst (
 	. id_q_1 ( )
 ,
@@ -3212,7 +3235,7 @@ REG \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1]  (
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0637|dx_net  ),
+	. di ( \ii0650|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -3234,36 +3257,36 @@ defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1] .le_sh0_always_en = "false"
 defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1] .PLACE_LOCATION = "C37R14.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1] .PLACE_LOCATION = "C39R12.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1] .PCK_LOCATION = "C37R14.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1] .PCK_LOCATION = "C39R12.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1] .is_en_used = "false";
 LUT4 ii0630 (
 	. dx ( \ii0630|dx_net  ),
-	. f3 ( \ii0579|dx_net  ),
-	. f2 ( \ii0587|dx_net  ),
-	. f1 ( \ii0629|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
+	. f1 ( \ii0597|dx_net  ),
+	. f0 ( \ii0605|dx_net  )
 );
-defparam ii0630.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp3.lut0";
-defparam ii0630.PCK_LOCATION = "C35R11.lp3.lut0";
-defparam ii0630.config_data = "EAEA";
+defparam ii0630.PLACE_LOCATION = "C27R15.le_tile.le_guts.lp1.lut0";
+defparam ii0630.PCK_LOCATION = "C27R15.lp1.lut0";
+defparam ii0630.config_data = "1000";
 LUT4 ii0629 (
 	. dx ( \ii0629|dx_net  ),
-	. f3 ( \u_arm_u_soc|fp0_m_ahb_resp_net  ),
+	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
 	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
-	. f1 ( \ii0626|dx_net  ),
-	. f0 ( )
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg|qx_net  ),
+	. f0 ( \ii0628|dx_net  )
 );
-defparam ii0629.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp2.lut40";
-defparam ii0629.PCK_LOCATION = "C35R11.lp2.lut40";
-defparam ii0629.config_data = "0707";
+defparam ii0629.PLACE_LOCATION = "C37R11.le_tile.le_guts.lp2.lut40";
+defparam ii0629.PCK_LOCATION = "C37R11.lp2.lut40";
+defparam ii0629.config_data = "0200";
 REG \u_sdram_to_RGB_emb_addr_rd__reg[7]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0546|dx_net  ),
+	. di ( \ii0557|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -3285,16 +3308,16 @@ defparam \u_sdram_to_RGB_emb_addr_rd__reg[7] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[7] .PLACE_LOCATION = "C27R17.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[7] .PLACE_LOCATION = "C29R15.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[7] .PCK_LOCATION = "C27R17.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[7] .PCK_LOCATION = "C29R15.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[7] .is_en_used = "false";
 REG u_sdram_to_RGB_display_period_align__reg (
 	. qx ( \u_sdram_to_RGB_display_period_align__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0524|dx_net  ),
+	. di ( \ii0534|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -3316,26 +3339,26 @@ defparam u_sdram_to_RGB_display_period_align__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_display_period_align__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_display_period_align__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_display_period_align__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_display_period_align__reg.PLACE_LOCATION = "C45R14.le_tile.le_guts.lp2.reg0";
+defparam u_sdram_to_RGB_display_period_align__reg.PLACE_LOCATION = "C33R22.le_tile.le_guts.lp0.reg0";
 defparam u_sdram_to_RGB_display_period_align__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_display_period_align__reg.PCK_LOCATION = "C45R14.lp2.reg0";
+defparam u_sdram_to_RGB_display_period_align__reg.PCK_LOCATION = "C33R22.lp0.reg0";
 defparam u_sdram_to_RGB_display_period_align__reg.is_en_used = "false";
 LUT4 ii0631 (
 	. dx ( \ii0631|dx_net  ),
-	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
-	. f2 ( \u_arm_u_soc|fp0_m_ahb_resp_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
-	. f0 ( \ii0614|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg|qx_net  ),
+	. f0 ( \ii0630|dx_net  )
 );
-defparam ii0631.PLACE_LOCATION = "C35R10.le_tile.le_guts.lp1.lut0";
-defparam ii0631.PCK_LOCATION = "C35R10.lp1.lut0";
-defparam ii0631.config_data = "A200";
+defparam ii0631.PLACE_LOCATION = "C37R13.le_tile.le_guts.lp0.lut0";
+defparam ii0631.PCK_LOCATION = "C37R13.lp0.lut0";
+defparam ii0631.config_data = "CCC8";
 REG \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0632|dx_net  ),
+	. di ( \ii0644|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -3357,9 +3380,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2] .le_sh0_always_en = "false"
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2] .PLACE_LOCATION = "C35R11.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2] .PLACE_LOCATION = "C39R10.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2] .PCK_LOCATION = "C35R11.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2] .PCK_LOCATION = "C39R10.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[4]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[4]|qx_net  ),
@@ -3388,26 +3411,26 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[4] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[4] .PLACE_LOCATION = "C33R21.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[4] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[4] .PCK_LOCATION = "C33R21.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[4] .PCK_LOCATION = "C33R16.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[4] .is_en_used = "false";
 LUT4 ii0632 (
 	. dx ( \ii0632|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
-	. f1 ( \ii0629|dx_net  ),
-	. f0 ( \ii0631|dx_net  )
+	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0632.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp0.lut0";
-defparam ii0632.PCK_LOCATION = "C35R11.lp0.lut0";
-defparam ii0632.config_data = "0046";
+defparam ii0632.PLACE_LOCATION = "C37R13.le_tile.le_guts.lp1.lut0";
+defparam ii0632.PCK_LOCATION = "C37R13.lp1.lut0";
+defparam ii0632.config_data = "3232";
 REG u_sdram_to_RGB_other_1_beat_valid__reg (
 	. qx ( \u_sdram_to_RGB_other_1_beat_valid__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0578|dx_net  ),
+	. di ( \ii0589|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -3429,26 +3452,26 @@ defparam u_sdram_to_RGB_other_1_beat_valid__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_other_1_beat_valid__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_other_1_beat_valid__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_other_1_beat_valid__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_other_1_beat_valid__reg.PLACE_LOCATION = "C45R13.le_tile.le_guts.lp1.reg0";
+defparam u_sdram_to_RGB_other_1_beat_valid__reg.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp2.reg0";
 defparam u_sdram_to_RGB_other_1_beat_valid__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_other_1_beat_valid__reg.PCK_LOCATION = "C45R13.lp1.reg0";
+defparam u_sdram_to_RGB_other_1_beat_valid__reg.PCK_LOCATION = "C35R16.lp2.reg0";
 defparam u_sdram_to_RGB_other_1_beat_valid__reg.is_en_used = "false";
 LUT4 ii0633 (
 	. dx ( \ii0633|dx_net  ),
-	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
-	. f2 ( \u_arm_u_soc|fp0_m_ahb_resp_net  ),
-	. f1 ( \ii0621|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
+	. f0 ( \ii0632|dx_net  )
 );
-defparam ii0633.PLACE_LOCATION = "C37R8.le_tile.le_guts.lp0.lut0";
-defparam ii0633.PCK_LOCATION = "C37R8.lp0.lut0";
-defparam ii0633.config_data = "0202";
+defparam ii0633.PLACE_LOCATION = "C37R12.le_tile.le_guts.lp0.lut0";
+defparam ii0633.PCK_LOCATION = "C37R12.lp0.lut0";
+defparam ii0633.config_data = "0100";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[5]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[5]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0572|dx_net  ),
+	. di ( \ii0583|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -3470,20 +3493,20 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[5] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[5] .PLACE_LOCATION = "C29R30.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[5] .PLACE_LOCATION = "C29R31.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[5] .PCK_LOCATION = "C29R30.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[5] .PCK_LOCATION = "C29R31.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[5] .is_en_used = "false";
 LUT4 ii0634 (
 	. dx ( \ii0634|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_mx_done_r__reg|qx_net  )
+	. f3 ( \u_arm_u_soc|fp0_m_ahb_resp_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  )
 );
-defparam ii0634.PLACE_LOCATION = "C33R12.le_tile.le_guts.lp1.lut0";
-defparam ii0634.PCK_LOCATION = "C33R12.lp1.lut0";
-defparam ii0634.config_data = "0100";
+defparam ii0634.PLACE_LOCATION = "C39R11.le_tile.le_guts.lp0.lut41";
+defparam ii0634.PCK_LOCATION = "C39R11.lp0.lut41";
+defparam ii0634.config_data = "0280";
 M7S_IO_DDR dedicated_io_cell_u207_inst (
 	. id_q_1 ( )
 ,
@@ -3630,9 +3653,9 @@ REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6]  (
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0735|dx_net  ),
+	. di ( \ii0750|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -3652,9 +3675,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6] .le_sh0_always_en = "false
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6] .PLACE_LOCATION = "C29R12.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6] .PLACE_LOCATION = "C27R14.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6] .PCK_LOCATION = "C29R12.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6] .PCK_LOCATION = "C27R14.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[15]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[15]|qx_net  ),
@@ -3683,16 +3706,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[15] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[15] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[15] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[15] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[15] .PLACE_LOCATION = "C33R19.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[15] .PLACE_LOCATION = "C33R18.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[15] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[15] .PCK_LOCATION = "C33R19.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[15] .PCK_LOCATION = "C33R18.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[15] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_addr_wr__reg[8]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr__reg[8]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0560|dx_net  ),
+	. di ( \ii0571|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
 	. mclk_b ( ),
@@ -3714,9 +3737,9 @@ defparam \u_sdram_to_RGB_emb_addr_wr__reg[8] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[8] .PLACE_LOCATION = "C35R16.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[8] .PLACE_LOCATION = "C25R17.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[8] .PCK_LOCATION = "C35R16.lp1.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[8] .PCK_LOCATION = "C25R17.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[8] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[13]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[13]|qx_net  ),
@@ -3745,20 +3768,20 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[13] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[13] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[13] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[13] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[13] .PLACE_LOCATION = "C29R8.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[13] .PLACE_LOCATION = "C29R13.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[13] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[13] .PCK_LOCATION = "C29R8.lp3.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[13] .PCK_LOCATION = "C29R13.lp0.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[13] .is_en_used = "false";
 LUT4 ii0635 (
 	. dx ( \ii0635|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  ),
-	. f1 ( \ii0631|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6]|qx_net  )
 );
-defparam ii0635.PLACE_LOCATION = "C37R12.le_tile.le_guts.lp1.lut41";
-defparam ii0635.PCK_LOCATION = "C37R12.lp1.lut41";
-defparam ii0635.config_data = "2E2E";
+defparam ii0635.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp1.lut41";
+defparam ii0635.PCK_LOCATION = "C35R11.lp1.lut41";
+defparam ii0635.config_data = "0001";
 REG \u_sdram_to_RGB_emb_addr_wr_r__reg[0]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr_r__reg[0]|qx_net  ),
 	. qs ( ),
@@ -3786,20 +3809,20 @@ defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[0] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[0] .PLACE_LOCATION = "C27R17.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[0] .PCK_LOCATION = "C33R12.lp2.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[0] .PCK_LOCATION = "C27R17.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[0] .is_en_used = "false";
 LUT4 ii0636 (
 	. dx ( \ii0636|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1]|qx_net  ),
-	. f2 ( \ii0616|dx_net  ),
-	. f1 ( \ii0617|dx_net  ),
-	. f0 ( \ii0635|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7]|qx_net  )
 );
-defparam ii0636.PLACE_LOCATION = "C37R12.le_tile.le_guts.lp2.lut0";
-defparam ii0636.PCK_LOCATION = "C37R12.lp2.lut0";
-defparam ii0636.config_data = "7520";
+defparam ii0636.PLACE_LOCATION = "C35R12.le_tile.le_guts.lp0.lut0";
+defparam ii0636.PCK_LOCATION = "C35R12.lp0.lut0";
+defparam ii0636.config_data = "0002";
 M7S_IO_DDR dedicated_io_cell_u263_inst (
 	. id_q_1 ( )
 ,
@@ -3948,7 +3971,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[5]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[5]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -3968,9 +3991,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[5] .le_sh0_always_en = "f
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[5] .PLACE_LOCATION = "C35R7.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[5] .PLACE_LOCATION = "C39R11.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[5] .PCK_LOCATION = "C35R7.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[5] .PCK_LOCATION = "C39R11.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[5] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23]|qx_net  ),
@@ -3979,7 +4002,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[23]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -3999,56 +4022,56 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23] .PLACE_LOCATION = "C33R8.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23] .PLACE_LOCATION = "C37R9.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23] .PCK_LOCATION = "C33R8.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23] .PCK_LOCATION = "C37R9.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[23] .is_en_used = "true";
 LUT4 ii0637 (
 	. dx ( \ii0637|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1]|qx_net  ),
-	. f0 ( \ii0631|dx_net  )
+	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  )
 );
-defparam ii0637.PLACE_LOCATION = "C37R14.le_tile.le_guts.lp0.lut0";
-defparam ii0637.PCK_LOCATION = "C37R14.lp0.lut0";
-defparam ii0637.config_data = "0400";
+defparam ii0637.PLACE_LOCATION = "C37R11.le_tile.le_guts.lp1.lut0";
+defparam ii0637.PCK_LOCATION = "C37R11.lp1.lut0";
+defparam ii0637.config_data = "0444";
 LUT4 ii0638 (
 	. dx ( \ii0638|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg|qx_net  ),
-	. f0 ( )
+	. f3 ( \ii0601|dx_net  ),
+	. f2 ( \ii0635|dx_net  ),
+	. f1 ( \ii0636|dx_net  ),
+	. f0 ( \ii0637|dx_net  )
 );
-defparam ii0638.PLACE_LOCATION = "C37R12.le_tile.le_guts.lp0.lut0";
-defparam ii0638.PCK_LOCATION = "C37R12.lp0.lut0";
-defparam ii0638.config_data = "E0E0";
+defparam ii0638.PLACE_LOCATION = "C37R11.le_tile.le_guts.lp3.lut0";
+defparam ii0638.PCK_LOCATION = "C37R11.lp3.lut0";
+defparam ii0638.config_data = "00D5";
 LUT4 ii0640 (
 	. dx ( \ii0640|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3]|qx_net  )
+	. f3 ( \ii0624|dx_net  ),
+	. f2 ( \ii0627|dx_net  ),
+	. f1 ( \ii0629|dx_net  ),
+	. f0 ( \ii0639|dx_net  )
 );
-defparam ii0640.PLACE_LOCATION = "C27R13.le_tile.le_guts.lp0.lut0";
-defparam ii0640.PCK_LOCATION = "C27R13.lp0.lut0";
-defparam ii0640.config_data = "8000";
+defparam ii0640.PLACE_LOCATION = "C37R12.le_tile.le_guts.lp0.lut41";
+defparam ii0640.PCK_LOCATION = "C37R12.lp0.lut41";
+defparam ii0640.config_data = "70FF";
 LUT4 ii0639 (
 	. dx ( \ii0639|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
-	. f0 ( )
+	. f3 ( \ii0631|dx_net  ),
+	. f2 ( \ii0633|dx_net  ),
+	. f1 ( \ii0634|dx_net  ),
+	. f0 ( \ii0638|dx_net  )
 );
-defparam ii0639.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp3.lut0";
-defparam ii0639.PCK_LOCATION = "C39R12.lp3.lut0";
-defparam ii0639.config_data = "C5C5";
+defparam ii0639.PLACE_LOCATION = "C37R12.le_tile.le_guts.lp2.lut0";
+defparam ii0639.PCK_LOCATION = "C37R12.lp2.lut0";
+defparam ii0639.config_data = "0B00";
 REG \u_sdram_to_RGB_emb_addr_rd__reg[8]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0548|dx_net  ),
+	. di ( \ii0558|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -4070,20 +4093,20 @@ defparam \u_sdram_to_RGB_emb_addr_rd__reg[8] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[8] .PLACE_LOCATION = "C29R17.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[8] .PLACE_LOCATION = "C27R16.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[8] .PCK_LOCATION = "C29R17.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[8] .PCK_LOCATION = "C27R16.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[8] .is_en_used = "false";
 LUT4 ii0641 (
 	. dx ( \ii0641|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6]|qx_net  ),
-	. f0 ( \ii0640|dx_net  )
+	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
+	. f2 ( \ii0602|dx_net  ),
+	. f1 ( \ii0635|dx_net  ),
+	. f0 ( \ii0636|dx_net  )
 );
-defparam ii0641.PLACE_LOCATION = "C27R13.le_tile.le_guts.lp2.lut0";
-defparam ii0641.PCK_LOCATION = "C27R13.lp2.lut0";
-defparam ii0641.config_data = "8000";
+defparam ii0641.PLACE_LOCATION = "C37R11.le_tile.le_guts.lp1.lut40";
+defparam ii0641.PCK_LOCATION = "C37R11.lp1.lut40";
+defparam ii0641.config_data = "1333";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[5]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[5]|qx_net  ),
 	. qs ( ),
@@ -4111,20 +4134,20 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[5] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[5] .PLACE_LOCATION = "C29R19.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[5] .PLACE_LOCATION = "C29R19.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[5] .PCK_LOCATION = "C29R19.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[5] .PCK_LOCATION = "C29R19.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[5] .is_en_used = "false";
 LUT4 ii0642 (
 	. dx ( \ii0642|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0589|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
 	. f0 ( \ii0641|dx_net  )
 );
-defparam ii0642.PLACE_LOCATION = "C29R9.le_tile.le_guts.lp0.lut0";
-defparam ii0642.PCK_LOCATION = "C29R9.lp0.lut0";
-defparam ii0642.config_data = "E0C0";
+defparam ii0642.PLACE_LOCATION = "C39R10.le_tile.le_guts.lp0.lut0";
+defparam ii0642.PCK_LOCATION = "C39R10.lp0.lut0";
+defparam ii0642.config_data = "F2F0";
 M7S_IO_VREF dedicated_io_cell_u259_inst (
 	. id_q_1 ( )
 ,
@@ -4268,20 +4291,20 @@ defparam dedicated_io_cell_u259_inst.cfg_gsclk_inv_1 = 1;
 defparam dedicated_io_cell_u259_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0643 (
 	. dx ( \ii0643|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9]|qx_net  )
+	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
+	. f2 ( \u_arm_u_soc|fp0_m_ahb_resp_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0643.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp0.lut0";
-defparam ii0643.PCK_LOCATION = "C39R12.lp0.lut0";
-defparam ii0643.config_data = "8000";
+defparam ii0643.PLACE_LOCATION = "C37R9.le_tile.le_guts.lp0.lut0";
+defparam ii0643.PCK_LOCATION = "C37R9.lp0.lut0";
+defparam ii0643.config_data = "5D5D";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[6]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[6]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0573|dx_net  ),
+	. di ( \ii0584|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -4303,28 +4326,28 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[6] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[6] .PLACE_LOCATION = "C29R31.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[6] .PLACE_LOCATION = "C29R31.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[6] .PCK_LOCATION = "C29R31.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[6] .PCK_LOCATION = "C29R31.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[6] .is_en_used = "false";
 LUT4 ii0644 (
 	. dx ( \ii0644|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
+	. f1 ( \ii0641|dx_net  ),
+	. f0 ( \ii0643|dx_net  )
 );
-defparam ii0644.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp0.lut41";
-defparam ii0644.PCK_LOCATION = "C39R12.lp0.lut41";
-defparam ii0644.config_data = "8000";
+defparam ii0644.PLACE_LOCATION = "C37R10.le_tile.le_guts.lp0.lut0";
+defparam ii0644.PCK_LOCATION = "C37R10.lp0.lut0";
+defparam ii0644.config_data = "4602";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0736|dx_net  ),
+	. di ( \ii0751|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -4344,9 +4367,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7] .le_sh0_always_en = "false
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7] .PLACE_LOCATION = "C29R13.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7] .PLACE_LOCATION = "C27R13.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7] .PCK_LOCATION = "C29R13.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7] .PCK_LOCATION = "C27R13.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[14]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[14]|qx_net  ),
@@ -4375,20 +4398,20 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[14] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[14] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[14] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[14] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[14] .PLACE_LOCATION = "C35R10.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[14] .PLACE_LOCATION = "C29R13.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[14] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[14] .PCK_LOCATION = "C35R10.lp0.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[14] .PCK_LOCATION = "C29R13.lp1.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[14] .is_en_used = "false";
 LUT4 ii0645 (
 	. dx ( \ii0645|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5]|qx_net  ),
-	. f1 ( \ii0643|dx_net  ),
-	. f0 ( \ii0644|dx_net  )
+	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
+	. f2 ( \u_arm_u_soc|fp0_m_ahb_resp_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0645.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp1.lut0";
-defparam ii0645.PCK_LOCATION = "C39R12.lp1.lut0";
-defparam ii0645.config_data = "8000";
+defparam ii0645.PLACE_LOCATION = "C39R9.le_tile.le_guts.lp0.lut0";
+defparam ii0645.PCK_LOCATION = "C39R9.lp0.lut0";
+defparam ii0645.config_data = "2222";
 REG \u_sdram_to_RGB_emb_addr_wr_r__reg[1]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr_r__reg[1]|qx_net  ),
 	. qs ( ),
@@ -4416,20 +4439,20 @@ defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[1] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[1] .PLACE_LOCATION = "C27R17.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[1] .PCK_LOCATION = "C33R16.lp2.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[1] .PCK_LOCATION = "C27R17.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[1] .is_en_used = "false";
 LUT4 ii0646 (
 	. dx ( \ii0646|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
 	. f0 ( \ii0645|dx_net  )
 );
-defparam ii0646.PLACE_LOCATION = "C39R14.le_tile.le_guts.lp0.lut0";
-defparam ii0646.PCK_LOCATION = "C39R14.lp0.lut0";
-defparam ii0646.config_data = "C5CA";
+defparam ii0646.PLACE_LOCATION = "C39R11.le_tile.le_guts.lp0.lut0";
+defparam ii0646.PCK_LOCATION = "C39R11.lp0.lut0";
+defparam ii0646.config_data = "1800";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6]|qx_net  ),
 	. qs ( ),
@@ -4437,7 +4460,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[6]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -4457,9 +4480,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6] .le_sh0_always_en = "f
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6] .PLACE_LOCATION = "C37R8.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6] .PLACE_LOCATION = "C33R11.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6] .PCK_LOCATION = "C37R8.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6] .PCK_LOCATION = "C33R11.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[6] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24]|qx_net  ),
@@ -4468,7 +4491,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[24]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -4488,56 +4511,56 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24] .PLACE_LOCATION = "C35R7.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24] .PLACE_LOCATION = "C29R11.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24] .PCK_LOCATION = "C35R7.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24] .PCK_LOCATION = "C29R11.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[24] .is_en_used = "true";
 LUT4 ii0647 (
 	. dx ( \ii0647|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
-	. f0 ( \ii0645|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_mx_done_r__reg|qx_net  )
 );
-defparam ii0647.PLACE_LOCATION = "C39R10.le_tile.le_guts.lp0.lut41";
-defparam ii0647.PCK_LOCATION = "C39R10.lp0.lut41";
-defparam ii0647.config_data = "060C";
+defparam ii0647.PLACE_LOCATION = "C37R12.le_tile.le_guts.lp3.lut0";
+defparam ii0647.PCK_LOCATION = "C37R12.lp3.lut0";
+defparam ii0647.config_data = "0100";
 LUT4 ii0648 (
 	. dx ( \ii0648|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0647|dx_net  ),
+	. f3 ( \ii0628|dx_net  ),
+	. f2 ( \ii0643|dx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0648.PLACE_LOCATION = "C29R11.le_tile.le_guts.lp2.lut0";
-defparam ii0648.PCK_LOCATION = "C29R11.lp2.lut0";
-defparam ii0648.config_data = "F8F8";
+defparam ii0648.PLACE_LOCATION = "C37R12.le_tile.le_guts.lp1.lut0";
+defparam ii0648.PCK_LOCATION = "C37R12.lp1.lut0";
+defparam ii0648.config_data = "2222";
 LUT4 ii0650 (
 	. dx ( \ii0650|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0649|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1]|qx_net  ),
+	. f0 ( \ii0648|dx_net  )
 );
-defparam ii0650.PLACE_LOCATION = "C39R13.le_tile.le_guts.lp3.lut0";
-defparam ii0650.PCK_LOCATION = "C39R13.lp3.lut0";
-defparam ii0650.config_data = "B8B8";
+defparam ii0650.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp0.lut0";
+defparam ii0650.PCK_LOCATION = "C39R12.lp0.lut0";
+defparam ii0650.config_data = "0400";
 LUT4 ii0649 (
 	. dx ( \ii0649|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12]|qx_net  ),
-	. f0 ( \ii0645|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  ),
+	. f2 ( \ii0631|dx_net  ),
+	. f1 ( \ii0632|dx_net  ),
+	. f0 ( \ii0648|dx_net  )
 );
-defparam ii0649.PLACE_LOCATION = "C39R13.le_tile.le_guts.lp2.lut40";
-defparam ii0649.PCK_LOCATION = "C39R13.lp2.lut40";
-defparam ii0649.config_data = "78F0";
+defparam ii0649.PLACE_LOCATION = "C37R13.le_tile.le_guts.lp3.lut0";
+defparam ii0649.PCK_LOCATION = "C37R13.lp3.lut0";
+defparam ii0649.config_data = "3032";
 REG u_sdram_to_RGB_u_ahb_master_mx_done_r__reg (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_done_r__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0631|dx_net  ),
+	. di ( \ii0648|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -4559,16 +4582,16 @@ defparam u_sdram_to_RGB_u_ahb_master_mx_done_r__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_u_ahb_master_mx_done_r__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_u_ahb_master_mx_done_r__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_u_ahb_master_mx_done_r__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_u_ahb_master_mx_done_r__reg.PLACE_LOCATION = "C33R12.le_tile.le_guts.lp0.reg1";
+defparam u_sdram_to_RGB_u_ahb_master_mx_done_r__reg.PLACE_LOCATION = "C37R12.le_tile.le_guts.lp3.reg0";
 defparam u_sdram_to_RGB_u_ahb_master_mx_done_r__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_u_ahb_master_mx_done_r__reg.PCK_LOCATION = "C33R12.lp0.reg1";
+defparam u_sdram_to_RGB_u_ahb_master_mx_done_r__reg.PCK_LOCATION = "C37R12.lp3.reg0";
 defparam u_sdram_to_RGB_u_ahb_master_mx_done_r__reg.is_en_used = "false";
 REG \u_sdram_to_RGB_emb_addr_rd__reg[9]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0549|dx_net  ),
+	. di ( \ii0560|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -4590,20 +4613,20 @@ defparam \u_sdram_to_RGB_emb_addr_rd__reg[9] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[9] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[9] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[9] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[9] .PLACE_LOCATION = "C29R17.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[9] .PLACE_LOCATION = "C29R16.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[9] .PCK_LOCATION = "C29R17.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[9] .PCK_LOCATION = "C29R16.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[9] .is_en_used = "false";
 LUT4 ii0651 (
 	. dx ( \ii0651|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12]|qx_net  ),
-	. f0 ( \ii0645|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_dma_cs__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg|qx_net  ),
+	. f0 ( )
 );
-defparam ii0651.PLACE_LOCATION = "C37R13.le_tile.le_guts.lp1.lut0";
-defparam ii0651.PCK_LOCATION = "C37R13.lp1.lut0";
-defparam ii0651.config_data = "8000";
+defparam ii0651.PLACE_LOCATION = "C37R13.le_tile.le_guts.lp0.lut41";
+defparam ii0651.PCK_LOCATION = "C37R13.lp0.lut41";
+defparam ii0651.config_data = "E0E0";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[6]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[6]|qx_net  ),
 	. qs ( ),
@@ -4631,30 +4654,30 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[6] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[6] .PLACE_LOCATION = "C29R20.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[6] .PLACE_LOCATION = "C29R19.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[6] .PCK_LOCATION = "C29R20.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[6] .PCK_LOCATION = "C29R19.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[6] .is_en_used = "false";
 LUT4 ii0652 (
 	. dx ( \ii0652|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
-	. f0 ( \ii0651|dx_net  )
-);
-defparam ii0652.PLACE_LOCATION = "C35R8.le_tile.le_guts.lp0.lut0";
-defparam ii0652.PCK_LOCATION = "C35R8.lp0.lut0";
-defparam ii0652.config_data = "C5CA";
-LUT4 ii0653 (
-	. dx ( \ii0653|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]|qx_net  ),
-	. f2 ( \ii0651|dx_net  ),
-	. f1 ( ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
 	. f0 ( )
 );
-defparam ii0653.PLACE_LOCATION = "C33R13.le_tile.le_guts.lp1.lut40";
-defparam ii0653.PCK_LOCATION = "C33R13.lp1.lut40";
-defparam ii0653.config_data = "8888";
+defparam ii0652.PLACE_LOCATION = "C37R14.le_tile.le_guts.lp2.lut0";
+defparam ii0652.PCK_LOCATION = "C37R14.lp2.lut0";
+defparam ii0652.config_data = "C5C5";
+LUT4 ii0653 (
+	. dx ( \ii0653|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3]|qx_net  )
+);
+defparam ii0653.PLACE_LOCATION = "C37R9.le_tile.le_guts.lp1.lut0";
+defparam ii0653.PCK_LOCATION = "C37R9.lp1.lut0";
+defparam ii0653.config_data = "8000";
 M7S_IO_DQS dedicated_io_cell_u253_inst (
 	. clkpol_o ( ),
 	. dqsr90_o ( ),
@@ -4819,7 +4842,7 @@ REG \u_sdram_to_RGB_emb_rdata_r__reg[7]  (
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0574|dx_net  ),
+	. di ( \ii0585|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -4841,28 +4864,28 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[7] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[7] .PLACE_LOCATION = "C29R31.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[7] .PLACE_LOCATION = "C29R31.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[7] .PCK_LOCATION = "C29R31.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[7] .PCK_LOCATION = "C29R31.lp2.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[7] .is_en_used = "false";
 LUT4 ii0654 (
 	. dx ( \ii0654|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6]|qx_net  ),
 	. f0 ( \ii0653|dx_net  )
 );
-defparam ii0654.PLACE_LOCATION = "C33R13.le_tile.le_guts.lp2.lut0";
-defparam ii0654.PCK_LOCATION = "C33R13.lp2.lut0";
-defparam ii0654.config_data = "C5CA";
+defparam ii0654.PLACE_LOCATION = "C35R10.le_tile.le_guts.lp1.lut0";
+defparam ii0654.PCK_LOCATION = "C35R10.lp1.lut0";
+defparam ii0654.config_data = "8000";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0737|dx_net  ),
+	. di ( \ii0752|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -4882,9 +4905,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8] .le_sh0_always_en = "false
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8] .PLACE_LOCATION = "C29R13.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8] .PLACE_LOCATION = "C27R13.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8] .PCK_LOCATION = "C29R13.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8] .PCK_LOCATION = "C27R13.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[15]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[15]|qx_net  ),
@@ -4913,20 +4936,20 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[15] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[15] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[15] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[15] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[15] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[15] .PLACE_LOCATION = "C33R13.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[15] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[15] .PCK_LOCATION = "C33R15.lp2.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[15] .PCK_LOCATION = "C33R13.lp0.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[15] .is_en_used = "false";
 LUT4 ii0655 (
 	. dx ( \ii0655|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15]|qx_net  ),
-	. f0 ( \ii0651|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0603|dx_net  ),
+	. f0 ( \ii0654|dx_net  )
 );
-defparam ii0655.PLACE_LOCATION = "C39R14.le_tile.le_guts.lp1.lut41";
-defparam ii0655.PCK_LOCATION = "C39R14.lp1.lut41";
-defparam ii0655.config_data = "78F0";
+defparam ii0655.PLACE_LOCATION = "C35R10.le_tile.le_guts.lp0.lut0";
+defparam ii0655.PCK_LOCATION = "C35R10.lp0.lut0";
+defparam ii0655.config_data = "E0C0";
 M7S_IO_PCISG dedicated_io_cell_u318_inst (
 	. id ( ),
 	. clk ( ),
@@ -4994,20 +5017,20 @@ defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[2] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[2] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[2] .PLACE_LOCATION = "C27R17.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[2] .PCK_LOCATION = "C33R16.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[2] .PCK_LOCATION = "C27R17.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[2] .is_en_used = "false";
 LUT4 ii0656 (
 	. dx ( \ii0656|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0655|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0656.PLACE_LOCATION = "C39R14.le_tile.le_guts.lp1.lut0";
-defparam ii0656.PCK_LOCATION = "C39R14.lp1.lut0";
-defparam ii0656.config_data = "B8B8";
+defparam ii0656.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp0.lut40";
+defparam ii0656.PCK_LOCATION = "C39R12.lp0.lut40";
+defparam ii0656.config_data = "8080";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7]|qx_net  ),
 	. qs ( ),
@@ -5015,7 +5038,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[7]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -5035,9 +5058,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7] .le_sh0_always_en = "f
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7] .PLACE_LOCATION = "C37R7.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7] .PLACE_LOCATION = "C33R11.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7] .PCK_LOCATION = "C37R7.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7] .PCK_LOCATION = "C33R11.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[7] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25]|qx_net  ),
@@ -5046,7 +5069,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[25]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -5066,30 +5089,30 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25] .PLACE_LOCATION = "C39R7.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25] .PLACE_LOCATION = "C39R11.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25] .PCK_LOCATION = "C39R7.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25] .PCK_LOCATION = "C39R11.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[25] .is_en_used = "true";
 LUT4 ii0657 (
 	. dx ( \ii0657|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15]|qx_net  ),
-	. f0 ( \ii0651|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0657.PLACE_LOCATION = "C37R13.le_tile.le_guts.lp0.lut0";
-defparam ii0657.PCK_LOCATION = "C37R13.lp0.lut0";
-defparam ii0657.config_data = "8000";
+defparam ii0657.PLACE_LOCATION = "C33R12.le_tile.le_guts.lp0.lut40";
+defparam ii0657.PCK_LOCATION = "C33R12.lp0.lut40";
+defparam ii0657.config_data = "8080";
 LUT4 ii0658 (
 	. dx ( \ii0658|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
-	. f0 ( \ii0657|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9]|qx_net  )
 );
-defparam ii0658.PLACE_LOCATION = "C37R10.le_tile.le_guts.lp2.lut0";
-defparam ii0658.PCK_LOCATION = "C37R10.lp2.lut0";
-defparam ii0658.config_data = "C5CA";
+defparam ii0658.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp1.lut40";
+defparam ii0658.PCK_LOCATION = "C39R12.lp1.lut40";
+defparam ii0658.config_data = "8000";
 M7S_IO_LVDS io_cell_spi_miso_inst (
 	. id_1 ( ),
 	. id_0 ( ),
@@ -5216,34 +5239,34 @@ defparam io_cell_spi_miso_inst.cfg_userio_en_0 = 1;
 defparam io_cell_spi_miso_inst.cfg_id_setn_en_1 = 1'b0;
 LUT4 ii0660 (
 	. dx ( \ii0660|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ),
-	. f2 ( \ii0651|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0659|dx_net  )
+);
+defparam ii0660.PLACE_LOCATION = "C39R13.le_tile.le_guts.lp3.lut0";
+defparam ii0660.PCK_LOCATION = "C39R13.lp3.lut0";
+defparam ii0660.config_data = "C5CA";
+LUT4 ii0659 (
+	. dx ( \ii0659|dx_net  ),
+	. f3 ( \ii0656|dx_net  ),
+	. f2 ( \ii0657|dx_net  ),
+	. f1 ( \ii0658|dx_net  ),
+	. f0 ( )
+);
+defparam ii0659.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp2.lut0";
+defparam ii0659.PCK_LOCATION = "C39R12.lp2.lut0";
+defparam ii0659.config_data = "8080";
+LUT4 ii0661 (
+	. dx ( \ii0661|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]|qx_net  ),
 	. f1 ( \ii0659|dx_net  ),
 	. f0 ( )
 );
-defparam ii0660.PLACE_LOCATION = "C39R13.le_tile.le_guts.lp2.lut41";
-defparam ii0660.PCK_LOCATION = "C39R13.lp2.lut41";
-defparam ii0660.config_data = "6A6A";
-LUT4 ii0659 (
-	. dx ( \ii0659|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16]|qx_net  )
-);
-defparam ii0659.PLACE_LOCATION = "C33R11.le_tile.le_guts.lp1.lut40";
-defparam ii0659.PCK_LOCATION = "C33R11.lp1.lut40";
-defparam ii0659.config_data = "8000";
-LUT4 ii0661 (
-	. dx ( \ii0661|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0660|dx_net  ),
-	. f0 ( )
-);
-defparam ii0661.PLACE_LOCATION = "C39R13.le_tile.le_guts.lp2.lut0";
-defparam ii0661.PCK_LOCATION = "C39R13.lp2.lut0";
-defparam ii0661.config_data = "B8B8";
+defparam ii0661.PLACE_LOCATION = "C39R13.le_tile.le_guts.lp1.lut0";
+defparam ii0661.PCK_LOCATION = "C39R13.lp1.lut0";
+defparam ii0661.config_data = "6C6C";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[7]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[7]|qx_net  ),
 	. qs ( ),
@@ -5271,9 +5294,9 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[7] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[7] .PLACE_LOCATION = "C33R17.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[7] .PLACE_LOCATION = "C29R18.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[7] .PCK_LOCATION = "C33R17.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[7] .PCK_LOCATION = "C29R18.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[7] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[2]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[2]|qx_net  ),
@@ -5302,20 +5325,20 @@ defparam \u_sdram_to_RGB_dma_addr__reg[2] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[2] .PLACE_LOCATION = "C27R15.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_dma_addr__reg[2] .PLACE_LOCATION = "C39R15.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[2] .PCK_LOCATION = "C27R15.lp0.reg1";
+defparam \u_sdram_to_RGB_dma_addr__reg[2] .PCK_LOCATION = "C39R15.lp1.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[2] .is_en_used = "false";
 LUT4 ii0662 (
 	. dx ( \ii0662|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18]|qx_net  ),
-	. f1 ( \ii0651|dx_net  ),
-	. f0 ( \ii0659|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0661|dx_net  ),
+	. f0 ( )
 );
-defparam ii0662.PLACE_LOCATION = "C33R11.le_tile.le_guts.lp2.lut0";
-defparam ii0662.PCK_LOCATION = "C33R11.lp2.lut0";
-defparam ii0662.config_data = "9333";
+defparam ii0662.PLACE_LOCATION = "C39R13.le_tile.le_guts.lp0.lut41";
+defparam ii0662.PCK_LOCATION = "C39R13.lp0.lut41";
+defparam ii0662.config_data = "B8B8";
 REG u_sdram_to_RGB_de_o__reg (
 	. qx ( \u_sdram_to_RGB_de_o__reg|qx_net  ),
 	. qs ( ),
@@ -5343,26 +5366,26 @@ defparam u_sdram_to_RGB_de_o__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_de_o__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_de_o__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_de_o__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_de_o__reg.PLACE_LOCATION = "C33R30.le_tile.le_guts.lp0.reg0";
+defparam u_sdram_to_RGB_de_o__reg.PLACE_LOCATION = "C35R30.le_tile.le_guts.lp0.reg0";
 defparam u_sdram_to_RGB_de_o__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_de_o__reg.PCK_LOCATION = "C33R30.lp0.reg0";
+defparam u_sdram_to_RGB_de_o__reg.PCK_LOCATION = "C35R30.lp0.reg0";
 defparam u_sdram_to_RGB_de_o__reg.is_en_used = "false";
 LUT4 ii0663 (
 	. dx ( \ii0663|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0662|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12]|qx_net  ),
+	. f0 ( \ii0659|dx_net  )
 );
-defparam ii0663.PLACE_LOCATION = "C33R10.le_tile.le_guts.lp2.lut0";
-defparam ii0663.PCK_LOCATION = "C33R10.lp2.lut0";
-defparam ii0663.config_data = "8B8B";
+defparam ii0663.PLACE_LOCATION = "C43R13.le_tile.le_guts.lp0.lut0";
+defparam ii0663.PCK_LOCATION = "C43R13.lp0.lut0";
+defparam ii0663.config_data = "78F0";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[8]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[8]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0575|dx_net  ),
+	. di ( \ii0586|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -5384,28 +5407,28 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[8] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[8] .PLACE_LOCATION = "C29R30.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[8] .PLACE_LOCATION = "C29R30.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[8] .PCK_LOCATION = "C29R30.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[8] .PCK_LOCATION = "C29R30.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[8] .is_en_used = "false";
 LUT4 ii0664 (
 	. dx ( \ii0664|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18]|qx_net  ),
-	. f1 ( \ii0659|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0663|dx_net  ),
 	. f0 ( )
 );
-defparam ii0664.PLACE_LOCATION = "C33R10.le_tile.le_guts.lp0.lut0";
-defparam ii0664.PCK_LOCATION = "C33R10.lp0.lut0";
-defparam ii0664.config_data = "8080";
+defparam ii0664.PLACE_LOCATION = "C45R14.le_tile.le_guts.lp0.lut0";
+defparam ii0664.PCK_LOCATION = "C45R14.lp0.lut0";
+defparam ii0664.config_data = "B8B8";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0738|dx_net  ),
+	. di ( \ii0753|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -5425,9 +5448,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9] .le_sh0_always_en = "false
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9] .PLACE_LOCATION = "C29R12.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9] .PLACE_LOCATION = "C45R15.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9] .PCK_LOCATION = "C29R12.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9] .PCK_LOCATION = "C45R15.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[16]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[16]|qx_net  ),
@@ -5456,20 +5479,428 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[16] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[16] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[16] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[16] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[16] .PLACE_LOCATION = "C25R14.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[16] .PLACE_LOCATION = "C29R13.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[16] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[16] .PCK_LOCATION = "C25R14.lp0.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[16] .PCK_LOCATION = "C29R13.lp2.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[16] .is_en_used = "false";
 LUT4 ii0665 (
 	. dx ( \ii0665|dx_net  ),
-	. f3 ( \ii0651|dx_net  ),
-	. f2 ( \ii0664|dx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12]|qx_net  ),
+	. f0 ( \ii0659|dx_net  )
 );
-defparam ii0665.PLACE_LOCATION = "C29R11.le_tile.le_guts.lp0.lut40";
-defparam ii0665.PCK_LOCATION = "C29R11.lp0.lut40";
-defparam ii0665.config_data = "8888";
+defparam ii0665.PLACE_LOCATION = "C43R12.le_tile.le_guts.lp0.lut0";
+defparam ii0665.PCK_LOCATION = "C43R12.lp0.lut0";
+defparam ii0665.config_data = "8000";
+M7S_EMB18K u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new (
+	. wfull ( ),
+	. wfull_almost ( ),
+	. rempty ( ),
+	. rempty_almost ( ),
+	. overflow ( ),
+	. wr_ack ( ),
+	. underflow ( ),
+	. rd_ack ( ),
+	. rd_ha ( )
+,
+	. rd_la ( )
+,
+	. c1r4_q ( {
+		/* c1r4_q [17] (nc) */ nc3 ,
+		/* c1r4_q [16] (nc) */ nc4 ,
+		/* c1r4_q [15] (nc) */ nc5 ,
+		/* c1r4_q [14] (nc) */ nc6 ,
+		/* c1r4_q [13] (nc) */ nc7 ,
+		/* c1r4_q [12] (nc) */ nc8 ,
+		/* c1r4_q [11] (nc) */ nc9 ,
+		/* c1r4_q [10] (nc) */ nc10 ,
+		/* c1r4_q [9] (nc) */ nc11 ,
+		/* c1r4_q [8] (nc) */ nc12 ,
+		/* c1r4_q [7] (nc) */ nc13 ,
+		/* c1r4_q [6] (nc) */ nc14 ,
+		/* c1r4_q [5] (nc) */ nc15 ,
+		/* c1r4_q [4] (nc) */ nc16 ,
+		/* c1r4_q [3] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[3]_net ,
+		/* c1r4_q [2] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[2]_net ,
+		/* c1r4_q [1] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[1]_net ,
+		/* c1r4_q [0] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[0]_net 
+	} ),
+	. c1r3_q ( {
+		/* c1r3_q [17] (nc) */ nc17 ,
+		/* c1r3_q [16] (nc) */ nc18 ,
+		/* c1r3_q [15] (nc) */ nc19 ,
+		/* c1r3_q [14] (nc) */ nc20 ,
+		/* c1r3_q [13] (nc) */ nc21 ,
+		/* c1r3_q [12] (nc) */ nc22 ,
+		/* c1r3_q [11] (nc) */ nc23 ,
+		/* c1r3_q [10] (nc) */ nc24 ,
+		/* c1r3_q [9] (nc) */ nc25 ,
+		/* c1r3_q [8] (nc) */ nc26 ,
+		/* c1r3_q [7] (nc) */ nc27 ,
+		/* c1r3_q [6] (nc) */ nc28 ,
+		/* c1r3_q [5] (nc) */ nc29 ,
+		/* c1r3_q [4] (nc) */ nc30 ,
+		/* c1r3_q [3] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[3]_net ,
+		/* c1r3_q [2] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[2]_net ,
+		/* c1r3_q [1] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[1]_net ,
+		/* c1r3_q [0] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[0]_net 
+	} ),
+	. c1r2_q ( {
+		/* c1r2_q [17] (nc) */ nc31 ,
+		/* c1r2_q [16] (nc) */ nc32 ,
+		/* c1r2_q [15] (nc) */ nc33 ,
+		/* c1r2_q [14] (nc) */ nc34 ,
+		/* c1r2_q [13] (nc) */ nc35 ,
+		/* c1r2_q [12] (nc) */ nc36 ,
+		/* c1r2_q [11] (nc) */ nc37 ,
+		/* c1r2_q [10] (nc) */ nc38 ,
+		/* c1r2_q [9] (nc) */ nc39 ,
+		/* c1r2_q [8] (nc) */ nc40 ,
+		/* c1r2_q [7] (nc) */ nc41 ,
+		/* c1r2_q [6] (nc) */ nc42 ,
+		/* c1r2_q [5] (nc) */ nc43 ,
+		/* c1r2_q [4] (nc) */ nc44 ,
+		/* c1r2_q [3] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[3]_net ,
+		/* c1r2_q [2] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[2]_net ,
+		/* c1r2_q [1] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[1]_net ,
+		/* c1r2_q [0] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[0]_net 
+	} ),
+	. c1r1_q ( {
+		/* c1r1_q [17] (nc) */ nc45 ,
+		/* c1r1_q [16] (nc) */ nc46 ,
+		/* c1r1_q [15] (nc) */ nc47 ,
+		/* c1r1_q [14] (nc) */ nc48 ,
+		/* c1r1_q [13] (nc) */ nc49 ,
+		/* c1r1_q [12] (nc) */ nc50 ,
+		/* c1r1_q [11] (nc) */ nc51 ,
+		/* c1r1_q [10] (nc) */ nc52 ,
+		/* c1r1_q [9] (nc) */ nc53 ,
+		/* c1r1_q [8] (nc) */ nc54 ,
+		/* c1r1_q [7] (nc) */ nc55 ,
+		/* c1r1_q [6] (nc) */ nc56 ,
+		/* c1r1_q [5] (nc) */ nc57 ,
+		/* c1r1_q [4] (nc) */ nc58 ,
+		/* c1r1_q [3] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[3]_net ,
+		/* c1r1_q [2] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[2]_net ,
+		/* c1r1_q [1] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[1]_net ,
+		/* c1r1_q [0] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[0]_net 
+	} ),
+	. c1r4_aa ( {
+		/* c1r4_aa [11] */ \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net ,
+		/* c1r4_aa [10] */ \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net ,
+		/* c1r4_aa [9] */ \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net ,
+		/* c1r4_aa [8] */ \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net ,
+		/* c1r4_aa [7] */ \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net ,
+		/* c1r4_aa [6] */ \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net ,
+		/* c1r4_aa [5] */ \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net ,
+		/* c1r4_aa [4] */ \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net ,
+		/* c1r4_aa [3] */ \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net ,
+		/* c1r4_aa [2] */ \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net ,
+		/* c1r4_aa [1] */ \GND_0_inst|Y_net ,
+		/* c1r4_aa [0] */ \GND_0_inst|Y_net 
+	} ),
+	. c1r4_ab ( {
+		/* c1r4_ab [11] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[8]|qx_net ,
+		/* c1r4_ab [10] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[7]|qx_net ,
+		/* c1r4_ab [9] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[6]|qx_net ,
+		/* c1r4_ab [8] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[5]|qx_net ,
+		/* c1r4_ab [7] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[4]|qx_net ,
+		/* c1r4_ab [6] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[3]|qx_net ,
+		/* c1r4_ab [5] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[2]|qx_net ,
+		/* c1r4_ab [4] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[1]|qx_net ,
+		/* c1r4_ab [3] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[0]|qx_net ,
+		/* c1r4_ab [2] */ \GND_0_inst|Y_net ,
+		/* c1r4_ab [1] */ \GND_0_inst|Y_net ,
+		/* c1r4_ab [0] */ \GND_0_inst|Y_net 
+	} ),
+	. c1r4_cea ( \ii0456|dx_net  ),
+	. c1r4_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr1__reg|qx_net  ),
+	. c1r4_clka ( \u_lvds_pll_u0|clkout0_net  ),
+	. c1r4_clkb ( \u_pll_pll_u0|clkout1_net  ),
+	. c1r4_da ( )
+,
+	. c1r4_db ( {
+		/* c1r4_db [17] */ \GND_0_inst|Y_net ,
+		/* c1r4_db [16] */ \GND_0_inst|Y_net ,
+		/* c1r4_db [15] */ \u_sdram_to_RGB_ahm_rdata_r__reg[28]|qx_net ,
+		/* c1r4_db [14] */ \u_sdram_to_RGB_ahm_rdata_r__reg[24]|qx_net ,
+		/* c1r4_db [13] */ \u_sdram_to_RGB_ahm_rdata_r__reg[20]|qx_net ,
+		/* c1r4_db [12] */ \u_sdram_to_RGB_ahm_rdata_r__reg[16]|qx_net ,
+		/* c1r4_db [11] */ \u_sdram_to_RGB_ahm_rdata_r__reg[12]|qx_net ,
+		/* c1r4_db [10] */ \u_sdram_to_RGB_ahm_rdata_r__reg[8]|qx_net ,
+		/* c1r4_db [9] */ \u_sdram_to_RGB_ahm_rdata_r__reg[4]|qx_net ,
+		/* c1r4_db [8] */ \u_sdram_to_RGB_ahm_rdata_r__reg[0]|qx_net ,
+		/* c1r4_db [7] */ \u_sdram_to_RGB_ahm_rdata_r__reg[28]|qx_net ,
+		/* c1r4_db [6] */ \u_sdram_to_RGB_ahm_rdata_r__reg[24]|qx_net ,
+		/* c1r4_db [5] */ \u_sdram_to_RGB_ahm_rdata_r__reg[20]|qx_net ,
+		/* c1r4_db [4] */ \u_sdram_to_RGB_ahm_rdata_r__reg[16]|qx_net ,
+		/* c1r4_db [3] */ \u_sdram_to_RGB_ahm_rdata_r__reg[12]|qx_net ,
+		/* c1r4_db [2] */ \u_sdram_to_RGB_ahm_rdata_r__reg[8]|qx_net ,
+		/* c1r4_db [1] */ \u_sdram_to_RGB_ahm_rdata_r__reg[4]|qx_net ,
+		/* c1r4_db [0] */ \u_sdram_to_RGB_ahm_rdata_r__reg[0]|qx_net 
+	} ),
+	. c1r4_rstna ( \VCC_0_inst|Y_net  ),
+	. c1r4_rstnb ( \VCC_0_inst|Y_net  ),
+	. c1r4_wea ( \GND_0_inst|Y_net  ),
+	. c1r4_web ( \VCC_0_inst|Y_net  ),
+	. c1r3_aa ( {
+		/* c1r3_aa [11] */ \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net ,
+		/* c1r3_aa [10] */ \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net ,
+		/* c1r3_aa [9] */ \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net ,
+		/* c1r3_aa [8] */ \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net ,
+		/* c1r3_aa [7] */ \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net ,
+		/* c1r3_aa [6] */ \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net ,
+		/* c1r3_aa [5] */ \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net ,
+		/* c1r3_aa [4] */ \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net ,
+		/* c1r3_aa [3] */ \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net ,
+		/* c1r3_aa [2] */ \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net ,
+		/* c1r3_aa [1] */ \GND_0_inst|Y_net ,
+		/* c1r3_aa [0] */ \GND_0_inst|Y_net 
+	} ),
+	. c1r3_ab ( {
+		/* c1r3_ab [11] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[8]|qx_net ,
+		/* c1r3_ab [10] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[7]|qx_net ,
+		/* c1r3_ab [9] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[6]|qx_net ,
+		/* c1r3_ab [8] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[5]|qx_net ,
+		/* c1r3_ab [7] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[4]|qx_net ,
+		/* c1r3_ab [6] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[3]|qx_net ,
+		/* c1r3_ab [5] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[2]|qx_net ,
+		/* c1r3_ab [4] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[1]|qx_net ,
+		/* c1r3_ab [3] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[0]|qx_net ,
+		/* c1r3_ab [2] */ \GND_0_inst|Y_net ,
+		/* c1r3_ab [1] */ \GND_0_inst|Y_net ,
+		/* c1r3_ab [0] */ \GND_0_inst|Y_net 
+	} ),
+	. c1r3_cea ( \ii0455|dx_net  ),
+	. c1r3_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr0__reg|qx_net  ),
+	. c1r3_clka ( \u_lvds_pll_u0|clkout0_net  ),
+	. c1r3_clkb ( \u_pll_pll_u0|clkout1_net  ),
+	. c1r3_da ( )
+,
+	. c1r3_db ( {
+		/* c1r3_db [17] */ \GND_0_inst|Y_net ,
+		/* c1r3_db [16] */ \GND_0_inst|Y_net ,
+		/* c1r3_db [15] */ \u_sdram_to_RGB_ahm_rdata_r__reg[31]|qx_net ,
+		/* c1r3_db [14] */ \u_sdram_to_RGB_ahm_rdata_r__reg[27]|qx_net ,
+		/* c1r3_db [13] */ \u_sdram_to_RGB_ahm_rdata_r__reg[23]|qx_net ,
+		/* c1r3_db [12] */ \u_sdram_to_RGB_ahm_rdata_r__reg[19]|qx_net ,
+		/* c1r3_db [11] */ \u_sdram_to_RGB_ahm_rdata_r__reg[15]|qx_net ,
+		/* c1r3_db [10] */ \u_sdram_to_RGB_ahm_rdata_r__reg[11]|qx_net ,
+		/* c1r3_db [9] */ \u_sdram_to_RGB_ahm_rdata_r__reg[7]|qx_net ,
+		/* c1r3_db [8] */ \u_sdram_to_RGB_ahm_rdata_r__reg[3]|qx_net ,
+		/* c1r3_db [7] */ \u_sdram_to_RGB_ahm_rdata_r__reg[31]|qx_net ,
+		/* c1r3_db [6] */ \u_sdram_to_RGB_ahm_rdata_r__reg[27]|qx_net ,
+		/* c1r3_db [5] */ \u_sdram_to_RGB_ahm_rdata_r__reg[23]|qx_net ,
+		/* c1r3_db [4] */ \u_sdram_to_RGB_ahm_rdata_r__reg[19]|qx_net ,
+		/* c1r3_db [3] */ \u_sdram_to_RGB_ahm_rdata_r__reg[15]|qx_net ,
+		/* c1r3_db [2] */ \u_sdram_to_RGB_ahm_rdata_r__reg[11]|qx_net ,
+		/* c1r3_db [1] */ \u_sdram_to_RGB_ahm_rdata_r__reg[7]|qx_net ,
+		/* c1r3_db [0] */ \u_sdram_to_RGB_ahm_rdata_r__reg[3]|qx_net 
+	} ),
+	. c1r3_rstna ( \VCC_0_inst|Y_net  ),
+	. c1r3_rstnb ( \VCC_0_inst|Y_net  ),
+	. c1r3_wea ( \GND_0_inst|Y_net  ),
+	. c1r3_web ( \VCC_0_inst|Y_net  ),
+	. c1r2_aa ( {
+		/* c1r2_aa [11] */ \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net ,
+		/* c1r2_aa [10] */ \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net ,
+		/* c1r2_aa [9] */ \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net ,
+		/* c1r2_aa [8] */ \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net ,
+		/* c1r2_aa [7] */ \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net ,
+		/* c1r2_aa [6] */ \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net ,
+		/* c1r2_aa [5] */ \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net ,
+		/* c1r2_aa [4] */ \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net ,
+		/* c1r2_aa [3] */ \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net ,
+		/* c1r2_aa [2] */ \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net ,
+		/* c1r2_aa [1] */ \GND_0_inst|Y_net ,
+		/* c1r2_aa [0] */ \GND_0_inst|Y_net 
+	} ),
+	. c1r2_ab ( {
+		/* c1r2_ab [11] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[8]|qx_net ,
+		/* c1r2_ab [10] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[7]|qx_net ,
+		/* c1r2_ab [9] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[6]|qx_net ,
+		/* c1r2_ab [8] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[5]|qx_net ,
+		/* c1r2_ab [7] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[4]|qx_net ,
+		/* c1r2_ab [6] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[3]|qx_net ,
+		/* c1r2_ab [5] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[2]|qx_net ,
+		/* c1r2_ab [4] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[1]|qx_net ,
+		/* c1r2_ab [3] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[0]|qx_net ,
+		/* c1r2_ab [2] */ \GND_0_inst|Y_net ,
+		/* c1r2_ab [1] */ \GND_0_inst|Y_net ,
+		/* c1r2_ab [0] */ \GND_0_inst|Y_net 
+	} ),
+	. c1r2_cea ( \ii0455|dx_net  ),
+	. c1r2_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr0__reg|qx_net  ),
+	. c1r2_clka ( \u_lvds_pll_u0|clkout0_net  ),
+	. c1r2_clkb ( \u_pll_pll_u0|clkout1_net  ),
+	. c1r2_da ( )
+,
+	. c1r2_db ( {
+		/* c1r2_db [17] */ \GND_0_inst|Y_net ,
+		/* c1r2_db [16] */ \GND_0_inst|Y_net ,
+		/* c1r2_db [15] */ \u_sdram_to_RGB_ahm_rdata_r__reg[30]|qx_net ,
+		/* c1r2_db [14] */ \u_sdram_to_RGB_ahm_rdata_r__reg[26]|qx_net ,
+		/* c1r2_db [13] */ \u_sdram_to_RGB_ahm_rdata_r__reg[22]|qx_net ,
+		/* c1r2_db [12] */ \u_sdram_to_RGB_ahm_rdata_r__reg[18]|qx_net ,
+		/* c1r2_db [11] */ \u_sdram_to_RGB_ahm_rdata_r__reg[14]|qx_net ,
+		/* c1r2_db [10] */ \u_sdram_to_RGB_ahm_rdata_r__reg[10]|qx_net ,
+		/* c1r2_db [9] */ \u_sdram_to_RGB_ahm_rdata_r__reg[6]|qx_net ,
+		/* c1r2_db [8] */ \u_sdram_to_RGB_ahm_rdata_r__reg[2]|qx_net ,
+		/* c1r2_db [7] */ \u_sdram_to_RGB_ahm_rdata_r__reg[30]|qx_net ,
+		/* c1r2_db [6] */ \u_sdram_to_RGB_ahm_rdata_r__reg[26]|qx_net ,
+		/* c1r2_db [5] */ \u_sdram_to_RGB_ahm_rdata_r__reg[22]|qx_net ,
+		/* c1r2_db [4] */ \u_sdram_to_RGB_ahm_rdata_r__reg[18]|qx_net ,
+		/* c1r2_db [3] */ \u_sdram_to_RGB_ahm_rdata_r__reg[14]|qx_net ,
+		/* c1r2_db [2] */ \u_sdram_to_RGB_ahm_rdata_r__reg[10]|qx_net ,
+		/* c1r2_db [1] */ \u_sdram_to_RGB_ahm_rdata_r__reg[6]|qx_net ,
+		/* c1r2_db [0] */ \u_sdram_to_RGB_ahm_rdata_r__reg[2]|qx_net 
+	} ),
+	. c1r2_rstna ( \VCC_0_inst|Y_net  ),
+	. c1r2_rstnb ( \VCC_0_inst|Y_net  ),
+	. c1r2_wea ( \GND_0_inst|Y_net  ),
+	. c1r2_web ( \VCC_0_inst|Y_net  ),
+	. c1r1_aa ( {
+		/* c1r1_aa [11] */ \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net ,
+		/* c1r1_aa [10] */ \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net ,
+		/* c1r1_aa [9] */ \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net ,
+		/* c1r1_aa [8] */ \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net ,
+		/* c1r1_aa [7] */ \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net ,
+		/* c1r1_aa [6] */ \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net ,
+		/* c1r1_aa [5] */ \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net ,
+		/* c1r1_aa [4] */ \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net ,
+		/* c1r1_aa [3] */ \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net ,
+		/* c1r1_aa [2] */ \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net ,
+		/* c1r1_aa [1] */ \GND_0_inst|Y_net ,
+		/* c1r1_aa [0] */ \GND_0_inst|Y_net 
+	} ),
+	. c1r1_ab ( {
+		/* c1r1_ab [11] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[8]|qx_net ,
+		/* c1r1_ab [10] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[7]|qx_net ,
+		/* c1r1_ab [9] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[6]|qx_net ,
+		/* c1r1_ab [8] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[5]|qx_net ,
+		/* c1r1_ab [7] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[4]|qx_net ,
+		/* c1r1_ab [6] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[3]|qx_net ,
+		/* c1r1_ab [5] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[2]|qx_net ,
+		/* c1r1_ab [4] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[1]|qx_net ,
+		/* c1r1_ab [3] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[0]|qx_net ,
+		/* c1r1_ab [2] */ \GND_0_inst|Y_net ,
+		/* c1r1_ab [1] */ \GND_0_inst|Y_net ,
+		/* c1r1_ab [0] */ \GND_0_inst|Y_net 
+	} ),
+	. c1r1_cea ( \ii0455|dx_net  ),
+	. c1r1_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr0__reg|qx_net  ),
+	. c1r1_clka ( \u_lvds_pll_u0|clkout0_net  ),
+	. c1r1_clkb ( \u_pll_pll_u0|clkout1_net  ),
+	. c1r1_da ( )
+,
+	. c1r1_db ( {
+		/* c1r1_db [17] */ \GND_0_inst|Y_net ,
+		/* c1r1_db [16] */ \GND_0_inst|Y_net ,
+		/* c1r1_db [15] */ \u_sdram_to_RGB_ahm_rdata_r__reg[29]|qx_net ,
+		/* c1r1_db [14] */ \u_sdram_to_RGB_ahm_rdata_r__reg[25]|qx_net ,
+		/* c1r1_db [13] */ \u_sdram_to_RGB_ahm_rdata_r__reg[21]|qx_net ,
+		/* c1r1_db [12] */ \u_sdram_to_RGB_ahm_rdata_r__reg[17]|qx_net ,
+		/* c1r1_db [11] */ \u_sdram_to_RGB_ahm_rdata_r__reg[13]|qx_net ,
+		/* c1r1_db [10] */ \u_sdram_to_RGB_ahm_rdata_r__reg[9]|qx_net ,
+		/* c1r1_db [9] */ \u_sdram_to_RGB_ahm_rdata_r__reg[5]|qx_net ,
+		/* c1r1_db [8] */ \u_sdram_to_RGB_ahm_rdata_r__reg[1]|qx_net ,
+		/* c1r1_db [7] */ \u_sdram_to_RGB_ahm_rdata_r__reg[29]|qx_net ,
+		/* c1r1_db [6] */ \u_sdram_to_RGB_ahm_rdata_r__reg[25]|qx_net ,
+		/* c1r1_db [5] */ \u_sdram_to_RGB_ahm_rdata_r__reg[21]|qx_net ,
+		/* c1r1_db [4] */ \u_sdram_to_RGB_ahm_rdata_r__reg[17]|qx_net ,
+		/* c1r1_db [3] */ \u_sdram_to_RGB_ahm_rdata_r__reg[13]|qx_net ,
+		/* c1r1_db [2] */ \u_sdram_to_RGB_ahm_rdata_r__reg[9]|qx_net ,
+		/* c1r1_db [1] */ \u_sdram_to_RGB_ahm_rdata_r__reg[5]|qx_net ,
+		/* c1r1_db [0] */ \u_sdram_to_RGB_ahm_rdata_r__reg[1]|qx_net 
+	} ),
+	. c1r1_rstna ( \VCC_0_inst|Y_net  ),
+	. c1r1_rstnb ( \VCC_0_inst|Y_net  ),
+	. c1r1_wea ( \GND_0_inst|Y_net  ),
+	. c1r1_web ( \VCC_0_inst|Y_net  ),
+	. cea ( ),
+	. ceb ( ),
+	. fifo_clr ( ),
+	. wr_req_n ( ),
+	. rd_req_n ( ),
+	. haa ( )
+,
+	. hab ( )
+,
+	. wea ( ),
+	. web ( )
+);
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_modeb_sel = 8;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_portb_wr_mode = 1;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.r_width = 5'h0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_porta_prog = 240;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_portb_data_width = 8;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_reset_value_a = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_reset_value_b = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_init_file = "";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_porta_reg_out = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_portb_reg_out = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.width_ext_mode = 1'b0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_portb_data_width = 8;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_modeb_sel = 8;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.PCK_LOCATION = "C31R17.emb18k_wrap.emb18k";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_porta_wr_mode = 1;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_modea_sel = 12;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_portb_wr_mode = 1;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_porta_prog = 240;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_inst = "u_sdram_to_RGB_u_1kx16_0_u_emb5k_2";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_portb_prog = 15;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_reset_value_a = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_portb_data_width = 8;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_reset_value_b = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_porta_reg_out = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_portb_reg_out = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_init_file = "";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_porta_wr_mode = 1;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.fifo_en = 1'b0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_portb_wr_mode = 1;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_modeb_sel = 8;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_modea_sel = 12;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.async_en = 1'b0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_porta_data_width = 4;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_portb_prog = 15;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_operation_mode = "simple_dual_port";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_reset_value_a = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_inst = "u_sdram_to_RGB_u_1kx16_1_u_emb5k_0";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_reset_value_b = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_porta_reg_out = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_portb_reg_out = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_init_file = "";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_inst = "u_sdram_to_RGB_u_1kx16_0_u_emb5k_1";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.depth_ext_mode = 1'b0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_porta_prog = 240;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_porta_data_width = 4;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_operation_mode = "simple_dual_port";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_portb_prog = 15;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_modea_sel = 12;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.af_level = 15'h0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.dedicated_cfg = 16'hffff;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_modeb_sel = 8;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_porta_wr_mode = 1;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_portb_wr_mode = 1;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_operation_mode = "simple_dual_port";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_reset_value_a = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_reset_value_b = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_porta_data_width = 4;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.w_width = 5'h0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_porta_reg_out = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_operation_mode = "simple_dual_port";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_porta_prog = 240;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_init_file = "";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_portb_reg_out = 0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_1_portb_data_width = 8;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_portb_prog = 15;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_inst = "u_sdram_to_RGB_u_1kx16_0_u_emb5k_3";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_4_porta_data_width = 4;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.PLACE_LOCATION = "C31R17.emb_guts.emb18k_wrap.emb18k";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.ae_level = 15'h0;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_2_modea_sel = 12;
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_1_new.emb5k_3_porta_wr_mode = 1;
 REG \u_sdram_to_RGB_emb_addr_wr_r__reg[3]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr_r__reg[3]|qx_net  ),
 	. qs ( ),
@@ -5497,19 +5928,19 @@ defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[3] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[3] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[3] .PLACE_LOCATION = "C27R17.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[3] .PCK_LOCATION = "C33R16.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[3] .PCK_LOCATION = "C27R17.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[3] .is_en_used = "false";
 LUT4 ii0666 (
 	. dx ( \ii0666|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
 	. f0 ( \ii0665|dx_net  )
 );
-defparam ii0666.PLACE_LOCATION = "C29R11.le_tile.le_guts.lp3.lut0";
-defparam ii0666.PCK_LOCATION = "C29R11.lp3.lut0";
+defparam ii0666.PLACE_LOCATION = "C43R14.le_tile.le_guts.lp1.lut0";
+defparam ii0666.PCK_LOCATION = "C43R14.lp1.lut0";
 defparam ii0666.config_data = "C5CA";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8]|qx_net  ),
@@ -5518,7 +5949,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[8]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -5538,9 +5969,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8] .le_sh0_always_en = "f
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8] .PLACE_LOCATION = "C33R7.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8] .PLACE_LOCATION = "C33R11.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8] .PCK_LOCATION = "C33R7.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8] .PCK_LOCATION = "C33R11.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[8] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26]|qx_net  ),
@@ -5549,7 +5980,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[26]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -5569,50 +6000,50 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26] .PLACE_LOCATION = "C37R9.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26] .PLACE_LOCATION = "C35R9.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26] .PCK_LOCATION = "C37R9.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26] .PCK_LOCATION = "C35R9.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[26] .is_en_used = "true";
 LUT4 ii0667 (
 	. dx ( \ii0667|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11]|qx_net  ),
-	. f0 ( \ii0579|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]|qx_net  )
 );
-defparam ii0667.PLACE_LOCATION = "C39R9.le_tile.le_guts.lp2.lut0";
-defparam ii0667.PCK_LOCATION = "C39R9.lp2.lut0";
-defparam ii0667.config_data = "F066";
+defparam ii0667.PLACE_LOCATION = "C43R11.le_tile.le_guts.lp0.lut0";
+defparam ii0667.PCK_LOCATION = "C43R11.lp0.lut0";
+defparam ii0667.config_data = "8000";
 LUT4 ii0668 (
 	. dx ( \ii0668|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20]|qx_net  ),
-	. f1 ( \ii0651|dx_net  ),
-	. f0 ( \ii0664|dx_net  )
+	. f3 ( \ii0656|dx_net  ),
+	. f2 ( \ii0657|dx_net  ),
+	. f1 ( \ii0658|dx_net  ),
+	. f0 ( \ii0667|dx_net  )
 );
-defparam ii0668.PLACE_LOCATION = "C39R13.le_tile.le_guts.lp1.lut0";
-defparam ii0668.PCK_LOCATION = "C39R13.lp1.lut0";
-defparam ii0668.config_data = "6CCC";
+defparam ii0668.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp3.lut0";
+defparam ii0668.PCK_LOCATION = "C39R12.lp3.lut0";
+defparam ii0668.config_data = "8000";
 LUT4 ii0670 (
 	. dx ( \ii0670|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20]|qx_net  ),
-	. f1 ( \ii0651|dx_net  ),
-	. f0 ( \ii0664|dx_net  )
-);
-defparam ii0670.PLACE_LOCATION = "C37R9.le_tile.le_guts.lp0.lut0";
-defparam ii0670.PCK_LOCATION = "C37R9.lp0.lut0";
-defparam ii0670.config_data = "8000";
-LUT4 ii0669 (
-	. dx ( \ii0669|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0668|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]|qx_net  ),
+	. f2 ( \ii0668|dx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0669.PLACE_LOCATION = "C39R14.le_tile.le_guts.lp2.lut0";
-defparam ii0669.PCK_LOCATION = "C39R14.lp2.lut0";
-defparam ii0669.config_data = "B8B8";
+defparam ii0670.PLACE_LOCATION = "C29R13.le_tile.le_guts.lp0.lut40";
+defparam ii0670.PCK_LOCATION = "C29R13.lp0.lut40";
+defparam ii0670.config_data = "8888";
+LUT4 ii0669 (
+	. dx ( \ii0669|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0668|dx_net  )
+);
+defparam ii0669.PLACE_LOCATION = "C33R11.le_tile.le_guts.lp3.lut0";
+defparam ii0669.PCK_LOCATION = "C33R11.lp3.lut0";
+defparam ii0669.config_data = "C5CA";
 M7S_IO_CAL dedicated_io_cell_u243_inst (
 	. id_q_1 ( )
 ,
@@ -5758,20 +6189,20 @@ defparam dedicated_io_cell_u243_inst.cfg_gsclk_inv_1 = 1;
 defparam dedicated_io_cell_u243_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0671 (
 	. dx ( \ii0671|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
 	. f0 ( \ii0670|dx_net  )
 );
-defparam ii0671.PLACE_LOCATION = "C39R10.le_tile.le_guts.lp0.lut0";
-defparam ii0671.PCK_LOCATION = "C39R10.lp0.lut0";
+defparam ii0671.PLACE_LOCATION = "C27R13.le_tile.le_guts.lp3.lut0";
+defparam ii0671.PCK_LOCATION = "C27R13.lp3.lut0";
 defparam ii0671.config_data = "C5CA";
 REG \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0705|dx_net  ),
+	. di ( \ii0720|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -5793,9 +6224,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0] .PLACE_LOCATION = "C33R9.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0] .PLACE_LOCATION = "C39R10.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0] .PCK_LOCATION = "C33R9.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0] .PCK_LOCATION = "C39R10.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[8]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[8]|qx_net  ),
@@ -5824,9 +6255,9 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[8] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[8] .PLACE_LOCATION = "C29R18.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[8] .PLACE_LOCATION = "C29R18.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[8] .PCK_LOCATION = "C29R18.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[8] .PCK_LOCATION = "C29R18.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[8] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[3]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[3]|qx_net  ),
@@ -5855,36 +6286,36 @@ defparam \u_sdram_to_RGB_dma_addr__reg[3] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[3] .PLACE_LOCATION = "C27R15.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[3] .PLACE_LOCATION = "C35R14.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[3] .PCK_LOCATION = "C27R15.lp1.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[3] .PCK_LOCATION = "C35R14.lp1.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[3] .is_en_used = "false";
 LUT4 ii0672 (
 	. dx ( \ii0672|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15]|qx_net  ),
+	. f2 ( \ii0670|dx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0672.PLACE_LOCATION = "C39R9.le_tile.le_guts.lp1.lut0";
-defparam ii0672.PCK_LOCATION = "C39R9.lp1.lut0";
-defparam ii0672.config_data = "7878";
+defparam ii0672.PLACE_LOCATION = "C29R13.le_tile.le_guts.lp1.lut0";
+defparam ii0672.PCK_LOCATION = "C29R13.lp1.lut0";
+defparam ii0672.config_data = "8888";
 LUT4 ii0673 (
 	. dx ( \ii0673|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0672|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0672|dx_net  )
 );
-defparam ii0673.PLACE_LOCATION = "C39R10.le_tile.le_guts.lp2.lut0";
-defparam ii0673.PCK_LOCATION = "C39R10.lp2.lut0";
-defparam ii0673.config_data = "B8B8";
+defparam ii0673.PLACE_LOCATION = "C27R12.le_tile.le_guts.lp0.lut0";
+defparam ii0673.PCK_LOCATION = "C27R12.lp0.lut0";
+defparam ii0673.config_data = "C5CA";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[9]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[9]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0576|dx_net  ),
+	. di ( \ii0587|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -5906,20 +6337,20 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[9] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[9] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[9] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[9] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[9] .PLACE_LOCATION = "C33R32.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[9] .PLACE_LOCATION = "C33R29.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[9] .PCK_LOCATION = "C33R32.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[9] .PCK_LOCATION = "C33R29.lp2.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[9] .is_en_used = "false";
 LUT4 ii0674 (
 	. dx ( \ii0674|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16]|qx_net  ),
+	. f0 ( \ii0668|dx_net  )
 );
-defparam ii0674.PLACE_LOCATION = "C43R13.le_tile.le_guts.lp0.lut0";
-defparam ii0674.PCK_LOCATION = "C43R13.lp0.lut0";
-defparam ii0674.config_data = "7F80";
+defparam ii0674.PLACE_LOCATION = "C29R11.le_tile.le_guts.lp0.lut40";
+defparam ii0674.PCK_LOCATION = "C29R11.lp0.lut40";
+defparam ii0674.config_data = "8000";
 M7S_IO_DDR dedicated_io_cell_u240_inst (
 	. id_q_1 ( )
 ,
@@ -6063,14 +6494,14 @@ defparam dedicated_io_cell_u240_inst.cfg_gsclk_inv_1 = 1;
 defparam dedicated_io_cell_u240_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0675 (
 	. dx ( \ii0675|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0674|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0674|dx_net  )
 );
-defparam ii0675.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp0.lut40";
-defparam ii0675.PCK_LOCATION = "C39R12.lp0.lut40";
-defparam ii0675.config_data = "B8B8";
+defparam ii0675.PLACE_LOCATION = "C29R11.le_tile.le_guts.lp1.lut0";
+defparam ii0675.PCK_LOCATION = "C29R11.lp1.lut0";
+defparam ii0675.config_data = "C5CA";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[17]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[17]|qx_net  ),
 	. qs ( ),
@@ -6098,9 +6529,9 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[17] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[17] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[17] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[17] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[17] .PLACE_LOCATION = "C35R10.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[17] .PLACE_LOCATION = "C29R13.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[17] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[17] .PCK_LOCATION = "C35R10.lp0.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[17] .PCK_LOCATION = "C29R13.lp3.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[17] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_addr_wr_r__reg[4]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr_r__reg[4]|qx_net  ),
@@ -6129,20 +6560,20 @@ defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[4] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[4] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[4] .PLACE_LOCATION = "C27R17.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[4] .PCK_LOCATION = "C33R16.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[4] .PCK_LOCATION = "C27R17.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[4] .is_en_used = "false";
 LUT4 ii0676 (
 	. dx ( \ii0676|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
-	. f0 ( \ii0644|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ),
+	. f2 ( \ii0674|dx_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0676.PLACE_LOCATION = "C37R10.le_tile.le_guts.lp3.lut0";
-defparam ii0676.PCK_LOCATION = "C37R10.lp3.lut0";
-defparam ii0676.config_data = "C5CA";
+defparam ii0676.PLACE_LOCATION = "C29R12.le_tile.le_guts.lp1.lut0";
+defparam ii0676.PCK_LOCATION = "C29R12.lp1.lut0";
+defparam ii0676.config_data = "8888";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9]|qx_net  ),
 	. qs ( ),
@@ -6150,7 +6581,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[9]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -6170,9 +6601,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9] .le_sh0_always_en = "f
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9] .PLACE_LOCATION = "C33R8.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9] .PLACE_LOCATION = "C33R11.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9] .PCK_LOCATION = "C33R8.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9] .PCK_LOCATION = "C33R11.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[9] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27]|qx_net  ),
@@ -6181,7 +6612,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[27]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -6201,20 +6632,20 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27] .PLACE_LOCATION = "C35R7.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27] .PLACE_LOCATION = "C35R9.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27] .PCK_LOCATION = "C35R7.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27] .PCK_LOCATION = "C35R9.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[27] .is_en_used = "true";
 LUT4 ii0677 (
 	. dx ( \ii0677|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5]|qx_net  ),
-	. f1 ( \ii0644|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0676|dx_net  )
 );
-defparam ii0677.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp1.lut41";
-defparam ii0677.PCK_LOCATION = "C39R12.lp1.lut41";
-defparam ii0677.config_data = "6C6C";
+defparam ii0677.PLACE_LOCATION = "C29R12.le_tile.le_guts.lp2.lut0";
+defparam ii0677.PCK_LOCATION = "C29R12.lp2.lut0";
+defparam ii0677.config_data = "C5CA";
 M7S_IO_LVDS io_cell_spi_sck_inst (
 	. id_1 ( ),
 	. id_0 ( ),
@@ -6232,15 +6663,15 @@ M7S_IO_LVDS io_cell_spi_sck_inst (
 	. geclk180 ( ),
 	. geclk270 ( ),
 	. od_d_1 ( {
-		/* od_d_1 [3] (nc) */ nc3 ,
-		/* od_d_1 [2] (nc) */ nc4 ,
-		/* od_d_1 [1] (nc) */ nc5 ,
+		/* od_d_1 [3] (nc) */ nc59 ,
+		/* od_d_1 [2] (nc) */ nc60 ,
+		/* od_d_1 [1] (nc) */ nc61 ,
 		/* od_d_1 [0] */ \u_arm_u_soc|spi0_sck_net 
 	} ),
 	. od_d_0 ( {
-		/* od_d_0 [3] (nc) */ nc6 ,
-		/* od_d_0 [2] (nc) */ nc7 ,
-		/* od_d_0 [1] (nc) */ nc8 ,
+		/* od_d_0 [3] (nc) */ nc62 ,
+		/* od_d_0 [2] (nc) */ nc63 ,
+		/* od_d_0 [1] (nc) */ nc64 ,
 		/* od_d_0 [0] */ \u_arm_u_soc|spi0_mosi_net 
 	} ),
 	. oen_1 ( ),
@@ -6345,22 +6776,22 @@ defparam io_cell_spi_sck_inst.cfg_userio_en_0 = 1;
 defparam io_cell_spi_sck_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0678 (
 	. dx ( \ii0678|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0677|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18]|qx_net  ),
+	. f1 ( \ii0674|dx_net  ),
 	. f0 ( )
 );
-defparam ii0678.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp2.lut0";
-defparam ii0678.PCK_LOCATION = "C39R12.lp2.lut0";
-defparam ii0678.config_data = "B8B8";
+defparam ii0678.PLACE_LOCATION = "C29R9.le_tile.le_guts.lp1.lut0";
+defparam ii0678.PCK_LOCATION = "C29R9.lp1.lut0";
+defparam ii0678.config_data = "8080";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0687|dx_net  ),
+	. di ( \ii0701|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -6380,36 +6811,36 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0] .PLACE_LOCATION = "C25R13.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0] .PLACE_LOCATION = "C35R12.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0] .PCK_LOCATION = "C25R13.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0] .PCK_LOCATION = "C35R12.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0] .is_en_used = "true";
 LUT4 ii0680 (
 	. dx ( \ii0680|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0679|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11]|qx_net  ),
+	. f0 ( \ii0593|dx_net  )
 );
-defparam ii0680.PLACE_LOCATION = "C39R11.le_tile.le_guts.lp0.lut41";
-defparam ii0680.PCK_LOCATION = "C39R11.lp0.lut41";
-defparam ii0680.config_data = "B8B8";
+defparam ii0680.PLACE_LOCATION = "C39R13.le_tile.le_guts.lp2.lut0";
+defparam ii0680.PCK_LOCATION = "C39R13.lp2.lut0";
+defparam ii0680.config_data = "F066";
 LUT4 ii0679 (
 	. dx ( \ii0679|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6]|qx_net  ),
-	. f0 ( \ii0644|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0678|dx_net  )
 );
-defparam ii0679.PLACE_LOCATION = "C39R10.le_tile.le_guts.lp1.lut41";
-defparam ii0679.PCK_LOCATION = "C39R10.lp1.lut41";
-defparam ii0679.config_data = "78F0";
+defparam ii0679.PLACE_LOCATION = "C33R10.le_tile.le_guts.lp0.lut0";
+defparam ii0679.PCK_LOCATION = "C33R10.lp0.lut0";
+defparam ii0679.config_data = "C5CA";
 REG \u_sdram_to_RGB_addr_cnt__reg[0]  (
 	. qx ( \u_sdram_to_RGB_addr_cnt__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0496|dx_net  ),
+	. di ( \ii0502|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
 	. mclk_b ( ),
@@ -6431,26 +6862,26 @@ defparam \u_sdram_to_RGB_addr_cnt__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_addr_cnt__reg[0] .PLACE_LOCATION = "C39R16.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[0] .PLACE_LOCATION = "C43R17.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_addr_cnt__reg[0] .PCK_LOCATION = "C39R16.lp1.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[0] .PCK_LOCATION = "C43R17.lp0.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[0] .is_en_used = "true";
 LUT4 ii0681 (
 	. dx ( \ii0681|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6]|qx_net  ),
-	. f0 ( \ii0644|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19]|qx_net  ),
+	. f0 ( \ii0674|dx_net  )
 );
-defparam ii0681.PLACE_LOCATION = "C39R11.le_tile.le_guts.lp0.lut0";
-defparam ii0681.PCK_LOCATION = "C39R11.lp0.lut0";
+defparam ii0681.PLACE_LOCATION = "C33R9.le_tile.le_guts.lp2.lut0";
+defparam ii0681.PCK_LOCATION = "C33R9.lp2.lut0";
 defparam ii0681.config_data = "8000";
 REG \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0706|dx_net  ),
+	. di ( \ii0721|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -6472,9 +6903,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1] .PLACE_LOCATION = "C33R9.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1] .PLACE_LOCATION = "C39R10.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1] .PCK_LOCATION = "C33R9.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1] .PCK_LOCATION = "C39R10.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[9]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[9]|qx_net  ),
@@ -6503,9 +6934,9 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[9] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[9] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[9] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[9] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[9] .PLACE_LOCATION = "C33R19.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[9] .PLACE_LOCATION = "C33R20.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[9] .PCK_LOCATION = "C33R19.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[9] .PCK_LOCATION = "C33R20.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[9] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[4]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[4]|qx_net  ),
@@ -6534,40 +6965,40 @@ defparam \u_sdram_to_RGB_dma_addr__reg[4] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[4] .PLACE_LOCATION = "C27R14.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[4] .PLACE_LOCATION = "C35R13.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[4] .PCK_LOCATION = "C27R14.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[4] .PCK_LOCATION = "C35R13.lp1.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[4] .is_en_used = "false";
 LUT4 ii0682 (
 	. dx ( \ii0682|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
 	. f0 ( \ii0681|dx_net  )
 );
-defparam ii0682.PLACE_LOCATION = "C39R11.le_tile.le_guts.lp2.lut0";
-defparam ii0682.PCK_LOCATION = "C39R11.lp2.lut0";
+defparam ii0682.PLACE_LOCATION = "C39R14.le_tile.le_guts.lp2.lut0";
+defparam ii0682.PCK_LOCATION = "C39R14.lp2.lut0";
 defparam ii0682.config_data = "C5CA";
 LUT4 ii0683 (
 	. dx ( \ii0683|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8]|qx_net  ),
-	. f1 ( \ii0681|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20]|qx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0683.PLACE_LOCATION = "C39R10.le_tile.le_guts.lp0.lut40";
-defparam ii0683.PCK_LOCATION = "C39R10.lp0.lut40";
-defparam ii0683.config_data = "6C6C";
+defparam ii0683.PLACE_LOCATION = "C35R9.le_tile.le_guts.lp0.lut0";
+defparam ii0683.PCK_LOCATION = "C35R9.lp0.lut0";
+defparam ii0683.config_data = "8888";
 LUT4 ii0684 (
 	. dx ( \ii0684|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0683|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19]|qx_net  ),
+	. f1 ( \ii0674|dx_net  ),
+	. f0 ( \ii0683|dx_net  )
 );
-defparam ii0684.PLACE_LOCATION = "C39R10.le_tile.le_guts.lp1.lut0";
-defparam ii0684.PCK_LOCATION = "C39R10.lp1.lut0";
-defparam ii0684.config_data = "B8B8";
+defparam ii0684.PLACE_LOCATION = "C35R9.le_tile.le_guts.lp1.lut0";
+defparam ii0684.PCK_LOCATION = "C35R9.lp1.lut0";
+defparam ii0684.config_data = "8000";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[18]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[18]|qx_net  ),
 	. qs ( ),
@@ -6595,20 +7026,20 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[18] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[18] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[18] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[18] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[18] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[18] .PLACE_LOCATION = "C33R13.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[18] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[18] .PCK_LOCATION = "C33R15.lp2.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[18] .PCK_LOCATION = "C33R13.lp1.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[18] .is_en_used = "false";
 LUT4 ii0685 (
 	. dx ( \ii0685|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8]|qx_net  ),
-	. f1 ( \ii0681|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0684|dx_net  )
 );
-defparam ii0685.PLACE_LOCATION = "C43R11.le_tile.le_guts.lp1.lut0";
-defparam ii0685.PCK_LOCATION = "C43R11.lp1.lut0";
-defparam ii0685.config_data = "8080";
+defparam ii0685.PLACE_LOCATION = "C39R11.le_tile.le_guts.lp2.lut0";
+defparam ii0685.PCK_LOCATION = "C39R11.lp2.lut0";
+defparam ii0685.config_data = "C5CA";
 REG \u_sdram_to_RGB_emb_addr_wr_r__reg[5]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr_r__reg[5]|qx_net  ),
 	. qs ( ),
@@ -6636,20 +7067,20 @@ defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[5] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[5] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[5] .PLACE_LOCATION = "C27R17.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[5] .PCK_LOCATION = "C33R16.lp1.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[5] .PCK_LOCATION = "C27R17.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[5] .is_en_used = "false";
 LUT4 ii0686 (
 	. dx ( \ii0686|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
-	. f0 ( \ii0685|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0686.PLACE_LOCATION = "C43R12.le_tile.le_guts.lp0.lut0";
-defparam ii0686.PCK_LOCATION = "C43R12.lp0.lut0";
-defparam ii0686.config_data = "C5CA";
+defparam ii0686.PLACE_LOCATION = "C39R14.le_tile.le_guts.lp3.lut0";
+defparam ii0686.PCK_LOCATION = "C39R14.lp3.lut0";
+defparam ii0686.config_data = "7878";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28]|qx_net  ),
 	. qs ( ),
@@ -6657,7 +7088,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[28]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -6677,38 +7108,38 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28] .PLACE_LOCATION = "C33R8.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28] .PLACE_LOCATION = "C35R9.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28] .PCK_LOCATION = "C33R8.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28] .PCK_LOCATION = "C35R9.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[28] .is_en_used = "true";
 LUT4 ii0687 (
 	. dx ( \ii0687|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0686|dx_net  ),
 	. f0 ( )
 );
-defparam ii0687.PLACE_LOCATION = "C25R13.le_tile.le_guts.lp1.lut0";
-defparam ii0687.PCK_LOCATION = "C25R13.lp1.lut0";
-defparam ii0687.config_data = "C5C5";
+defparam ii0687.PLACE_LOCATION = "C39R14.le_tile.le_guts.lp1.lut40";
+defparam ii0687.PCK_LOCATION = "C39R14.lp1.lut40";
+defparam ii0687.config_data = "B8B8";
 LUT4 ii0688 (
 	. dx ( \ii0688|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3]|qx_net  ),
-	. f0 ( \ii0579|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0656|dx_net  )
 );
-defparam ii0688.PLACE_LOCATION = "C27R9.le_tile.le_guts.lp0.lut0";
-defparam ii0688.PCK_LOCATION = "C27R9.lp0.lut0";
-defparam ii0688.config_data = "F066";
+defparam ii0688.PLACE_LOCATION = "C33R12.le_tile.le_guts.lp0.lut0";
+defparam ii0688.PCK_LOCATION = "C33R12.lp0.lut0";
+defparam ii0688.config_data = "C5CA";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0688|dx_net  ),
+	. di ( \ii0702|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -6728,40 +7159,40 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1] .PLACE_LOCATION = "C27R9.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1] .PLACE_LOCATION = "C33R10.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1] .PCK_LOCATION = "C27R9.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1] .PCK_LOCATION = "C33R10.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1] .is_en_used = "true";
 LUT4 ii0700 (
 	. dx ( \ii0700|dx_net  ),
-	. f3 ( \ii0599|dx_net  ),
-	. f2 ( \ii0585|dx_net  ),
-	. f1 ( \ii0594|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0699|dx_net  ),
 	. f0 ( )
 );
-defparam ii0700.PLACE_LOCATION = "C33R11.le_tile.le_guts.lp3.lut0";
-defparam ii0700.PCK_LOCATION = "C33R11.lp3.lut0";
-defparam ii0700.config_data = "5454";
+defparam ii0700.PLACE_LOCATION = "C45R13.le_tile.le_guts.lp2.lut0";
+defparam ii0700.PCK_LOCATION = "C45R13.lp2.lut0";
+defparam ii0700.config_data = "B8B8";
 LUT4 ii0690 (
 	. dx ( \ii0690|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0689|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0689|dx_net  )
 );
-defparam ii0690.PLACE_LOCATION = "C29R12.le_tile.le_guts.lp1.lut0";
-defparam ii0690.PCK_LOCATION = "C29R12.lp1.lut0";
-defparam ii0690.config_data = "B8B8";
+defparam ii0690.PLACE_LOCATION = "C29R10.le_tile.le_guts.lp0.lut0";
+defparam ii0690.PCK_LOCATION = "C29R10.lp0.lut0";
+defparam ii0690.config_data = "C5CA";
 LUT4 ii0689 (
 	. dx ( \ii0689|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3]|qx_net  ),
+	. f2 ( \ii0656|dx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0689.PLACE_LOCATION = "C29R12.le_tile.le_guts.lp2.lut0";
-defparam ii0689.PCK_LOCATION = "C29R12.lp2.lut0";
-defparam ii0689.config_data = "7878";
+defparam ii0689.PLACE_LOCATION = "C29R12.le_tile.le_guts.lp0.lut0";
+defparam ii0689.PCK_LOCATION = "C29R12.lp0.lut0";
+defparam ii0689.config_data = "8888";
 M7S_IO_LVDS io_cell_spi_ssn_inst (
 	. id_1 ( ),
 	. id_0 ( ),
@@ -6779,9 +7210,9 @@ M7S_IO_LVDS io_cell_spi_ssn_inst (
 	. geclk180 ( ),
 	. geclk270 ( ),
 	. od_d_1 ( {
-		/* od_d_1 [3] (nc) */ nc9 ,
-		/* od_d_1 [2] (nc) */ nc10 ,
-		/* od_d_1 [1] (nc) */ nc11 ,
+		/* od_d_1 [3] (nc) */ nc65 ,
+		/* od_d_1 [2] (nc) */ nc66 ,
+		/* od_d_1 [1] (nc) */ nc67 ,
 		/* od_d_1 [0] */ \u_arm_u_soc|spi0_ssn_net 
 	} ),
 	. od_d_0 ( )
@@ -6891,7 +7322,7 @@ REG \u_sdram_to_RGB_addr_cnt__reg[1]  (
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0501|dx_net  ),
+	. di ( \ii0510|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
 	. mclk_b ( ),
@@ -6913,38 +7344,38 @@ defparam \u_sdram_to_RGB_addr_cnt__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_addr_cnt__reg[1] .PLACE_LOCATION = "C39R16.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[1] .PLACE_LOCATION = "C43R16.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_addr_cnt__reg[1] .PCK_LOCATION = "C39R16.lp0.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[1] .PCK_LOCATION = "C43R16.lp2.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[1] .is_en_used = "true";
 LUT4 ii0701 (
 	. dx ( \ii0701|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0700|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
 	. f0 ( )
 );
-defparam ii0701.PLACE_LOCATION = "C33R11.le_tile.le_guts.lp0.lut0";
-defparam ii0701.PCK_LOCATION = "C33R11.lp0.lut0";
-defparam ii0701.config_data = "0E0E";
+defparam ii0701.PLACE_LOCATION = "C33R13.le_tile.le_guts.lp2.lut0";
+defparam ii0701.PCK_LOCATION = "C33R13.lp2.lut0";
+defparam ii0701.config_data = "C5C5";
 LUT4 ii0691 (
 	. dx ( \ii0691|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5]|qx_net  ),
+	. f1 ( \ii0689|dx_net  ),
+	. f0 ( )
 );
-defparam ii0691.PLACE_LOCATION = "C25R13.le_tile.le_guts.lp0.lut0";
-defparam ii0691.PCK_LOCATION = "C25R13.lp0.lut0";
-defparam ii0691.config_data = "7F80";
+defparam ii0691.PLACE_LOCATION = "C29R9.le_tile.le_guts.lp2.lut0";
+defparam ii0691.PCK_LOCATION = "C29R9.lp2.lut0";
+defparam ii0691.config_data = "6C6C";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0708|dx_net  ),
+	. di ( \ii0723|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -6964,9 +7395,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10] .PLACE_LOCATION = "C33R14.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10] .PLACE_LOCATION = "C37R16.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10] .PCK_LOCATION = "C33R14.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10] .PCK_LOCATION = "C37R16.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[10] .is_en_used = "true";
 REG \u_sdram_to_RGB_dma_addr__reg[5]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[5]|qx_net  ),
@@ -6995,29 +7426,29 @@ defparam \u_sdram_to_RGB_dma_addr__reg[5] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[5] .PLACE_LOCATION = "C27R14.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[5] .PLACE_LOCATION = "C35R14.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[5] .PCK_LOCATION = "C27R14.lp1.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[5] .PCK_LOCATION = "C35R14.lp3.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[5] .is_en_used = "false";
 LUT4 ii0702 (
 	. dx ( \ii0702|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0594|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3]|qx_net  ),
+	. f0 ( \ii0593|dx_net  )
 );
-defparam ii0702.PLACE_LOCATION = "C33R12.le_tile.le_guts.lp0.lut0";
-defparam ii0702.PCK_LOCATION = "C33R12.lp0.lut0";
-defparam ii0702.config_data = "F2F2";
+defparam ii0702.PLACE_LOCATION = "C33R11.le_tile.le_guts.lp1.lut0";
+defparam ii0702.PCK_LOCATION = "C33R11.lp1.lut0";
+defparam ii0702.config_data = "F066";
 LUT4 ii0692 (
 	. dx ( \ii0692|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
 	. f1 ( \ii0691|dx_net  ),
 	. f0 ( )
 );
-defparam ii0692.PLACE_LOCATION = "C25R9.le_tile.le_guts.lp0.lut0";
-defparam ii0692.PCK_LOCATION = "C25R9.lp0.lut0";
+defparam ii0692.PLACE_LOCATION = "C29R10.le_tile.le_guts.lp2.lut0";
+defparam ii0692.PCK_LOCATION = "C29R10.lp2.lut0";
 defparam ii0692.config_data = "B8B8";
 M7S_IO_DDR dedicated_io_cell_u229_inst (
 	. id_q_1 ( )
@@ -7165,7 +7596,7 @@ REG \u_colorgen_h_cnt__reg[0]  (
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0455|dx_net  ),
+	. di ( \ii0461|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -7187,50 +7618,50 @@ defparam \u_colorgen_h_cnt__reg[0] .le_sh0_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[0] .le_sh1_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[0] .use_reg_fdbk = "false";
 defparam \u_colorgen_h_cnt__reg[0] .is_le_clk_inv = "false";
-defparam \u_colorgen_h_cnt__reg[0] .PLACE_LOCATION = "C23R16.le_tile.le_guts.lp0.reg1";
+defparam \u_colorgen_h_cnt__reg[0] .PLACE_LOCATION = "C35R17.le_tile.le_guts.lp0.reg0";
 defparam \u_colorgen_h_cnt__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_h_cnt__reg[0] .PCK_LOCATION = "C23R16.lp0.reg1";
+defparam \u_colorgen_h_cnt__reg[0] .PCK_LOCATION = "C35R17.lp0.reg0";
 defparam \u_colorgen_h_cnt__reg[0] .is_en_used = "false";
 LUT4 ii0703 (
 	. dx ( \ii0703|dx_net  ),
-	. f3 ( \u_arm_u_soc|fp0_m_ahb_resp_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
-	. f1 ( \ii0587|dx_net  ),
-	. f0 ( \ii0626|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0703.PLACE_LOCATION = "C33R9.le_tile.le_guts.lp1.lut0";
-defparam ii0703.PCK_LOCATION = "C33R9.lp1.lut0";
-defparam ii0703.config_data = "0575";
+defparam ii0703.PLACE_LOCATION = "C33R12.le_tile.le_guts.lp2.lut0";
+defparam ii0703.PCK_LOCATION = "C33R12.lp2.lut0";
+defparam ii0703.config_data = "7878";
 LUT4 ii0693 (
 	. dx ( \ii0693|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
-	. f0 ( \ii0640|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6]|qx_net  ),
+	. f2 ( \ii0656|dx_net  ),
+	. f1 ( \ii0657|dx_net  ),
+	. f0 ( )
 );
-defparam ii0693.PLACE_LOCATION = "C27R10.le_tile.le_guts.lp0.lut0";
-defparam ii0693.PCK_LOCATION = "C27R10.lp0.lut0";
-defparam ii0693.config_data = "C5CA";
+defparam ii0693.PLACE_LOCATION = "C33R12.le_tile.le_guts.lp1.lut0";
+defparam ii0693.PCK_LOCATION = "C33R12.lp1.lut0";
+defparam ii0693.config_data = "6A6A";
 LUT4 ii0704 (
 	. dx ( \ii0704|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
-	. f2 ( \ii0588|dx_net  ),
-	. f1 ( \ii0625|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0703|dx_net  ),
 	. f0 ( )
 );
-defparam ii0704.PLACE_LOCATION = "C35R10.le_tile.le_guts.lp0.lut0";
-defparam ii0704.PCK_LOCATION = "C35R10.lp0.lut0";
-defparam ii0704.config_data = "0404";
+defparam ii0704.PLACE_LOCATION = "C33R12.le_tile.le_guts.lp3.lut0";
+defparam ii0704.PCK_LOCATION = "C33R12.lp3.lut0";
+defparam ii0704.config_data = "B8B8";
 LUT4 ii0694 (
 	. dx ( \ii0694|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5]|qx_net  ),
-	. f1 ( \ii0640|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0693|dx_net  ),
 	. f0 ( )
 );
-defparam ii0694.PLACE_LOCATION = "C25R10.le_tile.le_guts.lp1.lut0";
-defparam ii0694.PCK_LOCATION = "C25R10.lp1.lut0";
-defparam ii0694.config_data = "6C6C";
+defparam ii0694.PLACE_LOCATION = "C33R13.le_tile.le_guts.lp1.lut0";
+defparam ii0694.PCK_LOCATION = "C33R13.lp1.lut0";
+defparam ii0694.config_data = "B8B8";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[20]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[20]|qx_net  ),
 	. qs ( ),
@@ -7258,9 +7689,9 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[20] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[20] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[20] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[20] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[20] .PLACE_LOCATION = "C25R14.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[20] .PLACE_LOCATION = "C29R12.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[20] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[20] .PCK_LOCATION = "C25R14.lp3.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[20] .PCK_LOCATION = "C29R12.lp0.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[20] .is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[19]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[19]|qx_net  ),
@@ -7289,30 +7720,30 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[19] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[19] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[19] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[19] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[19] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[19] .PLACE_LOCATION = "C33R13.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[19] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[19] .PCK_LOCATION = "C33R15.lp3.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[19] .PCK_LOCATION = "C33R13.lp2.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[19] .is_en_used = "false";
 LUT4 ii0705 (
 	. dx ( \ii0705|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0703|dx_net  ),
-	. f0 ( \ii0704|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3]|qx_net  )
 );
-defparam ii0705.PLACE_LOCATION = "C33R9.le_tile.le_guts.lp2.lut0";
-defparam ii0705.PCK_LOCATION = "C33R9.lp2.lut0";
-defparam ii0705.config_data = "3020";
+defparam ii0705.PLACE_LOCATION = "C35R14.le_tile.le_guts.lp1.lut40";
+defparam ii0705.PCK_LOCATION = "C35R14.lp1.lut40";
+defparam ii0705.config_data = "7F80";
 LUT4 ii0695 (
 	. dx ( \ii0695|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0694|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6]|qx_net  ),
+	. f2 ( \ii0656|dx_net  ),
+	. f1 ( \ii0657|dx_net  ),
 	. f0 ( )
 );
-defparam ii0695.PLACE_LOCATION = "C25R10.le_tile.le_guts.lp0.lut40";
-defparam ii0695.PCK_LOCATION = "C25R10.lp0.lut40";
-defparam ii0695.config_data = "B8B8";
+defparam ii0695.PLACE_LOCATION = "C39R12.le_tile.le_guts.lp1.lut0";
+defparam ii0695.PCK_LOCATION = "C39R12.lp1.lut0";
+defparam ii0695.config_data = "8080";
 REG \u_sdram_to_RGB_emb_addr_wr_r__reg[6]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr_r__reg[6]|qx_net  ),
 	. qs ( ),
@@ -7340,30 +7771,30 @@ defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[6] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[6] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[6] .PLACE_LOCATION = "C27R17.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[6] .PCK_LOCATION = "C33R16.lp3.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[6] .PCK_LOCATION = "C27R17.lp2.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[6] .is_en_used = "false";
 LUT4 ii0706 (
 	. dx ( \ii0706|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0703|dx_net  ),
-	. f0 ( \ii0704|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0705|dx_net  ),
+	. f0 ( )
 );
-defparam ii0706.PLACE_LOCATION = "C33R9.le_tile.le_guts.lp0.lut0";
-defparam ii0706.PCK_LOCATION = "C33R9.lp0.lut0";
-defparam ii0706.config_data = "FCEC";
+defparam ii0706.PLACE_LOCATION = "C35R14.le_tile.le_guts.lp2.lut0";
+defparam ii0706.PCK_LOCATION = "C35R14.lp2.lut0";
+defparam ii0706.config_data = "B8B8";
 LUT4 ii0696 (
 	. dx ( \ii0696|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6]|qx_net  ),
-	. f0 ( \ii0640|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0695|dx_net  )
 );
-defparam ii0696.PLACE_LOCATION = "C27R10.le_tile.le_guts.lp1.lut0";
-defparam ii0696.PCK_LOCATION = "C27R10.lp1.lut0";
-defparam ii0696.config_data = "78F0";
+defparam ii0696.PLACE_LOCATION = "C37R14.le_tile.le_guts.lp3.lut0";
+defparam ii0696.PCK_LOCATION = "C37R14.lp3.lut0";
+defparam ii0696.config_data = "C5CA";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30]|qx_net  ),
 	. qs ( ),
@@ -7371,7 +7802,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[30]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -7391,9 +7822,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30] .PLACE_LOCATION = "C35R7.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30] .PLACE_LOCATION = "C33R11.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30] .PCK_LOCATION = "C35R7.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30] .PCK_LOCATION = "C33R11.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[30] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29]|qx_net  ),
@@ -7402,7 +7833,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[29]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -7422,58 +7853,58 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29] .PLACE_LOCATION = "C33R8.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29] .PLACE_LOCATION = "C35R9.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29] .PCK_LOCATION = "C33R8.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29] .PCK_LOCATION = "C35R9.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[29] .is_en_used = "true";
 LUT4 ii0707 (
 	. dx ( \ii0707|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_hwrite_o__reg|qx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0653|dx_net  )
 );
-defparam ii0707.PLACE_LOCATION = "C45R11.le_tile.le_guts.lp1.lut0";
-defparam ii0707.PCK_LOCATION = "C45R11.lp1.lut0";
-defparam ii0707.config_data = "4444";
+defparam ii0707.PLACE_LOCATION = "C37R10.le_tile.le_guts.lp3.lut0";
+defparam ii0707.PCK_LOCATION = "C37R10.lp3.lut0";
+defparam ii0707.config_data = "C5CA";
 LUT4 ii0697 (
 	. dx ( \ii0697|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0696|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8]|qx_net  ),
+	. f1 ( \ii0695|dx_net  ),
 	. f0 ( )
 );
-defparam ii0697.PLACE_LOCATION = "C27R10.le_tile.le_guts.lp2.lut0";
-defparam ii0697.PCK_LOCATION = "C27R10.lp2.lut0";
-defparam ii0697.config_data = "B8B8";
+defparam ii0697.PLACE_LOCATION = "C45R14.le_tile.le_guts.lp3.lut0";
+defparam ii0697.PCK_LOCATION = "C45R14.lp3.lut0";
+defparam ii0697.config_data = "6C6C";
 LUT4 ii0708 (
 	. dx ( \ii0708|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[10]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5]|qx_net  ),
+	. f1 ( \ii0653|dx_net  ),
 	. f0 ( )
 );
-defparam ii0708.PLACE_LOCATION = "C37R14.le_tile.le_guts.lp2.lut0";
-defparam ii0708.PCK_LOCATION = "C37R14.lp2.lut0";
-defparam ii0708.config_data = "B8B8";
+defparam ii0708.PLACE_LOCATION = "C33R10.le_tile.le_guts.lp3.lut0";
+defparam ii0708.PCK_LOCATION = "C33R10.lp3.lut0";
+defparam ii0708.config_data = "6C6C";
 LUT4 ii0698 (
 	. dx ( \ii0698|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9]|qx_net  ),
-	. f1 ( \ii0579|dx_net  ),
-	. f0 ( \ii0641|dx_net  )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0697|dx_net  ),
+	. f0 ( )
 );
-defparam ii0698.PLACE_LOCATION = "C27R14.le_tile.le_guts.lp0.lut0";
-defparam ii0698.PCK_LOCATION = "C27R14.lp0.lut0";
-defparam ii0698.config_data = "C5CA";
+defparam ii0698.PLACE_LOCATION = "C45R14.le_tile.le_guts.lp1.lut0";
+defparam ii0698.PCK_LOCATION = "C45R14.lp1.lut0";
+defparam ii0698.config_data = "B8B8";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0690|dx_net  ),
+	. di ( \ii0704|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -7493,46 +7924,46 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2] .PLACE_LOCATION = "C27R13.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2] .PLACE_LOCATION = "C35R12.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2] .PCK_LOCATION = "C27R13.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2] .PCK_LOCATION = "C35R12.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2] .is_en_used = "true";
 LUT4 ii0710 (
 	. dx ( \ii0710|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[11]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]|qx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6]|qx_net  ),
+	. f0 ( \ii0653|dx_net  )
 );
-defparam ii0710.PLACE_LOCATION = "C33R13.le_tile.le_guts.lp0.lut0";
-defparam ii0710.PCK_LOCATION = "C33R13.lp0.lut0";
-defparam ii0710.config_data = "B8B8";
+defparam ii0710.PLACE_LOCATION = "C35R10.le_tile.le_guts.lp1.lut41";
+defparam ii0710.PCK_LOCATION = "C35R10.lp1.lut41";
+defparam ii0710.config_data = "870F";
 LUT4 ii0709 (
 	. dx ( \ii0709|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \ii0631|dx_net  ),
-	. f1 ( ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0708|dx_net  ),
 	. f0 ( )
 );
-defparam ii0709.PLACE_LOCATION = "C33R14.le_tile.le_guts.lp3.lut0";
-defparam ii0709.PCK_LOCATION = "C33R14.lp3.lut0";
-defparam ii0709.config_data = "EEEE";
+defparam ii0709.PLACE_LOCATION = "C33R10.le_tile.le_guts.lp2.lut0";
+defparam ii0709.PCK_LOCATION = "C33R10.lp2.lut0";
+defparam ii0709.config_data = "B8B8";
 LUT4 ii0699 (
 	. dx ( \ii0699|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0585|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9]|qx_net  ),
+	. f0 ( \ii0695|dx_net  )
 );
-defparam ii0699.PLACE_LOCATION = "C29R10.le_tile.le_guts.lp2.lut0";
-defparam ii0699.PCK_LOCATION = "C29R10.lp2.lut0";
-defparam ii0699.config_data = "0E0E";
+defparam ii0699.PLACE_LOCATION = "C45R13.le_tile.le_guts.lp1.lut40";
+defparam ii0699.PCK_LOCATION = "C45R13.lp1.lut40";
+defparam ii0699.config_data = "78F0";
 REG \u_sdram_to_RGB_addr_cnt__reg[2]  (
 	. qx ( \u_sdram_to_RGB_addr_cnt__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0502|dx_net  ),
+	. di ( \ii0511|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
 	. mclk_b ( ),
@@ -7554,28 +7985,28 @@ defparam \u_sdram_to_RGB_addr_cnt__reg[2] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_addr_cnt__reg[2] .PLACE_LOCATION = "C39R16.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[2] .PLACE_LOCATION = "C43R17.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_addr_cnt__reg[2] .PCK_LOCATION = "C39R16.lp2.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[2] .PCK_LOCATION = "C43R17.lp1.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[2] .is_en_used = "true";
 LUT4 ii0711 (
 	. dx ( \ii0711|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[12]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0710|dx_net  ),
 	. f0 ( )
 );
-defparam ii0711.PLACE_LOCATION = "C33R14.le_tile.le_guts.lp0.lut0";
-defparam ii0711.PCK_LOCATION = "C33R14.lp0.lut0";
-defparam ii0711.config_data = "B8B8";
+defparam ii0711.PLACE_LOCATION = "C35R10.le_tile.le_guts.lp2.lut0";
+defparam ii0711.PCK_LOCATION = "C35R10.lp2.lut0";
+defparam ii0711.config_data = "8B8B";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0710|dx_net  ),
+	. di ( \ii0725|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -7595,16 +8026,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11] .PLACE_LOCATION = "C33R13.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11] .PLACE_LOCATION = "C37R16.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11] .PCK_LOCATION = "C33R13.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11] .PCK_LOCATION = "C37R16.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[11] .is_en_used = "true";
 REG u_sdram_to_RGB_other_1_beat_start_pulse__reg (
 	. qx ( \u_sdram_to_RGB_other_1_beat_start_pulse__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0577|dx_net  ),
+	. di ( \ii0588|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -7626,9 +8057,9 @@ defparam u_sdram_to_RGB_other_1_beat_start_pulse__reg.le_sh0_always_en = "false"
 defparam u_sdram_to_RGB_other_1_beat_start_pulse__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_other_1_beat_start_pulse__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_other_1_beat_start_pulse__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_other_1_beat_start_pulse__reg.PLACE_LOCATION = "C45R14.le_tile.le_guts.lp0.reg0";
+defparam u_sdram_to_RGB_other_1_beat_start_pulse__reg.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp1.reg1";
 defparam u_sdram_to_RGB_other_1_beat_start_pulse__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_other_1_beat_start_pulse__reg.PCK_LOCATION = "C45R14.lp0.reg0";
+defparam u_sdram_to_RGB_other_1_beat_start_pulse__reg.PCK_LOCATION = "C35R16.lp1.reg1";
 defparam u_sdram_to_RGB_other_1_beat_start_pulse__reg.is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[6]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[6]|qx_net  ),
@@ -7657,16 +8088,16 @@ defparam \u_sdram_to_RGB_dma_addr__reg[6] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[6] .PLACE_LOCATION = "C25R12.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[6] .PLACE_LOCATION = "C37R14.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_dma_addr__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[6] .PCK_LOCATION = "C25R12.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[6] .PCK_LOCATION = "C37R14.lp0.reg1";
 defparam \u_sdram_to_RGB_dma_addr__reg[6] .is_en_used = "false";
 REG \u_sdram_to_RGB_de_i_r__reg[0]  (
 	. qx ( \u_sdram_to_RGB_de_i_r__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0521|dx_net  ),
+	. di ( \ii0530|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -7688,26 +8119,26 @@ defparam \u_sdram_to_RGB_de_i_r__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_de_i_r__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_de_i_r__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_de_i_r__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_de_i_r__reg[0] .PLACE_LOCATION = "C39R15.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_de_i_r__reg[0] .PLACE_LOCATION = "C35R16.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_de_i_r__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_de_i_r__reg[0] .PCK_LOCATION = "C39R15.lp0.reg1";
+defparam \u_sdram_to_RGB_de_i_r__reg[0] .PCK_LOCATION = "C35R16.lp0.reg0";
 defparam \u_sdram_to_RGB_de_i_r__reg[0] .is_en_used = "false";
 LUT4 ii0712 (
 	. dx ( \ii0712|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[13]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3]|qx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9]|qx_net  ),
+	. f1 ( \ii0593|dx_net  ),
+	. f0 ( \ii0654|dx_net  )
 );
-defparam ii0712.PLACE_LOCATION = "C33R13.le_tile.le_guts.lp1.lut0";
-defparam ii0712.PCK_LOCATION = "C33R13.lp1.lut0";
-defparam ii0712.config_data = "B8B8";
+defparam ii0712.PLACE_LOCATION = "C35R10.le_tile.le_guts.lp3.lut0";
+defparam ii0712.PCK_LOCATION = "C35R10.lp3.lut0";
+defparam ii0712.config_data = "C5CA";
 REG \u_colorgen_h_cnt__reg[1]  (
 	. qx ( \u_colorgen_h_cnt__reg[1]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0461|dx_net  ),
+	. di ( \ii0468|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -7729,20 +8160,20 @@ defparam \u_colorgen_h_cnt__reg[1] .le_sh0_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[1] .le_sh1_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[1] .use_reg_fdbk = "false";
 defparam \u_colorgen_h_cnt__reg[1] .is_le_clk_inv = "false";
-defparam \u_colorgen_h_cnt__reg[1] .PLACE_LOCATION = "C23R16.le_tile.le_guts.lp0.reg0";
+defparam \u_colorgen_h_cnt__reg[1] .PLACE_LOCATION = "C35R17.le_tile.le_guts.lp3.reg0";
 defparam \u_colorgen_h_cnt__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_h_cnt__reg[1] .PCK_LOCATION = "C23R16.lp0.reg0";
+defparam \u_colorgen_h_cnt__reg[1] .PCK_LOCATION = "C35R17.lp3.reg0";
 defparam \u_colorgen_h_cnt__reg[1] .is_en_used = "false";
 LUT4 ii0713 (
 	. dx ( \ii0713|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[14]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0599|dx_net  ),
 	. f0 ( )
 );
-defparam ii0713.PLACE_LOCATION = "C37R15.le_tile.le_guts.lp1.lut40";
-defparam ii0713.PCK_LOCATION = "C37R15.lp1.lut40";
-defparam ii0713.config_data = "B8B8";
+defparam ii0713.PLACE_LOCATION = "C45R12.le_tile.le_guts.lp0.lut0";
+defparam ii0713.PCK_LOCATION = "C45R12.lp0.lut0";
+defparam ii0713.config_data = "0E0E";
 GND GND_0_inst (
 	. Y ( \GND_0_inst|Y_net  )
 );
@@ -7907,22 +8338,53 @@ defparam dedicated_io_cell_u223_inst.term_pu_en_1 = 1;
 defparam dedicated_io_cell_u223_inst.cfg_userio_en_0 = 0;
 defparam dedicated_io_cell_u223_inst.cfg_gsclk_inv_1 = 0;
 defparam dedicated_io_cell_u223_inst.cfg_id_setn_en_1 = 0;
+REG \u_sdram_to_RGB_text__reg[7]  (
+	. qx ( \u_sdram_to_RGB_text__reg[7]|qx_net  ),
+	. qs ( ),
+	. up_o ( ),
+	. down_o ( ),
+	. di ( \ii0590|dx_net  ),
+	. a_sr ( \rstn_final__reg|qx_net  ),
+	. en ( ),
+	. mclk_b ( ),
+	. sclk ( \u_pll_pll_u0|clkout1_net  ),
+	. shift ( ),
+	. up_i ( ),
+	. down_i ( )
+);
+defparam \u_sdram_to_RGB_text__reg[7] .shift_direct = "up";
+defparam \u_sdram_to_RGB_text__reg[7] .is_le_has_clk = "true";
+defparam \u_sdram_to_RGB_text__reg[7] .ignore_shift = "true";
+defparam \u_sdram_to_RGB_text__reg[7] .le_sync_mode = "false";
+defparam \u_sdram_to_RGB_text__reg[7] .is_le_en_not_inv = "true";
+defparam \u_sdram_to_RGB_text__reg[7] .preset = 1;
+defparam \u_sdram_to_RGB_text__reg[7] .is_le_sh0_en_not_inv = "true";
+defparam \u_sdram_to_RGB_text__reg[7] .is_le_sr_inv = "false";
+defparam \u_sdram_to_RGB_text__reg[7] .le_lat_mode = "false";
+defparam \u_sdram_to_RGB_text__reg[7] .le_sh0_always_en = "false";
+defparam \u_sdram_to_RGB_text__reg[7] .le_sh1_always_en = "false";
+defparam \u_sdram_to_RGB_text__reg[7] .use_reg_fdbk = "false";
+defparam \u_sdram_to_RGB_text__reg[7] .is_le_clk_inv = "false";
+defparam \u_sdram_to_RGB_text__reg[7] .PLACE_LOCATION = "C33R31.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_text__reg[7] .is_le_sh1_en_not_inv = "true";
+defparam \u_sdram_to_RGB_text__reg[7] .PCK_LOCATION = "C33R31.lp0.reg0";
+defparam \u_sdram_to_RGB_text__reg[7] .is_en_used = "false";
 LUT4 ii0714 (
 	. dx ( \ii0714|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[15]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5]|qx_net  ),
+	. f3 ( \ii0613|dx_net  ),
+	. f2 ( \ii0599|dx_net  ),
+	. f1 ( \ii0608|dx_net  ),
 	. f0 ( )
 );
-defparam ii0714.PLACE_LOCATION = "C33R14.le_tile.le_guts.lp1.lut0";
-defparam ii0714.PCK_LOCATION = "C33R14.lp1.lut0";
-defparam ii0714.config_data = "B8B8";
+defparam ii0714.PLACE_LOCATION = "C39R14.le_tile.le_guts.lp1.lut0";
+defparam ii0714.PCK_LOCATION = "C39R14.lp1.lut0";
+defparam ii0714.config_data = "5454";
 REG u_sdram_to_RGB_buffer_wr_sel__reg (
 	. qx ( \u_sdram_to_RGB_buffer_wr_sel__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0520|dx_net  ),
+	. di ( \ii0529|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -7944,9 +8406,9 @@ defparam u_sdram_to_RGB_buffer_wr_sel__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_buffer_wr_sel__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_buffer_wr_sel__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_buffer_wr_sel__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_buffer_wr_sel__reg.PLACE_LOCATION = "C45R15.le_tile.le_guts.lp0.reg0";
+defparam u_sdram_to_RGB_buffer_wr_sel__reg.PLACE_LOCATION = "C29R17.le_tile.le_guts.lp1.reg0";
 defparam u_sdram_to_RGB_buffer_wr_sel__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_buffer_wr_sel__reg.PCK_LOCATION = "C45R15.lp0.reg0";
+defparam u_sdram_to_RGB_buffer_wr_sel__reg.PCK_LOCATION = "C29R17.lp1.reg0";
 defparam u_sdram_to_RGB_buffer_wr_sel__reg.is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[21]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[21]|qx_net  ),
@@ -7975,20 +8437,20 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[21] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[21] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[21] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[21] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[21] .PLACE_LOCATION = "C35R10.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[21] .PLACE_LOCATION = "C33R13.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[21] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[21] .PCK_LOCATION = "C35R10.lp1.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[21] .PCK_LOCATION = "C33R13.lp0.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[21] .is_en_used = "false";
 LUT4 ii0715 (
 	. dx ( \ii0715|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[16]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0714|dx_net  ),
 	. f0 ( )
 );
-defparam ii0715.PLACE_LOCATION = "C39R18.le_tile.le_guts.lp0.lut0";
-defparam ii0715.PCK_LOCATION = "C39R18.lp0.lut0";
-defparam ii0715.config_data = "B8B8";
+defparam ii0715.PLACE_LOCATION = "C45R11.le_tile.le_guts.lp0.lut0";
+defparam ii0715.PCK_LOCATION = "C45R11.lp0.lut0";
+defparam ii0715.config_data = "0E0E";
 REG \u_sdram_to_RGB_emb_addr_wr_r__reg[7]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr_r__reg[7]|qx_net  ),
 	. qs ( ),
@@ -8016,20 +8478,20 @@ defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[7] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[7] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[7] .PLACE_LOCATION = "C27R17.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[7] .PCK_LOCATION = "C33R16.lp0.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[7] .PCK_LOCATION = "C27R17.lp3.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[7] .is_en_used = "false";
 LUT4 ii0716 (
 	. dx ( \ii0716|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[17]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0608|dx_net  ),
 	. f0 ( )
 );
-defparam ii0716.PLACE_LOCATION = "C45R12.le_tile.le_guts.lp0.lut0";
-defparam ii0716.PCK_LOCATION = "C45R12.lp0.lut0";
-defparam ii0716.config_data = "B8B8";
+defparam ii0716.PLACE_LOCATION = "C45R13.le_tile.le_guts.lp1.lut0";
+defparam ii0716.PCK_LOCATION = "C45R13.lp1.lut0";
+defparam ii0716.config_data = "F2F2";
 VCC VCC_0_inst (
 	. Y ( \VCC_0_inst|Y_net  )
 );
@@ -8042,7 +8504,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[31]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -8062,30 +8524,30 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31] .PLACE_LOCATION = "C33R8.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31] .PLACE_LOCATION = "C39R11.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31] .PCK_LOCATION = "C33R8.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31] .PCK_LOCATION = "C39R11.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[31] .is_en_used = "true";
 LUT4 ii0717 (
 	. dx ( \ii0717|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[18]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8]|qx_net  ),
+	. f3 ( \u_arm_u_soc|fp0_m_ahb_resp_net  ),
+	. f2 ( \ii0601|dx_net  ),
+	. f1 ( \ii0642|dx_net  ),
 	. f0 ( )
 );
-defparam ii0717.PLACE_LOCATION = "C37R15.le_tile.le_guts.lp3.lut0";
-defparam ii0717.PCK_LOCATION = "C37R15.lp3.lut0";
-defparam ii0717.config_data = "B8B8";
+defparam ii0717.PLACE_LOCATION = "C39R10.le_tile.le_guts.lp2.lut0";
+defparam ii0717.PCK_LOCATION = "C39R10.lp2.lut0";
+defparam ii0717.config_data = "0E0E";
 LUT4 ii0718 (
 	. dx ( \ii0718|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[19]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0718.PLACE_LOCATION = "C43R15.le_tile.le_guts.lp0.lut0";
-defparam ii0718.PCK_LOCATION = "C43R15.lp0.lut0";
-defparam ii0718.config_data = "B8B8";
+defparam ii0718.PLACE_LOCATION = "C35R12.le_tile.le_guts.lp1.lut0";
+defparam ii0718.PCK_LOCATION = "C35R12.lp1.lut0";
+defparam ii0718.config_data = "0101";
 M7S_IO_DQS dedicated_io_cell_u219_inst (
 	. clkpol_o ( ),
 	. dqsr90_o ( ),
@@ -8272,18 +8734,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[10] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[10] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[10] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[10] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[10] .PLACE_LOCATION = "C39R4.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[10] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[10] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[10] .PCK_LOCATION = "C39R4.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[10] .PCK_LOCATION = "C49R4.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[10] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0692|dx_net  ),
+	. di ( \ii0706|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -8303,36 +8765,36 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3] .PLACE_LOCATION = "C25R9.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3] .PLACE_LOCATION = "C35R12.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3] .PCK_LOCATION = "C25R9.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3] .PCK_LOCATION = "C35R12.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3] .is_en_used = "true";
 LUT4 ii0720 (
 	. dx ( \ii0720|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[21]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]|qx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[0]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0717|dx_net  ),
+	. f0 ( \ii0719|dx_net  )
 );
-defparam ii0720.PLACE_LOCATION = "C37R15.le_tile.le_guts.lp1.lut0";
-defparam ii0720.PCK_LOCATION = "C37R15.lp1.lut0";
-defparam ii0720.config_data = "B8B8";
+defparam ii0720.PLACE_LOCATION = "C39R10.le_tile.le_guts.lp1.lut0";
+defparam ii0720.PCK_LOCATION = "C39R10.lp1.lut0";
+defparam ii0720.config_data = "0302";
 LUT4 ii0719 (
 	. dx ( \ii0719|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[20]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
+	. f2 ( \ii0601|dx_net  ),
+	. f1 ( \ii0635|dx_net  ),
+	. f0 ( \ii0718|dx_net  )
 );
-defparam ii0719.PLACE_LOCATION = "C33R15.le_tile.le_guts.lp1.lut0";
-defparam ii0719.PCK_LOCATION = "C33R15.lp1.lut0";
-defparam ii0719.config_data = "B8B8";
+defparam ii0719.PLACE_LOCATION = "C37R11.le_tile.le_guts.lp0.lut0";
+defparam ii0719.PCK_LOCATION = "C37R11.lp0.lut0";
+defparam ii0719.config_data = "0444";
 REG \u_sdram_to_RGB_addr_cnt__reg[3]  (
 	. qx ( \u_sdram_to_RGB_addr_cnt__reg[3]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0503|dx_net  ),
+	. di ( \ii0512|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
 	. mclk_b ( ),
@@ -8354,20 +8816,20 @@ defparam \u_sdram_to_RGB_addr_cnt__reg[3] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_addr_cnt__reg[3] .PLACE_LOCATION = "C39R16.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[3] .PLACE_LOCATION = "C39R17.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_addr_cnt__reg[3] .PCK_LOCATION = "C39R16.lp3.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[3] .PCK_LOCATION = "C39R17.lp0.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[3] .is_en_used = "true";
 LUT4 ii0721 (
 	. dx ( \ii0721|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[22]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12]|qx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_htrans_o__reg[1]|qx_net  ),
+	. f2 ( \ii0593|dx_net  ),
+	. f1 ( \ii0717|dx_net  ),
+	. f0 ( \ii0719|dx_net  )
 );
-defparam ii0721.PLACE_LOCATION = "C37R14.le_tile.le_guts.lp0.lut41";
-defparam ii0721.PCK_LOCATION = "C37R14.lp0.lut41";
-defparam ii0721.config_data = "B8B8";
+defparam ii0721.PLACE_LOCATION = "C39R10.le_tile.le_guts.lp0.lut41";
+defparam ii0721.PCK_LOCATION = "C39R10.lp0.lut41";
+defparam ii0721.config_data = "0F0E";
 M7S_IO_DDR dedicated_io_cell_u275_inst (
 	. id_q_1 ( )
 ,
@@ -8514,9 +8976,9 @@ REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12]  (
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0711|dx_net  ),
+	. di ( \ii0726|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -8536,9 +8998,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12] .PLACE_LOCATION = "C33R14.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12] .PLACE_LOCATION = "C37R16.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12] .PCK_LOCATION = "C33R14.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12] .PCK_LOCATION = "C37R16.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[12] .is_en_used = "true";
 REG \u_sdram_to_RGB_dma_addr__reg[7]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[7]|qx_net  ),
@@ -8567,9 +9029,9 @@ defparam \u_sdram_to_RGB_dma_addr__reg[7] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[7] .PLACE_LOCATION = "C27R15.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[7] .PLACE_LOCATION = "C35R13.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[7] .PCK_LOCATION = "C27R15.lp2.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[7] .PCK_LOCATION = "C35R13.lp2.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[7] .is_en_used = "false";
 REG \u_sdram_to_RGB_de_i_r__reg[1]  (
 	. qx ( \u_sdram_to_RGB_de_i_r__reg[1]|qx_net  ),
@@ -8598,26 +9060,26 @@ defparam \u_sdram_to_RGB_de_i_r__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_de_i_r__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_de_i_r__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_de_i_r__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_de_i_r__reg[1] .PLACE_LOCATION = "C45R15.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_de_i_r__reg[1] .PLACE_LOCATION = "C35R16.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_de_i_r__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_de_i_r__reg[1] .PCK_LOCATION = "C45R15.lp1.reg0";
+defparam \u_sdram_to_RGB_de_i_r__reg[1] .PCK_LOCATION = "C35R16.lp1.reg0";
 defparam \u_sdram_to_RGB_de_i_r__reg[1] .is_en_used = "false";
 LUT4 ii0722 (
 	. dx ( \ii0722|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[23]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_hwrite_o__reg|qx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0722.PLACE_LOCATION = "C33R16.le_tile.le_guts.lp0.lut0";
-defparam ii0722.PCK_LOCATION = "C33R16.lp0.lut0";
-defparam ii0722.config_data = "B8B8";
+defparam ii0722.PLACE_LOCATION = "C43R14.le_tile.le_guts.lp3.lut0";
+defparam ii0722.PCK_LOCATION = "C43R14.lp3.lut0";
+defparam ii0722.config_data = "4444";
 REG \u_colorgen_h_cnt__reg[2]  (
 	. qx ( \u_colorgen_h_cnt__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0462|dx_net  ),
+	. di ( \ii0470|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -8639,30 +9101,61 @@ defparam \u_colorgen_h_cnt__reg[2] .le_sh0_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[2] .le_sh1_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[2] .use_reg_fdbk = "false";
 defparam \u_colorgen_h_cnt__reg[2] .is_le_clk_inv = "false";
-defparam \u_colorgen_h_cnt__reg[2] .PLACE_LOCATION = "C23R16.le_tile.le_guts.lp1.reg1";
+defparam \u_colorgen_h_cnt__reg[2] .PLACE_LOCATION = "C35R17.le_tile.le_guts.lp2.reg0";
 defparam \u_colorgen_h_cnt__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_h_cnt__reg[2] .PCK_LOCATION = "C23R16.lp1.reg1";
+defparam \u_colorgen_h_cnt__reg[2] .PCK_LOCATION = "C35R17.lp2.reg0";
 defparam \u_colorgen_h_cnt__reg[2] .is_en_used = "false";
 LUT4 ii0723 (
 	. dx ( \ii0723|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[24]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[10]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0723.PLACE_LOCATION = "C33R15.le_tile.le_guts.lp0.lut0";
-defparam ii0723.PCK_LOCATION = "C33R15.lp0.lut0";
+defparam ii0723.PLACE_LOCATION = "C39R15.le_tile.le_guts.lp1.lut0";
+defparam ii0723.PCK_LOCATION = "C39R15.lp1.lut0";
 defparam ii0723.config_data = "B8B8";
+REG \u_sdram_to_RGB_text__reg[8]  (
+	. qx ( \u_sdram_to_RGB_text__reg[8]|qx_net  ),
+	. qs ( ),
+	. up_o ( ),
+	. down_o ( ),
+	. di ( \ii0591|dx_net  ),
+	. a_sr ( \rstn_final__reg|qx_net  ),
+	. en ( ),
+	. mclk_b ( ),
+	. sclk ( \u_pll_pll_u0|clkout1_net  ),
+	. shift ( ),
+	. up_i ( ),
+	. down_i ( )
+);
+defparam \u_sdram_to_RGB_text__reg[8] .shift_direct = "up";
+defparam \u_sdram_to_RGB_text__reg[8] .is_le_has_clk = "true";
+defparam \u_sdram_to_RGB_text__reg[8] .ignore_shift = "true";
+defparam \u_sdram_to_RGB_text__reg[8] .le_sync_mode = "false";
+defparam \u_sdram_to_RGB_text__reg[8] .is_le_en_not_inv = "true";
+defparam \u_sdram_to_RGB_text__reg[8] .preset = 0;
+defparam \u_sdram_to_RGB_text__reg[8] .is_le_sh0_en_not_inv = "true";
+defparam \u_sdram_to_RGB_text__reg[8] .is_le_sr_inv = "false";
+defparam \u_sdram_to_RGB_text__reg[8] .le_lat_mode = "false";
+defparam \u_sdram_to_RGB_text__reg[8] .le_sh0_always_en = "false";
+defparam \u_sdram_to_RGB_text__reg[8] .le_sh1_always_en = "false";
+defparam \u_sdram_to_RGB_text__reg[8] .use_reg_fdbk = "false";
+defparam \u_sdram_to_RGB_text__reg[8] .is_le_clk_inv = "false";
+defparam \u_sdram_to_RGB_text__reg[8] .PLACE_LOCATION = "C33R31.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_text__reg[8] .is_le_sh1_en_not_inv = "true";
+defparam \u_sdram_to_RGB_text__reg[8] .PCK_LOCATION = "C33R31.lp1.reg0";
+defparam \u_sdram_to_RGB_text__reg[8] .is_en_used = "false";
 LUT4 ii0724 (
 	. dx ( \ii0724|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[25]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f2 ( \ii0648|dx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0724.PLACE_LOCATION = "C37R18.le_tile.le_guts.lp1.lut0";
-defparam ii0724.PCK_LOCATION = "C37R18.lp1.lut0";
-defparam ii0724.config_data = "B8B8";
+defparam ii0724.PLACE_LOCATION = "C37R16.le_tile.le_guts.lp0.lut0";
+defparam ii0724.PCK_LOCATION = "C37R16.lp0.lut0";
+defparam ii0724.config_data = "EEEE";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[22]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[22]|qx_net  ),
 	. qs ( ),
@@ -8690,19 +9183,19 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[22] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[22] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[22] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[22] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[22] .PLACE_LOCATION = "C35R10.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[22] .PLACE_LOCATION = "C33R13.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[22] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[22] .PCK_LOCATION = "C35R10.lp3.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[22] .PCK_LOCATION = "C33R13.lp1.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[22] .is_en_used = "false";
 LUT4 ii0725 (
 	. dx ( \ii0725|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[26]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[11]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0725.PLACE_LOCATION = "C37R15.le_tile.le_guts.lp0.lut40";
-defparam ii0725.PCK_LOCATION = "C37R15.lp0.lut40";
+defparam ii0725.PLACE_LOCATION = "C39R15.le_tile.le_guts.lp2.lut0";
+defparam ii0725.PCK_LOCATION = "C39R15.lp2.lut0";
 defparam ii0725.config_data = "B8B8";
 REG \u_sdram_to_RGB_emb_addr_wr_r__reg[8]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr_r__reg[8]|qx_net  ),
@@ -8731,26 +9224,26 @@ defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[8] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[8] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[8] .PLACE_LOCATION = "C29R17.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[8] .PCK_LOCATION = "C33R16.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[8] .PCK_LOCATION = "C29R17.lp2.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr_r__reg[8] .is_en_used = "false";
 LUT4 ii0726 (
 	. dx ( \ii0726|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[27]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[12]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0726.PLACE_LOCATION = "C33R15.le_tile.le_guts.lp2.lut0";
-defparam ii0726.PCK_LOCATION = "C33R15.lp2.lut0";
+defparam ii0726.PLACE_LOCATION = "C39R15.le_tile.le_guts.lp1.lut41";
+defparam ii0726.PCK_LOCATION = "C39R15.lp1.lut41";
 defparam ii0726.config_data = "B8B8";
 REG u_sdram_to_RGB_ahm_rdata_push_wr0__reg (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_push_wr0__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0510|dx_net  ),
+	. di ( \ii0519|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -8772,154 +9265,30 @@ defparam u_sdram_to_RGB_ahm_rdata_push_wr0__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_ahm_rdata_push_wr0__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_ahm_rdata_push_wr0__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_ahm_rdata_push_wr0__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_ahm_rdata_push_wr0__reg.PLACE_LOCATION = "C39R15.le_tile.le_guts.lp1.reg0";
+defparam u_sdram_to_RGB_ahm_rdata_push_wr0__reg.PLACE_LOCATION = "C29R17.le_tile.le_guts.lp0.reg0";
 defparam u_sdram_to_RGB_ahm_rdata_push_wr0__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_ahm_rdata_push_wr0__reg.PCK_LOCATION = "C39R15.lp1.reg0";
+defparam u_sdram_to_RGB_ahm_rdata_push_wr0__reg.PCK_LOCATION = "C29R17.lp0.reg0";
 defparam u_sdram_to_RGB_ahm_rdata_push_wr0__reg.is_en_used = "false";
 LUT4 ii0727 (
 	. dx ( \ii0727|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[28]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[13]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0727.PLACE_LOCATION = "C27R14.le_tile.le_guts.lp2.lut0";
-defparam ii0727.PCK_LOCATION = "C27R14.lp2.lut0";
+defparam ii0727.PLACE_LOCATION = "C33R15.le_tile.le_guts.lp0.lut0";
+defparam ii0727.PCK_LOCATION = "C33R15.lp0.lut0";
 defparam ii0727.config_data = "B8B8";
 LUT4 ii0728 (
 	. dx ( \ii0728|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[29]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[14]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0728.PLACE_LOCATION = "C29R15.le_tile.le_guts.lp0.lut0";
-defparam ii0728.PCK_LOCATION = "C29R15.lp0.lut0";
+defparam ii0728.PLACE_LOCATION = "C33R15.le_tile.le_guts.lp0.lut41";
+defparam ii0728.PCK_LOCATION = "C33R15.lp0.lut41";
 defparam ii0728.config_data = "B8B8";
-M7S_IO_LVDS io_cell_display_sel_inst (
-	. id_1 ( ),
-	. id_0 ( ),
-	. id_q_1 ( {
-		/* id_q_1 [3] (nc) */ nc12 ,
-		/* id_q_1 [2] (nc) */ nc13 ,
-		/* id_q_1 [1] (nc) */ nc14 ,
-		/* id_q_1 [0] */ \io_cell_display_sel_inst|id_q_net 
-	} ),
-	. id_q_0 ( )
-,
-	. align_rstn ( ),
-	. alignwd ( ),
-	. clk_en_1 ( ),
-	. clk_en_0 ( ),
-	. io_reg_clk ( ),
-	. geclk ( ),
-	. geclk90 ( ),
-	. geclk180 ( ),
-	. geclk270 ( ),
-	. od_d_1 ( )
-,
-	. od_d_0 ( )
-,
-	. oen_1 ( ),
-	. oen_0 ( ),
-	. clk_0 ( ),
-	. clk_1 ( ),
-	. rstn_0 ( ),
-	. rstn_1 ( ),
-	. setn_0 ( ),
-	. setn_1 ( ),
-	. PAD1 ( display_sel ),
-	. PAD0 ( )
-);
-defparam io_cell_display_sel_inst.cfg_userio_en_1 = 1;
-defparam io_cell_display_sel_inst.cfg_eclk90_gate_sel_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_sclk_out_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_eclk90_gate_sel_1 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_sclk_out_1 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_sclk_gate_sel_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_sclk_gate_sel_1 = 0;
-defparam io_cell_display_sel_inst.cfg_oen_setn_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_setn_inv_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_oen_setn_en_1 = 0;
-defparam io_cell_display_sel_inst.cfg_txd3_inv_0 = 1'b0;
-defparam io_cell_display_sel_inst.lvds_tx_en_cfg = 1'b0;
-defparam io_cell_display_sel_inst.cfg_setn_inv_1 = 0;
-defparam io_cell_display_sel_inst.PCK_LOCATION = "C29R49.u0_M7A_IO_LVDS";
-defparam io_cell_display_sel_inst.cfg_id_sel_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_txd3_inv_1 = 1'b0;
-defparam io_cell_display_sel_inst.td_cfg = 4'h0;
-defparam io_cell_display_sel_inst.cfg_id_sel_1 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_eclk90_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_rstn_inv_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_gear_mode7 = 1;
-defparam io_cell_display_sel_inst.term_diff_en_cfg = 1'b0;
-defparam io_cell_display_sel_inst.cfg_eclk90_en_1 = 1'b0;
-defparam io_cell_display_sel_inst.ndr_cfg_0 = 4'h0;
-defparam io_cell_display_sel_inst.cfg_rstn_inv_1 = 0;
-defparam io_cell_display_sel_inst.ndr_cfg_1 = 4'h0;
-defparam io_cell_display_sel_inst.pdr_cfg_0 = 4'h0;
-defparam io_cell_display_sel_inst.cfg_od_setn_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_gear_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_od_setn_en_1 = 0;
-defparam io_cell_display_sel_inst.pdr_cfg_1 = 4'h0;
-defparam io_cell_display_sel_inst.cfg_gear_1 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_eclk_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_fclk_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_eclk_gate_sel_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_eclk_en_1 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_eclk_gate_sel_1 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_fclk_en_1 = 0;
-defparam io_cell_display_sel_inst.in_del_0 = 4'h0;
-defparam io_cell_display_sel_inst.out_del_0 = 4'h0;
-defparam io_cell_display_sel_inst.cfg_id_rstn_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.in_del_1 = 0;
-defparam io_cell_display_sel_inst.cfg_txd2_inv_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_id_rstn_en_1 = 0;
-defparam io_cell_display_sel_inst.out_del_1 = 0;
-defparam io_cell_display_sel_inst.rx_dig_en_cfg_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_txd2_inv_1 = 1'b0;
-defparam io_cell_display_sel_inst.rx_dig_en_cfg_1 = 1;
-defparam io_cell_display_sel_inst.cfg_nc = 4'h0;
-defparam io_cell_display_sel_inst.keep_cfg_0 = 2'h0;
-defparam io_cell_display_sel_inst.cfg_slave_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_od_sel_0 = 2'h0;
-defparam io_cell_display_sel_inst.cfg_slave_en_1 = 1'b0;
-defparam io_cell_display_sel_inst.keep_cfg_1 = 2'h0;
-defparam io_cell_display_sel_inst.cfg_sclk_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_od_sel_1 = 2'h0;
-defparam io_cell_display_sel_inst.cfg_sclk_en_1 = 1'b0;
-defparam io_cell_display_sel_inst.ns_lv_cfg_0 = 2'h0;
-defparam io_cell_display_sel_inst.cfg_oen_rstn_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.ns_lv_fastestn_0 = 1'b0;
-defparam io_cell_display_sel_inst.ns_lv_fastestn_1 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_oen_rstn_en_1 = 0;
-defparam io_cell_display_sel_inst.ns_lv_cfg_1 = 2'h0;
-defparam io_cell_display_sel_inst.optional_function = "";
-defparam io_cell_display_sel_inst.cfg_txd1_inv_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_txd1_inv_1 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_sclk_inv_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_sclk_inv_1 = 0;
-defparam io_cell_display_sel_inst.cfg_od_rstn_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_od_rstn_en_1 = 0;
-defparam io_cell_display_sel_inst.cfg_clkout_sel_0 = 1'b0;
-defparam io_cell_display_sel_inst.rx_lvds_en_cfg = 1'b0;
-defparam io_cell_display_sel_inst.cfg_d_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_clkout_sel_1 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_d_en_1 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_algn_rsn_sel = 1'b0;
-defparam io_cell_display_sel_inst.cfg_gear_mode48 = 1'b0;
-defparam io_cell_display_sel_inst.cml_tx_en_cfg = 1'b0;
-defparam io_cell_display_sel_inst.ldr_cfg = 4'h0;
-defparam io_cell_display_sel_inst.cfg_txd0_inv_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_oen_sel_0 = 2'h0;
-defparam io_cell_display_sel_inst.cfg_txd0_inv_1 = 0;
-defparam io_cell_display_sel_inst.cfg_oen_inv_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_oen_sel_1 = 2'h0;
-defparam io_cell_display_sel_inst.PLACE_LOCATION = "C29R49.io_top.u0_bank11_mux.u0_bank11.u385.u0_M7A_IO_LVDS";
-defparam io_cell_display_sel_inst.cfg_oen_inv_1 = 0;
-defparam io_cell_display_sel_inst.cfg_id_setn_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_userio_en_0 = 1'b0;
-defparam io_cell_display_sel_inst.cfg_id_setn_en_1 = 0;
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11]|qx_net  ),
 	. qs ( ),
@@ -8947,18 +9316,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11] .PLACE_LOCATION = "C39R4.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11] .PCK_LOCATION = "C39R4.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11] .PCK_LOCATION = "C49R4.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[11] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0693|dx_net  ),
+	. di ( \ii0707|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -8978,29 +9347,29 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4] .PLACE_LOCATION = "C27R10.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4] .PLACE_LOCATION = "C35R10.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4] .PCK_LOCATION = "C27R10.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4] .PCK_LOCATION = "C35R10.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4] .is_en_used = "true";
 LUT4 ii0730 (
 	. dx ( \ii0730|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[30]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[16]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0730.PLACE_LOCATION = "C37R18.le_tile.le_guts.lp0.lut0";
-defparam ii0730.PCK_LOCATION = "C37R18.lp0.lut0";
+defparam ii0730.PLACE_LOCATION = "C35R15.le_tile.le_guts.lp2.lut0";
+defparam ii0730.PCK_LOCATION = "C35R15.lp2.lut0";
 defparam ii0730.config_data = "B8B8";
 LUT4 ii0729 (
 	. dx ( \ii0729|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[2]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[15]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0729.PLACE_LOCATION = "C27R15.le_tile.le_guts.lp0.lut41";
-defparam ii0729.PCK_LOCATION = "C27R15.lp0.lut41";
+defparam ii0729.PLACE_LOCATION = "C37R15.le_tile.le_guts.lp0.lut41";
+defparam ii0729.PCK_LOCATION = "C37R15.lp0.lut41";
 defparam ii0729.config_data = "B8B8";
 M7S_IO_DDR dedicated_io_cell_u213_inst (
 	. id_q_1 ( )
@@ -9148,7 +9517,7 @@ REG \u_sdram_to_RGB_addr_cnt__reg[4]  (
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0504|dx_net  ),
+	. di ( \ii0513|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
 	. mclk_b ( ),
@@ -9170,16 +9539,16 @@ defparam \u_sdram_to_RGB_addr_cnt__reg[4] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_addr_cnt__reg[4] .PLACE_LOCATION = "C37R16.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_addr_cnt__reg[4] .PLACE_LOCATION = "C39R18.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_addr_cnt__reg[4] .PCK_LOCATION = "C37R16.lp0.reg1";
+defparam \u_sdram_to_RGB_addr_cnt__reg[4] .PCK_LOCATION = "C39R18.lp0.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[4] .is_en_used = "true";
 REG u_colorgen_v_valid__reg (
 	. qx ( \u_colorgen_v_valid__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0495|dx_net  ),
+	. di ( \ii0501|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -9201,28 +9570,28 @@ defparam u_colorgen_v_valid__reg.le_sh0_always_en = "false";
 defparam u_colorgen_v_valid__reg.le_sh1_always_en = "false";
 defparam u_colorgen_v_valid__reg.use_reg_fdbk = "false";
 defparam u_colorgen_v_valid__reg.is_le_clk_inv = "false";
-defparam u_colorgen_v_valid__reg.PLACE_LOCATION = "C25R16.le_tile.le_guts.lp1.reg0";
+defparam u_colorgen_v_valid__reg.PLACE_LOCATION = "C33R19.le_tile.le_guts.lp1.reg0";
 defparam u_colorgen_v_valid__reg.is_le_sh1_en_not_inv = "true";
-defparam u_colorgen_v_valid__reg.PCK_LOCATION = "C25R16.lp1.reg0";
+defparam u_colorgen_v_valid__reg.PCK_LOCATION = "C33R19.lp1.reg0";
 defparam u_colorgen_v_valid__reg.is_en_used = "false";
 LUT4 ii0731 (
 	. dx ( \ii0731|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[31]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[17]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0731.PLACE_LOCATION = "C33R14.le_tile.le_guts.lp2.lut0";
-defparam ii0731.PCK_LOCATION = "C33R14.lp2.lut0";
+defparam ii0731.PLACE_LOCATION = "C33R15.le_tile.le_guts.lp1.lut0";
+defparam ii0731.PCK_LOCATION = "C33R15.lp1.lut0";
 defparam ii0731.config_data = "B8B8";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0712|dx_net  ),
+	. di ( \ii0727|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -9242,9 +9611,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13] .PLACE_LOCATION = "C33R13.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13] .PCK_LOCATION = "C33R13.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13] .PCK_LOCATION = "C33R15.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[13] .is_en_used = "true";
 REG \u_sdram_to_RGB_dma_addr__reg[8]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[8]|qx_net  ),
@@ -9273,19 +9642,19 @@ defparam \u_sdram_to_RGB_dma_addr__reg[8] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[8] .PLACE_LOCATION = "C23R13.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[8] .PLACE_LOCATION = "C35R13.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[8] .PCK_LOCATION = "C23R13.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[8] .PCK_LOCATION = "C35R13.lp3.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[8] .is_en_used = "false";
 LUT4 ii0732 (
 	. dx ( \ii0732|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[3]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[18]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0732.PLACE_LOCATION = "C27R13.le_tile.le_guts.lp1.lut0";
-defparam ii0732.PCK_LOCATION = "C27R13.lp1.lut0";
+defparam ii0732.PLACE_LOCATION = "C43R15.le_tile.le_guts.lp2.lut0";
+defparam ii0732.PCK_LOCATION = "C43R15.lp2.lut0";
 defparam ii0732.config_data = "B8B8";
 REG \u_sdram_to_RGB_dma_addr__reg[10]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[10]|qx_net  ),
@@ -9323,7 +9692,7 @@ REG \u_colorgen_h_cnt__reg[3]  (
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0464|dx_net  ),
+	. di ( \ii0471|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -9345,29 +9714,188 @@ defparam \u_colorgen_h_cnt__reg[3] .le_sh0_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[3] .le_sh1_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[3] .use_reg_fdbk = "false";
 defparam \u_colorgen_h_cnt__reg[3] .is_le_clk_inv = "false";
-defparam \u_colorgen_h_cnt__reg[3] .PLACE_LOCATION = "C19R16.le_tile.le_guts.lp0.reg0";
+defparam \u_colorgen_h_cnt__reg[3] .PLACE_LOCATION = "C33R18.le_tile.le_guts.lp3.reg1";
 defparam \u_colorgen_h_cnt__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_h_cnt__reg[3] .PCK_LOCATION = "C19R16.lp0.reg0";
+defparam \u_colorgen_h_cnt__reg[3] .PCK_LOCATION = "C33R18.lp3.reg1";
 defparam \u_colorgen_h_cnt__reg[3] .is_en_used = "false";
 LUT4 ii0733 (
 	. dx ( \ii0733|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[4]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[19]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0733.PLACE_LOCATION = "C29R14.le_tile.le_guts.lp0.lut0";
-defparam ii0733.PCK_LOCATION = "C29R14.lp0.lut0";
+defparam ii0733.PLACE_LOCATION = "C39R16.le_tile.le_guts.lp2.lut0";
+defparam ii0733.PCK_LOCATION = "C39R16.lp2.lut0";
 defparam ii0733.config_data = "B8B8";
+M7S_IO_LVDS io_cell_buttonIn2_inst (
+	. id_1 ( ),
+	. id_0 ( ),
+	. id_q_1 ( {
+		/* id_q_1 [3] (nc) */ nc68 ,
+		/* id_q_1 [2] (nc) */ nc69 ,
+		/* id_q_1 [1] (nc) */ nc70 ,
+		/* id_q_1 [0] */ \io_cell_buttonIn3_inst|id_q_net 
+	} ),
+	. id_q_0 ( {
+		/* id_q_0 [3] (nc) */ nc71 ,
+		/* id_q_0 [2] (nc) */ nc72 ,
+		/* id_q_0 [1] (nc) */ nc73 ,
+		/* id_q_0 [0] */ \io_cell_buttonIn2_inst|id_q_net 
+	} ),
+	. align_rstn ( ),
+	. alignwd ( ),
+	. clk_en_1 ( ),
+	. clk_en_0 ( ),
+	. io_reg_clk ( ),
+	. geclk ( ),
+	. geclk90 ( ),
+	. geclk180 ( ),
+	. geclk270 ( ),
+	. od_d_1 ( )
+,
+	. od_d_0 ( )
+,
+	. oen_1 ( ),
+	. oen_0 ( ),
+	. clk_0 ( ),
+	. clk_1 ( ),
+	. rstn_0 ( ),
+	. rstn_1 ( ),
+	. setn_0 ( ),
+	. setn_1 ( ),
+	. PAD1 ( buttonIn3 ),
+	. PAD0 ( buttonIn2 )
+);
+defparam io_cell_buttonIn2_inst.cfg_userio_en_1 = 1;
+defparam io_cell_buttonIn2_inst.cfg_eclk90_gate_sel_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_sclk_out_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_eclk90_gate_sel_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_sclk_out_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_sclk_gate_sel_0 = 0;
+defparam io_cell_buttonIn2_inst.cfg_sclk_gate_sel_1 = 0;
+defparam io_cell_buttonIn2_inst.cfg_oen_setn_en_0 = 0;
+defparam io_cell_buttonIn2_inst.cfg_setn_inv_0 = 0;
+defparam io_cell_buttonIn2_inst.cfg_oen_setn_en_1 = 0;
+defparam io_cell_buttonIn2_inst.cfg_txd3_inv_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.lvds_tx_en_cfg = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_setn_inv_1 = 0;
+defparam io_cell_buttonIn2_inst.PCK_LOCATION = "C29R49.u0_M7A_IO_LVDS";
+defparam io_cell_buttonIn2_inst.cfg_id_sel_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_txd3_inv_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.td_cfg = 4'h0;
+defparam io_cell_buttonIn2_inst.cfg_id_sel_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_eclk90_en_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_rstn_inv_0 = 0;
+defparam io_cell_buttonIn2_inst.cfg_gear_mode7 = 1;
+defparam io_cell_buttonIn2_inst.term_diff_en_cfg = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_eclk90_en_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.ndr_cfg_0 = 4'h0;
+defparam io_cell_buttonIn2_inst.cfg_rstn_inv_1 = 0;
+defparam io_cell_buttonIn2_inst.ndr_cfg_1 = 4'h0;
+defparam io_cell_buttonIn2_inst.pdr_cfg_0 = 4'h0;
+defparam io_cell_buttonIn2_inst.cfg_od_setn_en_0 = 0;
+defparam io_cell_buttonIn2_inst.cfg_gear_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_od_setn_en_1 = 0;
+defparam io_cell_buttonIn2_inst.pdr_cfg_1 = 4'h0;
+defparam io_cell_buttonIn2_inst.cfg_gear_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_eclk_en_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_fclk_en_0 = 0;
+defparam io_cell_buttonIn2_inst.cfg_eclk_gate_sel_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_eclk_en_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_eclk_gate_sel_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_fclk_en_1 = 0;
+defparam io_cell_buttonIn2_inst.in_del_0 = 0;
+defparam io_cell_buttonIn2_inst.out_del_0 = 0;
+defparam io_cell_buttonIn2_inst.cfg_id_rstn_en_0 = 0;
+defparam io_cell_buttonIn2_inst.in_del_1 = 0;
+defparam io_cell_buttonIn2_inst.cfg_txd2_inv_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_id_rstn_en_1 = 0;
+defparam io_cell_buttonIn2_inst.out_del_1 = 0;
+defparam io_cell_buttonIn2_inst.rx_dig_en_cfg_0 = 1;
+defparam io_cell_buttonIn2_inst.cfg_txd2_inv_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.rx_dig_en_cfg_1 = 1;
+defparam io_cell_buttonIn2_inst.cfg_nc = 4'h0;
+defparam io_cell_buttonIn2_inst.keep_cfg_0 = 2'h0;
+defparam io_cell_buttonIn2_inst.cfg_slave_en_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_od_sel_0 = 2'h0;
+defparam io_cell_buttonIn2_inst.cfg_slave_en_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.keep_cfg_1 = 2'h0;
+defparam io_cell_buttonIn2_inst.cfg_sclk_en_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_od_sel_1 = 2'h0;
+defparam io_cell_buttonIn2_inst.cfg_sclk_en_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.ns_lv_cfg_0 = 2'h0;
+defparam io_cell_buttonIn2_inst.cfg_oen_rstn_en_0 = 0;
+defparam io_cell_buttonIn2_inst.ns_lv_fastestn_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.ns_lv_fastestn_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_oen_rstn_en_1 = 0;
+defparam io_cell_buttonIn2_inst.ns_lv_cfg_1 = 2'h0;
+defparam io_cell_buttonIn2_inst.optional_function = "";
+defparam io_cell_buttonIn2_inst.cfg_txd1_inv_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_txd1_inv_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_sclk_inv_0 = 0;
+defparam io_cell_buttonIn2_inst.cfg_sclk_inv_1 = 0;
+defparam io_cell_buttonIn2_inst.cfg_od_rstn_en_0 = 0;
+defparam io_cell_buttonIn2_inst.cfg_od_rstn_en_1 = 0;
+defparam io_cell_buttonIn2_inst.cfg_clkout_sel_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.rx_lvds_en_cfg = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_d_en_0 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_clkout_sel_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_d_en_1 = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_algn_rsn_sel = 1'b0;
+defparam io_cell_buttonIn2_inst.cfg_gear_mode48 = 1'b0;
+defparam io_cell_buttonIn2_inst.cml_tx_en_cfg = 1'b0;
+defparam io_cell_buttonIn2_inst.ldr_cfg = 4'h0;
+defparam io_cell_buttonIn2_inst.cfg_txd0_inv_0 = 0;
+defparam io_cell_buttonIn2_inst.cfg_oen_sel_0 = 2'h0;
+defparam io_cell_buttonIn2_inst.cfg_txd0_inv_1 = 0;
+defparam io_cell_buttonIn2_inst.cfg_oen_inv_0 = 0;
+defparam io_cell_buttonIn2_inst.cfg_oen_sel_1 = 2'h0;
+defparam io_cell_buttonIn2_inst.PLACE_LOCATION = "C29R49.io_top.u0_bank11_mux.u0_bank11.u383.u0_M7A_IO_LVDS";
+defparam io_cell_buttonIn2_inst.cfg_oen_inv_1 = 0;
+defparam io_cell_buttonIn2_inst.cfg_id_setn_en_0 = 0;
+defparam io_cell_buttonIn2_inst.cfg_userio_en_0 = 1;
+defparam io_cell_buttonIn2_inst.cfg_id_setn_en_1 = 0;
+REG \u_sdram_to_RGB_text__reg[9]  (
+	. qx ( \u_sdram_to_RGB_text__reg[9]|qx_net  ),
+	. qs ( ),
+	. up_o ( ),
+	. down_o ( ),
+	. di ( \ii0592|dx_net  ),
+	. a_sr ( \rstn_final__reg|qx_net  ),
+	. en ( ),
+	. mclk_b ( ),
+	. sclk ( \u_pll_pll_u0|clkout1_net  ),
+	. shift ( ),
+	. up_i ( ),
+	. down_i ( )
+);
+defparam \u_sdram_to_RGB_text__reg[9] .shift_direct = "up";
+defparam \u_sdram_to_RGB_text__reg[9] .is_le_has_clk = "true";
+defparam \u_sdram_to_RGB_text__reg[9] .ignore_shift = "true";
+defparam \u_sdram_to_RGB_text__reg[9] .le_sync_mode = "false";
+defparam \u_sdram_to_RGB_text__reg[9] .is_le_en_not_inv = "true";
+defparam \u_sdram_to_RGB_text__reg[9] .preset = 1;
+defparam \u_sdram_to_RGB_text__reg[9] .is_le_sh0_en_not_inv = "true";
+defparam \u_sdram_to_RGB_text__reg[9] .is_le_sr_inv = "false";
+defparam \u_sdram_to_RGB_text__reg[9] .le_lat_mode = "false";
+defparam \u_sdram_to_RGB_text__reg[9] .le_sh0_always_en = "false";
+defparam \u_sdram_to_RGB_text__reg[9] .le_sh1_always_en = "false";
+defparam \u_sdram_to_RGB_text__reg[9] .use_reg_fdbk = "false";
+defparam \u_sdram_to_RGB_text__reg[9] .is_le_clk_inv = "false";
+defparam \u_sdram_to_RGB_text__reg[9] .PLACE_LOCATION = "C33R31.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_text__reg[9] .is_le_sh1_en_not_inv = "true";
+defparam \u_sdram_to_RGB_text__reg[9] .PCK_LOCATION = "C33R31.lp2.reg0";
+defparam \u_sdram_to_RGB_text__reg[9] .is_en_used = "false";
 LUT4 ii0734 (
 	. dx ( \ii0734|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[5]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[20]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0734.PLACE_LOCATION = "C25R14.le_tile.le_guts.lp0.lut0";
-defparam ii0734.PCK_LOCATION = "C25R14.lp0.lut0";
+defparam ii0734.PLACE_LOCATION = "C33R15.le_tile.le_guts.lp2.lut0";
+defparam ii0734.PCK_LOCATION = "C33R15.lp2.lut0";
 defparam ii0734.config_data = "B8B8";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[23]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[23]|qx_net  ),
@@ -9396,49 +9924,49 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[23] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[23] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[23] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[23] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[23] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[23] .PLACE_LOCATION = "C33R13.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[23] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[23] .PCK_LOCATION = "C33R15.lp0.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[23] .PCK_LOCATION = "C33R13.lp2.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[23] .is_en_used = "false";
 LUT4 ii0735 (
 	. dx ( \ii0735|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[6]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[21]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0735.PLACE_LOCATION = "C29R12.le_tile.le_guts.lp0.lut0";
-defparam ii0735.PCK_LOCATION = "C29R12.lp0.lut0";
+defparam ii0735.PLACE_LOCATION = "C39R16.le_tile.le_guts.lp0.lut0";
+defparam ii0735.PCK_LOCATION = "C39R16.lp0.lut0";
 defparam ii0735.config_data = "B8B8";
 LUT4 ii0736 (
 	. dx ( \ii0736|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[7]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[22]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0736.PLACE_LOCATION = "C27R15.le_tile.le_guts.lp2.lut0";
-defparam ii0736.PCK_LOCATION = "C27R15.lp2.lut0";
+defparam ii0736.PLACE_LOCATION = "C43R16.le_tile.le_guts.lp1.lut0";
+defparam ii0736.PCK_LOCATION = "C43R16.lp1.lut0";
 defparam ii0736.config_data = "B8B8";
 LUT4 ii0737 (
 	. dx ( \ii0737|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[8]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[23]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0737.PLACE_LOCATION = "C29R13.le_tile.le_guts.lp3.lut0";
-defparam ii0737.PCK_LOCATION = "C29R13.lp3.lut0";
+defparam ii0737.PLACE_LOCATION = "C39R16.le_tile.le_guts.lp3.lut0";
+defparam ii0737.PCK_LOCATION = "C39R16.lp3.lut0";
 defparam ii0737.config_data = "B8B8";
 LUT4 ii0738 (
 	. dx ( \ii0738|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_addr__reg[9]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[24]|qx_net  ),
 	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0738.PLACE_LOCATION = "C35R14.le_tile.le_guts.lp0.lut0";
-defparam ii0738.PCK_LOCATION = "C35R14.lp0.lut0";
+defparam ii0738.PLACE_LOCATION = "C33R16.le_tile.le_guts.lp0.lut0";
+defparam ii0738.PCK_LOCATION = "C33R16.lp0.lut0";
 defparam ii0738.config_data = "B8B8";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12]|qx_net  ),
@@ -9467,18 +9995,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12] .PLACE_LOCATION = "C39R4.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12] .PCK_LOCATION = "C39R4.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12] .PCK_LOCATION = "C49R4.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[12] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0695|dx_net  ),
+	. di ( \ii0709|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -9498,9 +10026,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5] .PLACE_LOCATION = "C25R10.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5] .PLACE_LOCATION = "C33R10.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5] .PCK_LOCATION = "C25R10.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5] .PCK_LOCATION = "C33R10.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5] .is_en_used = "true";
 M7S_IO_LVDS u_lvds_u_lvds_tx_clk (
 	. id_1 ( ),
@@ -9624,30 +10152,30 @@ defparam u_lvds_u_lvds_tx_clk.cfg_userio_en_0 = 0;
 defparam u_lvds_u_lvds_tx_clk.cfg_id_setn_en_1 = 0;
 LUT4 ii0740 (
 	. dx ( \ii0740|dx_net  ),
-	. f3 ( \ii0583|dx_net  ),
-	. f2 ( \ii0609|dx_net  ),
-	. f1 ( \ii0610|dx_net  ),
-	. f0 ( \ii0739|dx_net  )
-);
-defparam ii0740.PLACE_LOCATION = "C35R15.le_tile.le_guts.lp3.lut0";
-defparam ii0740.PCK_LOCATION = "C35R15.lp3.lut0";
-defparam ii0740.config_data = "8000";
-LUT4 ii0739 (
-	. dx ( \ii0739|dx_net  ),
-	. f3 ( \ii0616|dx_net  ),
-	. f2 ( \ii0631|dx_net  ),
-	. f1 ( ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[26]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0739.PLACE_LOCATION = "C37R13.le_tile.le_guts.lp3.lut0";
-defparam ii0739.PCK_LOCATION = "C37R13.lp3.lut0";
-defparam ii0739.config_data = "4444";
+defparam ii0740.PLACE_LOCATION = "C35R14.le_tile.le_guts.lp0.lut41";
+defparam ii0740.PCK_LOCATION = "C35R14.lp0.lut41";
+defparam ii0740.config_data = "B8B8";
+LUT4 ii0739 (
+	. dx ( \ii0739|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[25]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15]|qx_net  ),
+	. f0 ( )
+);
+defparam ii0739.PLACE_LOCATION = "C33R16.le_tile.le_guts.lp1.lut0";
+defparam ii0739.PCK_LOCATION = "C33R16.lp1.lut0";
+defparam ii0739.config_data = "B8B8";
 REG \u_sdram_to_RGB_addr_cnt__reg[5]  (
 	. qx ( \u_sdram_to_RGB_addr_cnt__reg[5]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0505|dx_net  ),
+	. di ( \ii0514|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
 	. mclk_b ( ),
@@ -9669,28 +10197,28 @@ defparam \u_sdram_to_RGB_addr_cnt__reg[5] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_addr_cnt__reg[5] .PLACE_LOCATION = "C37R16.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[5] .PLACE_LOCATION = "C39R18.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_addr_cnt__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_addr_cnt__reg[5] .PCK_LOCATION = "C37R16.lp3.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[5] .PCK_LOCATION = "C39R18.lp0.reg1";
 defparam \u_sdram_to_RGB_addr_cnt__reg[5] .is_en_used = "true";
 LUT4 ii0741 (
 	. dx ( \ii0741|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \ii0612|dx_net  ),
-	. f1 ( \ii0613|dx_net  ),
-	. f0 ( \ii0740|dx_net  )
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[27]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0741.PLACE_LOCATION = "C29R14.le_tile.le_guts.lp1.lut0";
-defparam ii0741.PCK_LOCATION = "C29R14.lp1.lut0";
-defparam ii0741.config_data = "AEEE";
+defparam ii0741.PLACE_LOCATION = "C35R14.le_tile.le_guts.lp0.lut0";
+defparam ii0741.PCK_LOCATION = "C35R14.lp0.lut0";
+defparam ii0741.config_data = "B8B8";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0713|dx_net  ),
+	. di ( \ii0728|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -9710,9 +10238,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14] .PLACE_LOCATION = "C37R15.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14] .PCK_LOCATION = "C37R15.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14] .PCK_LOCATION = "C33R15.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[14] .is_en_used = "true";
 REG \u_sdram_to_RGB_dma_addr__reg[9]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[9]|qx_net  ),
@@ -9741,20 +10269,20 @@ defparam \u_sdram_to_RGB_dma_addr__reg[9] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[9] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[9] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[9] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[9] .PLACE_LOCATION = "C37R14.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[9] .PLACE_LOCATION = "C43R14.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[9] .PCK_LOCATION = "C37R14.lp3.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[9] .PCK_LOCATION = "C43R14.lp1.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[9] .is_en_used = "false";
 LUT4 ii0742 (
 	. dx ( \ii0742|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \ii0739|dx_net  ),
-	. f1 ( ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[28]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0742.PLACE_LOCATION = "C33R16.le_tile.le_guts.lp2.lut0";
-defparam ii0742.PCK_LOCATION = "C33R16.lp2.lut0";
-defparam ii0742.config_data = "EEEE";
+defparam ii0742.PLACE_LOCATION = "C37R14.le_tile.le_guts.lp1.lut0";
+defparam ii0742.PCK_LOCATION = "C37R14.lp1.lut0";
+defparam ii0742.config_data = "B8B8";
 REG \u_sdram_to_RGB_dma_addr__reg[11]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[11]|qx_net  ),
 	. qs ( ),
@@ -9782,16 +10310,16 @@ defparam \u_sdram_to_RGB_dma_addr__reg[11] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[11] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[11] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[11] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[11] .PLACE_LOCATION = "C43R13.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[11] .PLACE_LOCATION = "C39R15.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[11] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[11] .PCK_LOCATION = "C43R13.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[11] .PCK_LOCATION = "C39R15.lp3.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[11] .is_en_used = "false";
 REG u_sdram_to_RGB_display_before_bmp__reg (
 	. qx ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0523|dx_net  ),
+	. di ( \ii0532|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -9813,16 +10341,16 @@ defparam u_sdram_to_RGB_display_before_bmp__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_display_before_bmp__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_display_before_bmp__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_display_before_bmp__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_display_before_bmp__reg.PLACE_LOCATION = "C39R17.le_tile.le_guts.lp1.reg0";
+defparam u_sdram_to_RGB_display_before_bmp__reg.PLACE_LOCATION = "C39R19.le_tile.le_guts.lp0.reg0";
 defparam u_sdram_to_RGB_display_before_bmp__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_display_before_bmp__reg.PCK_LOCATION = "C39R17.lp1.reg0";
+defparam u_sdram_to_RGB_display_before_bmp__reg.PCK_LOCATION = "C39R19.lp0.reg0";
 defparam u_sdram_to_RGB_display_before_bmp__reg.is_en_used = "false";
 REG \u_colorgen_h_cnt__reg[4]  (
 	. qx ( \u_colorgen_h_cnt__reg[4]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0465|dx_net  ),
+	. di ( \ii0472|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -9844,48 +10372,30 @@ defparam \u_colorgen_h_cnt__reg[4] .le_sh0_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[4] .le_sh1_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[4] .use_reg_fdbk = "false";
 defparam \u_colorgen_h_cnt__reg[4] .is_le_clk_inv = "false";
-defparam \u_colorgen_h_cnt__reg[4] .PLACE_LOCATION = "C19R17.le_tile.le_guts.lp2.reg0";
+defparam \u_colorgen_h_cnt__reg[4] .PLACE_LOCATION = "C35R18.le_tile.le_guts.lp3.reg1";
 defparam \u_colorgen_h_cnt__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_h_cnt__reg[4] .PCK_LOCATION = "C19R17.lp2.reg0";
+defparam \u_colorgen_h_cnt__reg[4] .PCK_LOCATION = "C35R18.lp3.reg1";
 defparam \u_colorgen_h_cnt__reg[4] .is_en_used = "false";
-LUT4C ii0743 (
-	. dx ( ),
-	. s ( ),
-	. co ( \ii0743|co_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
-	. f1 ( \ii0592|dx_net  ),
-	. f0 ( \ii0582|dx_net  ),
-	. ci ( \GND_0_inst|Y_net  ),
-	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  )
+LUT4 ii0743 (
+	. dx ( \ii0743|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[29]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0743.PLACE_LOCATION = "C35R13.le_tile.le_guts.lp0.lut40";
-defparam ii0743.is_le_cin_inv = "false";
-defparam ii0743.le_skip_en = "false";
-defparam ii0743.is_le_cin_below = "false";
-defparam ii0743.PCK_LOCATION = "C35R13.lp0.lut40";
-defparam ii0743.is_byp_used = "false";
-defparam ii0743.is_ca_not_inv = "true";
-defparam ii0743.config_data = "55DA";
-LUT4C ii0744 (
-	. dx ( ),
-	. s ( \ii0744|s_net  ),
-	. co ( \ii0744|co_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
-	. f1 ( \ii0592|dx_net  ),
-	. f0 ( \ii0582|dx_net  ),
-	. ci ( \ii0743|co_net  ),
-	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  )
+defparam ii0743.PLACE_LOCATION = "C33R13.le_tile.le_guts.lp3.lut0";
+defparam ii0743.PCK_LOCATION = "C33R13.lp3.lut0";
+defparam ii0743.config_data = "B8B8";
+LUT4 ii0744 (
+	. dx ( \ii0744|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[2]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[0]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0744.PLACE_LOCATION = "C35R13.le_tile.le_guts.lp1.lut40";
-defparam ii0744.is_le_cin_inv = "false";
-defparam ii0744.le_skip_en = "false";
-defparam ii0744.is_le_cin_below = "false";
-defparam ii0744.PCK_LOCATION = "C35R13.lp1.lut40";
-defparam ii0744.is_byp_used = "false";
-defparam ii0744.is_ca_not_inv = "true";
-defparam ii0744.config_data = "33BC";
+defparam ii0744.PLACE_LOCATION = "C39R15.le_tile.le_guts.lp0.lut41";
+defparam ii0744.PCK_LOCATION = "C39R15.lp0.lut41";
+defparam ii0744.config_data = "B8B8";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0]|qx_net  ),
 	. qs ( ),
@@ -9913,9 +10423,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0] .PLACE_LOCATION = "C39R4.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0] .PCK_LOCATION = "C39R4.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0] .PCK_LOCATION = "C49R4.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[0] .is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[24]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[24]|qx_net  ),
@@ -9944,86 +10454,50 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[24] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[24] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[24] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[24] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[24] .PLACE_LOCATION = "C25R14.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[24] .PLACE_LOCATION = "C29R12.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[24] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[24] .PCK_LOCATION = "C25R14.lp2.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[24] .PCK_LOCATION = "C29R12.lp1.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[24] .is_en_used = "false";
-LUT4C ii0745 (
-	. dx ( ),
-	. s ( \ii0745|s_net  ),
-	. co ( \ii0745|co_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ),
-	. f2 ( \ii0592|dx_net  ),
-	. f1 ( \ii0593|dx_net  ),
-	. f0 ( \ii0584|dx_net  ),
-	. ci ( \ii0744|co_net  ),
-	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  )
+LUT4 ii0745 (
+	. dx ( \ii0745|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[30]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0745.PLACE_LOCATION = "C35R13.le_tile.le_guts.lp2.lut40";
-defparam ii0745.is_le_cin_inv = "false";
-defparam ii0745.le_skip_en = "false";
-defparam ii0745.is_le_cin_below = "false";
-defparam ii0745.PCK_LOCATION = "C35R13.lp2.lut40";
-defparam ii0745.is_byp_used = "false";
-defparam ii0745.is_ca_not_inv = "true";
-defparam ii0745.config_data = "DCDE";
-LUT4C ii0746 (
-	. dx ( ),
-	. s ( \ii0746|s_net  ),
-	. co ( \ii0746|co_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ),
-	. f2 ( \ii0599|dx_net  ),
-	. f1 ( ),
-	. f0 ( ),
-	. ci ( \ii0745|co_net  ),
-	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  )
+defparam ii0745.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp1.lut0";
+defparam ii0745.PCK_LOCATION = "C35R16.lp1.lut0";
+defparam ii0745.config_data = "B8B8";
+LUT4 ii0746 (
+	. dx ( \ii0746|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[31]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[21]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0746.PLACE_LOCATION = "C35R13.le_tile.le_guts.lp3.lut40";
-defparam ii0746.is_le_cin_inv = "false";
-defparam ii0746.le_skip_en = "false";
-defparam ii0746.is_le_cin_below = "false";
-defparam ii0746.PCK_LOCATION = "C35R13.lp3.lut40";
-defparam ii0746.is_byp_used = "false";
-defparam ii0746.is_ca_not_inv = "true";
-defparam ii0746.config_data = "9999";
-LUT4C ii0747 (
-	. dx ( ),
-	. s ( \ii0747|s_net  ),
-	. co ( \ii0747|co_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4]|qx_net  ),
-	. f2 ( ),
-	. f1 ( ),
-	. f0 ( ),
-	. ci ( \ii0746|co_net  ),
-	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4]|qx_net  )
+defparam ii0746.PLACE_LOCATION = "C43R15.le_tile.le_guts.lp0.lut0";
+defparam ii0746.PCK_LOCATION = "C43R15.lp0.lut0";
+defparam ii0746.config_data = "B8B8";
+LUT4 ii0747 (
+	. dx ( \ii0747|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[3]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[1]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0747.PLACE_LOCATION = "C35R14.le_tile.le_guts.lp0.lut40";
-defparam ii0747.is_le_cin_inv = "false";
-defparam ii0747.le_skip_en = "false";
-defparam ii0747.is_le_cin_below = "false";
-defparam ii0747.PCK_LOCATION = "C35R14.lp0.lut40";
-defparam ii0747.is_byp_used = "false";
-defparam ii0747.is_ca_not_inv = "true";
-defparam ii0747.config_data = "5555";
-LUT4C ii0748 (
-	. dx ( ),
-	. s ( \ii0748|s_net  ),
-	. co ( \ii0748|co_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5]|qx_net  ),
-	. f2 ( ),
-	. f1 ( ),
-	. f0 ( ),
-	. ci ( \ii0747|co_net  ),
-	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5]|qx_net  )
+defparam ii0747.PLACE_LOCATION = "C35R14.le_tile.le_guts.lp1.lut0";
+defparam ii0747.PCK_LOCATION = "C35R14.lp1.lut0";
+defparam ii0747.config_data = "B8B8";
+LUT4 ii0748 (
+	. dx ( \ii0748|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[2]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0748.PLACE_LOCATION = "C35R14.le_tile.le_guts.lp1.lut40";
-defparam ii0748.is_le_cin_inv = "false";
-defparam ii0748.le_skip_en = "false";
-defparam ii0748.is_le_cin_below = "false";
-defparam ii0748.PCK_LOCATION = "C35R14.lp1.lut40";
-defparam ii0748.is_byp_used = "false";
-defparam ii0748.is_ca_not_inv = "true";
-defparam ii0748.config_data = "5555";
+defparam ii0748.PLACE_LOCATION = "C33R13.le_tile.le_guts.lp0.lut41";
+defparam ii0748.PCK_LOCATION = "C33R13.lp0.lut41";
+defparam ii0748.config_data = "B8B8";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13]|qx_net  ),
 	. qs ( ),
@@ -10051,18 +10525,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13] .PLACE_LOCATION = "C39R4.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13] .PCK_LOCATION = "C39R4.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13] .PCK_LOCATION = "C49R4.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[13] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0697|dx_net  ),
+	. di ( \ii0711|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -10082,54 +10556,36 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6] .PLACE_LOCATION = "C27R13.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6] .PLACE_LOCATION = "C35R10.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6] .PCK_LOCATION = "C27R13.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6] .PCK_LOCATION = "C35R10.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6] .is_en_used = "true";
-LUT4C ii0750 (
-	. dx ( ),
-	. s ( \ii0750|s_net  ),
-	. co ( ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7]|qx_net  ),
-	. f2 ( ),
-	. f1 ( ),
-	. f0 ( ),
-	. ci ( \ii0749|co_net  ),
-	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7]|qx_net  )
+LUT4 ii0750 (
+	. dx ( \ii0750|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[6]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[4]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0750.PLACE_LOCATION = "C35R14.le_tile.le_guts.lp3.lut40";
-defparam ii0750.is_le_cin_inv = "false";
-defparam ii0750.le_skip_en = "false";
-defparam ii0750.is_le_cin_below = "false";
-defparam ii0750.PCK_LOCATION = "C35R14.lp3.lut40";
-defparam ii0750.is_byp_used = "false";
-defparam ii0750.is_ca_not_inv = "true";
-defparam ii0750.config_data = "5555";
-LUT4C ii0749 (
-	. dx ( ),
-	. s ( \ii0749|s_net  ),
-	. co ( \ii0749|co_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6]|qx_net  ),
-	. f2 ( ),
-	. f1 ( ),
-	. f0 ( ),
-	. ci ( \ii0748|co_net  ),
-	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6]|qx_net  )
+defparam ii0750.PLACE_LOCATION = "C37R14.le_tile.le_guts.lp1.lut41";
+defparam ii0750.PCK_LOCATION = "C37R14.lp1.lut41";
+defparam ii0750.config_data = "B8B8";
+LUT4 ii0749 (
+	. dx ( \ii0749|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[5]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[3]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0749.PLACE_LOCATION = "C35R14.le_tile.le_guts.lp2.lut40";
-defparam ii0749.is_le_cin_inv = "false";
-defparam ii0749.le_skip_en = "false";
-defparam ii0749.is_le_cin_below = "false";
-defparam ii0749.PCK_LOCATION = "C35R14.lp2.lut40";
-defparam ii0749.is_byp_used = "false";
-defparam ii0749.is_ca_not_inv = "true";
-defparam ii0749.config_data = "5555";
+defparam ii0749.PLACE_LOCATION = "C35R14.le_tile.le_guts.lp3.lut0";
+defparam ii0749.PCK_LOCATION = "C35R14.lp3.lut0";
+defparam ii0749.config_data = "B8B8";
 REG \u_sdram_to_RGB_addr_cnt__reg[6]  (
 	. qx ( \u_sdram_to_RGB_addr_cnt__reg[6]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0506|dx_net  ),
+	. di ( \ii0515|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
 	. mclk_b ( ),
@@ -10151,18 +10607,28 @@ defparam \u_sdram_to_RGB_addr_cnt__reg[6] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_addr_cnt__reg[6] .PLACE_LOCATION = "C37R16.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_addr_cnt__reg[6] .PLACE_LOCATION = "C37R22.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_addr_cnt__reg[6] .PCK_LOCATION = "C37R16.lp1.reg1";
+defparam \u_sdram_to_RGB_addr_cnt__reg[6] .PCK_LOCATION = "C37R22.lp0.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[6] .is_en_used = "true";
+LUT4 ii0751 (
+	. dx ( \ii0751|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[7]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[5]|qx_net  ),
+	. f0 ( )
+);
+defparam ii0751.PLACE_LOCATION = "C33R13.le_tile.le_guts.lp1.lut41";
+defparam ii0751.PCK_LOCATION = "C33R13.lp1.lut41";
+defparam ii0751.config_data = "B8B8";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0714|dx_net  ),
+	. di ( \ii0729|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -10182,10 +10648,20 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15] .PLACE_LOCATION = "C33R14.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15] .PCK_LOCATION = "C33R14.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15] .PCK_LOCATION = "C33R15.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[15] .is_en_used = "true";
+LUT4 ii0752 (
+	. dx ( \ii0752|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[8]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[6]|qx_net  ),
+	. f0 ( )
+);
+defparam ii0752.PLACE_LOCATION = "C35R13.le_tile.le_guts.lp0.lut41";
+defparam ii0752.PCK_LOCATION = "C35R13.lp0.lut41";
+defparam ii0752.config_data = "B8B8";
 REG \u_sdram_to_RGB_dma_addr__reg[12]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[12]|qx_net  ),
 	. qs ( ),
@@ -10213,16 +10689,16 @@ defparam \u_sdram_to_RGB_dma_addr__reg[12] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[12] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[12] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[12] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[12] .PLACE_LOCATION = "C37R14.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_dma_addr__reg[12] .PLACE_LOCATION = "C39R15.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_dma_addr__reg[12] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[12] .PCK_LOCATION = "C37R14.lp2.reg1";
+defparam \u_sdram_to_RGB_dma_addr__reg[12] .PCK_LOCATION = "C39R15.lp0.reg1";
 defparam \u_sdram_to_RGB_dma_addr__reg[12] .is_en_used = "false";
 REG \u_colorgen_h_cnt__reg[5]  (
 	. qx ( \u_colorgen_h_cnt__reg[5]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0466|dx_net  ),
+	. di ( \ii0473|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -10244,10 +10720,30 @@ defparam \u_colorgen_h_cnt__reg[5] .le_sh0_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[5] .le_sh1_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[5] .use_reg_fdbk = "false";
 defparam \u_colorgen_h_cnt__reg[5] .is_le_clk_inv = "false";
-defparam \u_colorgen_h_cnt__reg[5] .PLACE_LOCATION = "C17R17.le_tile.le_guts.lp1.reg0";
+defparam \u_colorgen_h_cnt__reg[5] .PLACE_LOCATION = "C35R18.le_tile.le_guts.lp1.reg1";
 defparam \u_colorgen_h_cnt__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_h_cnt__reg[5] .PCK_LOCATION = "C17R17.lp1.reg0";
+defparam \u_colorgen_h_cnt__reg[5] .PCK_LOCATION = "C35R18.lp1.reg1";
 defparam \u_colorgen_h_cnt__reg[5] .is_en_used = "false";
+LUT4 ii0753 (
+	. dx ( \ii0753|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_addr__reg[9]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7]|qx_net  ),
+	. f0 ( )
+);
+defparam ii0753.PLACE_LOCATION = "C43R14.le_tile.le_guts.lp2.lut0";
+defparam ii0753.PCK_LOCATION = "C43R14.lp2.lut0";
+defparam ii0753.config_data = "B8B8";
+LUT4 ii0754 (
+	. dx ( \ii0754|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ),
+	. f2 ( \ii0625|dx_net  ),
+	. f1 ( \ii0613|dx_net  ),
+	. f0 ( \ii0630|dx_net  )
+);
+defparam ii0754.PLACE_LOCATION = "C43R18.le_tile.le_guts.lp2.lut0";
+defparam ii0754.PCK_LOCATION = "C43R18.lp2.lut0";
+defparam ii0754.config_data = "00E4";
 M7S_IO_DDR dedicated_io_cell_u255_inst (
 	. id_q_1 ( )
 ,
@@ -10416,9 +10912,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[1] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[1] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[1] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[1] .PCK_LOCATION = "C49R4.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[1] .PCK_LOCATION = "C49R5.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[1] .is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[25]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[25]|qx_net  ),
@@ -10447,10 +10943,59 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[25] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[25] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[25] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[25] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[25] .PLACE_LOCATION = "C37R14.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[25] .PLACE_LOCATION = "C33R13.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[25] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[25] .PCK_LOCATION = "C37R14.lp0.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[25] .PCK_LOCATION = "C33R13.lp3.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[25] .is_en_used = "false";
+LUT4 ii0755 (
+	. dx ( \ii0755|dx_net  ),
+	. f3 ( \ii0597|dx_net  ),
+	. f2 ( \ii0626|dx_net  ),
+	. f1 ( \ii0623|dx_net  ),
+	. f0 ( \ii0648|dx_net  )
+);
+defparam ii0755.PLACE_LOCATION = "C37R15.le_tile.le_guts.lp3.lut0";
+defparam ii0755.PCK_LOCATION = "C37R15.lp3.lut0";
+defparam ii0755.config_data = "8000";
+LUT4 ii0756 (
+	. dx ( \ii0756|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f2 ( \ii0625|dx_net  ),
+	. f1 ( \ii0754|dx_net  ),
+	. f0 ( \ii0755|dx_net  )
+);
+defparam ii0756.PLACE_LOCATION = "C37R19.le_tile.le_guts.lp1.lut0";
+defparam ii0756.PCK_LOCATION = "C37R19.lp1.lut0";
+defparam ii0756.config_data = "AEEE";
+LUT4 ii0757 (
+	. dx ( \ii0757|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f2 ( \ii0630|dx_net  ),
+	. f1 ( \ii0648|dx_net  ),
+	. f0 ( )
+);
+defparam ii0757.PLACE_LOCATION = "C43R18.le_tile.le_guts.lp0.lut0";
+defparam ii0757.PCK_LOCATION = "C43R18.lp0.lut0";
+defparam ii0757.config_data = "BABA";
+LUT4C ii0758 (
+	. dx ( ),
+	. s ( ),
+	. co ( \ii0758|co_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
+	. f1 ( \ii0596|dx_net  ),
+	. f0 ( \ii0606|dx_net  ),
+	. ci ( \GND_0_inst|Y_net  ),
+	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  )
+);
+defparam ii0758.PLACE_LOCATION = "C37R16.le_tile.le_guts.lp0.lut40";
+defparam ii0758.is_le_cin_inv = "false";
+defparam ii0758.le_skip_en = "false";
+defparam ii0758.is_le_cin_below = "false";
+defparam ii0758.PCK_LOCATION = "C37R16.lp0.lut40";
+defparam ii0758.is_byp_used = "false";
+defparam ii0758.is_ca_not_inv = "true";
+defparam ii0758.config_data = "5D5A";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14]|qx_net  ),
 	. qs ( ),
@@ -10478,18 +11023,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14] .PCK_LOCATION = "C49R4.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14] .PCK_LOCATION = "C49R4.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[14] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0698|dx_net  ),
+	. di ( \ii0712|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -10509,16 +11054,54 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7] .PLACE_LOCATION = "C35R14.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7] .PLACE_LOCATION = "C35R10.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7] .PCK_LOCATION = "C35R14.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7] .PCK_LOCATION = "C35R10.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_lo__reg[7] .is_en_used = "true";
+LUT4C ii0760 (
+	. dx ( ),
+	. s ( \ii0760|s_net  ),
+	. co ( \ii0760|co_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ),
+	. f2 ( \ii0606|dx_net  ),
+	. f1 ( \ii0607|dx_net  ),
+	. f0 ( \ii0598|dx_net  ),
+	. ci ( \ii0759|co_net  ),
+	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  )
+);
+defparam ii0760.PLACE_LOCATION = "C37R16.le_tile.le_guts.lp2.lut40";
+defparam ii0760.is_le_cin_inv = "false";
+defparam ii0760.le_skip_en = "false";
+defparam ii0760.is_le_cin_below = "false";
+defparam ii0760.PCK_LOCATION = "C37R16.lp2.lut40";
+defparam ii0760.is_byp_used = "false";
+defparam ii0760.is_ca_not_inv = "true";
+defparam ii0760.config_data = "DCDE";
+LUT4C ii0759 (
+	. dx ( ),
+	. s ( \ii0759|s_net  ),
+	. co ( \ii0759|co_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
+	. f1 ( \ii0596|dx_net  ),
+	. f0 ( \ii0606|dx_net  ),
+	. ci ( \ii0758|co_net  ),
+	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  )
+);
+defparam ii0759.PLACE_LOCATION = "C37R16.le_tile.le_guts.lp1.lut40";
+defparam ii0759.is_le_cin_inv = "false";
+defparam ii0759.le_skip_en = "false";
+defparam ii0759.is_le_cin_below = "false";
+defparam ii0759.PCK_LOCATION = "C37R16.lp1.lut40";
+defparam ii0759.is_byp_used = "false";
+defparam ii0759.is_ca_not_inv = "true";
+defparam ii0759.config_data = "3B3C";
 REG \u_sdram_to_RGB_addr_cnt__reg[7]  (
 	. qx ( \u_sdram_to_RGB_addr_cnt__reg[7]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0507|dx_net  ),
+	. di ( \ii0516|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
 	. mclk_b ( ),
@@ -10540,28 +11123,37 @@ defparam \u_sdram_to_RGB_addr_cnt__reg[7] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_addr_cnt__reg[7] .PLACE_LOCATION = "C37R19.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[7] .PLACE_LOCATION = "C37R22.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_addr_cnt__reg[7] .PCK_LOCATION = "C37R19.lp1.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[7] .PCK_LOCATION = "C37R22.lp1.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[7] .is_en_used = "true";
-LUT4 ii0761 (
-	. dx ( \ii0761|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \ii0744|s_net  ),
-	. f1 ( \ii0613|dx_net  ),
-	. f0 ( \ii0740|dx_net  )
+LUT4C ii0761 (
+	. dx ( ),
+	. s ( \ii0761|s_net  ),
+	. co ( \ii0761|co_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ),
+	. f2 ( \ii0613|dx_net  ),
+	. f1 ( ),
+	. f0 ( ),
+	. ci ( \ii0760|co_net  ),
+	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  )
 );
-defparam ii0761.PLACE_LOCATION = "C29R14.le_tile.le_guts.lp3.lut0";
-defparam ii0761.PCK_LOCATION = "C29R14.lp3.lut0";
-defparam ii0761.config_data = "AEEE";
+defparam ii0761.PLACE_LOCATION = "C37R16.le_tile.le_guts.lp3.lut40";
+defparam ii0761.is_le_cin_inv = "false";
+defparam ii0761.le_skip_en = "false";
+defparam ii0761.is_le_cin_below = "false";
+defparam ii0761.PCK_LOCATION = "C37R16.lp3.lut40";
+defparam ii0761.is_byp_used = "false";
+defparam ii0761.is_ca_not_inv = "true";
+defparam ii0761.config_data = "9999";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0715|dx_net  ),
+	. di ( \ii0730|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -10581,16 +11173,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16] .PLACE_LOCATION = "C37R15.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16] .PCK_LOCATION = "C37R15.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16] .PCK_LOCATION = "C33R15.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[16] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0699|dx_net  ),
+	. di ( \ii0713|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -10612,20 +11204,29 @@ defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0] .PLACE_LOCATION = "C29R10.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0] .PLACE_LOCATION = "C45R12.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0] .PCK_LOCATION = "C29R10.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0] .PCK_LOCATION = "C45R12.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[0] .is_en_used = "false";
-LUT4 ii0762 (
-	. dx ( \ii0762|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \ii0745|s_net  ),
-	. f1 ( \ii0613|dx_net  ),
-	. f0 ( \ii0740|dx_net  )
+LUT4C ii0762 (
+	. dx ( ),
+	. s ( \ii0762|s_net  ),
+	. co ( \ii0762|co_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4]|qx_net  ),
+	. f2 ( ),
+	. f1 ( ),
+	. f0 ( ),
+	. ci ( \ii0761|co_net  ),
+	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4]|qx_net  )
 );
-defparam ii0762.PLACE_LOCATION = "C35R11.le_tile.le_guts.lp2.lut0";
-defparam ii0762.PCK_LOCATION = "C35R11.lp2.lut0";
-defparam ii0762.config_data = "AEEE";
+defparam ii0762.PLACE_LOCATION = "C37R17.le_tile.le_guts.lp0.lut40";
+defparam ii0762.is_le_cin_inv = "false";
+defparam ii0762.le_skip_en = "false";
+defparam ii0762.is_le_cin_below = "false";
+defparam ii0762.PCK_LOCATION = "C37R17.lp0.lut40";
+defparam ii0762.is_byp_used = "false";
+defparam ii0762.is_ca_not_inv = "true";
+defparam ii0762.config_data = "5555";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[0]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[0]|qx_net  ),
 	. qs ( ),
@@ -10653,9 +11254,9 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[0] .PLACE_LOCATION = "C33R19.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[0] .PLACE_LOCATION = "C33R19.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[0] .PCK_LOCATION = "C33R19.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[0] .PCK_LOCATION = "C33R19.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[0] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[13]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[13]|qx_net  ),
@@ -10684,16 +11285,16 @@ defparam \u_sdram_to_RGB_dma_addr__reg[13] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[13] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[13] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[13] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[13] .PLACE_LOCATION = "C37R14.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_dma_addr__reg[13] .PLACE_LOCATION = "C37R15.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[13] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[13] .PCK_LOCATION = "C37R14.lp3.reg1";
+defparam \u_sdram_to_RGB_dma_addr__reg[13] .PCK_LOCATION = "C37R15.lp2.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[13] .is_en_used = "false";
 REG \u_colorgen_h_cnt__reg[6]  (
 	. qx ( \u_colorgen_h_cnt__reg[6]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0467|dx_net  ),
+	. di ( \ii0474|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -10715,56 +11316,54 @@ defparam \u_colorgen_h_cnt__reg[6] .le_sh0_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[6] .le_sh1_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[6] .use_reg_fdbk = "false";
 defparam \u_colorgen_h_cnt__reg[6] .is_le_clk_inv = "false";
-defparam \u_colorgen_h_cnt__reg[6] .PLACE_LOCATION = "C17R17.le_tile.le_guts.lp0.reg0";
+defparam \u_colorgen_h_cnt__reg[6] .PLACE_LOCATION = "C33R17.le_tile.le_guts.lp2.reg1";
 defparam \u_colorgen_h_cnt__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_h_cnt__reg[6] .PCK_LOCATION = "C17R17.lp0.reg0";
+defparam \u_colorgen_h_cnt__reg[6] .PCK_LOCATION = "C33R17.lp2.reg1";
 defparam \u_colorgen_h_cnt__reg[6] .is_en_used = "false";
-LUT4 ii0763 (
-	. dx ( \ii0763|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \ii0746|s_net  ),
-	. f1 ( \ii0613|dx_net  ),
-	. f0 ( \ii0740|dx_net  )
-);
-defparam ii0763.PLACE_LOCATION = "C37R11.le_tile.le_guts.lp0.lut41";
-defparam ii0763.PCK_LOCATION = "C37R11.lp0.lut41";
-defparam ii0763.config_data = "AEEE";
-LUT4 ii0764 (
-	. dx ( \ii0764|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \ii0747|s_net  ),
-	. f1 ( \ii0740|dx_net  ),
-	. f0 ( )
-);
-defparam ii0764.PLACE_LOCATION = "C35R15.le_tile.le_guts.lp0.lut0";
-defparam ii0764.PCK_LOCATION = "C35R15.lp0.lut0";
-defparam ii0764.config_data = "AEAE";
-LUT4 ii0450 (
-	. dx ( \ii0450|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
+LUT4C ii0763 (
+	. dx ( ),
+	. s ( \ii0763|s_net  ),
+	. co ( \ii0763|co_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5]|qx_net  ),
+	. f2 ( ),
 	. f1 ( ),
-	. f0 ( )
+	. f0 ( ),
+	. ci ( \ii0762|co_net  ),
+	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5]|qx_net  )
 );
-defparam ii0450.PLACE_LOCATION = "C33R16.le_tile.le_guts.lp1.lut0";
-defparam ii0450.PCK_LOCATION = "C33R16.lp1.lut0";
-defparam ii0450.config_data = "4444";
-LUT4 ii0449 (
-	. dx ( \ii0449|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
+defparam ii0763.PLACE_LOCATION = "C37R17.le_tile.le_guts.lp1.lut40";
+defparam ii0763.is_le_cin_inv = "false";
+defparam ii0763.le_skip_en = "false";
+defparam ii0763.is_le_cin_below = "false";
+defparam ii0763.PCK_LOCATION = "C37R17.lp1.lut40";
+defparam ii0763.is_byp_used = "false";
+defparam ii0763.is_ca_not_inv = "true";
+defparam ii0763.config_data = "5555";
+LUT4C ii0764 (
+	. dx ( ),
+	. s ( \ii0764|s_net  ),
+	. co ( \ii0764|co_net  ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6]|qx_net  ),
+	. f2 ( ),
 	. f1 ( ),
-	. f0 ( )
+	. f0 ( ),
+	. ci ( \ii0763|co_net  ),
+	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6]|qx_net  )
 );
-defparam ii0449.PLACE_LOCATION = "C33R17.le_tile.le_guts.lp1.lut0";
-defparam ii0449.PCK_LOCATION = "C33R17.lp1.lut0";
-defparam ii0449.config_data = "8888";
+defparam ii0764.PLACE_LOCATION = "C37R17.le_tile.le_guts.lp2.lut40";
+defparam ii0764.is_le_cin_inv = "false";
+defparam ii0764.le_skip_en = "false";
+defparam ii0764.is_le_cin_below = "false";
+defparam ii0764.PCK_LOCATION = "C37R17.lp2.lut40";
+defparam ii0764.is_byp_used = "false";
+defparam ii0764.is_ca_not_inv = "true";
+defparam ii0764.config_data = "5555";
 REG u_sdram_to_RGB_u_ahb_master_hwrite_o__reg (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwrite_o__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0707|dx_net  ),
+	. di ( \ii0722|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -10786,9 +11385,9 @@ defparam u_sdram_to_RGB_u_ahb_master_hwrite_o__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_u_ahb_master_hwrite_o__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_u_ahb_master_hwrite_o__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_u_ahb_master_hwrite_o__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_u_ahb_master_hwrite_o__reg.PLACE_LOCATION = "C45R11.le_tile.le_guts.lp1.reg0";
+defparam u_sdram_to_RGB_u_ahb_master_hwrite_o__reg.PLACE_LOCATION = "C43R14.le_tile.le_guts.lp2.reg0";
 defparam u_sdram_to_RGB_u_ahb_master_hwrite_o__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_u_ahb_master_hwrite_o__reg.PCK_LOCATION = "C45R11.lp1.reg0";
+defparam u_sdram_to_RGB_u_ahb_master_hwrite_o__reg.PCK_LOCATION = "C43R14.lp2.reg0";
 defparam u_sdram_to_RGB_u_ahb_master_hwrite_o__reg.is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2]|qx_net  ),
@@ -10817,16 +11416,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2] .PCK_LOCATION = "C49R5.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2] .PCK_LOCATION = "C49R5.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[2] .is_en_used = "false";
 REG u_sdram_to_RGB_buffer_rd_sel__reg (
 	. qx ( \u_sdram_to_RGB_buffer_rd_sel__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0519|dx_net  ),
+	. di ( \ii0528|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -10848,9 +11447,9 @@ defparam u_sdram_to_RGB_buffer_rd_sel__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_buffer_rd_sel__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_buffer_rd_sel__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_buffer_rd_sel__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_buffer_rd_sel__reg.PLACE_LOCATION = "C33R17.le_tile.le_guts.lp0.reg0";
+defparam u_sdram_to_RGB_buffer_rd_sel__reg.PLACE_LOCATION = "C33R16.le_tile.le_guts.lp2.reg0";
 defparam u_sdram_to_RGB_buffer_rd_sel__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_buffer_rd_sel__reg.PCK_LOCATION = "C33R17.lp0.reg0";
+defparam u_sdram_to_RGB_buffer_rd_sel__reg.PCK_LOCATION = "C33R16.lp2.reg0";
 defparam u_sdram_to_RGB_buffer_rd_sel__reg.is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[26]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[26]|qx_net  ),
@@ -10879,9 +11478,9 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[26] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[26] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[26] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[26] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[26] .PLACE_LOCATION = "C29R9.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[26] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[26] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[26] .PCK_LOCATION = "C29R9.lp0.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[26] .PCK_LOCATION = "C33R12.lp3.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[26] .is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[0]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[0]|qx_net  ),
@@ -10910,20 +11509,29 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[0] .PLACE_LOCATION = "C29R8.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[0] .PLACE_LOCATION = "C29R13.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[0] .PCK_LOCATION = "C29R8.lp2.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[0] .PCK_LOCATION = "C29R13.lp0.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[0] .is_en_used = "false";
-LUT4 ii0765 (
-	. dx ( \ii0765|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \ii0748|s_net  ),
-	. f1 ( \ii0740|dx_net  ),
-	. f0 ( )
+LUT4C ii0765 (
+	. dx ( ),
+	. s ( \ii0765|s_net  ),
+	. co ( ),
+	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7]|qx_net  ),
+	. f2 ( ),
+	. f1 ( ),
+	. f0 ( ),
+	. ci ( \ii0764|co_net  ),
+	. ca ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7]|qx_net  )
 );
-defparam ii0765.PLACE_LOCATION = "C35R15.le_tile.le_guts.lp0.lut41";
-defparam ii0765.PCK_LOCATION = "C35R15.lp0.lut41";
-defparam ii0765.config_data = "AEAE";
+defparam ii0765.PLACE_LOCATION = "C37R17.le_tile.le_guts.lp3.lut40";
+defparam ii0765.is_le_cin_inv = "false";
+defparam ii0765.le_skip_en = "false";
+defparam ii0765.is_le_cin_below = "false";
+defparam ii0765.PCK_LOCATION = "C37R17.lp3.lut40";
+defparam ii0765.is_byp_used = "false";
+defparam ii0765.is_ca_not_inv = "true";
+defparam ii0765.config_data = "5555";
 REG \u_sdram_to_RGB_buffer_rd_sel_r__reg[0]  (
 	. qx ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[0]|qx_net  ),
 	. qs ( ),
@@ -10951,60 +11559,10 @@ defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[0] .PLACE_LOCATION = "C33R17.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[0] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[0] .PCK_LOCATION = "C33R17.lp0.reg1";
+defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[0] .PCK_LOCATION = "C33R16.lp1.reg1";
 defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[0] .is_en_used = "false";
-LUT4 ii0766 (
-	. dx ( \ii0766|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \ii0749|s_net  ),
-	. f1 ( \ii0740|dx_net  ),
-	. f0 ( )
-);
-defparam ii0766.PLACE_LOCATION = "C35R12.le_tile.le_guts.lp0.lut0";
-defparam ii0766.PCK_LOCATION = "C35R12.lp0.lut0";
-defparam ii0766.config_data = "AEAE";
-LUT4 ii0452 (
-	. dx ( \ii0452|dx_net  ),
-	. f3 ( \u_pll_pll_u0|locked_net  ),
-	. f2 ( \io_cell_rstn_i_inst|id_q_net  ),
-	. f1 ( ),
-	. f0 ( )
-);
-defparam ii0452.PLACE_LOCATION = "C39R19.le_tile.le_guts.lp0.lut0";
-defparam ii0452.PCK_LOCATION = "C39R19.lp0.lut0";
-defparam ii0452.config_data = "7777";
-LUT4 ii0767 (
-	. dx ( \ii0767|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
-	. f2 ( \ii0750|s_net  ),
-	. f1 ( \ii0740|dx_net  ),
-	. f0 ( )
-);
-defparam ii0767.PLACE_LOCATION = "C35R12.le_tile.le_guts.lp0.lut41";
-defparam ii0767.PCK_LOCATION = "C35R12.lp0.lut41";
-defparam ii0767.config_data = "AEAE";
-LUT4 ii0453 (
-	. dx ( \ii0453|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[6]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[7]|qx_net  ),
-	. f1 ( \u_colorgen_h_cnt__reg[9]|qx_net  ),
-	. f0 ( )
-);
-defparam ii0453.PLACE_LOCATION = "C17R16.le_tile.le_guts.lp2.lut40";
-defparam ii0453.PCK_LOCATION = "C17R16.lp2.lut40";
-defparam ii0453.config_data = "0101";
-LUT4 ii0454 (
-	. dx ( \ii0454|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[10]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[8]|qx_net  ),
-	. f1 ( \u_colorgen_h_cnt__reg[9]|qx_net  ),
-	. f0 ( \ii0453|dx_net  )
-);
-defparam ii0454.PLACE_LOCATION = "C17R16.le_tile.le_guts.lp3.lut0";
-defparam ii0454.PCK_LOCATION = "C17R16.lp3.lut0";
-defparam ii0454.config_data = "00A8";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15]|qx_net  ),
 	. qs ( ),
@@ -11032,26 +11590,26 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15] .PCK_LOCATION = "C49R4.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15] .PCK_LOCATION = "C49R4.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[15] .is_en_used = "false";
 LUT4 ii0455 (
 	. dx ( \ii0455|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[0]|qx_net  ),
-	. f2 ( \ii0454|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel__reg|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0455.PLACE_LOCATION = "C23R16.le_tile.le_guts.lp1.lut0";
-defparam ii0455.PCK_LOCATION = "C23R16.lp1.lut0";
-defparam ii0455.config_data = "1111";
+defparam ii0455.PLACE_LOCATION = "C29R16.le_tile.le_guts.lp1.lut0";
+defparam ii0455.PCK_LOCATION = "C29R16.lp1.lut0";
+defparam ii0455.config_data = "8888";
 REG \u_sdram_to_RGB_addr_cnt__reg[8]  (
 	. qx ( \u_sdram_to_RGB_addr_cnt__reg[8]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0508|dx_net  ),
+	. di ( \ii0517|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
 	. mclk_b ( ),
@@ -11073,10 +11631,20 @@ defparam \u_sdram_to_RGB_addr_cnt__reg[8] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_addr_cnt__reg[8] .PLACE_LOCATION = "C37R19.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[8] .PLACE_LOCATION = "C35R22.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_addr_cnt__reg[8] .PCK_LOCATION = "C37R19.lp0.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[8] .PCK_LOCATION = "C35R22.lp1.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[8] .is_en_used = "true";
+LUT4 ii0456 (
+	. dx ( \ii0456|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel__reg|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
+	. f1 ( ),
+	. f0 ( )
+);
+defparam ii0456.PLACE_LOCATION = "C29R16.le_tile.le_guts.lp3.lut0";
+defparam ii0456.PCK_LOCATION = "C29R16.lp3.lut0";
+defparam ii0456.config_data = "4444";
 M7S_IO_DDR dedicated_io_cell_u245_inst (
 	. id_q_1 ( )
 ,
@@ -11223,9 +11791,9 @@ REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17]  (
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0716|dx_net  ),
+	. di ( \ii0731|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -11245,16 +11813,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17] .PLACE_LOCATION = "C45R12.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17] .PCK_LOCATION = "C45R12.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17] .PCK_LOCATION = "C33R15.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[17] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0701|dx_net  ),
+	. di ( \ii0715|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -11276,20 +11844,10 @@ defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1] .PLACE_LOCATION = "C33R11.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1] .PLACE_LOCATION = "C45R11.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1] .PCK_LOCATION = "C33R11.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1] .PCK_LOCATION = "C45R11.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[1] .is_en_used = "false";
-LUT4 ii0457 (
-	. dx ( \ii0457|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[1]|qx_net  ),
-	. f1 ( \u_colorgen_h_cnt__reg[2]|qx_net  ),
-	. f0 ( \u_colorgen_h_cnt__reg[3]|qx_net  )
-);
-defparam ii0457.PLACE_LOCATION = "C23R17.le_tile.le_guts.lp1.lut0";
-defparam ii0457.PCK_LOCATION = "C23R17.lp1.lut0";
-defparam ii0457.config_data = "8000";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[1]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[1]|qx_net  ),
 	. qs ( ),
@@ -11317,9 +11875,9 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[1] .PLACE_LOCATION = "C35R20.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[1] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[1] .PCK_LOCATION = "C35R20.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[1] .PCK_LOCATION = "C33R16.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[1] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[14]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[14]|qx_net  ),
@@ -11348,16 +11906,16 @@ defparam \u_sdram_to_RGB_dma_addr__reg[14] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[14] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[14] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[14] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[14] .PLACE_LOCATION = "C37R14.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_dma_addr__reg[14] .PLACE_LOCATION = "C37R15.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[14] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[14] .PCK_LOCATION = "C37R14.lp0.reg1";
+defparam \u_sdram_to_RGB_dma_addr__reg[14] .PCK_LOCATION = "C37R15.lp3.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[14] .is_en_used = "false";
 REG \u_colorgen_h_cnt__reg[7]  (
 	. qx ( \u_colorgen_h_cnt__reg[7]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0468|dx_net  ),
+	. di ( \ii0475|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -11379,40 +11937,40 @@ defparam \u_colorgen_h_cnt__reg[7] .le_sh0_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[7] .le_sh1_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[7] .use_reg_fdbk = "false";
 defparam \u_colorgen_h_cnt__reg[7] .is_le_clk_inv = "false";
-defparam \u_colorgen_h_cnt__reg[7] .PLACE_LOCATION = "C17R16.le_tile.le_guts.lp3.reg0";
+defparam \u_colorgen_h_cnt__reg[7] .PLACE_LOCATION = "C33R17.le_tile.le_guts.lp0.reg0";
 defparam \u_colorgen_h_cnt__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_h_cnt__reg[7] .PCK_LOCATION = "C17R16.lp3.reg0";
+defparam \u_colorgen_h_cnt__reg[7] .PCK_LOCATION = "C33R17.lp0.reg0";
 defparam \u_colorgen_h_cnt__reg[7] .is_en_used = "false";
 LUT4 ii0458 (
 	. dx ( \ii0458|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[4]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[5]|qx_net  ),
-	. f1 ( \ii0457|dx_net  ),
+	. f3 ( \u_pll_pll_u0|locked_net  ),
+	. f2 ( \io_cell_rstn_i_inst|id_q_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0458.PLACE_LOCATION = "C17R17.le_tile.le_guts.lp1.lut40";
-defparam ii0458.PCK_LOCATION = "C17R17.lp1.lut40";
-defparam ii0458.config_data = "8080";
+defparam ii0458.PLACE_LOCATION = "C39R17.le_tile.le_guts.lp3.lut0";
+defparam ii0458.PCK_LOCATION = "C39R17.lp3.lut0";
+defparam ii0458.config_data = "7777";
 LUT4 ii0460 (
 	. dx ( \ii0460|dx_net  ),
 	. f3 ( \u_colorgen_h_cnt__reg[10]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[9]|qx_net  ),
-	. f1 ( \ii0454|dx_net  ),
+	. f2 ( \u_colorgen_h_cnt__reg[8]|qx_net  ),
+	. f1 ( \u_colorgen_h_cnt__reg[9]|qx_net  ),
 	. f0 ( \ii0459|dx_net  )
 );
-defparam ii0460.PLACE_LOCATION = "C19R17.le_tile.le_guts.lp1.lut0";
-defparam ii0460.PCK_LOCATION = "C19R17.lp1.lut0";
-defparam ii0460.config_data = "0E0A";
+defparam ii0460.PLACE_LOCATION = "C33R18.le_tile.le_guts.lp1.lut0";
+defparam ii0460.PCK_LOCATION = "C33R18.lp1.lut0";
+defparam ii0460.config_data = "00A8";
 LUT4 ii0459 (
 	. dx ( \ii0459|dx_net  ),
 	. f3 ( \u_colorgen_h_cnt__reg[6]|qx_net  ),
 	. f2 ( \u_colorgen_h_cnt__reg[7]|qx_net  ),
-	. f1 ( \u_colorgen_h_cnt__reg[8]|qx_net  ),
-	. f0 ( \ii0458|dx_net  )
+	. f1 ( \u_colorgen_h_cnt__reg[9]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0459.PLACE_LOCATION = "C17R16.le_tile.le_guts.lp0.lut0";
-defparam ii0459.PCK_LOCATION = "C17R16.lp0.lut0";
-defparam ii0459.config_data = "8000";
+defparam ii0459.PLACE_LOCATION = "C33R18.le_tile.le_guts.lp2.lut0";
+defparam ii0459.PCK_LOCATION = "C33R18.lp2.lut0";
+defparam ii0459.config_data = "0101";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3]|qx_net  ),
 	. qs ( ),
@@ -11440,9 +11998,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3] .PCK_LOCATION = "C49R5.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3] .PCK_LOCATION = "C49R5.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[3] .is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[27]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[27]|qx_net  ),
@@ -11471,9 +12029,9 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[27] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[27] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[27] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[27] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[27] .PLACE_LOCATION = "C29R8.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[27] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[27] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[27] .PCK_LOCATION = "C29R8.lp1.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[27] .PCK_LOCATION = "C33R12.lp0.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[27] .is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[1]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[1]|qx_net  ),
@@ -11502,20 +12060,20 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[1] .PLACE_LOCATION = "C29R8.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[1] .PLACE_LOCATION = "C33R13.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[1] .PCK_LOCATION = "C29R8.lp0.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[1] .PCK_LOCATION = "C33R13.lp3.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[1] .is_en_used = "false";
 LUT4 ii0461 (
 	. dx ( \ii0461|dx_net  ),
 	. f3 ( \u_colorgen_h_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[1]|qx_net  ),
-	. f1 ( \ii0454|dx_net  ),
+	. f2 ( \ii0460|dx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0461.PLACE_LOCATION = "C23R17.le_tile.le_guts.lp2.lut0";
-defparam ii0461.PCK_LOCATION = "C23R17.lp2.lut0";
-defparam ii0461.config_data = "0606";
+defparam ii0461.PLACE_LOCATION = "C37R18.le_tile.le_guts.lp3.lut0";
+defparam ii0461.PCK_LOCATION = "C37R18.lp3.lut0";
+defparam ii0461.config_data = "1111";
 REG \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]  (
 	. qx ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
 	. qs ( ),
@@ -11543,40 +12101,60 @@ defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[1] .PLACE_LOCATION = "C33R18.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[1] .PLACE_LOCATION = "C33R19.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[1] .PCK_LOCATION = "C33R18.lp3.reg0";
+defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[1] .PCK_LOCATION = "C33R19.lp0.reg0";
 defparam \u_sdram_to_RGB_buffer_rd_sel_r__reg[1] .is_en_used = "false";
-LUT4 ii0462 (
-	. dx ( \ii0462|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[1]|qx_net  ),
-	. f1 ( \u_colorgen_h_cnt__reg[2]|qx_net  ),
-	. f0 ( \ii0454|dx_net  )
+LUT4 ii0776 (
+	. dx ( \ii0776|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f2 ( \ii0759|s_net  ),
+	. f1 ( \ii0754|dx_net  ),
+	. f0 ( \ii0755|dx_net  )
 );
-defparam ii0462.PLACE_LOCATION = "C23R16.le_tile.le_guts.lp1.lut41";
-defparam ii0462.PCK_LOCATION = "C23R16.lp1.lut41";
-defparam ii0462.config_data = "0078";
+defparam ii0776.PLACE_LOCATION = "C39R18.le_tile.le_guts.lp3.lut0";
+defparam ii0776.PCK_LOCATION = "C39R18.lp3.lut0";
+defparam ii0776.config_data = "AEEE";
+LUT4 ii0777 (
+	. dx ( \ii0777|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f2 ( \ii0760|s_net  ),
+	. f1 ( \ii0754|dx_net  ),
+	. f0 ( \ii0755|dx_net  )
+);
+defparam ii0777.PLACE_LOCATION = "C43R18.le_tile.le_guts.lp1.lut0";
+defparam ii0777.PCK_LOCATION = "C43R18.lp1.lut0";
+defparam ii0777.config_data = "AEEE";
 LUT4 ii0463 (
 	. dx ( \ii0463|dx_net  ),
 	. f3 ( \u_colorgen_h_cnt__reg[0]|qx_net  ),
 	. f2 ( \u_colorgen_h_cnt__reg[1]|qx_net  ),
 	. f1 ( \u_colorgen_h_cnt__reg[2]|qx_net  ),
-	. f0 ( \u_colorgen_h_cnt__reg[3]|qx_net  )
+	. f0 ( )
 );
-defparam ii0463.PLACE_LOCATION = "C23R16.le_tile.le_guts.lp0.lut0";
-defparam ii0463.PCK_LOCATION = "C23R16.lp0.lut0";
-defparam ii0463.config_data = "7F80";
+defparam ii0463.PLACE_LOCATION = "C35R17.le_tile.le_guts.lp2.lut0";
+defparam ii0463.PCK_LOCATION = "C35R17.lp2.lut0";
+defparam ii0463.config_data = "8080";
+LUT4 ii0778 (
+	. dx ( \ii0778|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f2 ( \ii0761|s_net  ),
+	. f1 ( \ii0754|dx_net  ),
+	. f0 ( \ii0755|dx_net  )
+);
+defparam ii0778.PLACE_LOCATION = "C37R18.le_tile.le_guts.lp0.lut0";
+defparam ii0778.PCK_LOCATION = "C37R18.lp0.lut0";
+defparam ii0778.config_data = "AEEE";
 LUT4 ii0464 (
 	. dx ( \ii0464|dx_net  ),
-	. f3 ( \ii0454|dx_net  ),
+	. f3 ( \u_colorgen_h_cnt__reg[3]|qx_net  ),
 	. f2 ( \ii0463|dx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0464.PLACE_LOCATION = "C19R16.le_tile.le_guts.lp1.lut0";
-defparam ii0464.PCK_LOCATION = "C19R16.lp1.lut0";
-defparam ii0464.config_data = "4444";
+defparam ii0464.PLACE_LOCATION = "C37R18.le_tile.le_guts.lp0.lut41";
+defparam ii0464.PCK_LOCATION = "C37R18.lp0.lut41";
+defparam ii0464.config_data = "8888";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16]|qx_net  ),
 	. qs ( ),
@@ -11604,26 +12182,46 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16] .PCK_LOCATION = "C49R4.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16] .PCK_LOCATION = "C49R4.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[16] .is_en_used = "false";
+LUT4 ii0780 (
+	. dx ( \ii0780|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f2 ( \ii0763|s_net  ),
+	. f1 ( \ii0754|dx_net  ),
+	. f0 ( \ii0755|dx_net  )
+);
+defparam ii0780.PLACE_LOCATION = "C39R20.le_tile.le_guts.lp1.lut0";
+defparam ii0780.PCK_LOCATION = "C39R20.lp1.lut0";
+defparam ii0780.config_data = "AEEE";
+LUT4 ii0779 (
+	. dx ( \ii0779|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f2 ( \ii0762|s_net  ),
+	. f1 ( \ii0754|dx_net  ),
+	. f0 ( \ii0755|dx_net  )
+);
+defparam ii0779.PLACE_LOCATION = "C39R20.le_tile.le_guts.lp0.lut0";
+defparam ii0779.PCK_LOCATION = "C39R20.lp0.lut0";
+defparam ii0779.config_data = "AEEE";
 LUT4 ii0465 (
 	. dx ( \ii0465|dx_net  ),
 	. f3 ( \u_colorgen_h_cnt__reg[4]|qx_net  ),
-	. f2 ( \ii0454|dx_net  ),
-	. f1 ( \ii0457|dx_net  ),
+	. f2 ( \u_colorgen_h_cnt__reg[5]|qx_net  ),
+	. f1 ( \ii0464|dx_net  ),
 	. f0 ( )
 );
-defparam ii0465.PLACE_LOCATION = "C19R17.le_tile.le_guts.lp0.lut0";
-defparam ii0465.PCK_LOCATION = "C19R17.lp0.lut0";
-defparam ii0465.config_data = "1212";
+defparam ii0465.PLACE_LOCATION = "C35R18.le_tile.le_guts.lp2.lut0";
+defparam ii0465.PCK_LOCATION = "C35R18.lp2.lut0";
+defparam ii0465.config_data = "8080";
 REG \u_sdram_to_RGB_addr_cnt__reg[9]  (
 	. qx ( \u_sdram_to_RGB_addr_cnt__reg[9]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0509|dx_net  ),
+	. di ( \ii0518|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
 	. mclk_b ( ),
@@ -11645,28 +12243,38 @@ defparam \u_sdram_to_RGB_addr_cnt__reg[9] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[9] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[9] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[9] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_addr_cnt__reg[9] .PLACE_LOCATION = "C39R20.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[9] .PLACE_LOCATION = "C35R23.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_addr_cnt__reg[9] .PCK_LOCATION = "C39R20.lp2.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[9] .PCK_LOCATION = "C35R23.lp2.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[9] .is_en_used = "true";
+LUT4 ii0781 (
+	. dx ( \ii0781|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f2 ( \ii0764|s_net  ),
+	. f1 ( \ii0754|dx_net  ),
+	. f0 ( \ii0755|dx_net  )
+);
+defparam ii0781.PLACE_LOCATION = "C43R19.le_tile.le_guts.lp0.lut0";
+defparam ii0781.PCK_LOCATION = "C43R19.lp0.lut0";
+defparam ii0781.config_data = "AEEE";
 LUT4 ii0466 (
 	. dx ( \ii0466|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[4]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[5]|qx_net  ),
-	. f1 ( \ii0454|dx_net  ),
-	. f0 ( \ii0457|dx_net  )
+	. f3 ( \u_colorgen_h_cnt__reg[6]|qx_net  ),
+	. f2 ( \u_colorgen_h_cnt__reg[7]|qx_net  ),
+	. f1 ( \u_colorgen_h_cnt__reg[8]|qx_net  ),
+	. f0 ( \ii0465|dx_net  )
 );
-defparam ii0466.PLACE_LOCATION = "C17R17.le_tile.le_guts.lp1.lut0";
-defparam ii0466.PCK_LOCATION = "C17R17.lp1.lut0";
-defparam ii0466.config_data = "060C";
+defparam ii0466.PLACE_LOCATION = "C33R17.le_tile.le_guts.lp3.lut41";
+defparam ii0466.PCK_LOCATION = "C33R17.lp3.lut41";
+defparam ii0466.config_data = "8000";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0717|dx_net  ),
+	. di ( \ii0732|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -11686,16 +12294,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18] .PLACE_LOCATION = "C37R15.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18] .PLACE_LOCATION = "C45R15.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18] .PCK_LOCATION = "C37R15.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18] .PCK_LOCATION = "C45R15.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[18] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0702|dx_net  ),
+	. di ( \ii0716|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -11717,16 +12325,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2] .PLACE_LOCATION = "C47R13.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2] .PCK_LOCATION = "C33R12.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2] .PCK_LOCATION = "C47R13.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hburst_o__reg[2] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[10]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[10]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0562|dx_net  ),
+	. di ( \ii0573|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -11748,20 +12356,30 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[10] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[10] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[10] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[10] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[10] .PLACE_LOCATION = "C33R33.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[10] .PLACE_LOCATION = "C37R31.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[10] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[10] .PCK_LOCATION = "C33R33.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[10] .PCK_LOCATION = "C37R31.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[10] .is_en_used = "false";
+LUT4 ii0782 (
+	. dx ( \ii0782|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
+	. f2 ( \ii0765|s_net  ),
+	. f1 ( \ii0754|dx_net  ),
+	. f0 ( \ii0755|dx_net  )
+);
+defparam ii0782.PLACE_LOCATION = "C39R20.le_tile.le_guts.lp2.lut0";
+defparam ii0782.PCK_LOCATION = "C39R20.lp2.lut0";
+defparam ii0782.config_data = "AEEE";
 LUT4 ii0467 (
 	. dx ( \ii0467|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[6]|qx_net  ),
-	. f2 ( \ii0454|dx_net  ),
-	. f1 ( \ii0458|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_colorgen_h_cnt__reg[10]|qx_net  ),
+	. f2 ( \u_colorgen_h_cnt__reg[9]|qx_net  ),
+	. f1 ( \ii0460|dx_net  ),
+	. f0 ( \ii0466|dx_net  )
 );
-defparam ii0467.PLACE_LOCATION = "C17R17.le_tile.le_guts.lp2.lut0";
-defparam ii0467.PCK_LOCATION = "C17R17.lp2.lut0";
-defparam ii0467.config_data = "1212";
+defparam ii0467.PLACE_LOCATION = "C33R18.le_tile.le_guts.lp0.lut0";
+defparam ii0467.PCK_LOCATION = "C33R18.lp0.lut0";
+defparam ii0467.config_data = "0E0A";
 M7S_EMB18K u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new (
 	. wfull ( ),
 	. wfull_almost ( ),
@@ -11776,80 +12394,80 @@ M7S_EMB18K u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new (
 	. rd_la ( )
 ,
 	. c1r4_q ( {
-		/* c1r4_q [17] (nc) */ nc15 ,
-		/* c1r4_q [16] (nc) */ nc16 ,
-		/* c1r4_q [15] (nc) */ nc17 ,
-		/* c1r4_q [14] (nc) */ nc18 ,
-		/* c1r4_q [13] (nc) */ nc19 ,
-		/* c1r4_q [12] (nc) */ nc20 ,
-		/* c1r4_q [11] (nc) */ nc21 ,
-		/* c1r4_q [10] (nc) */ nc22 ,
-		/* c1r4_q [9] (nc) */ nc23 ,
-		/* c1r4_q [8] (nc) */ nc24 ,
-		/* c1r4_q [7] (nc) */ nc25 ,
-		/* c1r4_q [6] (nc) */ nc26 ,
-		/* c1r4_q [5] (nc) */ nc27 ,
-		/* c1r4_q [4] (nc) */ nc28 ,
-		/* c1r4_q [3] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[3]_net ,
-		/* c1r4_q [2] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[2]_net ,
-		/* c1r4_q [1] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[1]_net ,
-		/* c1r4_q [0] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_3|q[0]_net 
+		/* c1r4_q [17] (nc) */ nc74 ,
+		/* c1r4_q [16] (nc) */ nc75 ,
+		/* c1r4_q [15] (nc) */ nc76 ,
+		/* c1r4_q [14] (nc) */ nc77 ,
+		/* c1r4_q [13] (nc) */ nc78 ,
+		/* c1r4_q [12] (nc) */ nc79 ,
+		/* c1r4_q [11] (nc) */ nc80 ,
+		/* c1r4_q [10] (nc) */ nc81 ,
+		/* c1r4_q [9] (nc) */ nc82 ,
+		/* c1r4_q [8] (nc) */ nc83 ,
+		/* c1r4_q [7] (nc) */ nc84 ,
+		/* c1r4_q [6] (nc) */ nc85 ,
+		/* c1r4_q [5] (nc) */ nc86 ,
+		/* c1r4_q [4] (nc) */ nc87 ,
+		/* c1r4_q [3] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[3]_net ,
+		/* c1r4_q [2] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[2]_net ,
+		/* c1r4_q [1] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[1]_net ,
+		/* c1r4_q [0] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[0]_net 
 	} ),
 	. c1r3_q ( {
-		/* c1r3_q [17] (nc) */ nc29 ,
-		/* c1r3_q [16] (nc) */ nc30 ,
-		/* c1r3_q [15] (nc) */ nc31 ,
-		/* c1r3_q [14] (nc) */ nc32 ,
-		/* c1r3_q [13] (nc) */ nc33 ,
-		/* c1r3_q [12] (nc) */ nc34 ,
-		/* c1r3_q [11] (nc) */ nc35 ,
-		/* c1r3_q [10] (nc) */ nc36 ,
-		/* c1r3_q [9] (nc) */ nc37 ,
-		/* c1r3_q [8] (nc) */ nc38 ,
-		/* c1r3_q [7] (nc) */ nc39 ,
-		/* c1r3_q [6] (nc) */ nc40 ,
-		/* c1r3_q [5] (nc) */ nc41 ,
-		/* c1r3_q [4] (nc) */ nc42 ,
-		/* c1r3_q [3] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[3]_net ,
-		/* c1r3_q [2] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[2]_net ,
-		/* c1r3_q [1] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[1]_net ,
-		/* c1r3_q [0] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_2|q[0]_net 
+		/* c1r3_q [17] (nc) */ nc88 ,
+		/* c1r3_q [16] (nc) */ nc89 ,
+		/* c1r3_q [15] (nc) */ nc90 ,
+		/* c1r3_q [14] (nc) */ nc91 ,
+		/* c1r3_q [13] (nc) */ nc92 ,
+		/* c1r3_q [12] (nc) */ nc93 ,
+		/* c1r3_q [11] (nc) */ nc94 ,
+		/* c1r3_q [10] (nc) */ nc95 ,
+		/* c1r3_q [9] (nc) */ nc96 ,
+		/* c1r3_q [8] (nc) */ nc97 ,
+		/* c1r3_q [7] (nc) */ nc98 ,
+		/* c1r3_q [6] (nc) */ nc99 ,
+		/* c1r3_q [5] (nc) */ nc100 ,
+		/* c1r3_q [4] (nc) */ nc101 ,
+		/* c1r3_q [3] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[3]_net ,
+		/* c1r3_q [2] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[2]_net ,
+		/* c1r3_q [1] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[1]_net ,
+		/* c1r3_q [0] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[0]_net 
 	} ),
 	. c1r2_q ( {
-		/* c1r2_q [17] (nc) */ nc43 ,
-		/* c1r2_q [16] (nc) */ nc44 ,
-		/* c1r2_q [15] (nc) */ nc45 ,
-		/* c1r2_q [14] (nc) */ nc46 ,
-		/* c1r2_q [13] (nc) */ nc47 ,
-		/* c1r2_q [12] (nc) */ nc48 ,
-		/* c1r2_q [11] (nc) */ nc49 ,
-		/* c1r2_q [10] (nc) */ nc50 ,
-		/* c1r2_q [9] (nc) */ nc51 ,
-		/* c1r2_q [8] (nc) */ nc52 ,
-		/* c1r2_q [7] (nc) */ nc53 ,
-		/* c1r2_q [6] (nc) */ nc54 ,
-		/* c1r2_q [5] (nc) */ nc55 ,
-		/* c1r2_q [4] (nc) */ nc56 ,
-		/* c1r2_q [3] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[3]_net ,
-		/* c1r2_q [2] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[2]_net ,
-		/* c1r2_q [1] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[1]_net ,
-		/* c1r2_q [0] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_1|q[0]_net 
+		/* c1r2_q [17] (nc) */ nc102 ,
+		/* c1r2_q [16] (nc) */ nc103 ,
+		/* c1r2_q [15] (nc) */ nc104 ,
+		/* c1r2_q [14] (nc) */ nc105 ,
+		/* c1r2_q [13] (nc) */ nc106 ,
+		/* c1r2_q [12] (nc) */ nc107 ,
+		/* c1r2_q [11] (nc) */ nc108 ,
+		/* c1r2_q [10] (nc) */ nc109 ,
+		/* c1r2_q [9] (nc) */ nc110 ,
+		/* c1r2_q [8] (nc) */ nc111 ,
+		/* c1r2_q [7] (nc) */ nc112 ,
+		/* c1r2_q [6] (nc) */ nc113 ,
+		/* c1r2_q [5] (nc) */ nc114 ,
+		/* c1r2_q [4] (nc) */ nc115 ,
+		/* c1r2_q [3] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[3]_net ,
+		/* c1r2_q [2] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[2]_net ,
+		/* c1r2_q [1] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[1]_net ,
+		/* c1r2_q [0] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[0]_net 
 	} ),
 	. c1r1_q ( {
-		/* c1r1_q [17] (nc) */ nc57 ,
-		/* c1r1_q [16] (nc) */ nc58 ,
-		/* c1r1_q [15] (nc) */ nc59 ,
-		/* c1r1_q [14] (nc) */ nc60 ,
-		/* c1r1_q [13] (nc) */ nc61 ,
-		/* c1r1_q [12] (nc) */ nc62 ,
-		/* c1r1_q [11] (nc) */ nc63 ,
-		/* c1r1_q [10] (nc) */ nc64 ,
-		/* c1r1_q [9] (nc) */ nc65 ,
-		/* c1r1_q [8] (nc) */ nc66 ,
-		/* c1r1_q [7] (nc) */ nc67 ,
-		/* c1r1_q [6] (nc) */ nc68 ,
-		/* c1r1_q [5] (nc) */ nc69 ,
-		/* c1r1_q [4] (nc) */ nc70 ,
+		/* c1r1_q [17] (nc) */ nc116 ,
+		/* c1r1_q [16] (nc) */ nc117 ,
+		/* c1r1_q [15] (nc) */ nc118 ,
+		/* c1r1_q [14] (nc) */ nc119 ,
+		/* c1r1_q [13] (nc) */ nc120 ,
+		/* c1r1_q [12] (nc) */ nc121 ,
+		/* c1r1_q [11] (nc) */ nc122 ,
+		/* c1r1_q [10] (nc) */ nc123 ,
+		/* c1r1_q [9] (nc) */ nc124 ,
+		/* c1r1_q [8] (nc) */ nc125 ,
+		/* c1r1_q [7] (nc) */ nc126 ,
+		/* c1r1_q [6] (nc) */ nc127 ,
+		/* c1r1_q [5] (nc) */ nc128 ,
+		/* c1r1_q [4] (nc) */ nc129 ,
 		/* c1r1_q [3] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_0|q[3]_net ,
 		/* c1r1_q [2] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_0|q[2]_net ,
 		/* c1r1_q [1] */ \u_sdram_to_RGB_u_1kx16_0_u_emb5k_0|q[1]_net ,
@@ -11883,8 +12501,8 @@ M7S_EMB18K u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new (
 		/* c1r4_ab [1] */ \GND_0_inst|Y_net ,
 		/* c1r4_ab [0] */ \GND_0_inst|Y_net 
 	} ),
-	. c1r4_cea ( \ii0449|dx_net  ),
-	. c1r4_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr0__reg|qx_net  ),
+	. c1r4_cea ( \ii0456|dx_net  ),
+	. c1r4_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr1__reg|qx_net  ),
 	. c1r4_clka ( \u_lvds_pll_u0|clkout0_net  ),
 	. c1r4_clkb ( \u_pll_pll_u0|clkout1_net  ),
 	. c1r4_da ( )
@@ -11892,22 +12510,22 @@ M7S_EMB18K u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new (
 	. c1r4_db ( {
 		/* c1r4_db [17] */ \GND_0_inst|Y_net ,
 		/* c1r4_db [16] */ \GND_0_inst|Y_net ,
-		/* c1r4_db [15] */ \u_sdram_to_RGB_ahm_rdata_r__reg[31]|qx_net ,
-		/* c1r4_db [14] */ \u_sdram_to_RGB_ahm_rdata_r__reg[27]|qx_net ,
-		/* c1r4_db [13] */ \u_sdram_to_RGB_ahm_rdata_r__reg[23]|qx_net ,
-		/* c1r4_db [12] */ \u_sdram_to_RGB_ahm_rdata_r__reg[19]|qx_net ,
-		/* c1r4_db [11] */ \u_sdram_to_RGB_ahm_rdata_r__reg[15]|qx_net ,
-		/* c1r4_db [10] */ \u_sdram_to_RGB_ahm_rdata_r__reg[11]|qx_net ,
-		/* c1r4_db [9] */ \u_sdram_to_RGB_ahm_rdata_r__reg[7]|qx_net ,
-		/* c1r4_db [8] */ \u_sdram_to_RGB_ahm_rdata_r__reg[3]|qx_net ,
-		/* c1r4_db [7] */ \u_sdram_to_RGB_ahm_rdata_r__reg[31]|qx_net ,
-		/* c1r4_db [6] */ \u_sdram_to_RGB_ahm_rdata_r__reg[27]|qx_net ,
-		/* c1r4_db [5] */ \u_sdram_to_RGB_ahm_rdata_r__reg[23]|qx_net ,
-		/* c1r4_db [4] */ \u_sdram_to_RGB_ahm_rdata_r__reg[19]|qx_net ,
-		/* c1r4_db [3] */ \u_sdram_to_RGB_ahm_rdata_r__reg[15]|qx_net ,
-		/* c1r4_db [2] */ \u_sdram_to_RGB_ahm_rdata_r__reg[11]|qx_net ,
-		/* c1r4_db [1] */ \u_sdram_to_RGB_ahm_rdata_r__reg[7]|qx_net ,
-		/* c1r4_db [0] */ \u_sdram_to_RGB_ahm_rdata_r__reg[3]|qx_net 
+		/* c1r4_db [15] */ \u_sdram_to_RGB_ahm_rdata_r__reg[29]|qx_net ,
+		/* c1r4_db [14] */ \u_sdram_to_RGB_ahm_rdata_r__reg[25]|qx_net ,
+		/* c1r4_db [13] */ \u_sdram_to_RGB_ahm_rdata_r__reg[21]|qx_net ,
+		/* c1r4_db [12] */ \u_sdram_to_RGB_ahm_rdata_r__reg[17]|qx_net ,
+		/* c1r4_db [11] */ \u_sdram_to_RGB_ahm_rdata_r__reg[13]|qx_net ,
+		/* c1r4_db [10] */ \u_sdram_to_RGB_ahm_rdata_r__reg[9]|qx_net ,
+		/* c1r4_db [9] */ \u_sdram_to_RGB_ahm_rdata_r__reg[5]|qx_net ,
+		/* c1r4_db [8] */ \u_sdram_to_RGB_ahm_rdata_r__reg[1]|qx_net ,
+		/* c1r4_db [7] */ \u_sdram_to_RGB_ahm_rdata_r__reg[29]|qx_net ,
+		/* c1r4_db [6] */ \u_sdram_to_RGB_ahm_rdata_r__reg[25]|qx_net ,
+		/* c1r4_db [5] */ \u_sdram_to_RGB_ahm_rdata_r__reg[21]|qx_net ,
+		/* c1r4_db [4] */ \u_sdram_to_RGB_ahm_rdata_r__reg[17]|qx_net ,
+		/* c1r4_db [3] */ \u_sdram_to_RGB_ahm_rdata_r__reg[13]|qx_net ,
+		/* c1r4_db [2] */ \u_sdram_to_RGB_ahm_rdata_r__reg[9]|qx_net ,
+		/* c1r4_db [1] */ \u_sdram_to_RGB_ahm_rdata_r__reg[5]|qx_net ,
+		/* c1r4_db [0] */ \u_sdram_to_RGB_ahm_rdata_r__reg[1]|qx_net 
 	} ),
 	. c1r4_rstna ( \VCC_0_inst|Y_net  ),
 	. c1r4_rstnb ( \VCC_0_inst|Y_net  ),
@@ -11941,8 +12559,8 @@ M7S_EMB18K u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new (
 		/* c1r3_ab [1] */ \GND_0_inst|Y_net ,
 		/* c1r3_ab [0] */ \GND_0_inst|Y_net 
 	} ),
-	. c1r3_cea ( \ii0449|dx_net  ),
-	. c1r3_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr0__reg|qx_net  ),
+	. c1r3_cea ( \ii0456|dx_net  ),
+	. c1r3_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr1__reg|qx_net  ),
 	. c1r3_clka ( \u_lvds_pll_u0|clkout0_net  ),
 	. c1r3_clkb ( \u_pll_pll_u0|clkout1_net  ),
 	. c1r3_da ( )
@@ -11999,8 +12617,8 @@ M7S_EMB18K u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new (
 		/* c1r2_ab [1] */ \GND_0_inst|Y_net ,
 		/* c1r2_ab [0] */ \GND_0_inst|Y_net 
 	} ),
-	. c1r2_cea ( \ii0449|dx_net  ),
-	. c1r2_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr0__reg|qx_net  ),
+	. c1r2_cea ( \ii0456|dx_net  ),
+	. c1r2_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr1__reg|qx_net  ),
 	. c1r2_clka ( \u_lvds_pll_u0|clkout0_net  ),
 	. c1r2_clkb ( \u_pll_pll_u0|clkout1_net  ),
 	. c1r2_da ( )
@@ -12008,22 +12626,22 @@ M7S_EMB18K u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new (
 	. c1r2_db ( {
 		/* c1r2_db [17] */ \GND_0_inst|Y_net ,
 		/* c1r2_db [16] */ \GND_0_inst|Y_net ,
-		/* c1r2_db [15] */ \u_sdram_to_RGB_ahm_rdata_r__reg[29]|qx_net ,
-		/* c1r2_db [14] */ \u_sdram_to_RGB_ahm_rdata_r__reg[25]|qx_net ,
-		/* c1r2_db [13] */ \u_sdram_to_RGB_ahm_rdata_r__reg[21]|qx_net ,
-		/* c1r2_db [12] */ \u_sdram_to_RGB_ahm_rdata_r__reg[17]|qx_net ,
-		/* c1r2_db [11] */ \u_sdram_to_RGB_ahm_rdata_r__reg[13]|qx_net ,
-		/* c1r2_db [10] */ \u_sdram_to_RGB_ahm_rdata_r__reg[9]|qx_net ,
-		/* c1r2_db [9] */ \u_sdram_to_RGB_ahm_rdata_r__reg[5]|qx_net ,
-		/* c1r2_db [8] */ \u_sdram_to_RGB_ahm_rdata_r__reg[1]|qx_net ,
-		/* c1r2_db [7] */ \u_sdram_to_RGB_ahm_rdata_r__reg[29]|qx_net ,
-		/* c1r2_db [6] */ \u_sdram_to_RGB_ahm_rdata_r__reg[25]|qx_net ,
-		/* c1r2_db [5] */ \u_sdram_to_RGB_ahm_rdata_r__reg[21]|qx_net ,
-		/* c1r2_db [4] */ \u_sdram_to_RGB_ahm_rdata_r__reg[17]|qx_net ,
-		/* c1r2_db [3] */ \u_sdram_to_RGB_ahm_rdata_r__reg[13]|qx_net ,
-		/* c1r2_db [2] */ \u_sdram_to_RGB_ahm_rdata_r__reg[9]|qx_net ,
-		/* c1r2_db [1] */ \u_sdram_to_RGB_ahm_rdata_r__reg[5]|qx_net ,
-		/* c1r2_db [0] */ \u_sdram_to_RGB_ahm_rdata_r__reg[1]|qx_net 
+		/* c1r2_db [15] */ \u_sdram_to_RGB_ahm_rdata_r__reg[31]|qx_net ,
+		/* c1r2_db [14] */ \u_sdram_to_RGB_ahm_rdata_r__reg[27]|qx_net ,
+		/* c1r2_db [13] */ \u_sdram_to_RGB_ahm_rdata_r__reg[23]|qx_net ,
+		/* c1r2_db [12] */ \u_sdram_to_RGB_ahm_rdata_r__reg[19]|qx_net ,
+		/* c1r2_db [11] */ \u_sdram_to_RGB_ahm_rdata_r__reg[15]|qx_net ,
+		/* c1r2_db [10] */ \u_sdram_to_RGB_ahm_rdata_r__reg[11]|qx_net ,
+		/* c1r2_db [9] */ \u_sdram_to_RGB_ahm_rdata_r__reg[7]|qx_net ,
+		/* c1r2_db [8] */ \u_sdram_to_RGB_ahm_rdata_r__reg[3]|qx_net ,
+		/* c1r2_db [7] */ \u_sdram_to_RGB_ahm_rdata_r__reg[31]|qx_net ,
+		/* c1r2_db [6] */ \u_sdram_to_RGB_ahm_rdata_r__reg[27]|qx_net ,
+		/* c1r2_db [5] */ \u_sdram_to_RGB_ahm_rdata_r__reg[23]|qx_net ,
+		/* c1r2_db [4] */ \u_sdram_to_RGB_ahm_rdata_r__reg[19]|qx_net ,
+		/* c1r2_db [3] */ \u_sdram_to_RGB_ahm_rdata_r__reg[15]|qx_net ,
+		/* c1r2_db [2] */ \u_sdram_to_RGB_ahm_rdata_r__reg[11]|qx_net ,
+		/* c1r2_db [1] */ \u_sdram_to_RGB_ahm_rdata_r__reg[7]|qx_net ,
+		/* c1r2_db [0] */ \u_sdram_to_RGB_ahm_rdata_r__reg[3]|qx_net 
 	} ),
 	. c1r2_rstna ( \VCC_0_inst|Y_net  ),
 	. c1r2_rstnb ( \VCC_0_inst|Y_net  ),
@@ -12057,7 +12675,7 @@ M7S_EMB18K u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new (
 		/* c1r1_ab [1] */ \GND_0_inst|Y_net ,
 		/* c1r1_ab [0] */ \GND_0_inst|Y_net 
 	} ),
-	. c1r1_cea ( \ii0449|dx_net  ),
+	. c1r1_cea ( \ii0455|dx_net  ),
 	. c1r1_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr0__reg|qx_net  ),
 	. c1r1_clka ( \u_lvds_pll_u0|clkout0_net  ),
 	. c1r1_clkb ( \u_pll_pll_u0|clkout1_net  ),
@@ -12112,12 +12730,12 @@ defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_3_portb_reg_out = 0;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.width_ext_mode = 1'b0;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_3_portb_data_width = 8;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_1_modeb_sel = 8;
-defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.PCK_LOCATION = "C31R17.emb18k_wrap.emb18k";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.PCK_LOCATION = "C31R13.emb18k_wrap.emb18k";
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_2_porta_wr_mode = 1;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_3_modea_sel = 12;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_2_portb_wr_mode = 1;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_2_porta_prog = 240;
-defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_2_inst = "u_sdram_to_RGB_u_1kx16_0_u_emb5k_1";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_2_inst = "u_sdram_to_RGB_u_1kx16_1_u_emb5k_3";
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_3_portb_prog = 15;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_3_reset_value_a = 0;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_4_portb_data_width = 8;
@@ -12135,7 +12753,7 @@ defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_1_porta_data_width = 4;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_1_portb_prog = 15;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_4_operation_mode = "simple_dual_port";
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_2_reset_value_a = 0;
-defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_4_inst = "u_sdram_to_RGB_u_1kx16_0_u_emb5k_3";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_4_inst = "u_sdram_to_RGB_u_1kx16_1_u_emb5k_1";
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_2_reset_value_b = 0;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_1_porta_reg_out = 0;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_1_portb_reg_out = 0;
@@ -12164,9 +12782,9 @@ defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_4_init_file = "";
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_4_portb_reg_out = 0;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_1_portb_data_width = 8;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_2_portb_prog = 15;
-defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_3_inst = "u_sdram_to_RGB_u_1kx16_0_u_emb5k_2";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_3_inst = "u_sdram_to_RGB_u_1kx16_1_u_emb5k_2";
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_4_porta_data_width = 4;
-defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.PLACE_LOCATION = "C31R17.emb_guts.emb18k_wrap.emb18k";
+defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.PLACE_LOCATION = "C31R13.emb_guts.emb18k_wrap.emb18k";
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.ae_level = 15'h0;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_2_modea_sel = 12;
 defparam u_sdram_to_RGB_u_1kx16_0_u_emb5k_0_new.emb5k_3_porta_wr_mode = 1;
@@ -12197,9 +12815,9 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[2] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[2] .PLACE_LOCATION = "C29R18.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[2] .PLACE_LOCATION = "C29R16.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[2] .PCK_LOCATION = "C29R18.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[2] .PCK_LOCATION = "C29R16.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[2] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[15]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[15]|qx_net  ),
@@ -12228,16 +12846,16 @@ defparam \u_sdram_to_RGB_dma_addr__reg[15] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[15] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[15] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[15] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[15] .PLACE_LOCATION = "C35R15.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[15] .PLACE_LOCATION = "C37R15.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_dma_addr__reg[15] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[15] .PCK_LOCATION = "C35R15.lp1.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[15] .PCK_LOCATION = "C37R15.lp0.reg1";
 defparam \u_sdram_to_RGB_dma_addr__reg[15] .is_en_used = "false";
 REG \u_colorgen_h_cnt__reg[8]  (
 	. qx ( \u_colorgen_h_cnt__reg[8]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0470|dx_net  ),
+	. di ( \ii0477|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -12259,40 +12877,40 @@ defparam \u_colorgen_h_cnt__reg[8] .le_sh0_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[8] .le_sh1_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[8] .use_reg_fdbk = "false";
 defparam \u_colorgen_h_cnt__reg[8] .is_le_clk_inv = "false";
-defparam \u_colorgen_h_cnt__reg[8] .PLACE_LOCATION = "C17R16.le_tile.le_guts.lp1.reg0";
+defparam \u_colorgen_h_cnt__reg[8] .PLACE_LOCATION = "C33R17.le_tile.le_guts.lp3.reg1";
 defparam \u_colorgen_h_cnt__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_h_cnt__reg[8] .PCK_LOCATION = "C17R16.lp1.reg0";
+defparam \u_colorgen_h_cnt__reg[8] .PCK_LOCATION = "C33R17.lp3.reg1";
 defparam \u_colorgen_h_cnt__reg[8] .is_en_used = "false";
 LUT4 ii0468 (
 	. dx ( \ii0468|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[6]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[7]|qx_net  ),
-	. f1 ( \ii0454|dx_net  ),
-	. f0 ( \ii0458|dx_net  )
-);
-defparam ii0468.PLACE_LOCATION = "C17R17.le_tile.le_guts.lp0.lut0";
-defparam ii0468.PCK_LOCATION = "C17R17.lp0.lut0";
-defparam ii0468.config_data = "060C";
-LUT4 ii0469 (
-	. dx ( \ii0469|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[6]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[7]|qx_net  ),
-	. f1 ( \u_colorgen_h_cnt__reg[8]|qx_net  ),
-	. f0 ( \ii0458|dx_net  )
-);
-defparam ii0469.PLACE_LOCATION = "C17R16.le_tile.le_guts.lp1.lut0";
-defparam ii0469.PCK_LOCATION = "C17R16.lp1.lut0";
-defparam ii0469.config_data = "78F0";
-LUT4 ii0470 (
-	. dx ( \ii0470|dx_net  ),
-	. f3 ( \ii0454|dx_net  ),
-	. f2 ( \ii0469|dx_net  ),
-	. f1 ( ),
+	. f3 ( \u_colorgen_h_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_colorgen_h_cnt__reg[1]|qx_net  ),
+	. f1 ( \ii0460|dx_net  ),
 	. f0 ( )
 );
-defparam ii0470.PLACE_LOCATION = "C17R16.le_tile.le_guts.lp2.lut0";
-defparam ii0470.PCK_LOCATION = "C17R16.lp2.lut0";
-defparam ii0470.config_data = "4444";
+defparam ii0468.PLACE_LOCATION = "C35R17.le_tile.le_guts.lp3.lut0";
+defparam ii0468.PCK_LOCATION = "C35R17.lp3.lut0";
+defparam ii0468.config_data = "0606";
+LUT4 ii0470 (
+	. dx ( \ii0470|dx_net  ),
+	. f3 ( \ii0460|dx_net  ),
+	. f2 ( \ii0463|dx_net  ),
+	. f1 ( \ii0469|dx_net  ),
+	. f0 ( )
+);
+defparam ii0470.PLACE_LOCATION = "C35R17.le_tile.le_guts.lp0.lut41";
+defparam ii0470.PCK_LOCATION = "C35R17.lp0.lut41";
+defparam ii0470.config_data = "0101";
+LUT4 ii0469 (
+	. dx ( \ii0469|dx_net  ),
+	. f3 ( \u_colorgen_h_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_colorgen_h_cnt__reg[1]|qx_net  ),
+	. f1 ( \u_colorgen_h_cnt__reg[2]|qx_net  ),
+	. f0 ( )
+);
+defparam ii0469.PLACE_LOCATION = "C35R17.le_tile.le_guts.lp0.lut0";
+defparam ii0469.PCK_LOCATION = "C35R17.lp0.lut0";
+defparam ii0469.config_data = "0707";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4]|qx_net  ),
 	. qs ( ),
@@ -12320,18 +12938,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4] .PCK_LOCATION = "C49R5.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4] .PCK_LOCATION = "C49R5.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[4] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0639|dx_net  ),
+	. di ( \ii0652|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -12351,9 +12969,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0] .PLACE_LOCATION = "C39R12.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0] .PLACE_LOCATION = "C39R14.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0] .PCK_LOCATION = "C39R12.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0] .PCK_LOCATION = "C39R14.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[0] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[2]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[2]|qx_net  ),
@@ -12382,9 +13000,9 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[2] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[2] .PLACE_LOCATION = "C35R10.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[2] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[2] .PCK_LOCATION = "C35R10.lp1.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[2] .PCK_LOCATION = "C33R12.lp2.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[2] .is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[28]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[28]|qx_net  ),
@@ -12413,30 +13031,40 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[28] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[28] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[28] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[28] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[28] .PLACE_LOCATION = "C33R9.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[28] .PLACE_LOCATION = "C29R12.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[28] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[28] .PCK_LOCATION = "C33R9.lp1.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[28] .PCK_LOCATION = "C29R12.lp2.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[28] .is_en_used = "false";
 LUT4 ii0471 (
 	. dx ( \ii0471|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[9]|qx_net  ),
-	. f2 ( \ii0454|dx_net  ),
-	. f1 ( \ii0459|dx_net  ),
+	. f3 ( \u_colorgen_h_cnt__reg[3]|qx_net  ),
+	. f2 ( \ii0460|dx_net  ),
+	. f1 ( \ii0463|dx_net  ),
 	. f0 ( )
 );
-defparam ii0471.PLACE_LOCATION = "C19R16.le_tile.le_guts.lp2.lut0";
-defparam ii0471.PCK_LOCATION = "C19R16.lp2.lut0";
+defparam ii0471.PLACE_LOCATION = "C35R18.le_tile.le_guts.lp0.lut0";
+defparam ii0471.PCK_LOCATION = "C35R18.lp0.lut0";
 defparam ii0471.config_data = "1212";
 LUT4 ii0472 (
 	. dx ( \ii0472|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[1]|qx_net  ),
-	. f1 ( \u_colorgen_h_cnt__reg[2]|qx_net  ),
+	. f3 ( \u_colorgen_h_cnt__reg[4]|qx_net  ),
+	. f2 ( \ii0460|dx_net  ),
+	. f1 ( \ii0464|dx_net  ),
 	. f0 ( )
 );
-defparam ii0472.PLACE_LOCATION = "C23R16.le_tile.le_guts.lp0.lut41";
-defparam ii0472.PCK_LOCATION = "C23R16.lp0.lut41";
-defparam ii0472.config_data = "0707";
+defparam ii0472.PLACE_LOCATION = "C37R18.le_tile.le_guts.lp0.lut40";
+defparam ii0472.PCK_LOCATION = "C37R18.lp0.lut40";
+defparam ii0472.config_data = "1212";
+LUT4 ii0473 (
+	. dx ( \ii0473|dx_net  ),
+	. f3 ( \u_colorgen_h_cnt__reg[4]|qx_net  ),
+	. f2 ( \u_colorgen_h_cnt__reg[5]|qx_net  ),
+	. f1 ( \ii0460|dx_net  ),
+	. f0 ( \ii0464|dx_net  )
+);
+defparam ii0473.PLACE_LOCATION = "C35R18.le_tile.le_guts.lp1.lut41";
+defparam ii0473.PCK_LOCATION = "C35R18.lp1.lut41";
+defparam ii0473.config_data = "060C";
 M7S_IO_DDR dedicated_io_cell_u235_inst (
 	. id_q_1 ( )
 ,
@@ -12578,26 +13206,16 @@ defparam dedicated_io_cell_u235_inst.term_pu_en_1 = 1;
 defparam dedicated_io_cell_u235_inst.cfg_userio_en_0 = 1;
 defparam dedicated_io_cell_u235_inst.cfg_gsclk_inv_1 = 0;
 defparam dedicated_io_cell_u235_inst.cfg_id_setn_en_1 = 0;
-LUT4 ii0473 (
-	. dx ( \ii0473|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[4]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[5]|qx_net  ),
-	. f1 ( \ii0453|dx_net  ),
-	. f0 ( \ii0472|dx_net  )
-);
-defparam ii0473.PLACE_LOCATION = "C19R17.le_tile.le_guts.lp2.lut0";
-defparam ii0473.PCK_LOCATION = "C19R17.lp2.lut0";
-defparam ii0473.config_data = "1000";
 LUT4 ii0474 (
 	. dx ( \ii0474|dx_net  ),
-	. f3 ( \u_colorgen_h_cnt__reg[10]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[3]|qx_net  ),
-	. f1 ( \u_colorgen_h_cnt__reg[8]|qx_net  ),
-	. f0 ( \ii0473|dx_net  )
+	. f3 ( \u_colorgen_h_cnt__reg[6]|qx_net  ),
+	. f2 ( \ii0460|dx_net  ),
+	. f1 ( \ii0465|dx_net  ),
+	. f0 ( )
 );
-defparam ii0474.PLACE_LOCATION = "C19R16.le_tile.le_guts.lp0.lut0";
-defparam ii0474.PCK_LOCATION = "C19R16.lp0.lut0";
-defparam ii0474.config_data = "5655";
+defparam ii0474.PLACE_LOCATION = "C33R17.le_tile.le_guts.lp2.lut0";
+defparam ii0474.PCK_LOCATION = "C33R17.lp2.lut0";
+defparam ii0474.config_data = "1212";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17]|qx_net  ),
 	. qs ( ),
@@ -12625,18 +13243,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17] .PCK_LOCATION = "C49R4.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17] .PCK_LOCATION = "C49R5.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[17] .is_en_used = "false";
 REG \u_colorgen_v_cnt__reg[0]  (
 	. qx ( \u_colorgen_v_cnt__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0479|dx_net  ),
+	. di ( \ii0485|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0480|dx_net  ),
+	. en ( \ii0486|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_lvds_pll_u0|clkout0_net  ),
 	. shift ( ),
@@ -12656,20 +13274,20 @@ defparam \u_colorgen_v_cnt__reg[0] .le_sh0_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[0] .le_sh1_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[0] .use_reg_fdbk = "false";
 defparam \u_colorgen_v_cnt__reg[0] .is_le_clk_inv = "false";
-defparam \u_colorgen_v_cnt__reg[0] .PLACE_LOCATION = "C15R17.le_tile.le_guts.lp0.reg0";
+defparam \u_colorgen_v_cnt__reg[0] .PLACE_LOCATION = "C25R19.le_tile.le_guts.lp0.reg1";
 defparam \u_colorgen_v_cnt__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_v_cnt__reg[0] .PCK_LOCATION = "C15R17.lp0.reg0";
+defparam \u_colorgen_v_cnt__reg[0] .PCK_LOCATION = "C25R19.lp0.reg1";
 defparam \u_colorgen_v_cnt__reg[0] .is_en_used = "true";
 LUT4 ii0475 (
 	. dx ( \ii0475|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[3]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[4]|qx_net  ),
-	. f1 ( \u_colorgen_v_cnt__reg[6]|qx_net  ),
-	. f0 ( \u_colorgen_v_cnt__reg[7]|qx_net  )
+	. f3 ( \u_colorgen_h_cnt__reg[6]|qx_net  ),
+	. f2 ( \u_colorgen_h_cnt__reg[7]|qx_net  ),
+	. f1 ( \ii0460|dx_net  ),
+	. f0 ( \ii0465|dx_net  )
 );
-defparam ii0475.PLACE_LOCATION = "C13R16.le_tile.le_guts.lp2.lut0";
-defparam ii0475.PCK_LOCATION = "C13R16.lp2.lut0";
-defparam ii0475.config_data = "0001";
+defparam ii0475.PLACE_LOCATION = "C33R17.le_tile.le_guts.lp2.lut41";
+defparam ii0475.PCK_LOCATION = "C33R17.lp2.lut41";
+defparam ii0475.config_data = "060C";
 M7S_DLL u_arm_dll_u0 (
 	. clkin ( \u_pll_pll_u0|clkout0_net  ),
 	. pwrdown ( ),
@@ -12711,22 +13329,22 @@ defparam u_arm_dll_u0.dll_sel = "2";
 defparam u_arm_dll_u0.dll_msel3 = 11;
 LUT4 ii0476 (
 	. dx ( \ii0476|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[8]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[9]|qx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_colorgen_h_cnt__reg[6]|qx_net  ),
+	. f2 ( \u_colorgen_h_cnt__reg[7]|qx_net  ),
+	. f1 ( \u_colorgen_h_cnt__reg[8]|qx_net  ),
+	. f0 ( \ii0465|dx_net  )
 );
-defparam ii0476.PLACE_LOCATION = "C15R16.le_tile.le_guts.lp0.lut41";
-defparam ii0476.PCK_LOCATION = "C15R16.lp0.lut41";
-defparam ii0476.config_data = "8888";
+defparam ii0476.PLACE_LOCATION = "C33R17.le_tile.le_guts.lp0.lut0";
+defparam ii0476.PCK_LOCATION = "C33R17.lp0.lut0";
+defparam ii0476.config_data = "78F0";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0719|dx_net  ),
+	. di ( \ii0734|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -12746,18 +13364,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20] .PLACE_LOCATION = "C33R14.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20] .PCK_LOCATION = "C33R14.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20] .PCK_LOCATION = "C33R15.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[20] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0718|dx_net  ),
+	. di ( \ii0733|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -12777,16 +13395,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19] .PLACE_LOCATION = "C43R15.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19] .PLACE_LOCATION = "C37R16.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19] .PCK_LOCATION = "C43R15.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19] .PCK_LOCATION = "C37R16.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[19] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[11]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[11]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0563|dx_net  ),
+	. di ( \ii0574|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -12818,7 +13436,7 @@ REG rstn_final__reg (
 	. up_o ( ),
 	. down_o ( ),
 	. di ( \VCC_0_inst|Y_net  ),
-	. a_sr ( \ii0452|dx_net  ),
+	. a_sr ( \ii0458|dx_net  ),
 	. en ( ),
 	. mclk_b ( ),
 	. sclk ( \u_lvds_pll_u0|clkout0_net  ),
@@ -12839,20 +13457,20 @@ defparam rstn_final__reg.le_sh0_always_en = "false";
 defparam rstn_final__reg.le_sh1_always_en = "false";
 defparam rstn_final__reg.use_reg_fdbk = "false";
 defparam rstn_final__reg.is_le_clk_inv = "false";
-defparam rstn_final__reg.PLACE_LOCATION = "C39R18.le_tile.le_guts.lp0.reg0";
+defparam rstn_final__reg.PLACE_LOCATION = "C39R16.le_tile.le_guts.lp0.reg0";
 defparam rstn_final__reg.is_le_sh1_en_not_inv = "true";
-defparam rstn_final__reg.PCK_LOCATION = "C39R18.lp0.reg0";
+defparam rstn_final__reg.PCK_LOCATION = "C39R16.lp0.reg0";
 defparam rstn_final__reg.is_en_used = "false";
 LUT4 ii0477 (
 	. dx ( \ii0477|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[1]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[2]|qx_net  ),
-	. f1 ( \ii0475|dx_net  ),
-	. f0 ( \ii0476|dx_net  )
+	. f3 ( \ii0460|dx_net  ),
+	. f2 ( \ii0476|dx_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0477.PLACE_LOCATION = "C15R16.le_tile.le_guts.lp0.lut40";
-defparam ii0477.PCK_LOCATION = "C15R16.lp0.lut40";
-defparam ii0477.config_data = "8F00";
+defparam ii0477.PLACE_LOCATION = "C35R18.le_tile.le_guts.lp1.lut0";
+defparam ii0477.PCK_LOCATION = "C35R18.lp1.lut0";
+defparam ii0477.config_data = "4444";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[3]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[3]|qx_net  ),
 	. qs ( ),
@@ -12880,16 +13498,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[3] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[3] .PLACE_LOCATION = "C33R17.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[3] .PLACE_LOCATION = "C33R18.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[3] .PCK_LOCATION = "C33R17.lp3.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[3] .PCK_LOCATION = "C33R18.lp1.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[3] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[16]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[16]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0525|dx_net  ),
+	. di ( \ii0535|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -12911,16 +13529,16 @@ defparam \u_sdram_to_RGB_dma_addr__reg[16] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[16] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[16] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[16] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[16] .PLACE_LOCATION = "C39R19.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[16] .PLACE_LOCATION = "C39R23.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[16] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[16] .PCK_LOCATION = "C39R19.lp2.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[16] .PCK_LOCATION = "C39R23.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[16] .is_en_used = "false";
 REG \u_colorgen_h_cnt__reg[9]  (
 	. qx ( \u_colorgen_h_cnt__reg[9]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0471|dx_net  ),
+	. di ( \ii0478|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -12942,40 +13560,40 @@ defparam \u_colorgen_h_cnt__reg[9] .le_sh0_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[9] .le_sh1_always_en = "false";
 defparam \u_colorgen_h_cnt__reg[9] .use_reg_fdbk = "false";
 defparam \u_colorgen_h_cnt__reg[9] .is_le_clk_inv = "false";
-defparam \u_colorgen_h_cnt__reg[9] .PLACE_LOCATION = "C19R16.le_tile.le_guts.lp2.reg0";
+defparam \u_colorgen_h_cnt__reg[9] .PLACE_LOCATION = "C33R18.le_tile.le_guts.lp0.reg1";
 defparam \u_colorgen_h_cnt__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_h_cnt__reg[9] .PCK_LOCATION = "C19R16.lp2.reg0";
+defparam \u_colorgen_h_cnt__reg[9] .PCK_LOCATION = "C33R18.lp0.reg1";
 defparam \u_colorgen_h_cnt__reg[9] .is_en_used = "false";
 LUT4 ii0478 (
 	. dx ( \ii0478|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[5]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[6]|qx_net  ),
-	. f1 ( \u_colorgen_v_cnt__reg[7]|qx_net  ),
-	. f0 ( \ii0477|dx_net  )
-);
-defparam ii0478.PLACE_LOCATION = "C13R16.le_tile.le_guts.lp0.lut40";
-defparam ii0478.PCK_LOCATION = "C13R16.lp0.lut40";
-defparam ii0478.config_data = "FE00";
-LUT4 ii0479 (
-	. dx ( \ii0479|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[0]|qx_net  ),
-	. f2 ( \ii0478|dx_net  ),
-	. f1 ( ),
+	. f3 ( \u_colorgen_h_cnt__reg[9]|qx_net  ),
+	. f2 ( \ii0460|dx_net  ),
+	. f1 ( \ii0466|dx_net  ),
 	. f0 ( )
 );
-defparam ii0479.PLACE_LOCATION = "C9R17.le_tile.le_guts.lp0.lut0";
-defparam ii0479.PCK_LOCATION = "C9R17.lp0.lut0";
-defparam ii0479.config_data = "1111";
+defparam ii0478.PLACE_LOCATION = "C33R18.le_tile.le_guts.lp0.lut41";
+defparam ii0478.PCK_LOCATION = "C33R18.lp0.lut41";
+defparam ii0478.config_data = "1212";
+LUT4 ii0479 (
+	. dx ( \ii0479|dx_net  ),
+	. f3 ( \u_colorgen_h_cnt__reg[4]|qx_net  ),
+	. f2 ( \u_colorgen_h_cnt__reg[5]|qx_net  ),
+	. f1 ( \ii0459|dx_net  ),
+	. f0 ( \ii0469|dx_net  )
+);
+defparam ii0479.PLACE_LOCATION = "C35R18.le_tile.le_guts.lp3.lut41";
+defparam ii0479.PCK_LOCATION = "C35R18.lp3.lut41";
+defparam ii0479.config_data = "1000";
 LUT4 ii0480 (
 	. dx ( \ii0480|dx_net  ),
 	. f3 ( \u_colorgen_h_cnt__reg[10]|qx_net  ),
-	. f2 ( \u_colorgen_h_cnt__reg[8]|qx_net  ),
-	. f1 ( \ii0453|dx_net  ),
-	. f0 ( \ii0458|dx_net  )
+	. f2 ( \u_colorgen_h_cnt__reg[3]|qx_net  ),
+	. f1 ( \u_colorgen_h_cnt__reg[8]|qx_net  ),
+	. f0 ( \ii0479|dx_net  )
 );
-defparam ii0480.PLACE_LOCATION = "C15R17.le_tile.le_guts.lp0.lut0";
-defparam ii0480.PCK_LOCATION = "C15R17.lp0.lut0";
-defparam ii0480.config_data = "8000";
+defparam ii0480.PLACE_LOCATION = "C33R18.le_tile.le_guts.lp3.lut41";
+defparam ii0480.PCK_LOCATION = "C33R18.lp3.lut41";
+defparam ii0480.config_data = "5655";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5]|qx_net  ),
 	. qs ( ),
@@ -13003,18 +13621,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5] .PCK_LOCATION = "C49R5.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5] .PCK_LOCATION = "C47R4.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[5] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0667|dx_net  ),
+	. di ( \ii0680|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -13034,18 +13652,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1] .PLACE_LOCATION = "C39R9.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1] .PLACE_LOCATION = "C39R13.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1] .PCK_LOCATION = "C39R9.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1] .PCK_LOCATION = "C39R13.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[1] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0646|dx_net  ),
+	. di ( \ii0660|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -13065,9 +13683,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10] .PLACE_LOCATION = "C39R10.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10] .PLACE_LOCATION = "C39R13.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10] .PCK_LOCATION = "C39R10.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10] .PCK_LOCATION = "C39R13.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[10] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[3]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[3]|qx_net  ),
@@ -13096,9 +13714,9 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[3] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[3] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[3] .PLACE_LOCATION = "C35R13.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[3] .PCK_LOCATION = "C33R15.lp3.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[3] .PCK_LOCATION = "C35R13.lp2.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[3] .is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[30]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[30]|qx_net  ),
@@ -13127,9 +13745,9 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[30] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[30] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[30] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[30] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[30] .PLACE_LOCATION = "C25R14.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[30] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[30] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[30] .PCK_LOCATION = "C25R14.lp3.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[30] .PCK_LOCATION = "C33R12.lp3.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[30] .is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[29]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[29]|qx_net  ),
@@ -13158,46 +13776,46 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[29] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[29] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[29] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[29] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[29] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[29] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[29] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[29] .PCK_LOCATION = "C33R15.lp1.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[29] .PCK_LOCATION = "C33R12.lp1.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[29] .is_en_used = "false";
 LUT4 ii0481 (
 	. dx ( \ii0481|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[1]|qx_net  ),
-	. f1 ( \ii0478|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_colorgen_v_cnt__reg[3]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[4]|qx_net  ),
+	. f1 ( \u_colorgen_v_cnt__reg[6]|qx_net  ),
+	. f0 ( \u_colorgen_v_cnt__reg[7]|qx_net  )
 );
-defparam ii0481.PLACE_LOCATION = "C9R17.le_tile.le_guts.lp1.lut0";
-defparam ii0481.PCK_LOCATION = "C9R17.lp1.lut0";
-defparam ii0481.config_data = "0606";
+defparam ii0481.PLACE_LOCATION = "C25R19.le_tile.le_guts.lp2.lut0";
+defparam ii0481.PCK_LOCATION = "C25R19.lp2.lut0";
+defparam ii0481.config_data = "0001";
 LUT4 ii0482 (
 	. dx ( \ii0482|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[1]|qx_net  ),
-	. f1 ( \u_colorgen_v_cnt__reg[2]|qx_net  ),
-	. f0 ( \ii0478|dx_net  )
+	. f3 ( \u_colorgen_v_cnt__reg[8]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[9]|qx_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0482.PLACE_LOCATION = "C9R17.le_tile.le_guts.lp2.lut0";
-defparam ii0482.PCK_LOCATION = "C9R17.lp2.lut0";
-defparam ii0482.config_data = "0078";
+defparam ii0482.PLACE_LOCATION = "C25R19.le_tile.le_guts.lp0.lut0";
+defparam ii0482.PCK_LOCATION = "C25R19.lp0.lut0";
+defparam ii0482.config_data = "8888";
 LUT4 ii0483 (
 	. dx ( \ii0483|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[1]|qx_net  ),
-	. f1 ( \u_colorgen_v_cnt__reg[2]|qx_net  ),
-	. f0 ( \u_colorgen_v_cnt__reg[3]|qx_net  )
+	. f3 ( \u_colorgen_v_cnt__reg[5]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[6]|qx_net  ),
+	. f1 ( \u_colorgen_v_cnt__reg[7]|qx_net  ),
+	. f0 ( \ii0482|dx_net  )
 );
-defparam ii0483.PLACE_LOCATION = "C9R16.le_tile.le_guts.lp3.lut0";
-defparam ii0483.PCK_LOCATION = "C9R16.lp3.lut0";
-defparam ii0483.config_data = "7F80";
+defparam ii0483.PLACE_LOCATION = "C25R19.le_tile.le_guts.lp3.lut41";
+defparam ii0483.PCK_LOCATION = "C25R19.lp3.lut41";
+defparam ii0483.config_data = "FE00";
 REG \u_sdram_to_RGB_addr_cnt__reg[10]  (
 	. qx ( \u_sdram_to_RGB_addr_cnt__reg[10]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0500|dx_net  ),
+	. di ( \ii0509|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_dma_start_xfer__reg|qx_net  ),
 	. mclk_b ( ),
@@ -13219,20 +13837,20 @@ defparam \u_sdram_to_RGB_addr_cnt__reg[10] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[10] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[10] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_addr_cnt__reg[10] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_addr_cnt__reg[10] .PLACE_LOCATION = "C39R20.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[10] .PLACE_LOCATION = "C35R23.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[10] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_addr_cnt__reg[10] .PCK_LOCATION = "C39R20.lp3.reg0";
+defparam \u_sdram_to_RGB_addr_cnt__reg[10] .PCK_LOCATION = "C35R23.lp1.reg0";
 defparam \u_sdram_to_RGB_addr_cnt__reg[10] .is_en_used = "true";
 LUT4 ii0484 (
 	. dx ( \ii0484|dx_net  ),
-	. f3 ( \ii0478|dx_net  ),
-	. f2 ( \ii0483|dx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_colorgen_v_cnt__reg[1]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[2]|qx_net  ),
+	. f1 ( \ii0481|dx_net  ),
+	. f0 ( \ii0483|dx_net  )
 );
-defparam ii0484.PLACE_LOCATION = "C9R16.le_tile.le_guts.lp0.lut41";
-defparam ii0484.PCK_LOCATION = "C9R16.lp0.lut41";
-defparam ii0484.config_data = "4444";
+defparam ii0484.PLACE_LOCATION = "C25R19.le_tile.le_guts.lp2.lut41";
+defparam ii0484.PCK_LOCATION = "C25R19.lp2.lut41";
+defparam ii0484.config_data = "8F00";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18]|qx_net  ),
 	. qs ( ),
@@ -13260,9 +13878,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18] .PCK_LOCATION = "C49R4.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18] .PCK_LOCATION = "C49R5.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[18] .is_en_used = "false";
 M7S_IO_LVDS u_lvds_u_lvds_tx_0 (
 	. id_1 ( ),
@@ -13397,9 +14015,9 @@ REG \u_colorgen_v_cnt__reg[1]  (
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0481|dx_net  ),
+	. di ( \ii0487|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0480|dx_net  ),
+	. en ( \ii0486|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_lvds_pll_u0|clkout0_net  ),
 	. shift ( ),
@@ -13419,20 +14037,20 @@ defparam \u_colorgen_v_cnt__reg[1] .le_sh0_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[1] .le_sh1_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[1] .use_reg_fdbk = "false";
 defparam \u_colorgen_v_cnt__reg[1] .is_le_clk_inv = "false";
-defparam \u_colorgen_v_cnt__reg[1] .PLACE_LOCATION = "C13R17.le_tile.le_guts.lp2.reg0";
+defparam \u_colorgen_v_cnt__reg[1] .PLACE_LOCATION = "C25R19.le_tile.le_guts.lp1.reg0";
 defparam \u_colorgen_v_cnt__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_v_cnt__reg[1] .PCK_LOCATION = "C13R17.lp2.reg0";
+defparam \u_colorgen_v_cnt__reg[1] .PCK_LOCATION = "C25R19.lp1.reg0";
 defparam \u_colorgen_v_cnt__reg[1] .is_en_used = "true";
 LUT4 ii0485 (
 	. dx ( \ii0485|dx_net  ),
 	. f3 ( \u_colorgen_v_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[1]|qx_net  ),
-	. f1 ( \u_colorgen_v_cnt__reg[2]|qx_net  ),
-	. f0 ( \u_colorgen_v_cnt__reg[3]|qx_net  )
+	. f2 ( \ii0484|dx_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0485.PLACE_LOCATION = "C9R16.le_tile.le_guts.lp1.lut41";
-defparam ii0485.PCK_LOCATION = "C9R16.lp1.lut41";
-defparam ii0485.config_data = "8000";
+defparam ii0485.PLACE_LOCATION = "C25R19.le_tile.le_guts.lp0.lut40";
+defparam ii0485.PCK_LOCATION = "C25R19.lp0.lut40";
+defparam ii0485.config_data = "1111";
 M7S_IO_LVDS u_lvds_u_lvds_tx_1 (
 	. id_1 ( ),
 	. id_0 ( ),
@@ -13563,22 +14181,22 @@ defparam u_lvds_u_lvds_tx_1.cfg_userio_en_0 = 0;
 defparam u_lvds_u_lvds_tx_1.cfg_id_setn_en_1 = 0;
 LUT4 ii0486 (
 	. dx ( \ii0486|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[4]|qx_net  ),
-	. f2 ( \ii0478|dx_net  ),
-	. f1 ( \ii0485|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_colorgen_h_cnt__reg[10]|qx_net  ),
+	. f2 ( \u_colorgen_h_cnt__reg[8]|qx_net  ),
+	. f1 ( \ii0459|dx_net  ),
+	. f0 ( \ii0465|dx_net  )
 );
-defparam ii0486.PLACE_LOCATION = "C9R16.le_tile.le_guts.lp2.lut41";
-defparam ii0486.PCK_LOCATION = "C9R16.lp2.lut41";
-defparam ii0486.config_data = "1212";
+defparam ii0486.PLACE_LOCATION = "C29R18.le_tile.le_guts.lp0.lut0";
+defparam ii0486.PCK_LOCATION = "C29R18.lp0.lut0";
+defparam ii0486.config_data = "8000";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0720|dx_net  ),
+	. di ( \ii0735|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -13598,16 +14216,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21] .PLACE_LOCATION = "C37R15.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21] .PLACE_LOCATION = "C45R16.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21] .PCK_LOCATION = "C37R15.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21] .PCK_LOCATION = "C45R16.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[21] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[12]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[12]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0564|dx_net  ),
+	. di ( \ii0575|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -13629,9 +14247,9 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[12] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[12] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[12] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[12] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[12] .PLACE_LOCATION = "C29R30.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[12] .PLACE_LOCATION = "C29R31.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[12] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[12] .PCK_LOCATION = "C29R30.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[12] .PCK_LOCATION = "C29R31.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[12] .is_en_used = "false";
 M7S_IO_LVDS u_lvds_u_lvds_tx_2 (
 	. id_1 ( ),
@@ -13763,14 +14381,14 @@ defparam u_lvds_u_lvds_tx_2.cfg_userio_en_0 = 0;
 defparam u_lvds_u_lvds_tx_2.cfg_id_setn_en_1 = 0;
 LUT4 ii0487 (
 	. dx ( \ii0487|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[4]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[5]|qx_net  ),
-	. f1 ( \ii0478|dx_net  ),
-	. f0 ( \ii0485|dx_net  )
+	. f3 ( \u_colorgen_v_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[1]|qx_net  ),
+	. f1 ( \ii0484|dx_net  ),
+	. f0 ( )
 );
-defparam ii0487.PLACE_LOCATION = "C13R17.le_tile.le_guts.lp3.lut0";
-defparam ii0487.PCK_LOCATION = "C13R17.lp3.lut0";
-defparam ii0487.config_data = "060C";
+defparam ii0487.PLACE_LOCATION = "C25R19.le_tile.le_guts.lp1.lut40";
+defparam ii0487.PCK_LOCATION = "C25R19.lp1.lut40";
+defparam ii0487.config_data = "0606";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[4]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[4]|qx_net  ),
 	. qs ( ),
@@ -13798,16 +14416,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[4] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[4] .PLACE_LOCATION = "C33R21.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[4] .PLACE_LOCATION = "C33R17.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[4] .PCK_LOCATION = "C33R21.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[4] .PCK_LOCATION = "C33R17.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[4] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[17]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[17]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0526|dx_net  ),
+	. di ( \ii0536|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -13829,9 +14447,9 @@ defparam \u_sdram_to_RGB_dma_addr__reg[17] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[17] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[17] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[17] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[17] .PLACE_LOCATION = "C37R20.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[17] .PLACE_LOCATION = "C33R21.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[17] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[17] .PCK_LOCATION = "C37R20.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[17] .PCK_LOCATION = "C33R21.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[17] .is_en_used = "false";
 M7S_IO_LVDS u_lvds_u_lvds_tx_3 (
 	. id_1 ( ),
@@ -13963,44 +14581,44 @@ defparam u_lvds_u_lvds_tx_3.cfg_userio_en_0 = 0;
 defparam u_lvds_u_lvds_tx_3.cfg_id_setn_en_1 = 0;
 LUT4 ii0488 (
 	. dx ( \ii0488|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[4]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[5]|qx_net  ),
-	. f1 ( \ii0485|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_colorgen_v_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[1]|qx_net  ),
+	. f1 ( \u_colorgen_v_cnt__reg[2]|qx_net  ),
+	. f0 ( \ii0484|dx_net  )
 );
-defparam ii0488.PLACE_LOCATION = "C13R16.le_tile.le_guts.lp3.lut0";
-defparam ii0488.PCK_LOCATION = "C13R16.lp3.lut0";
-defparam ii0488.config_data = "8080";
+defparam ii0488.PLACE_LOCATION = "C25R19.le_tile.le_guts.lp3.lut40";
+defparam ii0488.PCK_LOCATION = "C25R19.lp3.lut40";
+defparam ii0488.config_data = "0078";
 LUT4 ii0489 (
 	. dx ( \ii0489|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[6]|qx_net  ),
-	. f2 ( \ii0478|dx_net  ),
-	. f1 ( \ii0488|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_colorgen_v_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[1]|qx_net  ),
+	. f1 ( \u_colorgen_v_cnt__reg[2]|qx_net  ),
+	. f0 ( \u_colorgen_v_cnt__reg[3]|qx_net  )
 );
-defparam ii0489.PLACE_LOCATION = "C13R16.le_tile.le_guts.lp0.lut0";
-defparam ii0489.PCK_LOCATION = "C13R16.lp0.lut0";
-defparam ii0489.config_data = "1212";
+defparam ii0489.PLACE_LOCATION = "C25R19.le_tile.le_guts.lp1.lut41";
+defparam ii0489.PCK_LOCATION = "C25R19.lp1.lut41";
+defparam ii0489.config_data = "7F80";
 LUT4 ii0490 (
 	. dx ( \ii0490|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[6]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[7]|qx_net  ),
-	. f1 ( \ii0478|dx_net  ),
-	. f0 ( \ii0488|dx_net  )
-);
-defparam ii0490.PLACE_LOCATION = "C13R17.le_tile.le_guts.lp0.lut0";
-defparam ii0490.PCK_LOCATION = "C13R17.lp0.lut0";
-defparam ii0490.config_data = "060C";
-LUT4 ii0500 (
-	. dx ( \ii0500|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[10]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[9]|qx_net  ),
-	. f1 ( \ii0499|dx_net  ),
+	. f3 ( \ii0484|dx_net  ),
+	. f2 ( \ii0489|dx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0500.PLACE_LOCATION = "C39R20.le_tile.le_guts.lp3.lut0";
-defparam ii0500.PCK_LOCATION = "C39R20.lp3.lut0";
-defparam ii0500.config_data = "4A4A";
+defparam ii0490.PLACE_LOCATION = "C25R19.le_tile.le_guts.lp2.lut40";
+defparam ii0490.PCK_LOCATION = "C25R19.lp2.lut40";
+defparam ii0490.config_data = "4444";
+LUT4 ii0500 (
+	. dx ( \ii0500|dx_net  ),
+	. f3 ( \u_colorgen_v_cnt__reg[1]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[2]|qx_net  ),
+	. f1 ( \u_colorgen_v_cnt__reg[5]|qx_net  ),
+	. f0 ( )
+);
+defparam ii0500.PLACE_LOCATION = "C25R19.le_tile.le_guts.lp1.lut0";
+defparam ii0500.PCK_LOCATION = "C25R19.lp1.lut0";
+defparam ii0500.config_data = "0101";
 REG \u_sdram_to_RGB_v_valid_r__reg[0]  (
 	. qx ( \u_sdram_to_RGB_v_valid_r__reg[0]|qx_net  ),
 	. qs ( ),
@@ -14028,9 +14646,9 @@ defparam \u_sdram_to_RGB_v_valid_r__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_v_valid_r__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_v_valid_r__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_v_valid_r__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_v_valid_r__reg[0] .PLACE_LOCATION = "C39R15.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_v_valid_r__reg[0] .PLACE_LOCATION = "C35R19.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_v_valid_r__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_v_valid_r__reg[0] .PCK_LOCATION = "C39R15.lp1.reg1";
+defparam \u_sdram_to_RGB_v_valid_r__reg[0] .PCK_LOCATION = "C35R19.lp1.reg0";
 defparam \u_sdram_to_RGB_v_valid_r__reg[0] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6]|qx_net  ),
@@ -14059,18 +14677,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6] .PCK_LOCATION = "C47R4.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6] .PCK_LOCATION = "C47R4.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[6] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0673|dx_net  ),
+	. di ( \ii0687|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -14090,18 +14708,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2] .PLACE_LOCATION = "C39R10.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2] .PLACE_LOCATION = "C39R14.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2] .PCK_LOCATION = "C39R10.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2] .PCK_LOCATION = "C39R14.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[2] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0648|dx_net  ),
+	. di ( \ii0662|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -14121,9 +14739,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11] .PLACE_LOCATION = "C29R11.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11] .PLACE_LOCATION = "C43R13.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11] .PCK_LOCATION = "C29R11.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11] .PCK_LOCATION = "C43R13.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[11] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[4]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[4]|qx_net  ),
@@ -14152,9 +14770,9 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[4] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[4] .PLACE_LOCATION = "C25R14.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[4] .PLACE_LOCATION = "C29R12.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[4] .PCK_LOCATION = "C25R14.lp0.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[4] .PCK_LOCATION = "C29R12.lp3.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[4] .is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[31]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[31]|qx_net  ),
@@ -14183,56 +14801,56 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[31] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[31] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[31] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[31] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[31] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[31] .PLACE_LOCATION = "C35R13.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[31] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[31] .PCK_LOCATION = "C33R12.lp1.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[31] .PCK_LOCATION = "C35R13.lp1.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[31] .is_en_used = "false";
 LUT4 ii0491 (
 	. dx ( \ii0491|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[6]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[7]|qx_net  ),
-	. f1 ( \ii0488|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_colorgen_v_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[1]|qx_net  ),
+	. f1 ( \u_colorgen_v_cnt__reg[2]|qx_net  ),
+	. f0 ( \u_colorgen_v_cnt__reg[3]|qx_net  )
 );
-defparam ii0491.PLACE_LOCATION = "C13R16.le_tile.le_guts.lp2.lut41";
-defparam ii0491.PCK_LOCATION = "C13R16.lp2.lut41";
-defparam ii0491.config_data = "8080";
+defparam ii0491.PLACE_LOCATION = "C25R19.le_tile.le_guts.lp0.lut41";
+defparam ii0491.PCK_LOCATION = "C25R19.lp0.lut41";
+defparam ii0491.config_data = "8000";
 LUT4 ii0501 (
 	. dx ( \ii0501|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[1]|qx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_colorgen_v_cnt__reg[8]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[9]|qx_net  ),
+	. f1 ( \ii0481|dx_net  ),
+	. f0 ( \ii0500|dx_net  )
 );
-defparam ii0501.PLACE_LOCATION = "C39R16.le_tile.le_guts.lp1.lut0";
-defparam ii0501.PCK_LOCATION = "C39R16.lp1.lut0";
-defparam ii0501.config_data = "6666";
+defparam ii0501.PLACE_LOCATION = "C27R19.le_tile.le_guts.lp0.lut0";
+defparam ii0501.PCK_LOCATION = "C27R19.lp0.lut0";
+defparam ii0501.config_data = "E777";
 LUT4 ii0492 (
 	. dx ( \ii0492|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[8]|qx_net  ),
-	. f2 ( \ii0478|dx_net  ),
+	. f3 ( \u_colorgen_v_cnt__reg[4]|qx_net  ),
+	. f2 ( \ii0484|dx_net  ),
 	. f1 ( \ii0491|dx_net  ),
 	. f0 ( )
 );
-defparam ii0492.PLACE_LOCATION = "C13R16.le_tile.le_guts.lp1.lut0";
-defparam ii0492.PCK_LOCATION = "C13R16.lp1.lut0";
+defparam ii0492.PLACE_LOCATION = "C23R19.le_tile.le_guts.lp2.lut0";
+defparam ii0492.PCK_LOCATION = "C23R19.lp2.lut0";
 defparam ii0492.config_data = "1212";
 LUT4 ii0502 (
 	. dx ( \ii0502|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_addr_cnt__reg[2]|qx_net  ),
+	. f2 ( ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0502.PLACE_LOCATION = "C39R16.le_tile.le_guts.lp2.lut0";
-defparam ii0502.PCK_LOCATION = "C39R16.lp2.lut0";
-defparam ii0502.config_data = "7878";
+defparam ii0502.PLACE_LOCATION = "C43R17.le_tile.le_guts.lp0.lut0";
+defparam ii0502.PCK_LOCATION = "C43R17.lp0.lut0";
+defparam ii0502.config_data = "5555";
 REG u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0634|dx_net  ),
+	. di ( \ii0647|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -14254,20 +14872,20 @@ defparam u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg.le_sh0_always_en = "fals
 defparam u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg.PLACE_LOCATION = "C45R13.le_tile.le_guts.lp2.reg0";
+defparam u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg.PLACE_LOCATION = "C35R15.le_tile.le_guts.lp0.reg0";
 defparam u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg.PCK_LOCATION = "C45R13.lp2.reg0";
+defparam u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg.PCK_LOCATION = "C35R15.lp0.reg0";
 defparam u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg.is_en_used = "false";
 LUT4 ii0493 (
 	. dx ( \ii0493|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[8]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[9]|qx_net  ),
-	. f1 ( \ii0478|dx_net  ),
+	. f3 ( \u_colorgen_v_cnt__reg[4]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[5]|qx_net  ),
+	. f1 ( \ii0484|dx_net  ),
 	. f0 ( \ii0491|dx_net  )
 );
-defparam ii0493.PLACE_LOCATION = "C13R16.le_tile.le_guts.lp0.lut41";
-defparam ii0493.PCK_LOCATION = "C13R16.lp0.lut41";
-defparam ii0493.config_data = "0E0C";
+defparam ii0493.PLACE_LOCATION = "C23R19.le_tile.le_guts.lp0.lut0";
+defparam ii0493.PCK_LOCATION = "C23R19.lp0.lut0";
+defparam ii0493.config_data = "060C";
 LUT4 ii0503 (
 	. dx ( \ii0503|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[0]|qx_net  ),
@@ -14275,15 +14893,15 @@ LUT4 ii0503 (
 	. f1 ( \u_sdram_to_RGB_addr_cnt__reg[2]|qx_net  ),
 	. f0 ( \u_sdram_to_RGB_addr_cnt__reg[3]|qx_net  )
 );
-defparam ii0503.PLACE_LOCATION = "C39R16.le_tile.le_guts.lp0.lut0";
-defparam ii0503.PCK_LOCATION = "C39R16.lp0.lut0";
-defparam ii0503.config_data = "7F80";
+defparam ii0503.PLACE_LOCATION = "C39R17.le_tile.le_guts.lp0.lut0";
+defparam ii0503.PCK_LOCATION = "C39R17.lp0.lut0";
+defparam ii0503.config_data = "8000";
 REG u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0633|dx_net  ),
+	. di ( \ii0646|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -14305,30 +14923,30 @@ defparam u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg.le_sh0_always_en = "fal
 defparam u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg.PLACE_LOCATION = "C39R15.le_tile.le_guts.lp0.reg0";
+defparam u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg.PLACE_LOCATION = "C29R12.le_tile.le_guts.lp1.reg1";
 defparam u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg.PCK_LOCATION = "C39R15.lp0.reg0";
+defparam u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg.PCK_LOCATION = "C29R12.lp1.reg1";
 defparam u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg.is_en_used = "false";
 LUT4 ii0494 (
 	. dx ( \ii0494|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[1]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[2]|qx_net  ),
-	. f1 ( \u_colorgen_v_cnt__reg[5]|qx_net  ),
-	. f0 ( \ii0475|dx_net  )
+	. f3 ( \u_colorgen_v_cnt__reg[4]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[5]|qx_net  ),
+	. f1 ( \ii0491|dx_net  ),
+	. f0 ( )
 );
-defparam ii0494.PLACE_LOCATION = "C13R17.le_tile.le_guts.lp2.lut0";
-defparam ii0494.PCK_LOCATION = "C13R17.lp2.lut0";
-defparam ii0494.config_data = "0100";
+defparam ii0494.PLACE_LOCATION = "C23R19.le_tile.le_guts.lp2.lut40";
+defparam ii0494.PCK_LOCATION = "C23R19.lp2.lut40";
+defparam ii0494.config_data = "8080";
 LUT4 ii0504 (
 	. dx ( \ii0504|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[4]|qx_net  ),
-	. f2 ( \ii0497|dx_net  ),
-	. f1 ( ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[5]|qx_net  ),
+	. f1 ( \ii0503|dx_net  ),
 	. f0 ( )
 );
-defparam ii0504.PLACE_LOCATION = "C37R16.le_tile.le_guts.lp0.lut0";
-defparam ii0504.PCK_LOCATION = "C37R16.lp0.lut0";
-defparam ii0504.config_data = "6666";
+defparam ii0504.PLACE_LOCATION = "C39R18.le_tile.le_guts.lp0.lut41";
+defparam ii0504.PCK_LOCATION = "C39R18.lp0.lut41";
+defparam ii0504.config_data = "8080";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20]|qx_net  ),
 	. qs ( ),
@@ -14356,9 +14974,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20] .PCK_LOCATION = "C49R4.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20] .PCK_LOCATION = "C47R4.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[20] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19]|qx_net  ),
@@ -14387,18 +15005,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19] .PLACE_LOCATION = "C49R4.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19] .PCK_LOCATION = "C49R4.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19] .PCK_LOCATION = "C49R5.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[19] .is_en_used = "false";
 REG \u_colorgen_v_cnt__reg[2]  (
 	. qx ( \u_colorgen_v_cnt__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0482|dx_net  ),
+	. di ( \ii0488|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0480|dx_net  ),
+	. en ( \ii0486|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_lvds_pll_u0|clkout0_net  ),
 	. shift ( ),
@@ -14418,58 +15036,58 @@ defparam \u_colorgen_v_cnt__reg[2] .le_sh0_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[2] .le_sh1_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[2] .use_reg_fdbk = "false";
 defparam \u_colorgen_v_cnt__reg[2] .is_le_clk_inv = "false";
-defparam \u_colorgen_v_cnt__reg[2] .PLACE_LOCATION = "C15R17.le_tile.le_guts.lp1.reg0";
+defparam \u_colorgen_v_cnt__reg[2] .PLACE_LOCATION = "C25R19.le_tile.le_guts.lp1.reg1";
 defparam \u_colorgen_v_cnt__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_v_cnt__reg[2] .PCK_LOCATION = "C15R17.lp1.reg0";
+defparam \u_colorgen_v_cnt__reg[2] .PCK_LOCATION = "C25R19.lp1.reg1";
 defparam \u_colorgen_v_cnt__reg[2] .is_en_used = "true";
 LUT4 ii0495 (
 	. dx ( \ii0495|dx_net  ),
-	. f3 ( \u_colorgen_v_cnt__reg[8]|qx_net  ),
-	. f2 ( \u_colorgen_v_cnt__reg[9]|qx_net  ),
+	. f3 ( \u_colorgen_v_cnt__reg[6]|qx_net  ),
+	. f2 ( \ii0484|dx_net  ),
 	. f1 ( \ii0494|dx_net  ),
 	. f0 ( )
 );
-defparam ii0495.PLACE_LOCATION = "C15R16.le_tile.le_guts.lp1.lut0";
-defparam ii0495.PCK_LOCATION = "C15R16.lp1.lut0";
-defparam ii0495.config_data = "E7E7";
+defparam ii0495.PLACE_LOCATION = "C23R19.le_tile.le_guts.lp1.lut0";
+defparam ii0495.PCK_LOCATION = "C23R19.lp1.lut0";
+defparam ii0495.config_data = "1212";
 LUT4 ii0505 (
 	. dx ( \ii0505|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[5]|qx_net  ),
-	. f1 ( \ii0497|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[6]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[7]|qx_net  ),
+	. f1 ( \ii0504|dx_net  ),
 	. f0 ( )
 );
-defparam ii0505.PLACE_LOCATION = "C37R16.le_tile.le_guts.lp0.lut41";
-defparam ii0505.PCK_LOCATION = "C37R16.lp0.lut41";
-defparam ii0505.config_data = "6C6C";
+defparam ii0505.PLACE_LOCATION = "C37R22.le_tile.le_guts.lp1.lut0";
+defparam ii0505.PCK_LOCATION = "C37R22.lp1.lut0";
+defparam ii0505.config_data = "8080";
 LUT4 ii0496 (
 	. dx ( \ii0496|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[0]|qx_net  ),
-	. f2 ( ),
+	. f3 ( \u_colorgen_v_cnt__reg[6]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[7]|qx_net  ),
+	. f1 ( \ii0484|dx_net  ),
+	. f0 ( \ii0494|dx_net  )
+);
+defparam ii0496.PLACE_LOCATION = "C23R19.le_tile.le_guts.lp3.lut0";
+defparam ii0496.PCK_LOCATION = "C23R19.lp3.lut0";
+defparam ii0496.config_data = "060C";
+LUT4 ii0506 (
+	. dx ( \ii0506|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[9]|qx_net  ),
+	. f2 ( \ii0505|dx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0496.PLACE_LOCATION = "C39R16.le_tile.le_guts.lp1.lut41";
-defparam ii0496.PCK_LOCATION = "C39R16.lp1.lut41";
-defparam ii0496.config_data = "5555";
-LUT4 ii0506 (
-	. dx ( \ii0506|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_addr_cnt__reg[6]|qx_net  ),
-	. f0 ( \ii0497|dx_net  )
-);
-defparam ii0506.PLACE_LOCATION = "C37R16.le_tile.le_guts.lp3.lut0";
-defparam ii0506.PCK_LOCATION = "C37R16.lp3.lut0";
-defparam ii0506.config_data = "78F0";
+defparam ii0506.PLACE_LOCATION = "C35R23.le_tile.le_guts.lp3.lut0";
+defparam ii0506.PCK_LOCATION = "C35R23.lp3.lut0";
+defparam ii0506.config_data = "8888";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0721|dx_net  ),
+	. di ( \ii0736|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -14489,9 +15107,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22] .PLACE_LOCATION = "C43R14.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22] .PLACE_LOCATION = "C45R16.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22] .PCK_LOCATION = "C43R14.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22] .PCK_LOCATION = "C45R16.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[22] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10]|qx_net  ),
@@ -14500,7 +15118,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[10]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -14520,18 +15138,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10] .PLACE_LOCATION = "C33R7.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10] .PLACE_LOCATION = "C33R11.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10] .PCK_LOCATION = "C33R7.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10] .PCK_LOCATION = "C33R11.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[10] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0586|dx_net  ),
+	. di ( \ii0600|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -14551,16 +15169,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0] .PLACE_LOCATION = "C25R11.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0] .PLACE_LOCATION = "C35R12.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0] .PCK_LOCATION = "C25R11.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0] .PCK_LOCATION = "C35R12.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[13]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[13]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0565|dx_net  ),
+	. di ( \ii0576|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -14582,30 +15200,30 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[13] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[13] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[13] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[13] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[13] .PLACE_LOCATION = "C29R30.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[13] .PLACE_LOCATION = "C29R31.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[13] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[13] .PCK_LOCATION = "C29R30.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[13] .PCK_LOCATION = "C29R31.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[13] .is_en_used = "false";
 LUT4 ii0497 (
 	. dx ( \ii0497|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_addr_cnt__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_addr_cnt__reg[3]|qx_net  )
-);
-defparam ii0497.PLACE_LOCATION = "C39R16.le_tile.le_guts.lp0.lut41";
-defparam ii0497.PCK_LOCATION = "C39R16.lp0.lut41";
-defparam ii0497.config_data = "8000";
-LUT4 ii0507 (
-	. dx ( \ii0507|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[7]|qx_net  ),
-	. f2 ( \ii0498|dx_net  ),
-	. f1 ( ),
+	. f3 ( \u_colorgen_v_cnt__reg[6]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[7]|qx_net  ),
+	. f1 ( \ii0494|dx_net  ),
 	. f0 ( )
 );
-defparam ii0507.PLACE_LOCATION = "C37R19.le_tile.le_guts.lp1.lut0";
-defparam ii0507.PCK_LOCATION = "C37R19.lp1.lut0";
-defparam ii0507.config_data = "6666";
+defparam ii0497.PLACE_LOCATION = "C23R19.le_tile.le_guts.lp0.lut41";
+defparam ii0497.PCK_LOCATION = "C23R19.lp0.lut41";
+defparam ii0497.config_data = "8080";
+LUT4 ii0507 (
+	. dx ( \ii0507|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[10]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[8]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_text__reg[7]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_text__reg[9]|qx_net  )
+);
+defparam ii0507.PLACE_LOCATION = "C33R24.le_tile.le_guts.lp1.lut0";
+defparam ii0507.PCK_LOCATION = "C33R24.lp1.lut0";
+defparam ii0507.config_data = "8241";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[5]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[5]|qx_net  ),
 	. qs ( ),
@@ -14633,16 +15251,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[5] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[5] .PLACE_LOCATION = "C29R17.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[5] .PLACE_LOCATION = "C29R15.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[5] .PCK_LOCATION = "C29R17.lp0.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[5] .PCK_LOCATION = "C29R15.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[5] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[18]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[18]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0527|dx_net  ),
+	. di ( \ii0537|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -14664,60 +15282,60 @@ defparam \u_sdram_to_RGB_dma_addr__reg[18] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[18] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[18] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[18] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[18] .PLACE_LOCATION = "C37R21.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[18] .PLACE_LOCATION = "C39R23.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[18] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[18] .PCK_LOCATION = "C37R21.lp2.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[18] .PCK_LOCATION = "C39R23.lp1.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[18] .is_en_used = "false";
 LUT4 ii0498 (
 	. dx ( \ii0498|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_addr_cnt__reg[6]|qx_net  ),
-	. f0 ( \ii0497|dx_net  )
+	. f3 ( \u_colorgen_v_cnt__reg[8]|qx_net  ),
+	. f2 ( \ii0484|dx_net  ),
+	. f1 ( \ii0497|dx_net  ),
+	. f0 ( )
 );
-defparam ii0498.PLACE_LOCATION = "C37R16.le_tile.le_guts.lp1.lut41";
-defparam ii0498.PCK_LOCATION = "C37R16.lp1.lut41";
-defparam ii0498.config_data = "8000";
+defparam ii0498.PLACE_LOCATION = "C23R19.le_tile.le_guts.lp1.lut41";
+defparam ii0498.PCK_LOCATION = "C23R19.lp1.lut41";
+defparam ii0498.config_data = "1212";
 LUT4 ii0508 (
 	. dx ( \ii0508|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[7]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[8]|qx_net  ),
-	. f1 ( \ii0498|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[9]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_text__reg[8]|qx_net  ),
+	. f1 ( \ii0505|dx_net  ),
+	. f0 ( \ii0507|dx_net  )
 );
-defparam ii0508.PLACE_LOCATION = "C37R19.le_tile.le_guts.lp0.lut0";
-defparam ii0508.PCK_LOCATION = "C37R19.lp0.lut0";
-defparam ii0508.config_data = "6C6C";
+defparam ii0508.PLACE_LOCATION = "C35R23.le_tile.le_guts.lp2.lut0";
+defparam ii0508.PCK_LOCATION = "C35R23.lp2.lut0";
+defparam ii0508.config_data = "9000";
 LUT4 ii0499 (
 	. dx ( \ii0499|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[7]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[8]|qx_net  ),
-	. f1 ( \ii0498|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_colorgen_v_cnt__reg[8]|qx_net  ),
+	. f2 ( \u_colorgen_v_cnt__reg[9]|qx_net  ),
+	. f1 ( \ii0484|dx_net  ),
+	. f0 ( \ii0497|dx_net  )
 );
-defparam ii0499.PLACE_LOCATION = "C37R20.le_tile.le_guts.lp1.lut0";
-defparam ii0499.PCK_LOCATION = "C37R20.lp1.lut0";
-defparam ii0499.config_data = "8080";
+defparam ii0499.PLACE_LOCATION = "C25R19.le_tile.le_guts.lp3.lut0";
+defparam ii0499.PCK_LOCATION = "C25R19.lp3.lut0";
+defparam ii0499.config_data = "0E0C";
 LUT4 ii0509 (
 	. dx ( \ii0509|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[10]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[9]|qx_net  ),
-	. f1 ( \ii0499|dx_net  ),
-	. f0 ( )
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[8]|qx_net  ),
+	. f1 ( \ii0506|dx_net  ),
+	. f0 ( \ii0508|dx_net  )
 );
-defparam ii0509.PLACE_LOCATION = "C39R20.le_tile.le_guts.lp2.lut0";
-defparam ii0509.PCK_LOCATION = "C39R20.lp2.lut0";
-defparam ii0509.config_data = "1C1C";
+defparam ii0509.PLACE_LOCATION = "C35R23.le_tile.le_guts.lp1.lut0";
+defparam ii0509.PCK_LOCATION = "C35R23.lp1.lut0";
+defparam ii0509.config_data = "006A";
 LUT4 ii0510 (
 	. dx ( \ii0510|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_wr_sel__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_display_period_align__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[1]|qx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0510.PLACE_LOCATION = "C39R15.le_tile.le_guts.lp1.lut0";
-defparam ii0510.PCK_LOCATION = "C39R15.lp1.lut0";
-defparam ii0510.config_data = "4040";
+defparam ii0510.PLACE_LOCATION = "C43R17.le_tile.le_guts.lp1.lut0";
+defparam ii0510.PCK_LOCATION = "C43R17.lp1.lut0";
+defparam ii0510.config_data = "6666";
 REG \u_sdram_to_RGB_v_valid_r__reg[1]  (
 	. qx ( \u_sdram_to_RGB_v_valid_r__reg[1]|qx_net  ),
 	. qs ( ),
@@ -14745,9 +15363,9 @@ defparam \u_sdram_to_RGB_v_valid_r__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_v_valid_r__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_v_valid_r__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_v_valid_r__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_v_valid_r__reg[1] .PLACE_LOCATION = "C45R15.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_v_valid_r__reg[1] .PLACE_LOCATION = "C39R22.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_v_valid_r__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_v_valid_r__reg[1] .PCK_LOCATION = "C45R15.lp2.reg0";
+defparam \u_sdram_to_RGB_v_valid_r__reg[1] .PCK_LOCATION = "C39R22.lp1.reg0";
 defparam \u_sdram_to_RGB_v_valid_r__reg[1] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7]|qx_net  ),
@@ -14776,18 +15394,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7] .PCK_LOCATION = "C47R4.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7] .PCK_LOCATION = "C47R4.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[7] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0675|dx_net  ),
+	. di ( \ii0688|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -14807,18 +15425,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3] .PLACE_LOCATION = "C39R12.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3] .PLACE_LOCATION = "C33R9.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3] .PCK_LOCATION = "C39R12.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3] .PCK_LOCATION = "C33R9.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[3] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0650|dx_net  ),
+	. di ( \ii0664|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -14838,9 +15456,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12] .PLACE_LOCATION = "C37R13.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12] .PLACE_LOCATION = "C45R14.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12] .PCK_LOCATION = "C37R13.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12] .PCK_LOCATION = "C45R14.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[12] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[5]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[5]|qx_net  ),
@@ -14869,50 +15487,50 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[5] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[5] .PLACE_LOCATION = "C35R10.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[5] .PLACE_LOCATION = "C35R13.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[5] .PCK_LOCATION = "C35R10.lp3.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[5] .PCK_LOCATION = "C35R13.lp3.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[5] .is_en_used = "false";
 LUT4 ii0511 (
 	. dx ( \ii0511|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_wr_sel__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_display_period_align__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_addr_cnt__reg[2]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0511.PLACE_LOCATION = "C39R15.le_tile.le_guts.lp0.lut0";
-defparam ii0511.PCK_LOCATION = "C39R15.lp0.lut0";
-defparam ii0511.config_data = "8080";
+defparam ii0511.PLACE_LOCATION = "C43R16.le_tile.le_guts.lp2.lut0";
+defparam ii0511.PCK_LOCATION = "C43R16.lp2.lut0";
+defparam ii0511.config_data = "7878";
 LUT4 ii0512 (
 	. dx ( \ii0512|dx_net  ),
-	. f3 ( \u_arm_u_soc|gpio_0_out_o[1]_net  ),
-	. f2 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_addr_cnt__reg[2]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_addr_cnt__reg[3]|qx_net  )
 );
-defparam ii0512.PLACE_LOCATION = "C39R15.le_tile.le_guts.lp2.lut0";
-defparam ii0512.PCK_LOCATION = "C39R15.lp2.lut0";
-defparam ii0512.config_data = "2222";
+defparam ii0512.PLACE_LOCATION = "C39R17.le_tile.le_guts.lp1.lut0";
+defparam ii0512.PCK_LOCATION = "C39R17.lp1.lut0";
+defparam ii0512.config_data = "7F80";
 LUT4 ii0513 (
 	. dx ( \ii0513|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[4]|qx_net  ),
+	. f2 ( \ii0503|dx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0513.PLACE_LOCATION = "C37R23.le_tile.le_guts.lp0.lut0";
-defparam ii0513.PCK_LOCATION = "C37R23.lp0.lut0";
-defparam ii0513.config_data = "1111";
+defparam ii0513.PLACE_LOCATION = "C39R18.le_tile.le_guts.lp2.lut0";
+defparam ii0513.PCK_LOCATION = "C39R18.lp2.lut0";
+defparam ii0513.config_data = "6666";
 LUT4 ii0514 (
 	. dx ( \ii0514|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_bmp_fig_chg__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_bmp_fig_chg__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[5]|qx_net  ),
+	. f1 ( \ii0503|dx_net  ),
 	. f0 ( )
 );
-defparam ii0514.PLACE_LOCATION = "C39R21.le_tile.le_guts.lp0.lut0";
-defparam ii0514.PCK_LOCATION = "C39R21.lp0.lut0";
-defparam ii0514.config_data = "F2F2";
+defparam ii0514.PLACE_LOCATION = "C39R18.le_tile.le_guts.lp0.lut0";
+defparam ii0514.PCK_LOCATION = "C39R18.lp0.lut0";
+defparam ii0514.config_data = "6C6C";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21]|qx_net  ),
 	. qs ( ),
@@ -14940,18 +15558,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21] .PCK_LOCATION = "C49R5.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21] .PCK_LOCATION = "C47R4.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[21] .is_en_used = "false";
 REG \u_colorgen_v_cnt__reg[3]  (
 	. qx ( \u_colorgen_v_cnt__reg[3]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0484|dx_net  ),
+	. di ( \ii0490|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0480|dx_net  ),
+	. en ( \ii0486|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_lvds_pll_u0|clkout0_net  ),
 	. shift ( ),
@@ -14971,20 +15589,20 @@ defparam \u_colorgen_v_cnt__reg[3] .le_sh0_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[3] .le_sh1_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[3] .use_reg_fdbk = "false";
 defparam \u_colorgen_v_cnt__reg[3] .is_le_clk_inv = "false";
-defparam \u_colorgen_v_cnt__reg[3] .PLACE_LOCATION = "C13R17.le_tile.le_guts.lp1.reg0";
+defparam \u_colorgen_v_cnt__reg[3] .PLACE_LOCATION = "C25R19.le_tile.le_guts.lp2.reg0";
 defparam \u_colorgen_v_cnt__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_v_cnt__reg[3] .PCK_LOCATION = "C13R17.lp1.reg0";
+defparam \u_colorgen_v_cnt__reg[3] .PCK_LOCATION = "C25R19.lp2.reg0";
 defparam \u_colorgen_v_cnt__reg[3] .is_en_used = "true";
 LUT4 ii0515 (
 	. dx ( \ii0515|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[6]|qx_net  ),
+	. f2 ( \ii0504|dx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0515.PLACE_LOCATION = "C37R22.le_tile.le_guts.lp2.lut0";
-defparam ii0515.PCK_LOCATION = "C37R22.lp2.lut0";
-defparam ii0515.config_data = "0606";
+defparam ii0515.PLACE_LOCATION = "C39R22.le_tile.le_guts.lp0.lut0";
+defparam ii0515.PCK_LOCATION = "C39R22.lp0.lut0";
+defparam ii0515.config_data = "6666";
 M7S_IO_DDR dedicated_io_cell_u215_inst (
 	. id_q_1 ( )
 ,
@@ -15128,22 +15746,22 @@ defparam dedicated_io_cell_u215_inst.cfg_gsclk_inv_1 = 0;
 defparam dedicated_io_cell_u215_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0516 (
 	. dx ( \ii0516|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  )
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[6]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[7]|qx_net  ),
+	. f1 ( \ii0504|dx_net  ),
+	. f0 ( )
 );
-defparam ii0516.PLACE_LOCATION = "C37R23.le_tile.le_guts.lp1.lut0";
-defparam ii0516.PCK_LOCATION = "C37R23.lp1.lut0";
-defparam ii0516.config_data = "0078";
+defparam ii0516.PLACE_LOCATION = "C37R22.le_tile.le_guts.lp0.lut0";
+defparam ii0516.PCK_LOCATION = "C37R22.lp0.lut0";
+defparam ii0516.config_data = "6C6C";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0722|dx_net  ),
+	. di ( \ii0737|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -15163,9 +15781,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23] .PLACE_LOCATION = "C33R14.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23] .PLACE_LOCATION = "C37R16.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23] .PCK_LOCATION = "C33R14.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23] .PCK_LOCATION = "C37R16.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[23] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11]|qx_net  ),
@@ -15174,7 +15792,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[11]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -15194,18 +15812,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11] .PLACE_LOCATION = "C33R8.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11] .PLACE_LOCATION = "C29R11.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11] .PCK_LOCATION = "C33R8.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11] .PCK_LOCATION = "C29R11.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[11] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0590|dx_net  ),
+	. di ( \ii0604|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -15225,16 +15843,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1] .PLACE_LOCATION = "C25R11.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1] .PLACE_LOCATION = "C35R12.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1] .PCK_LOCATION = "C25R11.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1] .PCK_LOCATION = "C35R12.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[1] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[14]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[14]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0566|dx_net  ),
+	. di ( \ii0577|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -15256,28 +15874,28 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[14] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[14] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[14] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[14] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[14] .PLACE_LOCATION = "C35R31.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[14] .PLACE_LOCATION = "C33R29.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[14] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[14] .PCK_LOCATION = "C35R31.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[14] .PCK_LOCATION = "C33R29.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[14] .is_en_used = "false";
 LUT4 ii0517 (
 	. dx ( \ii0517|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[3]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[8]|qx_net  ),
+	. f2 ( \ii0505|dx_net  ),
+	. f1 ( \ii0508|dx_net  ),
+	. f0 ( )
 );
-defparam ii0517.PLACE_LOCATION = "C37R22.le_tile.le_guts.lp0.lut0";
-defparam ii0517.PCK_LOCATION = "C37R22.lp0.lut0";
-defparam ii0517.config_data = "807F";
+defparam ii0517.PLACE_LOCATION = "C35R22.le_tile.le_guts.lp1.lut0";
+defparam ii0517.PCK_LOCATION = "C35R22.lp1.lut0";
+defparam ii0517.config_data = "0606";
 REG \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0741|dx_net  ),
+	. di ( \ii0756|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0742|dx_net  ),
+	. en ( \ii0757|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -15297,9 +15915,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0] .PLACE_LOCATION = "C29R14.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0] .PLACE_LOCATION = "C27R15.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0] .PCK_LOCATION = "C29R14.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0] .PCK_LOCATION = "C27R15.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[6]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[6]|qx_net  ),
@@ -15328,16 +15946,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[6] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[6] .PLACE_LOCATION = "C29R20.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[6] .PLACE_LOCATION = "C29R18.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[6] .PCK_LOCATION = "C29R20.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[6] .PCK_LOCATION = "C29R18.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[6] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[20]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[20]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0529|dx_net  ),
+	. di ( \ii0539|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -15359,16 +15977,16 @@ defparam \u_sdram_to_RGB_dma_addr__reg[20] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[20] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[20] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[20] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[20] .PLACE_LOCATION = "C35R23.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[20] .PLACE_LOCATION = "C33R24.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[20] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[20] .PCK_LOCATION = "C35R23.lp1.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[20] .PCK_LOCATION = "C33R24.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[20] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[19]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[19]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0528|dx_net  ),
+	. di ( \ii0538|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -15390,9 +16008,9 @@ defparam \u_sdram_to_RGB_dma_addr__reg[19] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[19] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[19] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[19] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[19] .PLACE_LOCATION = "C39R19.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[19] .PLACE_LOCATION = "C39R22.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[19] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[19] .PCK_LOCATION = "C39R19.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[19] .PCK_LOCATION = "C39R22.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[19] .is_en_used = "false";
 M7S_IO_DDR dedicated_io_cell_u271_inst (
 	. id_q_1 ( )
@@ -15537,34 +16155,158 @@ defparam dedicated_io_cell_u271_inst.cfg_gsclk_inv_1 = 1;
 defparam dedicated_io_cell_u271_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0518 (
 	. dx ( \ii0518|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
-	. f2 ( \ii0517|dx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_addr_cnt__reg[8]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[9]|qx_net  ),
+	. f1 ( \ii0505|dx_net  ),
+	. f0 ( \ii0508|dx_net  )
 );
-defparam ii0518.PLACE_LOCATION = "C37R23.le_tile.le_guts.lp2.lut0";
-defparam ii0518.PCK_LOCATION = "C37R23.lp2.lut0";
-defparam ii0518.config_data = "1111";
+defparam ii0518.PLACE_LOCATION = "C35R22.le_tile.le_guts.lp3.lut0";
+defparam ii0518.PCK_LOCATION = "C35R22.lp3.lut0";
+defparam ii0518.config_data = "006C";
 LUT4 ii0519 (
 	. dx ( \ii0519|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_de_i_r_sclk__reg[0]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_buffer_wr_sel__reg|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_display_period_align__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
 	. f0 ( )
 );
-defparam ii0519.PLACE_LOCATION = "C33R17.le_tile.le_guts.lp0.lut0";
-defparam ii0519.PCK_LOCATION = "C33R17.lp0.lut0";
-defparam ii0519.config_data = "A6A6";
+defparam ii0519.PLACE_LOCATION = "C29R17.le_tile.le_guts.lp1.lut0";
+defparam ii0519.PCK_LOCATION = "C29R17.lp1.lut0";
+defparam ii0519.config_data = "4040";
 LUT4 ii0520 (
 	. dx ( \ii0520|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_buffer_wr_sel__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_de_i_start_pulse__reg|qx_net  ),
-	. f1 ( ),
+	. f2 ( \u_sdram_to_RGB_display_period_align__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
 	. f0 ( )
 );
-defparam ii0520.PLACE_LOCATION = "C45R15.le_tile.le_guts.lp0.lut0";
-defparam ii0520.PCK_LOCATION = "C45R15.lp0.lut0";
-defparam ii0520.config_data = "6666";
+defparam ii0520.PLACE_LOCATION = "C29R17.le_tile.le_guts.lp0.lut0";
+defparam ii0520.PCK_LOCATION = "C29R17.lp0.lut0";
+defparam ii0520.config_data = "8080";
+M7S_IO_LVDS io_cell_buttonIn4_inst (
+	. id_1 ( ),
+	. id_0 ( ),
+	. id_q_1 ( {
+		/* id_q_1 [3] (nc) */ nc130 ,
+		/* id_q_1 [2] (nc) */ nc131 ,
+		/* id_q_1 [1] (nc) */ nc132 ,
+		/* id_q_1 [0] */ \io_cell_display_sel_inst|id_q_net 
+	} ),
+	. id_q_0 ( )
+,
+	. align_rstn ( ),
+	. alignwd ( ),
+	. clk_en_1 ( ),
+	. clk_en_0 ( ),
+	. io_reg_clk ( ),
+	. geclk ( ),
+	. geclk90 ( ),
+	. geclk180 ( ),
+	. geclk270 ( ),
+	. od_d_1 ( )
+,
+	. od_d_0 ( )
+,
+	. oen_1 ( ),
+	. oen_0 ( ),
+	. clk_0 ( ),
+	. clk_1 ( ),
+	. rstn_0 ( ),
+	. rstn_1 ( ),
+	. setn_0 ( ),
+	. setn_1 ( ),
+	. PAD1 ( display_sel ),
+	. PAD0 ( buttonIn4 )
+);
+defparam io_cell_buttonIn4_inst.cfg_userio_en_1 = 1;
+defparam io_cell_buttonIn4_inst.cfg_eclk90_gate_sel_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_sclk_out_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_eclk90_gate_sel_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_sclk_out_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_sclk_gate_sel_0 = 0;
+defparam io_cell_buttonIn4_inst.cfg_sclk_gate_sel_1 = 0;
+defparam io_cell_buttonIn4_inst.cfg_oen_setn_en_0 = 0;
+defparam io_cell_buttonIn4_inst.cfg_setn_inv_0 = 0;
+defparam io_cell_buttonIn4_inst.cfg_oen_setn_en_1 = 0;
+defparam io_cell_buttonIn4_inst.cfg_txd3_inv_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.lvds_tx_en_cfg = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_setn_inv_1 = 0;
+defparam io_cell_buttonIn4_inst.PCK_LOCATION = "C29R49.u0_M7A_IO_LVDS";
+defparam io_cell_buttonIn4_inst.cfg_id_sel_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_txd3_inv_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.td_cfg = 4'h0;
+defparam io_cell_buttonIn4_inst.cfg_id_sel_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_eclk90_en_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_rstn_inv_0 = 0;
+defparam io_cell_buttonIn4_inst.cfg_gear_mode7 = 1;
+defparam io_cell_buttonIn4_inst.term_diff_en_cfg = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_eclk90_en_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.ndr_cfg_0 = 4'h0;
+defparam io_cell_buttonIn4_inst.cfg_rstn_inv_1 = 0;
+defparam io_cell_buttonIn4_inst.ndr_cfg_1 = 4'h0;
+defparam io_cell_buttonIn4_inst.pdr_cfg_0 = 4'h0;
+defparam io_cell_buttonIn4_inst.cfg_od_setn_en_0 = 0;
+defparam io_cell_buttonIn4_inst.cfg_gear_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_od_setn_en_1 = 0;
+defparam io_cell_buttonIn4_inst.pdr_cfg_1 = 4'h0;
+defparam io_cell_buttonIn4_inst.cfg_gear_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_eclk_en_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_fclk_en_0 = 0;
+defparam io_cell_buttonIn4_inst.cfg_eclk_gate_sel_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_eclk_en_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_eclk_gate_sel_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_fclk_en_1 = 0;
+defparam io_cell_buttonIn4_inst.in_del_0 = 0;
+defparam io_cell_buttonIn4_inst.out_del_0 = 0;
+defparam io_cell_buttonIn4_inst.cfg_id_rstn_en_0 = 0;
+defparam io_cell_buttonIn4_inst.in_del_1 = 0;
+defparam io_cell_buttonIn4_inst.cfg_txd2_inv_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_id_rstn_en_1 = 0;
+defparam io_cell_buttonIn4_inst.out_del_1 = 0;
+defparam io_cell_buttonIn4_inst.rx_dig_en_cfg_0 = 1;
+defparam io_cell_buttonIn4_inst.cfg_txd2_inv_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.rx_dig_en_cfg_1 = 1;
+defparam io_cell_buttonIn4_inst.cfg_nc = 4'h0;
+defparam io_cell_buttonIn4_inst.keep_cfg_0 = 2'h0;
+defparam io_cell_buttonIn4_inst.cfg_slave_en_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_od_sel_0 = 2'h0;
+defparam io_cell_buttonIn4_inst.cfg_slave_en_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.keep_cfg_1 = 2'h0;
+defparam io_cell_buttonIn4_inst.cfg_sclk_en_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_od_sel_1 = 2'h0;
+defparam io_cell_buttonIn4_inst.cfg_sclk_en_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.ns_lv_cfg_0 = 2'h0;
+defparam io_cell_buttonIn4_inst.cfg_oen_rstn_en_0 = 0;
+defparam io_cell_buttonIn4_inst.ns_lv_fastestn_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.ns_lv_fastestn_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_oen_rstn_en_1 = 0;
+defparam io_cell_buttonIn4_inst.ns_lv_cfg_1 = 2'h0;
+defparam io_cell_buttonIn4_inst.optional_function = "";
+defparam io_cell_buttonIn4_inst.cfg_txd1_inv_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_txd1_inv_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_sclk_inv_0 = 0;
+defparam io_cell_buttonIn4_inst.cfg_sclk_inv_1 = 0;
+defparam io_cell_buttonIn4_inst.cfg_od_rstn_en_0 = 0;
+defparam io_cell_buttonIn4_inst.cfg_od_rstn_en_1 = 0;
+defparam io_cell_buttonIn4_inst.cfg_clkout_sel_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.rx_lvds_en_cfg = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_d_en_0 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_clkout_sel_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_d_en_1 = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_algn_rsn_sel = 1'b0;
+defparam io_cell_buttonIn4_inst.cfg_gear_mode48 = 1'b0;
+defparam io_cell_buttonIn4_inst.cml_tx_en_cfg = 1'b0;
+defparam io_cell_buttonIn4_inst.ldr_cfg = 4'h0;
+defparam io_cell_buttonIn4_inst.cfg_txd0_inv_0 = 0;
+defparam io_cell_buttonIn4_inst.cfg_oen_sel_0 = 2'h0;
+defparam io_cell_buttonIn4_inst.cfg_txd0_inv_1 = 0;
+defparam io_cell_buttonIn4_inst.cfg_oen_inv_0 = 0;
+defparam io_cell_buttonIn4_inst.cfg_oen_sel_1 = 2'h0;
+defparam io_cell_buttonIn4_inst.PLACE_LOCATION = "C29R49.io_top.u0_bank11_mux.u0_bank11.u385.u0_M7A_IO_LVDS";
+defparam io_cell_buttonIn4_inst.cfg_oen_inv_1 = 0;
+defparam io_cell_buttonIn4_inst.cfg_id_setn_en_0 = 0;
+defparam io_cell_buttonIn4_inst.cfg_userio_en_0 = 1;
+defparam io_cell_buttonIn4_inst.cfg_id_setn_en_1 = 0;
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8]|qx_net  ),
 	. qs ( ),
@@ -15592,18 +16334,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8] .PLACE_LOCATION = "C49R6.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8] .PCK_LOCATION = "C47R4.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8] .PCK_LOCATION = "C49R6.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[8] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0676|dx_net  ),
+	. di ( \ii0690|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -15623,18 +16365,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4] .PLACE_LOCATION = "C39R10.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4] .PLACE_LOCATION = "C29R9.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4] .PCK_LOCATION = "C39R10.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4] .PCK_LOCATION = "C29R9.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[4] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0652|dx_net  ),
+	. di ( \ii0666|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -15654,9 +16396,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13] .PLACE_LOCATION = "C35R8.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13] .PLACE_LOCATION = "C45R14.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13] .PCK_LOCATION = "C35R8.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13] .PCK_LOCATION = "C45R14.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[13] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[6]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[6]|qx_net  ),
@@ -15685,40 +16427,40 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[6] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[6] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[6] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[6] .PCK_LOCATION = "C33R12.lp2.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[6] .PCK_LOCATION = "C33R12.lp0.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[6] .is_en_used = "false";
 LUT4 ii0521 (
 	. dx ( \ii0521|dx_net  ),
-	. f3 ( \u_colorgen_h_valid__reg|qx_net  ),
-	. f2 ( \u_colorgen_v_valid__reg|qx_net  ),
+	. f3 ( \u_arm_u_soc|gpio_0_out_o[1]_net  ),
+	. f2 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0521.PLACE_LOCATION = "C25R16.le_tile.le_guts.lp0.lut0";
-defparam ii0521.PCK_LOCATION = "C25R16.lp0.lut0";
-defparam ii0521.config_data = "8888";
+defparam ii0521.PLACE_LOCATION = "C39R15.le_tile.le_guts.lp0.lut0";
+defparam ii0521.PCK_LOCATION = "C39R15.lp0.lut0";
+defparam ii0521.config_data = "2222";
 LUT4 ii0522 (
 	. dx ( \ii0522|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_de_i_r__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_de_i_r__reg[1]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0522.PLACE_LOCATION = "C45R15.le_tile.le_guts.lp1.lut0";
-defparam ii0522.PCK_LOCATION = "C45R15.lp1.lut0";
-defparam ii0522.config_data = "2222";
+defparam ii0522.PLACE_LOCATION = "C39R23.le_tile.le_guts.lp0.lut0";
+defparam ii0522.PCK_LOCATION = "C39R23.lp0.lut0";
+defparam ii0522.config_data = "1111";
 LUT4 ii0523 (
 	. dx ( \ii0523|dx_net  ),
-	. f3 ( \u_arm_u_soc|gpio_0_out_o[0]_net  ),
-	. f2 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_v_valid_r__reg[0]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_v_valid_r__reg[1]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_bmp_fig_chg__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_bmp_fig_chg__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
+	. f0 ( )
 );
-defparam ii0523.PLACE_LOCATION = "C39R15.le_tile.le_guts.lp1.lut41";
-defparam ii0523.PCK_LOCATION = "C39R15.lp1.lut41";
-defparam ii0523.config_data = "CCAC";
+defparam ii0523.PLACE_LOCATION = "C37R21.le_tile.le_guts.lp0.lut0";
+defparam ii0523.PCK_LOCATION = "C37R21.lp0.lut0";
+defparam ii0523.config_data = "F2F2";
 M7S_IO_DDR dedicated_io_cell_u267_inst (
 	. id_q_1 ( )
 ,
@@ -15862,14 +16604,14 @@ defparam dedicated_io_cell_u267_inst.cfg_gsclk_inv_1 = 1;
 defparam dedicated_io_cell_u267_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0524 (
 	. dx ( \ii0524|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_display_period_align__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_v_valid_r__reg[0]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_v_valid_r__reg[1]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
 	. f0 ( )
 );
-defparam ii0524.PLACE_LOCATION = "C45R15.le_tile.le_guts.lp2.lut0";
-defparam ii0524.PCK_LOCATION = "C45R15.lp2.lut0";
-defparam ii0524.config_data = "BABA";
+defparam ii0524.PLACE_LOCATION = "C39R23.le_tile.le_guts.lp1.lut0";
+defparam ii0524.PCK_LOCATION = "C39R23.lp1.lut0";
+defparam ii0524.config_data = "0606";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22]|qx_net  ),
 	. qs ( ),
@@ -15897,18 +16639,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22] .PCK_LOCATION = "C49R5.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22] .PCK_LOCATION = "C49R5.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[22] .is_en_used = "false";
 REG \u_colorgen_v_cnt__reg[4]  (
 	. qx ( \u_colorgen_v_cnt__reg[4]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0486|dx_net  ),
+	. di ( \ii0492|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0480|dx_net  ),
+	. en ( \ii0486|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_lvds_pll_u0|clkout0_net  ),
 	. shift ( ),
@@ -15928,38 +16670,38 @@ defparam \u_colorgen_v_cnt__reg[4] .le_sh0_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[4] .le_sh1_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[4] .use_reg_fdbk = "false";
 defparam \u_colorgen_v_cnt__reg[4] .is_le_clk_inv = "false";
-defparam \u_colorgen_v_cnt__reg[4] .PLACE_LOCATION = "C13R16.le_tile.le_guts.lp0.reg0";
+defparam \u_colorgen_v_cnt__reg[4] .PLACE_LOCATION = "C23R19.le_tile.le_guts.lp0.reg0";
 defparam \u_colorgen_v_cnt__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_v_cnt__reg[4] .PCK_LOCATION = "C13R16.lp0.reg0";
+defparam \u_colorgen_v_cnt__reg[4] .PCK_LOCATION = "C23R19.lp0.reg0";
 defparam \u_colorgen_v_cnt__reg[4] .is_en_used = "true";
 LUT4 ii0525 (
 	. dx ( \ii0525|dx_net  ),
-	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[6]|qx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[2]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  )
 );
-defparam ii0525.PLACE_LOCATION = "C37R21.le_tile.le_guts.lp0.lut0";
-defparam ii0525.PCK_LOCATION = "C37R21.lp0.lut0";
-defparam ii0525.config_data = "8888";
+defparam ii0525.PLACE_LOCATION = "C37R24.le_tile.le_guts.lp2.lut0";
+defparam ii0525.PCK_LOCATION = "C37R24.lp2.lut0";
+defparam ii0525.config_data = "0078";
 LUT4 ii0526 (
 	. dx ( \ii0526|dx_net  ),
-	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[7]|qx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[2]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[3]|qx_net  )
 );
-defparam ii0526.PLACE_LOCATION = "C37R21.le_tile.le_guts.lp1.lut0";
-defparam ii0526.PCK_LOCATION = "C37R21.lp1.lut0";
-defparam ii0526.config_data = "8888";
+defparam ii0526.PLACE_LOCATION = "C37R23.le_tile.le_guts.lp0.lut0";
+defparam ii0526.PCK_LOCATION = "C37R23.lp0.lut0";
+defparam ii0526.config_data = "807F";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0723|dx_net  ),
+	. di ( \ii0738|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -15979,9 +16721,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24] .PLACE_LOCATION = "C33R14.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24] .PCK_LOCATION = "C33R14.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24] .PCK_LOCATION = "C33R15.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[24] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12]|qx_net  ),
@@ -15990,7 +16732,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[12]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -16010,18 +16752,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12] .PLACE_LOCATION = "C33R7.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12] .PLACE_LOCATION = "C37R9.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12] .PCK_LOCATION = "C33R7.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12] .PCK_LOCATION = "C37R9.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[12] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0596|dx_net  ),
+	. di ( \ii0610|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -16041,16 +16783,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2] .PLACE_LOCATION = "C27R11.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2] .PLACE_LOCATION = "C35R12.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2] .PCK_LOCATION = "C27R11.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2] .PCK_LOCATION = "C35R12.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[2] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[15]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[15]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0567|dx_net  ),
+	. di ( \ii0578|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -16072,28 +16814,28 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[15] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[15] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[15] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[15] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[15] .PLACE_LOCATION = "C33R32.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[15] .PLACE_LOCATION = "C33R29.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[15] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[15] .PCK_LOCATION = "C33R32.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[15] .PCK_LOCATION = "C33R29.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[15] .is_en_used = "false";
 LUT4 ii0527 (
 	. dx ( \ii0527|dx_net  ),
-	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[8]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
+	. f2 ( \ii0526|dx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0527.PLACE_LOCATION = "C37R22.le_tile.le_guts.lp1.lut0";
-defparam ii0527.PCK_LOCATION = "C37R22.lp1.lut0";
-defparam ii0527.config_data = "8888";
+defparam ii0527.PLACE_LOCATION = "C37R23.le_tile.le_guts.lp2.lut0";
+defparam ii0527.PCK_LOCATION = "C37R23.lp2.lut0";
+defparam ii0527.config_data = "1111";
 REG \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0761|dx_net  ),
+	. di ( \ii0776|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0742|dx_net  ),
+	. en ( \ii0757|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -16113,9 +16855,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1] .PLACE_LOCATION = "C29R14.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1] .PLACE_LOCATION = "C43R18.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1] .PCK_LOCATION = "C29R14.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1] .PCK_LOCATION = "C43R18.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[7]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[7]|qx_net  ),
@@ -16144,16 +16886,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[7] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[7] .PLACE_LOCATION = "C29R16.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[7] .PLACE_LOCATION = "C29R19.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[7] .PCK_LOCATION = "C29R16.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[7] .PCK_LOCATION = "C29R19.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[7] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[21]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[21]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0530|dx_net  ),
+	. di ( \ii0540|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -16175,39 +16917,39 @@ defparam \u_sdram_to_RGB_dma_addr__reg[21] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[21] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[21] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[21] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[21] .PLACE_LOCATION = "C37R21.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[21] .PLACE_LOCATION = "C39R23.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[21] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[21] .PCK_LOCATION = "C37R21.lp1.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[21] .PCK_LOCATION = "C39R23.lp2.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[21] .is_en_used = "false";
 LUT4 ii0528 (
 	. dx ( \ii0528|dx_net  ),
-	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[9]|qx_net  ),
-	. f1 ( ),
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel__reg|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_de_i_r_sclk__reg[0]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0528.PLACE_LOCATION = "C39R26.le_tile.le_guts.lp0.lut0";
-defparam ii0528.PCK_LOCATION = "C39R26.lp0.lut0";
-defparam ii0528.config_data = "8888";
+defparam ii0528.PLACE_LOCATION = "C33R16.le_tile.le_guts.lp2.lut0";
+defparam ii0528.PCK_LOCATION = "C33R16.lp2.lut0";
+defparam ii0528.config_data = "A6A6";
 LUT4 ii0529 (
 	. dx ( \ii0529|dx_net  ),
-	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
-	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[10]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_buffer_wr_sel__reg|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_de_i_start_pulse__reg|qx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0529.PLACE_LOCATION = "C35R23.le_tile.le_guts.lp0.lut0";
-defparam ii0529.PCK_LOCATION = "C35R23.lp0.lut0";
-defparam ii0529.config_data = "8888";
+defparam ii0529.PLACE_LOCATION = "C29R17.le_tile.le_guts.lp3.lut0";
+defparam ii0529.PCK_LOCATION = "C29R17.lp3.lut0";
+defparam ii0529.config_data = "6666";
 LUT4 ii0530 (
 	. dx ( \ii0530|dx_net  ),
-	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
-	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ),
+	. f3 ( \u_colorgen_h_valid__reg|qx_net  ),
+	. f2 ( \u_colorgen_v_valid__reg|qx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0530.PLACE_LOCATION = "C37R23.le_tile.le_guts.lp3.lut0";
-defparam ii0530.PCK_LOCATION = "C37R23.lp3.lut0";
+defparam ii0530.PLACE_LOCATION = "C33R19.le_tile.le_guts.lp0.lut41";
+defparam ii0530.PCK_LOCATION = "C33R19.lp0.lut41";
 defparam ii0530.config_data = "8888";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9]|qx_net  ),
@@ -16236,18 +16978,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9] .PLACE_LOCATION = "C49R6.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9] .PCK_LOCATION = "C47R4.lp3.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9] .PCK_LOCATION = "C49R6.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[9] .is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0678|dx_net  ),
+	. di ( \ii0692|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -16267,18 +17009,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5] .PLACE_LOCATION = "C39R12.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5] .PLACE_LOCATION = "C29R10.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5] .PCK_LOCATION = "C39R12.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5] .PCK_LOCATION = "C29R10.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[5] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0654|dx_net  ),
+	. di ( \ii0669|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -16298,9 +17040,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14] .PLACE_LOCATION = "C37R13.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14] .PLACE_LOCATION = "C33R9.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14] .PCK_LOCATION = "C37R13.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14] .PCK_LOCATION = "C33R9.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[14] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[7]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[7]|qx_net  ),
@@ -16329,458 +17071,50 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[7] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[7] .PLACE_LOCATION = "C37R14.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[7] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[7] .PCK_LOCATION = "C37R14.lp1.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[7] .PCK_LOCATION = "C33R12.lp1.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[7] .is_en_used = "false";
 LUT4 ii0531 (
 	. dx ( \ii0531|dx_net  ),
-	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
-	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[1]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_de_i_r__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_de_i_r__reg[1]|qx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0531.PLACE_LOCATION = "C37R26.le_tile.le_guts.lp0.lut0";
-defparam ii0531.PCK_LOCATION = "C37R26.lp0.lut0";
-defparam ii0531.config_data = "8888";
+defparam ii0531.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp0.lut0";
+defparam ii0531.PCK_LOCATION = "C35R16.lp0.lut0";
+defparam ii0531.config_data = "2222";
 LUT4 ii0532 (
 	. dx ( \ii0532|dx_net  ),
-	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
-	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[2]|qx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_arm_u_soc|gpio_0_out_o[0]_net  ),
+	. f2 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_v_valid_r__reg[0]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_v_valid_r__reg[1]|qx_net  )
 );
-defparam ii0532.PLACE_LOCATION = "C33R24.le_tile.le_guts.lp0.lut0";
-defparam ii0532.PCK_LOCATION = "C33R24.lp0.lut0";
-defparam ii0532.config_data = "8888";
-M7S_EMB18K u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new (
-	. wfull ( ),
-	. wfull_almost ( ),
-	. rempty ( ),
-	. rempty_almost ( ),
-	. overflow ( ),
-	. wr_ack ( ),
-	. underflow ( ),
-	. rd_ack ( ),
-	. rd_ha ( )
-,
-	. rd_la ( )
-,
-	. c1r4_q ( {
-		/* c1r4_q [17] (nc) */ nc71 ,
-		/* c1r4_q [16] (nc) */ nc72 ,
-		/* c1r4_q [15] (nc) */ nc73 ,
-		/* c1r4_q [14] (nc) */ nc74 ,
-		/* c1r4_q [13] (nc) */ nc75 ,
-		/* c1r4_q [12] (nc) */ nc76 ,
-		/* c1r4_q [11] (nc) */ nc77 ,
-		/* c1r4_q [10] (nc) */ nc78 ,
-		/* c1r4_q [9] (nc) */ nc79 ,
-		/* c1r4_q [8] (nc) */ nc80 ,
-		/* c1r4_q [7] (nc) */ nc81 ,
-		/* c1r4_q [6] (nc) */ nc82 ,
-		/* c1r4_q [5] (nc) */ nc83 ,
-		/* c1r4_q [4] (nc) */ nc84 ,
-		/* c1r4_q [3] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[3]_net ,
-		/* c1r4_q [2] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[2]_net ,
-		/* c1r4_q [1] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[1]_net ,
-		/* c1r4_q [0] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_0|q[0]_net 
-	} ),
-	. c1r3_q ( {
-		/* c1r3_q [17] (nc) */ nc85 ,
-		/* c1r3_q [16] (nc) */ nc86 ,
-		/* c1r3_q [15] (nc) */ nc87 ,
-		/* c1r3_q [14] (nc) */ nc88 ,
-		/* c1r3_q [13] (nc) */ nc89 ,
-		/* c1r3_q [12] (nc) */ nc90 ,
-		/* c1r3_q [11] (nc) */ nc91 ,
-		/* c1r3_q [10] (nc) */ nc92 ,
-		/* c1r3_q [9] (nc) */ nc93 ,
-		/* c1r3_q [8] (nc) */ nc94 ,
-		/* c1r3_q [7] (nc) */ nc95 ,
-		/* c1r3_q [6] (nc) */ nc96 ,
-		/* c1r3_q [5] (nc) */ nc97 ,
-		/* c1r3_q [4] (nc) */ nc98 ,
-		/* c1r3_q [3] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[3]_net ,
-		/* c1r3_q [2] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[2]_net ,
-		/* c1r3_q [1] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[1]_net ,
-		/* c1r3_q [0] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_1|q[0]_net 
-	} ),
-	. c1r2_q ( {
-		/* c1r2_q [17] (nc) */ nc99 ,
-		/* c1r2_q [16] (nc) */ nc100 ,
-		/* c1r2_q [15] (nc) */ nc101 ,
-		/* c1r2_q [14] (nc) */ nc102 ,
-		/* c1r2_q [13] (nc) */ nc103 ,
-		/* c1r2_q [12] (nc) */ nc104 ,
-		/* c1r2_q [11] (nc) */ nc105 ,
-		/* c1r2_q [10] (nc) */ nc106 ,
-		/* c1r2_q [9] (nc) */ nc107 ,
-		/* c1r2_q [8] (nc) */ nc108 ,
-		/* c1r2_q [7] (nc) */ nc109 ,
-		/* c1r2_q [6] (nc) */ nc110 ,
-		/* c1r2_q [5] (nc) */ nc111 ,
-		/* c1r2_q [4] (nc) */ nc112 ,
-		/* c1r2_q [3] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[3]_net ,
-		/* c1r2_q [2] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[2]_net ,
-		/* c1r2_q [1] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[1]_net ,
-		/* c1r2_q [0] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_2|q[0]_net 
-	} ),
-	. c1r1_q ( {
-		/* c1r1_q [17] (nc) */ nc113 ,
-		/* c1r1_q [16] (nc) */ nc114 ,
-		/* c1r1_q [15] (nc) */ nc115 ,
-		/* c1r1_q [14] (nc) */ nc116 ,
-		/* c1r1_q [13] (nc) */ nc117 ,
-		/* c1r1_q [12] (nc) */ nc118 ,
-		/* c1r1_q [11] (nc) */ nc119 ,
-		/* c1r1_q [10] (nc) */ nc120 ,
-		/* c1r1_q [9] (nc) */ nc121 ,
-		/* c1r1_q [8] (nc) */ nc122 ,
-		/* c1r1_q [7] (nc) */ nc123 ,
-		/* c1r1_q [6] (nc) */ nc124 ,
-		/* c1r1_q [5] (nc) */ nc125 ,
-		/* c1r1_q [4] (nc) */ nc126 ,
-		/* c1r1_q [3] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[3]_net ,
-		/* c1r1_q [2] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[2]_net ,
-		/* c1r1_q [1] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[1]_net ,
-		/* c1r1_q [0] */ \u_sdram_to_RGB_u_1kx16_1_u_emb5k_3|q[0]_net 
-	} ),
-	. c1r4_aa ( {
-		/* c1r4_aa [11] */ \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net ,
-		/* c1r4_aa [10] */ \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net ,
-		/* c1r4_aa [9] */ \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net ,
-		/* c1r4_aa [8] */ \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net ,
-		/* c1r4_aa [7] */ \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net ,
-		/* c1r4_aa [6] */ \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net ,
-		/* c1r4_aa [5] */ \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net ,
-		/* c1r4_aa [4] */ \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net ,
-		/* c1r4_aa [3] */ \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net ,
-		/* c1r4_aa [2] */ \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net ,
-		/* c1r4_aa [1] */ \GND_0_inst|Y_net ,
-		/* c1r4_aa [0] */ \GND_0_inst|Y_net 
-	} ),
-	. c1r4_ab ( {
-		/* c1r4_ab [11] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[8]|qx_net ,
-		/* c1r4_ab [10] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[7]|qx_net ,
-		/* c1r4_ab [9] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[6]|qx_net ,
-		/* c1r4_ab [8] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[5]|qx_net ,
-		/* c1r4_ab [7] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[4]|qx_net ,
-		/* c1r4_ab [6] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[3]|qx_net ,
-		/* c1r4_ab [5] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[2]|qx_net ,
-		/* c1r4_ab [4] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[1]|qx_net ,
-		/* c1r4_ab [3] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[0]|qx_net ,
-		/* c1r4_ab [2] */ \GND_0_inst|Y_net ,
-		/* c1r4_ab [1] */ \GND_0_inst|Y_net ,
-		/* c1r4_ab [0] */ \GND_0_inst|Y_net 
-	} ),
-	. c1r4_cea ( \ii0450|dx_net  ),
-	. c1r4_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr1__reg|qx_net  ),
-	. c1r4_clka ( \u_lvds_pll_u0|clkout0_net  ),
-	. c1r4_clkb ( \u_pll_pll_u0|clkout1_net  ),
-	. c1r4_da ( )
-,
-	. c1r4_db ( {
-		/* c1r4_db [17] */ \GND_0_inst|Y_net ,
-		/* c1r4_db [16] */ \GND_0_inst|Y_net ,
-		/* c1r4_db [15] */ \u_sdram_to_RGB_ahm_rdata_r__reg[28]|qx_net ,
-		/* c1r4_db [14] */ \u_sdram_to_RGB_ahm_rdata_r__reg[24]|qx_net ,
-		/* c1r4_db [13] */ \u_sdram_to_RGB_ahm_rdata_r__reg[20]|qx_net ,
-		/* c1r4_db [12] */ \u_sdram_to_RGB_ahm_rdata_r__reg[16]|qx_net ,
-		/* c1r4_db [11] */ \u_sdram_to_RGB_ahm_rdata_r__reg[12]|qx_net ,
-		/* c1r4_db [10] */ \u_sdram_to_RGB_ahm_rdata_r__reg[8]|qx_net ,
-		/* c1r4_db [9] */ \u_sdram_to_RGB_ahm_rdata_r__reg[4]|qx_net ,
-		/* c1r4_db [8] */ \u_sdram_to_RGB_ahm_rdata_r__reg[0]|qx_net ,
-		/* c1r4_db [7] */ \u_sdram_to_RGB_ahm_rdata_r__reg[28]|qx_net ,
-		/* c1r4_db [6] */ \u_sdram_to_RGB_ahm_rdata_r__reg[24]|qx_net ,
-		/* c1r4_db [5] */ \u_sdram_to_RGB_ahm_rdata_r__reg[20]|qx_net ,
-		/* c1r4_db [4] */ \u_sdram_to_RGB_ahm_rdata_r__reg[16]|qx_net ,
-		/* c1r4_db [3] */ \u_sdram_to_RGB_ahm_rdata_r__reg[12]|qx_net ,
-		/* c1r4_db [2] */ \u_sdram_to_RGB_ahm_rdata_r__reg[8]|qx_net ,
-		/* c1r4_db [1] */ \u_sdram_to_RGB_ahm_rdata_r__reg[4]|qx_net ,
-		/* c1r4_db [0] */ \u_sdram_to_RGB_ahm_rdata_r__reg[0]|qx_net 
-	} ),
-	. c1r4_rstna ( \VCC_0_inst|Y_net  ),
-	. c1r4_rstnb ( \VCC_0_inst|Y_net  ),
-	. c1r4_wea ( \GND_0_inst|Y_net  ),
-	. c1r4_web ( \VCC_0_inst|Y_net  ),
-	. c1r3_aa ( {
-		/* c1r3_aa [11] */ \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net ,
-		/* c1r3_aa [10] */ \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net ,
-		/* c1r3_aa [9] */ \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net ,
-		/* c1r3_aa [8] */ \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net ,
-		/* c1r3_aa [7] */ \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net ,
-		/* c1r3_aa [6] */ \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net ,
-		/* c1r3_aa [5] */ \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net ,
-		/* c1r3_aa [4] */ \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net ,
-		/* c1r3_aa [3] */ \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net ,
-		/* c1r3_aa [2] */ \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net ,
-		/* c1r3_aa [1] */ \GND_0_inst|Y_net ,
-		/* c1r3_aa [0] */ \GND_0_inst|Y_net 
-	} ),
-	. c1r3_ab ( {
-		/* c1r3_ab [11] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[8]|qx_net ,
-		/* c1r3_ab [10] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[7]|qx_net ,
-		/* c1r3_ab [9] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[6]|qx_net ,
-		/* c1r3_ab [8] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[5]|qx_net ,
-		/* c1r3_ab [7] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[4]|qx_net ,
-		/* c1r3_ab [6] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[3]|qx_net ,
-		/* c1r3_ab [5] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[2]|qx_net ,
-		/* c1r3_ab [4] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[1]|qx_net ,
-		/* c1r3_ab [3] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[0]|qx_net ,
-		/* c1r3_ab [2] */ \GND_0_inst|Y_net ,
-		/* c1r3_ab [1] */ \GND_0_inst|Y_net ,
-		/* c1r3_ab [0] */ \GND_0_inst|Y_net 
-	} ),
-	. c1r3_cea ( \ii0450|dx_net  ),
-	. c1r3_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr1__reg|qx_net  ),
-	. c1r3_clka ( \u_lvds_pll_u0|clkout0_net  ),
-	. c1r3_clkb ( \u_pll_pll_u0|clkout1_net  ),
-	. c1r3_da ( )
-,
-	. c1r3_db ( {
-		/* c1r3_db [17] */ \GND_0_inst|Y_net ,
-		/* c1r3_db [16] */ \GND_0_inst|Y_net ,
-		/* c1r3_db [15] */ \u_sdram_to_RGB_ahm_rdata_r__reg[29]|qx_net ,
-		/* c1r3_db [14] */ \u_sdram_to_RGB_ahm_rdata_r__reg[25]|qx_net ,
-		/* c1r3_db [13] */ \u_sdram_to_RGB_ahm_rdata_r__reg[21]|qx_net ,
-		/* c1r3_db [12] */ \u_sdram_to_RGB_ahm_rdata_r__reg[17]|qx_net ,
-		/* c1r3_db [11] */ \u_sdram_to_RGB_ahm_rdata_r__reg[13]|qx_net ,
-		/* c1r3_db [10] */ \u_sdram_to_RGB_ahm_rdata_r__reg[9]|qx_net ,
-		/* c1r3_db [9] */ \u_sdram_to_RGB_ahm_rdata_r__reg[5]|qx_net ,
-		/* c1r3_db [8] */ \u_sdram_to_RGB_ahm_rdata_r__reg[1]|qx_net ,
-		/* c1r3_db [7] */ \u_sdram_to_RGB_ahm_rdata_r__reg[29]|qx_net ,
-		/* c1r3_db [6] */ \u_sdram_to_RGB_ahm_rdata_r__reg[25]|qx_net ,
-		/* c1r3_db [5] */ \u_sdram_to_RGB_ahm_rdata_r__reg[21]|qx_net ,
-		/* c1r3_db [4] */ \u_sdram_to_RGB_ahm_rdata_r__reg[17]|qx_net ,
-		/* c1r3_db [3] */ \u_sdram_to_RGB_ahm_rdata_r__reg[13]|qx_net ,
-		/* c1r3_db [2] */ \u_sdram_to_RGB_ahm_rdata_r__reg[9]|qx_net ,
-		/* c1r3_db [1] */ \u_sdram_to_RGB_ahm_rdata_r__reg[5]|qx_net ,
-		/* c1r3_db [0] */ \u_sdram_to_RGB_ahm_rdata_r__reg[1]|qx_net 
-	} ),
-	. c1r3_rstna ( \VCC_0_inst|Y_net  ),
-	. c1r3_rstnb ( \VCC_0_inst|Y_net  ),
-	. c1r3_wea ( \GND_0_inst|Y_net  ),
-	. c1r3_web ( \VCC_0_inst|Y_net  ),
-	. c1r2_aa ( {
-		/* c1r2_aa [11] */ \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net ,
-		/* c1r2_aa [10] */ \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net ,
-		/* c1r2_aa [9] */ \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net ,
-		/* c1r2_aa [8] */ \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net ,
-		/* c1r2_aa [7] */ \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net ,
-		/* c1r2_aa [6] */ \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net ,
-		/* c1r2_aa [5] */ \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net ,
-		/* c1r2_aa [4] */ \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net ,
-		/* c1r2_aa [3] */ \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net ,
-		/* c1r2_aa [2] */ \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net ,
-		/* c1r2_aa [1] */ \GND_0_inst|Y_net ,
-		/* c1r2_aa [0] */ \GND_0_inst|Y_net 
-	} ),
-	. c1r2_ab ( {
-		/* c1r2_ab [11] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[8]|qx_net ,
-		/* c1r2_ab [10] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[7]|qx_net ,
-		/* c1r2_ab [9] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[6]|qx_net ,
-		/* c1r2_ab [8] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[5]|qx_net ,
-		/* c1r2_ab [7] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[4]|qx_net ,
-		/* c1r2_ab [6] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[3]|qx_net ,
-		/* c1r2_ab [5] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[2]|qx_net ,
-		/* c1r2_ab [4] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[1]|qx_net ,
-		/* c1r2_ab [3] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[0]|qx_net ,
-		/* c1r2_ab [2] */ \GND_0_inst|Y_net ,
-		/* c1r2_ab [1] */ \GND_0_inst|Y_net ,
-		/* c1r2_ab [0] */ \GND_0_inst|Y_net 
-	} ),
-	. c1r2_cea ( \ii0450|dx_net  ),
-	. c1r2_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr1__reg|qx_net  ),
-	. c1r2_clka ( \u_lvds_pll_u0|clkout0_net  ),
-	. c1r2_clkb ( \u_pll_pll_u0|clkout1_net  ),
-	. c1r2_da ( )
-,
-	. c1r2_db ( {
-		/* c1r2_db [17] */ \GND_0_inst|Y_net ,
-		/* c1r2_db [16] */ \GND_0_inst|Y_net ,
-		/* c1r2_db [15] */ \u_sdram_to_RGB_ahm_rdata_r__reg[30]|qx_net ,
-		/* c1r2_db [14] */ \u_sdram_to_RGB_ahm_rdata_r__reg[26]|qx_net ,
-		/* c1r2_db [13] */ \u_sdram_to_RGB_ahm_rdata_r__reg[22]|qx_net ,
-		/* c1r2_db [12] */ \u_sdram_to_RGB_ahm_rdata_r__reg[18]|qx_net ,
-		/* c1r2_db [11] */ \u_sdram_to_RGB_ahm_rdata_r__reg[14]|qx_net ,
-		/* c1r2_db [10] */ \u_sdram_to_RGB_ahm_rdata_r__reg[10]|qx_net ,
-		/* c1r2_db [9] */ \u_sdram_to_RGB_ahm_rdata_r__reg[6]|qx_net ,
-		/* c1r2_db [8] */ \u_sdram_to_RGB_ahm_rdata_r__reg[2]|qx_net ,
-		/* c1r2_db [7] */ \u_sdram_to_RGB_ahm_rdata_r__reg[30]|qx_net ,
-		/* c1r2_db [6] */ \u_sdram_to_RGB_ahm_rdata_r__reg[26]|qx_net ,
-		/* c1r2_db [5] */ \u_sdram_to_RGB_ahm_rdata_r__reg[22]|qx_net ,
-		/* c1r2_db [4] */ \u_sdram_to_RGB_ahm_rdata_r__reg[18]|qx_net ,
-		/* c1r2_db [3] */ \u_sdram_to_RGB_ahm_rdata_r__reg[14]|qx_net ,
-		/* c1r2_db [2] */ \u_sdram_to_RGB_ahm_rdata_r__reg[10]|qx_net ,
-		/* c1r2_db [1] */ \u_sdram_to_RGB_ahm_rdata_r__reg[6]|qx_net ,
-		/* c1r2_db [0] */ \u_sdram_to_RGB_ahm_rdata_r__reg[2]|qx_net 
-	} ),
-	. c1r2_rstna ( \VCC_0_inst|Y_net  ),
-	. c1r2_rstnb ( \VCC_0_inst|Y_net  ),
-	. c1r2_wea ( \GND_0_inst|Y_net  ),
-	. c1r2_web ( \VCC_0_inst|Y_net  ),
-	. c1r1_aa ( {
-		/* c1r1_aa [11] */ \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net ,
-		/* c1r1_aa [10] */ \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net ,
-		/* c1r1_aa [9] */ \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net ,
-		/* c1r1_aa [8] */ \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net ,
-		/* c1r1_aa [7] */ \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net ,
-		/* c1r1_aa [6] */ \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net ,
-		/* c1r1_aa [5] */ \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net ,
-		/* c1r1_aa [4] */ \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net ,
-		/* c1r1_aa [3] */ \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net ,
-		/* c1r1_aa [2] */ \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net ,
-		/* c1r1_aa [1] */ \GND_0_inst|Y_net ,
-		/* c1r1_aa [0] */ \GND_0_inst|Y_net 
-	} ),
-	. c1r1_ab ( {
-		/* c1r1_ab [11] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[8]|qx_net ,
-		/* c1r1_ab [10] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[7]|qx_net ,
-		/* c1r1_ab [9] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[6]|qx_net ,
-		/* c1r1_ab [8] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[5]|qx_net ,
-		/* c1r1_ab [7] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[4]|qx_net ,
-		/* c1r1_ab [6] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[3]|qx_net ,
-		/* c1r1_ab [5] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[2]|qx_net ,
-		/* c1r1_ab [4] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[1]|qx_net ,
-		/* c1r1_ab [3] */ \u_sdram_to_RGB_emb_addr_wr_r__reg[0]|qx_net ,
-		/* c1r1_ab [2] */ \GND_0_inst|Y_net ,
-		/* c1r1_ab [1] */ \GND_0_inst|Y_net ,
-		/* c1r1_ab [0] */ \GND_0_inst|Y_net 
-	} ),
-	. c1r1_cea ( \ii0450|dx_net  ),
-	. c1r1_ceb ( \u_sdram_to_RGB_ahm_rdata_push_wr1__reg|qx_net  ),
-	. c1r1_clka ( \u_lvds_pll_u0|clkout0_net  ),
-	. c1r1_clkb ( \u_pll_pll_u0|clkout1_net  ),
-	. c1r1_da ( )
-,
-	. c1r1_db ( {
-		/* c1r1_db [17] */ \GND_0_inst|Y_net ,
-		/* c1r1_db [16] */ \GND_0_inst|Y_net ,
-		/* c1r1_db [15] */ \u_sdram_to_RGB_ahm_rdata_r__reg[31]|qx_net ,
-		/* c1r1_db [14] */ \u_sdram_to_RGB_ahm_rdata_r__reg[27]|qx_net ,
-		/* c1r1_db [13] */ \u_sdram_to_RGB_ahm_rdata_r__reg[23]|qx_net ,
-		/* c1r1_db [12] */ \u_sdram_to_RGB_ahm_rdata_r__reg[19]|qx_net ,
-		/* c1r1_db [11] */ \u_sdram_to_RGB_ahm_rdata_r__reg[15]|qx_net ,
-		/* c1r1_db [10] */ \u_sdram_to_RGB_ahm_rdata_r__reg[11]|qx_net ,
-		/* c1r1_db [9] */ \u_sdram_to_RGB_ahm_rdata_r__reg[7]|qx_net ,
-		/* c1r1_db [8] */ \u_sdram_to_RGB_ahm_rdata_r__reg[3]|qx_net ,
-		/* c1r1_db [7] */ \u_sdram_to_RGB_ahm_rdata_r__reg[31]|qx_net ,
-		/* c1r1_db [6] */ \u_sdram_to_RGB_ahm_rdata_r__reg[27]|qx_net ,
-		/* c1r1_db [5] */ \u_sdram_to_RGB_ahm_rdata_r__reg[23]|qx_net ,
-		/* c1r1_db [4] */ \u_sdram_to_RGB_ahm_rdata_r__reg[19]|qx_net ,
-		/* c1r1_db [3] */ \u_sdram_to_RGB_ahm_rdata_r__reg[15]|qx_net ,
-		/* c1r1_db [2] */ \u_sdram_to_RGB_ahm_rdata_r__reg[11]|qx_net ,
-		/* c1r1_db [1] */ \u_sdram_to_RGB_ahm_rdata_r__reg[7]|qx_net ,
-		/* c1r1_db [0] */ \u_sdram_to_RGB_ahm_rdata_r__reg[3]|qx_net 
-	} ),
-	. c1r1_rstna ( \VCC_0_inst|Y_net  ),
-	. c1r1_rstnb ( \VCC_0_inst|Y_net  ),
-	. c1r1_wea ( \GND_0_inst|Y_net  ),
-	. c1r1_web ( \VCC_0_inst|Y_net  ),
-	. cea ( ),
-	. ceb ( ),
-	. fifo_clr ( ),
-	. wr_req_n ( ),
-	. rd_req_n ( ),
-	. haa ( )
-,
-	. hab ( )
-,
-	. wea ( ),
-	. web ( )
-);
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_modeb_sel = 8;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_portb_wr_mode = 1;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.r_width = 5'h0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_porta_prog = 240;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_portb_data_width = 8;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_reset_value_a = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_reset_value_b = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_init_file = "";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_porta_reg_out = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_portb_reg_out = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.width_ext_mode = 1'b0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_portb_data_width = 8;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_modeb_sel = 8;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.PCK_LOCATION = "C31R13.emb18k_wrap.emb18k";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_porta_wr_mode = 1;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_modea_sel = 12;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_portb_wr_mode = 1;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_porta_prog = 240;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_inst = "u_sdram_to_RGB_u_1kx16_1_u_emb5k_2";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_portb_prog = 15;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_reset_value_a = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_portb_data_width = 8;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_reset_value_b = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_porta_reg_out = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_portb_reg_out = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_init_file = "";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_porta_wr_mode = 1;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.fifo_en = 1'b0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_portb_wr_mode = 1;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_modeb_sel = 8;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_modea_sel = 12;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.async_en = 1'b0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_porta_data_width = 4;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_portb_prog = 15;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_operation_mode = "simple_dual_port";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_reset_value_a = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_inst = "u_sdram_to_RGB_u_1kx16_1_u_emb5k_0";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_reset_value_b = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_porta_reg_out = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_portb_reg_out = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_init_file = "";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_inst = "u_sdram_to_RGB_u_1kx16_1_u_emb5k_3";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.depth_ext_mode = 1'b0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_porta_prog = 240;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_porta_data_width = 4;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_operation_mode = "simple_dual_port";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_portb_prog = 15;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_modea_sel = 12;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.af_level = 15'h0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.dedicated_cfg = 16'hffff;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_modeb_sel = 8;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_porta_wr_mode = 1;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_portb_wr_mode = 1;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_operation_mode = "simple_dual_port";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_reset_value_a = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_reset_value_b = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_porta_data_width = 4;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.w_width = 5'h0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_porta_reg_out = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_operation_mode = "simple_dual_port";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_porta_prog = 240;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_init_file = "";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_portb_reg_out = 0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_1_portb_data_width = 8;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_portb_prog = 15;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_inst = "u_sdram_to_RGB_u_1kx16_1_u_emb5k_1";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_4_porta_data_width = 4;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.PLACE_LOCATION = "C31R13.emb_guts.emb18k_wrap.emb18k";
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.ae_level = 15'h0;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_2_modea_sel = 12;
-defparam u_sdram_to_RGB_u_1kx16_1_u_emb5k_0_new.emb5k_3_porta_wr_mode = 1;
+defparam ii0532.PLACE_LOCATION = "C39R19.le_tile.le_guts.lp2.lut0";
+defparam ii0532.PCK_LOCATION = "C39R19.lp2.lut0";
+defparam ii0532.config_data = "CCAC";
 LUT4 ii0533 (
 	. dx ( \ii0533|dx_net  ),
-	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
-	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[3]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_v_valid_r__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_v_valid_r__reg[1]|qx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0533.PLACE_LOCATION = "C37R30.le_tile.le_guts.lp0.lut0";
-defparam ii0533.PCK_LOCATION = "C37R30.lp0.lut0";
-defparam ii0533.config_data = "8888";
+defparam ii0533.PLACE_LOCATION = "C35R22.le_tile.le_guts.lp0.lut0";
+defparam ii0533.PCK_LOCATION = "C35R22.lp0.lut0";
+defparam ii0533.config_data = "4444";
 LUT4 ii0534 (
 	. dx ( \ii0534|dx_net  ),
-	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
-	. f2 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_display_period_align__reg|qx_net  ),
+	. f2 ( \ii0533|dx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0534.PLACE_LOCATION = "C39R22.le_tile.le_guts.lp1.lut0";
-defparam ii0534.PCK_LOCATION = "C39R22.lp1.lut0";
-defparam ii0534.config_data = "8888";
+defparam ii0534.PLACE_LOCATION = "C33R22.le_tile.le_guts.lp0.lut0";
+defparam ii0534.PCK_LOCATION = "C33R22.lp0.lut0";
+defparam ii0534.config_data = "EEEE";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23]|qx_net  ),
 	. qs ( ),
@@ -16808,18 +17142,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23] .PCK_LOCATION = "C49R5.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23] .PCK_LOCATION = "C47R4.lp3.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[23] .is_en_used = "false";
 REG \u_colorgen_v_cnt__reg[5]  (
 	. qx ( \u_colorgen_v_cnt__reg[5]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0487|dx_net  ),
+	. di ( \ii0493|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0480|dx_net  ),
+	. en ( \ii0486|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_lvds_pll_u0|clkout0_net  ),
 	. shift ( ),
@@ -16839,9 +17173,9 @@ defparam \u_colorgen_v_cnt__reg[5] .le_sh0_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[5] .le_sh1_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[5] .use_reg_fdbk = "false";
 defparam \u_colorgen_v_cnt__reg[5] .is_le_clk_inv = "false";
-defparam \u_colorgen_v_cnt__reg[5] .PLACE_LOCATION = "C13R17.le_tile.le_guts.lp3.reg0";
+defparam \u_colorgen_v_cnt__reg[5] .PLACE_LOCATION = "C23R19.le_tile.le_guts.lp1.reg0";
 defparam \u_colorgen_v_cnt__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_v_cnt__reg[5] .PCK_LOCATION = "C13R17.lp3.reg0";
+defparam \u_colorgen_v_cnt__reg[5] .PCK_LOCATION = "C23R19.lp1.reg0";
 defparam \u_colorgen_v_cnt__reg[5] .is_en_used = "true";
 M7S_IO_DDR dedicated_io_cell_u261_inst (
 	. id_q_1 ( )
@@ -16986,20 +17320,20 @@ defparam dedicated_io_cell_u261_inst.cfg_gsclk_inv_1 = 1;
 defparam dedicated_io_cell_u261_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0535 (
 	. dx ( \ii0535|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_de_i_start_pulse__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_display_period_align__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_other_1_beat_start_pulse__reg|qx_net  ),
+	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[6]|qx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0535.PLACE_LOCATION = "C45R14.le_tile.le_guts.lp1.lut0";
-defparam ii0535.PCK_LOCATION = "C45R14.lp1.lut0";
-defparam ii0535.config_data = "C8C8";
+defparam ii0535.PLACE_LOCATION = "C39R23.le_tile.le_guts.lp2.lut0";
+defparam ii0535.PCK_LOCATION = "C39R23.lp2.lut0";
+defparam ii0535.config_data = "8888";
 REG u_sdram_to_RGB_de_i_start_pulse__reg (
 	. qx ( \u_sdram_to_RGB_de_i_start_pulse__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0522|dx_net  ),
+	. di ( \ii0531|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -17021,28 +17355,28 @@ defparam u_sdram_to_RGB_de_i_start_pulse__reg.le_sh0_always_en = "false";
 defparam u_sdram_to_RGB_de_i_start_pulse__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_de_i_start_pulse__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_de_i_start_pulse__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_de_i_start_pulse__reg.PLACE_LOCATION = "C45R14.le_tile.le_guts.lp1.reg0";
+defparam u_sdram_to_RGB_de_i_start_pulse__reg.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp0.reg1";
 defparam u_sdram_to_RGB_de_i_start_pulse__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_de_i_start_pulse__reg.PCK_LOCATION = "C45R14.lp1.reg0";
+defparam u_sdram_to_RGB_de_i_start_pulse__reg.PCK_LOCATION = "C35R16.lp0.reg1";
 defparam u_sdram_to_RGB_de_i_start_pulse__reg.is_en_used = "false";
 LUT4 ii0536 (
 	. dx ( \ii0536|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net  ),
+	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[7]|qx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0536.PLACE_LOCATION = "C29R17.le_tile.le_guts.lp0.lut0";
-defparam ii0536.PCK_LOCATION = "C29R17.lp0.lut0";
-defparam ii0536.config_data = "2222";
+defparam ii0536.PLACE_LOCATION = "C33R22.le_tile.le_guts.lp1.lut0";
+defparam ii0536.PCK_LOCATION = "C33R22.lp1.lut0";
+defparam ii0536.config_data = "8888";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0724|dx_net  ),
+	. di ( \ii0739|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -17062,9 +17396,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25] .PLACE_LOCATION = "C43R15.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25] .PLACE_LOCATION = "C27R13.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25] .PCK_LOCATION = "C43R15.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25] .PCK_LOCATION = "C27R13.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[25] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13]|qx_net  ),
@@ -17073,7 +17407,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[13]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -17093,18 +17427,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13] .PLACE_LOCATION = "C33R7.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13] .PLACE_LOCATION = "C35R9.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13] .PCK_LOCATION = "C33R7.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13] .PCK_LOCATION = "C35R9.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[13] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0601|dx_net  ),
+	. di ( \ii0615|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -17124,28 +17458,28 @@ defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3] .PLACE_LOCATION = "C27R12.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3] .PLACE_LOCATION = "C35R11.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3] .PCK_LOCATION = "C27R12.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3] .PCK_LOCATION = "C35R11.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[3] .is_en_used = "true";
 LUT4 ii0537 (
 	. dx ( \ii0537|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net  ),
+	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[8]|qx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0537.PLACE_LOCATION = "C29R15.le_tile.le_guts.lp1.lut0";
-defparam ii0537.PCK_LOCATION = "C29R15.lp1.lut0";
-defparam ii0537.config_data = "2828";
+defparam ii0537.PLACE_LOCATION = "C35R24.le_tile.le_guts.lp1.lut0";
+defparam ii0537.PCK_LOCATION = "C35R24.lp1.lut0";
+defparam ii0537.config_data = "8888";
 REG \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0762|dx_net  ),
+	. di ( \ii0777|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0742|dx_net  ),
+	. en ( \ii0757|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -17165,9 +17499,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2] .PLACE_LOCATION = "C37R11.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2] .PLACE_LOCATION = "C43R18.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2] .PCK_LOCATION = "C37R11.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2] .PCK_LOCATION = "C43R18.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[8]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[8]|qx_net  ),
@@ -17196,16 +17530,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[8] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[8] .PLACE_LOCATION = "C29R16.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[8] .PLACE_LOCATION = "C29R20.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[8] .PCK_LOCATION = "C29R16.lp3.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[8] .PCK_LOCATION = "C29R20.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[8] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[22]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[22]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0531|dx_net  ),
+	. di ( \ii0541|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -17227,48 +17561,48 @@ defparam \u_sdram_to_RGB_dma_addr__reg[22] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[22] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[22] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[22] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[22] .PLACE_LOCATION = "C37R21.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[22] .PLACE_LOCATION = "C39R23.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[22] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[22] .PCK_LOCATION = "C37R21.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[22] .PCK_LOCATION = "C39R23.lp3.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[22] .is_en_used = "false";
 LUT4 ii0538 (
 	. dx ( \ii0538|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net  )
+	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[9]|qx_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0538.PLACE_LOCATION = "C29R16.le_tile.le_guts.lp0.lut41";
-defparam ii0538.PCK_LOCATION = "C29R16.lp0.lut41";
-defparam ii0538.config_data = "2A80";
+defparam ii0538.PLACE_LOCATION = "C39R22.le_tile.le_guts.lp1.lut0";
+defparam ii0538.PCK_LOCATION = "C39R22.lp1.lut0";
+defparam ii0538.config_data = "8888";
 LUT4 ii0539 (
 	. dx ( \ii0539|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net  ),
+	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
+	. f2 ( \u_sdram_to_RGB_addr_cnt__reg[10]|qx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0539.PLACE_LOCATION = "C29R16.le_tile.le_guts.lp2.lut0";
-defparam ii0539.PCK_LOCATION = "C29R16.lp2.lut0";
-defparam ii0539.config_data = "8080";
+defparam ii0539.PLACE_LOCATION = "C33R24.le_tile.le_guts.lp0.lut0";
+defparam ii0539.PCK_LOCATION = "C33R24.lp0.lut0";
+defparam ii0539.config_data = "8888";
 LUT4 ii0540 (
 	. dx ( \ii0540|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net  ),
-	. f1 ( \ii0539|dx_net  ),
+	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
+	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0540.PLACE_LOCATION = "C27R16.le_tile.le_guts.lp1.lut0";
-defparam ii0540.PCK_LOCATION = "C27R16.lp1.lut0";
-defparam ii0540.config_data = "2828";
+defparam ii0540.PLACE_LOCATION = "C39R23.le_tile.le_guts.lp3.lut0";
+defparam ii0540.PCK_LOCATION = "C39R23.lp3.lut0";
+defparam ii0540.config_data = "8888";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0680|dx_net  ),
+	. di ( \ii0694|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -17288,18 +17622,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6] .PLACE_LOCATION = "C39R11.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6] .PLACE_LOCATION = "C39R13.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6] .PCK_LOCATION = "C39R11.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6] .PCK_LOCATION = "C39R13.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[6] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0656|dx_net  ),
+	. di ( \ii0671|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -17319,9 +17653,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15] .PLACE_LOCATION = "C39R14.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15] .PLACE_LOCATION = "C33R14.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15] .PCK_LOCATION = "C39R14.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15] .PCK_LOCATION = "C33R14.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[15] .is_en_used = "true";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[8]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[8]|qx_net  ),
@@ -17350,40 +17684,40 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[8] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[8] .PLACE_LOCATION = "C25R14.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[8] .PLACE_LOCATION = "C29R12.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[8] .PCK_LOCATION = "C25R14.lp2.reg1";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[8] .PCK_LOCATION = "C29R12.lp0.reg1";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[8] .is_en_used = "false";
 LUT4 ii0541 (
 	. dx ( \ii0541|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net  ),
-	. f0 ( \ii0539|dx_net  )
+	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
+	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[1]|qx_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0541.PLACE_LOCATION = "C29R16.le_tile.le_guts.lp1.lut0";
-defparam ii0541.PCK_LOCATION = "C29R16.lp1.lut0";
-defparam ii0541.config_data = "28A0";
+defparam ii0541.PLACE_LOCATION = "C39R24.le_tile.le_guts.lp2.lut0";
+defparam ii0541.PCK_LOCATION = "C39R24.lp2.lut0";
+defparam ii0541.config_data = "8888";
 LUT4 ii0542 (
 	. dx ( \ii0542|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net  ),
-	. f1 ( \ii0539|dx_net  ),
+	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
+	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[2]|qx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0542.PLACE_LOCATION = "C27R16.le_tile.le_guts.lp2.lut0";
-defparam ii0542.PCK_LOCATION = "C27R16.lp2.lut0";
-defparam ii0542.config_data = "8080";
+defparam ii0542.PLACE_LOCATION = "C37R23.le_tile.le_guts.lp1.lut0";
+defparam ii0542.PCK_LOCATION = "C37R23.lp1.lut0";
+defparam ii0542.config_data = "8888";
 LUT4 ii0543 (
 	. dx ( \ii0543|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net  ),
-	. f1 ( \ii0542|dx_net  ),
+	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
+	. f2 ( \u_sdram_to_RGB_bmp_fig_cnt__reg[3]|qx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0543.PLACE_LOCATION = "C27R17.le_tile.le_guts.lp1.lut0";
-defparam ii0543.PCK_LOCATION = "C27R17.lp1.lut0";
-defparam ii0543.config_data = "2828";
+defparam ii0543.PLACE_LOCATION = "C37R23.le_tile.le_guts.lp3.lut0";
+defparam ii0543.PCK_LOCATION = "C37R23.lp3.lut0";
+defparam ii0543.config_data = "8888";
 M7S_PLL u_pll_pll_u0 (
 	. clkin0 ( \io_cell_clk_i_inst|id_q_net  ),
 	. clkin1 ( ),
@@ -17405,7 +17739,7 @@ defparam u_pll_pll_u0.sel_fbpath = 0;
 defparam u_pll_pll_u0.rst_pll_sel = 0;
 defparam u_pll_pll_u0.pll_divc0 = 5;
 defparam u_pll_pll_u0.pll_divc1 = 11;
-defparam u_pll_pll_u0.pll_divc2 = 17;
+defparam u_pll_pll_u0.pll_divc2 = 2;
 defparam u_pll_pll_u0.pll_lkd_hold = 0;
 defparam u_pll_pll_u0.pll_divc3 = 8;
 defparam u_pll_pll_u0.pll_mp_autor_en = 0;
@@ -17413,7 +17747,7 @@ defparam u_pll_pll_u0.pll_fbck_del = 0;
 defparam u_pll_pll_u0.pll_sel_c3phase = 0;
 defparam u_pll_pll_u0.pll_sel = "auto";
 defparam u_pll_pll_u0.pll_atest_sel = 0;
-defparam u_pll_pll_u0.pll_co2dly = 1;
+defparam u_pll_pll_u0.pll_co2dly = 0;
 defparam u_pll_pll_u0.pll_kvsel = 3;
 defparam u_pll_pll_u0.cfg_ldo_cfg = 0;
 defparam u_pll_pll_u0.pll_bp_dvdd12 = 0;
@@ -17435,11 +17769,11 @@ defparam u_pll_pll_u0.pwrmode = 1;
 defparam u_pll_pll_u0.pll_divmp = 0;
 defparam u_pll_pll_u0.pll_ssdivh = 0;
 defparam u_pll_pll_u0.cfg_nc = 0;
-defparam u_pll_pll_u0.pll_sel_c2phase = 4;
+defparam u_pll_pll_u0.pll_sel_c2phase = 0;
 defparam u_pll_pll_u0.pll_mken0 = 1;
 defparam u_pll_pll_u0.pll_mken1 = 1;
 defparam u_pll_pll_u0.pll_ssdivl = 199;
-defparam u_pll_pll_u0.pll_mken2 = 0;
+defparam u_pll_pll_u0.pll_mken2 = 1;
 defparam u_pll_pll_u0.pll_bps0 = 0;
 defparam u_pll_pll_u0.pll_mken3 = 0;
 defparam u_pll_pll_u0.pll_bps1 = 0;
@@ -17461,14 +17795,14 @@ defparam u_pll_pll_u0.pll_cpsel_cr = 3;
 defparam u_pll_pll_u0.PLACE_LOCATION = "C53R1.gclk_ctrl_c2r1.pll";
 LUT4 ii0544 (
 	. dx ( \ii0544|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net  ),
-	. f0 ( \ii0542|dx_net  )
+	. f3 ( \io_cell_display_sel_inst|id_q_net  ),
+	. f2 ( \u_sdram_to_RGB_display_before_bmp__reg|qx_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0544.PLACE_LOCATION = "C27R17.le_tile.le_guts.lp0.lut0";
-defparam ii0544.PCK_LOCATION = "C27R17.lp0.lut0";
-defparam ii0544.config_data = "28A0";
+defparam ii0544.PLACE_LOCATION = "C39R22.le_tile.le_guts.lp2.lut0";
+defparam ii0544.PCK_LOCATION = "C39R22.lp2.lut0";
+defparam ii0544.config_data = "8888";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24]|qx_net  ),
 	. qs ( ),
@@ -17496,16 +17830,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24] .PLACE_LOCATION = "C49R5.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24] .PLACE_LOCATION = "C49R6.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24] .PCK_LOCATION = "C49R5.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24] .PCK_LOCATION = "C49R6.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[24] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_addr_wr__reg[0]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0550|dx_net  ),
+	. di ( \ii0561|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
 	. mclk_b ( ),
@@ -17527,18 +17861,18 @@ defparam \u_sdram_to_RGB_emb_addr_wr__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[0] .PLACE_LOCATION = "C35R17.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[0] .PLACE_LOCATION = "C19R17.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[0] .PCK_LOCATION = "C35R17.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[0] .PCK_LOCATION = "C19R17.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[0] .is_en_used = "true";
 REG \u_colorgen_v_cnt__reg[6]  (
 	. qx ( \u_colorgen_v_cnt__reg[6]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0489|dx_net  ),
+	. di ( \ii0495|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0480|dx_net  ),
+	. en ( \ii0486|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_lvds_pll_u0|clkout0_net  ),
 	. shift ( ),
@@ -17558,38 +17892,38 @@ defparam \u_colorgen_v_cnt__reg[6] .le_sh0_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[6] .le_sh1_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[6] .use_reg_fdbk = "false";
 defparam \u_colorgen_v_cnt__reg[6] .is_le_clk_inv = "false";
-defparam \u_colorgen_v_cnt__reg[6] .PLACE_LOCATION = "C13R16.le_tile.le_guts.lp3.reg1";
+defparam \u_colorgen_v_cnt__reg[6] .PLACE_LOCATION = "C23R19.le_tile.le_guts.lp0.reg1";
 defparam \u_colorgen_v_cnt__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_v_cnt__reg[6] .PCK_LOCATION = "C13R16.lp3.reg1";
+defparam \u_colorgen_v_cnt__reg[6] .PCK_LOCATION = "C23R19.lp0.reg1";
 defparam \u_colorgen_v_cnt__reg[6] .is_en_used = "true";
 LUT4 ii0545 (
 	. dx ( \ii0545|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net  ),
-	. f2 ( \ii0542|dx_net  ),
-	. f1 ( ),
+	. f3 ( \u_sdram_to_RGB_de_i_start_pulse__reg|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_display_period_align__reg|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_other_1_beat_start_pulse__reg|qx_net  ),
 	. f0 ( )
 );
-defparam ii0545.PLACE_LOCATION = "C27R16.le_tile.le_guts.lp2.lut40";
-defparam ii0545.PCK_LOCATION = "C27R16.lp2.lut40";
-defparam ii0545.config_data = "8888";
+defparam ii0545.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp3.lut0";
+defparam ii0545.PCK_LOCATION = "C35R16.lp3.lut0";
+defparam ii0545.config_data = "C8C8";
 LUT4 ii0546 (
 	. dx ( \ii0546|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net  ),
-	. f0 ( \ii0545|dx_net  )
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0546.PLACE_LOCATION = "C27R17.le_tile.le_guts.lp2.lut0";
-defparam ii0546.PCK_LOCATION = "C27R17.lp2.lut0";
-defparam ii0546.config_data = "28A0";
+defparam ii0546.PLACE_LOCATION = "C29R14.le_tile.le_guts.lp1.lut41";
+defparam ii0546.PCK_LOCATION = "C29R14.lp1.lut41";
+defparam ii0546.config_data = "2222";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0725|dx_net  ),
+	. di ( \ii0740|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -17609,9 +17943,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26] .PLACE_LOCATION = "C37R15.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26] .PLACE_LOCATION = "C27R14.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26] .PCK_LOCATION = "C37R15.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26] .PCK_LOCATION = "C27R14.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[26] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14]|qx_net  ),
@@ -17620,7 +17954,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[14]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -17640,18 +17974,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14] .PLACE_LOCATION = "C37R7.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14] .PLACE_LOCATION = "C35R9.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14] .PCK_LOCATION = "C37R7.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14] .PCK_LOCATION = "C35R9.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[14] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0603|dx_net  ),
+	. di ( \ii0617|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -17671,9 +18005,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4] .PLACE_LOCATION = "C27R11.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4] .PLACE_LOCATION = "C35R11.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4] .PCK_LOCATION = "C27R11.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4] .PCK_LOCATION = "C35R11.lp2.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[4] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[10]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[10]|qx_net  ),
@@ -17702,28 +18036,28 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[10] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[10] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[10] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[10] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[10] .PLACE_LOCATION = "C33R18.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[10] .PLACE_LOCATION = "C37R19.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[10] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[10] .PCK_LOCATION = "C33R18.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[10] .PCK_LOCATION = "C37R19.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[10] .is_en_used = "false";
 LUT4 ii0547 (
 	. dx ( \ii0547|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net  ),
-	. f1 ( \ii0545|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0547.PLACE_LOCATION = "C27R16.le_tile.le_guts.lp3.lut0";
-defparam ii0547.PCK_LOCATION = "C27R16.lp3.lut0";
-defparam ii0547.config_data = "8080";
+defparam ii0547.PLACE_LOCATION = "C29R14.le_tile.le_guts.lp3.lut0";
+defparam ii0547.PCK_LOCATION = "C29R14.lp3.lut0";
+defparam ii0547.config_data = "2828";
 REG \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0763|dx_net  ),
+	. di ( \ii0778|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0742|dx_net  ),
+	. en ( \ii0757|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -17743,9 +18077,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3] .PLACE_LOCATION = "C37R11.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3] .PLACE_LOCATION = "C43R18.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3] .PCK_LOCATION = "C37R11.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3] .PCK_LOCATION = "C43R18.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[9]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[9]|qx_net  ),
@@ -17774,16 +18108,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[9] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[9] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[9] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[9] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[9] .PLACE_LOCATION = "C33R20.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[9] .PLACE_LOCATION = "C33R18.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[9] .PCK_LOCATION = "C33R20.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[9] .PCK_LOCATION = "C33R18.lp2.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[9] .is_en_used = "false";
 REG \u_sdram_to_RGB_dma_addr__reg[23]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[23]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0532|dx_net  ),
+	. di ( \ii0542|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -17805,9 +18139,9 @@ defparam \u_sdram_to_RGB_dma_addr__reg[23] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[23] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[23] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[23] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[23] .PLACE_LOCATION = "C33R24.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[23] .PLACE_LOCATION = "C39R23.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_dma_addr__reg[23] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[23] .PCK_LOCATION = "C33R24.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[23] .PCK_LOCATION = "C39R23.lp0.reg1";
 defparam \u_sdram_to_RGB_dma_addr__reg[23] .is_en_used = "false";
 M7S_IO_PCISG dedicated_io_cell_u319_inst (
 	. id ( ),
@@ -17852,41 +18186,41 @@ defparam dedicated_io_cell_u319_inst.cfg_od_inv = 0;
 LUT4 ii0548 (
 	. dx ( \ii0548|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net  ),
-	. f1 ( \ii0547|dx_net  ),
-	. f0 ( )
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net  )
 );
-defparam ii0548.PLACE_LOCATION = "C29R17.le_tile.le_guts.lp3.lut0";
-defparam ii0548.PCK_LOCATION = "C29R17.lp3.lut0";
-defparam ii0548.config_data = "2828";
+defparam ii0548.PLACE_LOCATION = "C29R14.le_tile.le_guts.lp0.lut0";
+defparam ii0548.PCK_LOCATION = "C29R14.lp0.lut0";
+defparam ii0548.config_data = "2A80";
 LUT4 ii0549 (
 	. dx ( \ii0549|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net  ),
-	. f0 ( \ii0547|dx_net  )
-);
-defparam ii0549.PLACE_LOCATION = "C29R17.le_tile.le_guts.lp2.lut0";
-defparam ii0549.PCK_LOCATION = "C29R17.lp2.lut0";
-defparam ii0549.config_data = "28A0";
-LUT4 ii0550 (
-	. dx ( \ii0550|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[0]|qx_net  ),
-	. f2 ( ),
-	. f1 ( ),
+	. f3 ( \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0550.PLACE_LOCATION = "C35R17.le_tile.le_guts.lp1.lut0";
-defparam ii0550.PCK_LOCATION = "C35R17.lp1.lut0";
-defparam ii0550.config_data = "5555";
+defparam ii0549.PLACE_LOCATION = "C29R14.le_tile.le_guts.lp2.lut0";
+defparam ii0549.PCK_LOCATION = "C29R14.lp2.lut0";
+defparam ii0549.config_data = "8080";
+LUT4 ii0550 (
+	. dx ( \ii0550|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net  ),
+	. f1 ( \ii0549|dx_net  ),
+	. f0 ( )
+);
+defparam ii0550.PLACE_LOCATION = "C29R15.le_tile.le_guts.lp1.lut0";
+defparam ii0550.PCK_LOCATION = "C29R15.lp1.lut0";
+defparam ii0550.config_data = "2828";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0682|dx_net  ),
+	. di ( \ii0696|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -17906,18 +18240,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7] .PLACE_LOCATION = "C39R12.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7] .PLACE_LOCATION = "C45R14.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7] .PCK_LOCATION = "C39R12.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7] .PCK_LOCATION = "C45R14.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[7] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0658|dx_net  ),
+	. di ( \ii0673|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -17937,16 +18271,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16] .PLACE_LOCATION = "C37R10.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16] .PLACE_LOCATION = "C29R9.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16] .PCK_LOCATION = "C37R10.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16] .PCK_LOCATION = "C29R9.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[16] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_addr_rd__reg[0]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_rd__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0536|dx_net  ),
+	. di ( \ii0546|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -17968,9 +18302,9 @@ defparam \u_sdram_to_RGB_emb_addr_rd__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[0] .PLACE_LOCATION = "C29R16.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[0] .PLACE_LOCATION = "C29R14.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[0] .PCK_LOCATION = "C29R16.lp2.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[0] .PCK_LOCATION = "C29R14.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[0] .is_en_used = "false";
 REG \u_sdram_to_RGB_ahm_rdata_r__reg[9]  (
 	. qx ( \u_sdram_to_RGB_ahm_rdata_r__reg[9]|qx_net  ),
@@ -17999,20 +18333,20 @@ defparam \u_sdram_to_RGB_ahm_rdata_r__reg[9] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[9] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[9] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[9] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[9] .PLACE_LOCATION = "C29R8.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[9] .PLACE_LOCATION = "C33R12.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_ahm_rdata_r__reg[9] .PCK_LOCATION = "C29R8.lp0.reg0";
+defparam \u_sdram_to_RGB_ahm_rdata_r__reg[9] .PCK_LOCATION = "C33R12.lp2.reg0";
 defparam \u_sdram_to_RGB_ahm_rdata_r__reg[9] .is_en_used = "false";
 LUT4 ii0551 (
 	. dx ( \ii0551|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[1]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net  ),
+	. f2 ( \ii0549|dx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0551.PLACE_LOCATION = "C37R17.le_tile.le_guts.lp0.lut0";
-defparam ii0551.PCK_LOCATION = "C37R17.lp0.lut0";
-defparam ii0551.config_data = "6666";
+defparam ii0551.PLACE_LOCATION = "C29R14.le_tile.le_guts.lp0.lut41";
+defparam ii0551.PCK_LOCATION = "C29R14.lp0.lut41";
+defparam ii0551.config_data = "8888";
 M7S_IO_DDR dedicated_io_cell_u251_inst (
 	. id_q_1 ( )
 ,
@@ -18156,30 +18490,30 @@ defparam dedicated_io_cell_u251_inst.cfg_gsclk_inv_1 = 1;
 defparam dedicated_io_cell_u251_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0552 (
 	. dx ( \ii0552|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_addr_wr__reg[2]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net  ),
+	. f1 ( \ii0551|dx_net  ),
 	. f0 ( )
 );
-defparam ii0552.PLACE_LOCATION = "C37R17.le_tile.le_guts.lp1.lut0";
-defparam ii0552.PCK_LOCATION = "C37R17.lp1.lut0";
-defparam ii0552.config_data = "7878";
+defparam ii0552.PLACE_LOCATION = "C29R15.le_tile.le_guts.lp0.lut41";
+defparam ii0552.PCK_LOCATION = "C29R15.lp0.lut41";
+defparam ii0552.config_data = "2828";
 LUT4 ii0553 (
 	. dx ( \ii0553|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_addr_wr__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_emb_addr_wr__reg[3]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net  ),
+	. f2 ( \ii0551|dx_net  ),
+	. f1 ( ),
+	. f0 ( )
 );
-defparam ii0553.PLACE_LOCATION = "C35R17.le_tile.le_guts.lp0.lut0";
-defparam ii0553.PCK_LOCATION = "C35R17.lp0.lut0";
-defparam ii0553.config_data = "7F80";
+defparam ii0553.PLACE_LOCATION = "C29R15.le_tile.le_guts.lp1.lut41";
+defparam ii0553.PCK_LOCATION = "C29R15.lp1.lut41";
+defparam ii0553.config_data = "8888";
 REG \u_sdram_to_RGB_de_i_r_sclk__reg[0]  (
 	. qx ( \u_sdram_to_RGB_de_i_r_sclk__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0521|dx_net  ),
+	. di ( \ii0530|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -18201,9 +18535,9 @@ defparam \u_sdram_to_RGB_de_i_r_sclk__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_de_i_r_sclk__reg[0] .PLACE_LOCATION = "C33R17.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_de_i_r_sclk__reg[0] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_de_i_r_sclk__reg[0] .PCK_LOCATION = "C33R17.lp2.reg0";
+defparam \u_sdram_to_RGB_de_i_r_sclk__reg[0] .PCK_LOCATION = "C33R16.lp1.reg0";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[0] .is_en_used = "false";
 M7S_PLL u_lvds_pll_u0 (
 	. clkin0 ( \io_cell_clk_i_inst|id_q_net  ),
@@ -18282,14 +18616,14 @@ defparam u_lvds_pll_u0.pll_cpsel_cr = 3;
 defparam u_lvds_pll_u0.PLACE_LOCATION = "C53R48.gclk_ctrl_c1r2.pll";
 LUT4 ii0554 (
 	. dx ( \ii0554|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_addr_wr__reg[2]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_emb_addr_wr__reg[3]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net  ),
+	. f1 ( \ii0553|dx_net  ),
+	. f0 ( )
 );
-defparam ii0554.PLACE_LOCATION = "C35R17.le_tile.le_guts.lp2.lut0";
-defparam ii0554.PCK_LOCATION = "C35R17.lp2.lut0";
-defparam ii0554.config_data = "8000";
+defparam ii0554.PLACE_LOCATION = "C29R16.le_tile.le_guts.lp2.lut0";
+defparam ii0554.PCK_LOCATION = "C29R16.lp2.lut0";
+defparam ii0554.config_data = "2828";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25]|qx_net  ),
 	. qs ( ),
@@ -18317,16 +18651,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25] .PLACE_LOCATION = "C49R6.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25] .PCK_LOCATION = "C47R4.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25] .PCK_LOCATION = "C49R6.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[25] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_addr_wr__reg[1]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr__reg[1]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0551|dx_net  ),
+	. di ( \ii0562|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
 	. mclk_b ( ),
@@ -18348,18 +18682,18 @@ defparam \u_sdram_to_RGB_emb_addr_wr__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[1] .PLACE_LOCATION = "C37R17.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[1] .PLACE_LOCATION = "C19R17.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[1] .PCK_LOCATION = "C37R17.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[1] .PCK_LOCATION = "C19R17.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[1] .is_en_used = "true";
 REG \u_colorgen_v_cnt__reg[7]  (
 	. qx ( \u_colorgen_v_cnt__reg[7]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0490|dx_net  ),
+	. di ( \ii0496|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0480|dx_net  ),
+	. en ( \ii0486|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_lvds_pll_u0|clkout0_net  ),
 	. shift ( ),
@@ -18379,38 +18713,38 @@ defparam \u_colorgen_v_cnt__reg[7] .le_sh0_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[7] .le_sh1_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[7] .use_reg_fdbk = "false";
 defparam \u_colorgen_v_cnt__reg[7] .is_le_clk_inv = "false";
-defparam \u_colorgen_v_cnt__reg[7] .PLACE_LOCATION = "C13R16.le_tile.le_guts.lp2.reg0";
+defparam \u_colorgen_v_cnt__reg[7] .PLACE_LOCATION = "C23R19.le_tile.le_guts.lp2.reg0";
 defparam \u_colorgen_v_cnt__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_v_cnt__reg[7] .PCK_LOCATION = "C13R16.lp2.reg0";
+defparam \u_colorgen_v_cnt__reg[7] .PCK_LOCATION = "C23R19.lp2.reg0";
 defparam \u_colorgen_v_cnt__reg[7] .is_en_used = "true";
 LUT4 ii0555 (
 	. dx ( \ii0555|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[4]|qx_net  ),
-	. f2 ( \ii0554|dx_net  ),
-	. f1 ( ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net  ),
+	. f0 ( \ii0553|dx_net  )
 );
-defparam ii0555.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp2.lut0";
-defparam ii0555.PCK_LOCATION = "C35R16.lp2.lut0";
-defparam ii0555.config_data = "6666";
+defparam ii0555.PLACE_LOCATION = "C29R16.le_tile.le_guts.lp0.lut0";
+defparam ii0555.PCK_LOCATION = "C29R16.lp0.lut0";
+defparam ii0555.config_data = "28A0";
 LUT4 ii0556 (
 	. dx ( \ii0556|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[5]|qx_net  ),
-	. f1 ( \ii0554|dx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_emb_addr_rd__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[5]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[6]|qx_net  ),
+	. f0 ( \ii0551|dx_net  )
 );
-defparam ii0556.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp3.lut41";
-defparam ii0556.PCK_LOCATION = "C35R16.lp3.lut41";
-defparam ii0556.config_data = "6C6C";
+defparam ii0556.PLACE_LOCATION = "C29R15.le_tile.le_guts.lp3.lut0";
+defparam ii0556.PCK_LOCATION = "C29R15.lp3.lut0";
+defparam ii0556.config_data = "8000";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0726|dx_net  ),
+	. di ( \ii0741|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -18430,9 +18764,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27] .PLACE_LOCATION = "C43R15.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27] .PLACE_LOCATION = "C27R14.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27] .PCK_LOCATION = "C43R15.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27] .PCK_LOCATION = "C27R14.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[27] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15]|qx_net  ),
@@ -18441,7 +18775,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[15]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -18461,18 +18795,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15] .PLACE_LOCATION = "C33R8.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15] .PLACE_LOCATION = "C35R9.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15] .PCK_LOCATION = "C33R8.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15] .PCK_LOCATION = "C35R9.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[15] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0605|dx_net  ),
+	. di ( \ii0619|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -18492,9 +18826,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5] .PLACE_LOCATION = "C27R12.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5] .PLACE_LOCATION = "C35R11.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5] .PCK_LOCATION = "C27R12.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5] .PCK_LOCATION = "C35R11.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[5] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[11]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[11]|qx_net  ),
@@ -18523,9 +18857,9 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[11] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[11] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[11] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[11] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[11] .PLACE_LOCATION = "C29R21.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[11] .PLACE_LOCATION = "C29R20.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[11] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[11] .PCK_LOCATION = "C29R21.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[11] .PCK_LOCATION = "C29R20.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[11] .is_en_used = "false";
 M7S_IO_DDR dedicated_io_cell_u247_inst (
 	. id_q_1 ( )
@@ -18670,22 +19004,22 @@ defparam dedicated_io_cell_u247_inst.cfg_gsclk_inv_1 = 1;
 defparam dedicated_io_cell_u247_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0557 (
 	. dx ( \ii0557|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_addr_wr__reg[6]|qx_net  ),
-	. f0 ( \ii0554|dx_net  )
+	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net  ),
+	. f1 ( \ii0556|dx_net  ),
+	. f0 ( )
 );
-defparam ii0557.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp2.lut41";
-defparam ii0557.PCK_LOCATION = "C35R16.lp2.lut41";
-defparam ii0557.config_data = "78F0";
+defparam ii0557.PLACE_LOCATION = "C29R15.le_tile.le_guts.lp0.lut0";
+defparam ii0557.PCK_LOCATION = "C29R15.lp0.lut0";
+defparam ii0557.config_data = "2828";
 REG \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0764|dx_net  ),
+	. di ( \ii0779|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0742|dx_net  ),
+	. en ( \ii0757|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -18705,16 +19039,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4] .PLACE_LOCATION = "C35R12.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4] .PLACE_LOCATION = "C39R20.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4] .PCK_LOCATION = "C35R12.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4] .PCK_LOCATION = "C39R20.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4] .is_en_used = "true";
 REG \u_sdram_to_RGB_dma_addr__reg[24]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[24]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0533|dx_net  ),
+	. di ( \ii0543|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -18736,48 +19070,48 @@ defparam \u_sdram_to_RGB_dma_addr__reg[24] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[24] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[24] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[24] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[24] .PLACE_LOCATION = "C35R23.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[24] .PLACE_LOCATION = "C35R19.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[24] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[24] .PCK_LOCATION = "C35R23.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[24] .PCK_LOCATION = "C35R19.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[24] .is_en_used = "false";
 LUT4 ii0558 (
 	. dx ( \ii0558|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_addr_wr__reg[6]|qx_net  ),
-	. f0 ( \ii0554|dx_net  )
+	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net  ),
+	. f0 ( \ii0556|dx_net  )
 );
-defparam ii0558.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp3.lut0";
-defparam ii0558.PCK_LOCATION = "C35R16.lp3.lut0";
-defparam ii0558.config_data = "8000";
+defparam ii0558.PLACE_LOCATION = "C27R16.le_tile.le_guts.lp3.lut0";
+defparam ii0558.PCK_LOCATION = "C27R16.lp3.lut0";
+defparam ii0558.config_data = "28A0";
 LUT4 ii0559 (
 	. dx ( \ii0559|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[7]|qx_net  ),
-	. f2 ( \ii0558|dx_net  ),
-	. f1 ( ),
+	. f3 ( \u_sdram_to_RGB_emb_addr_rd__reg[7]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[8]|qx_net  ),
+	. f1 ( \ii0556|dx_net  ),
 	. f0 ( )
 );
-defparam ii0559.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp0.lut41";
-defparam ii0559.PCK_LOCATION = "C35R16.lp0.lut41";
-defparam ii0559.config_data = "6666";
+defparam ii0559.PLACE_LOCATION = "C29R15.le_tile.le_guts.lp2.lut0";
+defparam ii0559.PCK_LOCATION = "C29R15.lp2.lut0";
+defparam ii0559.config_data = "8080";
 LUT4 ii0560 (
 	. dx ( \ii0560|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[7]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[8]|qx_net  ),
-	. f1 ( \ii0558|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_rd__reg[9]|qx_net  ),
+	. f1 ( \ii0559|dx_net  ),
 	. f0 ( )
 );
-defparam ii0560.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp1.lut41";
-defparam ii0560.PCK_LOCATION = "C35R16.lp1.lut41";
-defparam ii0560.config_data = "6C6C";
+defparam ii0560.PLACE_LOCATION = "C29R16.le_tile.le_guts.lp0.lut41";
+defparam ii0560.PCK_LOCATION = "C29R16.lp0.lut41";
+defparam ii0560.config_data = "2828";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0684|dx_net  ),
+	. di ( \ii0698|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -18797,18 +19131,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8] .PLACE_LOCATION = "C39R10.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8] .PLACE_LOCATION = "C45R14.le_tile.le_guts.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8] .PCK_LOCATION = "C39R10.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8] .PCK_LOCATION = "C45R14.lp1.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[8] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0661|dx_net  ),
+	. di ( \ii0675|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -18828,16 +19162,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17] .PLACE_LOCATION = "C39R13.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17] .PLACE_LOCATION = "C33R9.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17] .PCK_LOCATION = "C39R13.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17] .PCK_LOCATION = "C33R9.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[17] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_addr_rd__reg[1]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_rd__reg[1]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0537|dx_net  ),
+	. di ( \ii0547|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -18859,40 +19193,40 @@ defparam \u_sdram_to_RGB_emb_addr_rd__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[1] .PLACE_LOCATION = "C29R16.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[1] .PLACE_LOCATION = "C29R14.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[1] .PCK_LOCATION = "C29R16.lp0.reg1";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[1] .PCK_LOCATION = "C29R14.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[1] .is_en_used = "false";
 LUT4 ii0561 (
 	. dx ( \ii0561|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[0]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[0]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[0]|qx_net  ),
+	. f2 ( ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0561.PLACE_LOCATION = "C35R21.le_tile.le_guts.lp0.lut0";
-defparam ii0561.PCK_LOCATION = "C35R21.lp0.lut0";
-defparam ii0561.config_data = "D8D8";
+defparam ii0561.PLACE_LOCATION = "C19R17.le_tile.le_guts.lp0.lut0";
+defparam ii0561.PCK_LOCATION = "C19R17.lp0.lut0";
+defparam ii0561.config_data = "5555";
 LUT4 ii0562 (
 	. dx ( \ii0562|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[10]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[10]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[1]|qx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0562.PLACE_LOCATION = "C33R18.le_tile.le_guts.lp0.lut0";
-defparam ii0562.PCK_LOCATION = "C33R18.lp0.lut0";
-defparam ii0562.config_data = "D8D8";
+defparam ii0562.PLACE_LOCATION = "C19R17.le_tile.le_guts.lp1.lut0";
+defparam ii0562.PCK_LOCATION = "C19R17.lp1.lut0";
+defparam ii0562.config_data = "6666";
 LUT4 ii0563 (
 	. dx ( \ii0563|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[11]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[11]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_addr_wr__reg[2]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0563.PLACE_LOCATION = "C29R21.le_tile.le_guts.lp0.lut0";
-defparam ii0563.PCK_LOCATION = "C29R21.lp0.lut0";
-defparam ii0563.config_data = "D8D8";
+defparam ii0563.PLACE_LOCATION = "C19R17.le_tile.le_guts.lp0.lut41";
+defparam ii0563.PCK_LOCATION = "C19R17.lp0.lut41";
+defparam ii0563.config_data = "7878";
 REG \u_sdram_to_RGB_de_i_r_sclk__reg[1]  (
 	. qx ( \u_sdram_to_RGB_de_i_r_sclk__reg[1]|qx_net  ),
 	. qs ( ),
@@ -18920,20 +19254,20 @@ defparam \u_sdram_to_RGB_de_i_r_sclk__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_de_i_r_sclk__reg[1] .PLACE_LOCATION = "C29R17.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_de_i_r_sclk__reg[1] .PLACE_LOCATION = "C27R16.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_de_i_r_sclk__reg[1] .PCK_LOCATION = "C29R17.lp0.reg0";
+defparam \u_sdram_to_RGB_de_i_r_sclk__reg[1] .PCK_LOCATION = "C27R16.lp0.reg0";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[1] .is_en_used = "false";
 LUT4 ii0564 (
 	. dx ( \ii0564|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[12]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[12]|qx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_addr_wr__reg[2]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_emb_addr_wr__reg[3]|qx_net  )
 );
-defparam ii0564.PLACE_LOCATION = "C33R19.le_tile.le_guts.lp0.lut0";
-defparam ii0564.PCK_LOCATION = "C33R19.lp0.lut0";
-defparam ii0564.config_data = "D8D8";
+defparam ii0564.PLACE_LOCATION = "C19R17.le_tile.le_guts.lp3.lut0";
+defparam ii0564.PCK_LOCATION = "C19R17.lp3.lut0";
+defparam ii0564.config_data = "7F80";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26]|qx_net  ),
 	. qs ( ),
@@ -18961,16 +19295,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26] .PLACE_LOCATION = "C49R6.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26] .PCK_LOCATION = "C47R4.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26] .PCK_LOCATION = "C49R6.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[26] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_addr_wr__reg[2]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0552|dx_net  ),
+	. di ( \ii0563|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
 	. mclk_b ( ),
@@ -18992,18 +19326,18 @@ defparam \u_sdram_to_RGB_emb_addr_wr__reg[2] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[2] .PLACE_LOCATION = "C37R17.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[2] .PLACE_LOCATION = "C19R17.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[2] .PCK_LOCATION = "C37R17.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[2] .PCK_LOCATION = "C19R17.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[2] .is_en_used = "true";
 REG \u_colorgen_v_cnt__reg[8]  (
 	. qx ( \u_colorgen_v_cnt__reg[8]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0492|dx_net  ),
+	. di ( \ii0498|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0480|dx_net  ),
+	. en ( \ii0486|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_lvds_pll_u0|clkout0_net  ),
 	. shift ( ),
@@ -19023,38 +19357,38 @@ defparam \u_colorgen_v_cnt__reg[8] .le_sh0_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[8] .le_sh1_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[8] .use_reg_fdbk = "false";
 defparam \u_colorgen_v_cnt__reg[8] .is_le_clk_inv = "false";
-defparam \u_colorgen_v_cnt__reg[8] .PLACE_LOCATION = "C15R16.le_tile.le_guts.lp1.reg0";
+defparam \u_colorgen_v_cnt__reg[8] .PLACE_LOCATION = "C25R19.le_tile.le_guts.lp3.reg0";
 defparam \u_colorgen_v_cnt__reg[8] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_v_cnt__reg[8] .PCK_LOCATION = "C15R16.lp1.reg0";
+defparam \u_colorgen_v_cnt__reg[8] .PCK_LOCATION = "C25R19.lp3.reg0";
 defparam \u_colorgen_v_cnt__reg[8] .is_en_used = "true";
 LUT4 ii0565 (
 	. dx ( \ii0565|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[13]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[13]|qx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[0]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_addr_wr__reg[2]|qx_net  ),
+	. f0 ( \u_sdram_to_RGB_emb_addr_wr__reg[3]|qx_net  )
 );
-defparam ii0565.PLACE_LOCATION = "C29R19.le_tile.le_guts.lp0.lut41";
-defparam ii0565.PCK_LOCATION = "C29R19.lp0.lut41";
-defparam ii0565.config_data = "D8D8";
+defparam ii0565.PLACE_LOCATION = "C19R17.le_tile.le_guts.lp2.lut0";
+defparam ii0565.PCK_LOCATION = "C19R17.lp2.lut0";
+defparam ii0565.config_data = "8000";
 LUT4 ii0566 (
 	. dx ( \ii0566|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[14]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[14]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[4]|qx_net  ),
+	. f2 ( \ii0565|dx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0566.PLACE_LOCATION = "C35R19.le_tile.le_guts.lp0.lut0";
-defparam ii0566.PCK_LOCATION = "C35R19.lp0.lut0";
-defparam ii0566.config_data = "D8D8";
+defparam ii0566.PLACE_LOCATION = "C25R17.le_tile.le_guts.lp3.lut0";
+defparam ii0566.PCK_LOCATION = "C25R17.lp3.lut0";
+defparam ii0566.config_data = "6666";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0727|dx_net  ),
+	. di ( \ii0742|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -19074,9 +19408,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28] .PLACE_LOCATION = "C33R14.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28] .PLACE_LOCATION = "C27R14.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28] .PCK_LOCATION = "C33R14.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28] .PCK_LOCATION = "C27R14.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[28] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16]|qx_net  ),
@@ -19085,7 +19419,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[16]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -19105,18 +19439,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16] .PLACE_LOCATION = "C33R7.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16] .PLACE_LOCATION = "C37R9.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16] .PCK_LOCATION = "C33R7.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16] .PCK_LOCATION = "C37R9.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[16] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0606|dx_net  ),
+	. di ( \ii0620|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -19136,9 +19470,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6] .PLACE_LOCATION = "C27R12.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6] .PLACE_LOCATION = "C35R11.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6] .PCK_LOCATION = "C27R12.lp1.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6] .PCK_LOCATION = "C35R11.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[6] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[12]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[12]|qx_net  ),
@@ -19167,28 +19501,28 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[12] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[12] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[12] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[12] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[12] .PLACE_LOCATION = "C33R18.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[12] .PLACE_LOCATION = "C29R19.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[12] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[12] .PCK_LOCATION = "C33R18.lp0.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[12] .PCK_LOCATION = "C29R19.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[12] .is_en_used = "false";
 LUT4 ii0567 (
 	. dx ( \ii0567|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[15]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[15]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[5]|qx_net  ),
+	. f1 ( \ii0565|dx_net  ),
 	. f0 ( )
 );
-defparam ii0567.PLACE_LOCATION = "C33R19.le_tile.le_guts.lp2.lut0";
-defparam ii0567.PCK_LOCATION = "C33R19.lp2.lut0";
-defparam ii0567.config_data = "D8D8";
+defparam ii0567.PLACE_LOCATION = "C23R16.le_tile.le_guts.lp2.lut0";
+defparam ii0567.PCK_LOCATION = "C23R16.lp2.lut0";
+defparam ii0567.config_data = "6C6C";
 REG \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0765|dx_net  ),
+	. di ( \ii0780|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0742|dx_net  ),
+	. en ( \ii0757|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -19208,16 +19542,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5] .PLACE_LOCATION = "C35R12.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5] .PLACE_LOCATION = "C39R20.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5] .PCK_LOCATION = "C35R12.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5] .PCK_LOCATION = "C39R20.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5] .is_en_used = "true";
 REG \u_sdram_to_RGB_dma_addr__reg[25]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[25]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0534|dx_net  ),
+	. di ( \ii0544|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -19239,48 +19573,48 @@ defparam \u_sdram_to_RGB_dma_addr__reg[25] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[25] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[25] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[25] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[25] .PLACE_LOCATION = "C37R20.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[25] .PLACE_LOCATION = "C39R22.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[25] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[25] .PCK_LOCATION = "C37R20.lp1.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[25] .PCK_LOCATION = "C39R22.lp2.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[25] .is_en_used = "false";
 LUT4 ii0568 (
 	. dx ( \ii0568|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[1]|qx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[5]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_addr_wr__reg[6]|qx_net  ),
+	. f0 ( \ii0565|dx_net  )
 );
-defparam ii0568.PLACE_LOCATION = "C35R20.le_tile.le_guts.lp1.lut0";
-defparam ii0568.PCK_LOCATION = "C35R20.lp1.lut0";
-defparam ii0568.config_data = "D8D8";
+defparam ii0568.PLACE_LOCATION = "C23R16.le_tile.le_guts.lp3.lut0";
+defparam ii0568.PCK_LOCATION = "C23R16.lp3.lut0";
+defparam ii0568.config_data = "78F0";
 LUT4 ii0569 (
 	. dx ( \ii0569|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[2]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[2]|qx_net  ),
-	. f0 ( )
+	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[4]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[5]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_addr_wr__reg[6]|qx_net  ),
+	. f0 ( \ii0565|dx_net  )
 );
-defparam ii0569.PLACE_LOCATION = "C29R18.le_tile.le_guts.lp2.lut0";
-defparam ii0569.PCK_LOCATION = "C29R18.lp2.lut0";
-defparam ii0569.config_data = "D8D8";
+defparam ii0569.PLACE_LOCATION = "C25R17.le_tile.le_guts.lp2.lut0";
+defparam ii0569.PCK_LOCATION = "C25R17.lp2.lut0";
+defparam ii0569.config_data = "8000";
 LUT4 ii0570 (
 	. dx ( \ii0570|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[3]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[3]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[7]|qx_net  ),
+	. f2 ( \ii0569|dx_net  ),
+	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0570.PLACE_LOCATION = "C35R18.le_tile.le_guts.lp1.lut0";
-defparam ii0570.PCK_LOCATION = "C35R18.lp1.lut0";
-defparam ii0570.config_data = "D8D8";
+defparam ii0570.PLACE_LOCATION = "C27R17.le_tile.le_guts.lp0.lut0";
+defparam ii0570.PCK_LOCATION = "C27R17.lp0.lut0";
+defparam ii0570.config_data = "6666";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0686|dx_net  ),
+	. di ( \ii0700|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -19300,18 +19634,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9] .PLACE_LOCATION = "C43R12.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9] .PLACE_LOCATION = "C45R13.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9] .PCK_LOCATION = "C43R12.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9] .PCK_LOCATION = "C45R13.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[9] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0663|dx_net  ),
+	. di ( \ii0677|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -19331,16 +19665,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18] .PLACE_LOCATION = "C33R10.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18] .PLACE_LOCATION = "C29R9.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18] .PCK_LOCATION = "C33R10.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18] .PCK_LOCATION = "C29R9.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[18] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_addr_rd__reg[2]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_rd__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0538|dx_net  ),
+	. di ( \ii0548|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -19362,16 +19696,16 @@ defparam \u_sdram_to_RGB_emb_addr_rd__reg[2] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[2] .PLACE_LOCATION = "C29R17.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[2] .PLACE_LOCATION = "C29R14.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[2] .PCK_LOCATION = "C29R17.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[2] .PCK_LOCATION = "C29R14.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[2] .is_en_used = "false";
 REG \u_sdram_to_RGB_bmp_fig_chg__reg[0]  (
 	. qx ( \u_sdram_to_RGB_bmp_fig_chg__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0512|dx_net  ),
+	. di ( \ii0521|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -19393,46 +19727,46 @@ defparam \u_sdram_to_RGB_bmp_fig_chg__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_bmp_fig_chg__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_bmp_fig_chg__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_bmp_fig_chg__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_bmp_fig_chg__reg[0] .PLACE_LOCATION = "C39R17.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_bmp_fig_chg__reg[0] .PLACE_LOCATION = "C39R15.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_bmp_fig_chg__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_bmp_fig_chg__reg[0] .PCK_LOCATION = "C39R17.lp2.reg0";
+defparam \u_sdram_to_RGB_bmp_fig_chg__reg[0] .PCK_LOCATION = "C39R15.lp0.reg0";
 defparam \u_sdram_to_RGB_bmp_fig_chg__reg[0] .is_en_used = "false";
 LUT4 ii0571 (
 	. dx ( \ii0571|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[4]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[4]|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_emb_addr_wr__reg[7]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_addr_wr__reg[8]|qx_net  ),
+	. f1 ( \ii0569|dx_net  ),
 	. f0 ( )
 );
-defparam ii0571.PLACE_LOCATION = "C33R21.le_tile.le_guts.lp0.lut0";
-defparam ii0571.PCK_LOCATION = "C33R21.lp0.lut0";
-defparam ii0571.config_data = "D8D8";
+defparam ii0571.PLACE_LOCATION = "C25R17.le_tile.le_guts.lp0.lut0";
+defparam ii0571.PCK_LOCATION = "C25R17.lp0.lut0";
+defparam ii0571.config_data = "6C6C";
 LUT4 ii0572 (
 	. dx ( \ii0572|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[5]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[0]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[0]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0572.PLACE_LOCATION = "C29R19.le_tile.le_guts.lp2.lut0";
-defparam ii0572.PCK_LOCATION = "C29R19.lp2.lut0";
+defparam ii0572.PLACE_LOCATION = "C33R19.le_tile.le_guts.lp2.lut0";
+defparam ii0572.PCK_LOCATION = "C33R19.lp2.lut0";
 defparam ii0572.config_data = "D8D8";
 LUT4 ii0573 (
 	. dx ( \ii0573|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[6]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[6]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[10]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[10]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0573.PLACE_LOCATION = "C29R20.le_tile.le_guts.lp2.lut0";
-defparam ii0573.PCK_LOCATION = "C29R20.lp2.lut0";
+defparam ii0573.PLACE_LOCATION = "C37R19.le_tile.le_guts.lp0.lut0";
+defparam ii0573.PCK_LOCATION = "C37R19.lp0.lut0";
 defparam ii0573.config_data = "D8D8";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[0]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0561|dx_net  ),
+	. di ( \ii0572|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -19454,9 +19788,9 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[0] .PLACE_LOCATION = "C35R30.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[0] .PLACE_LOCATION = "C33R29.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[0] .PCK_LOCATION = "C35R30.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[0] .PCK_LOCATION = "C33R29.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[0] .is_en_used = "false";
 REG \u_sdram_to_RGB_de_i_r_sclk__reg[2]  (
 	. qx ( \u_sdram_to_RGB_de_i_r_sclk__reg[2]|qx_net  ),
@@ -19485,18 +19819,18 @@ defparam \u_sdram_to_RGB_de_i_r_sclk__reg[2] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_de_i_r_sclk__reg[2] .PLACE_LOCATION = "C33R17.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_de_i_r_sclk__reg[2] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp2.reg1";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_de_i_r_sclk__reg[2] .PCK_LOCATION = "C33R17.lp1.reg0";
+defparam \u_sdram_to_RGB_de_i_r_sclk__reg[2] .PCK_LOCATION = "C33R16.lp2.reg1";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[2] .is_en_used = "false";
 REG \u_sdram_to_RGB_bmp_fig_cnt__reg[0]  (
 	. qx ( \u_sdram_to_RGB_bmp_fig_cnt__reg[0]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0513|dx_net  ),
+	. di ( \ii0522|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0514|dx_net  ),
+	. en ( \ii0523|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -19516,9 +19850,9 @@ defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[0] .PLACE_LOCATION = "C37R23.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[0] .PLACE_LOCATION = "C37R23.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[0] .PCK_LOCATION = "C37R23.lp1.reg0";
+defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[0] .PCK_LOCATION = "C37R23.lp0.reg0";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[0] .is_en_used = "true";
 M7S_IO_DDR dedicated_io_cell_u237_inst (
 	. id_q_1 ( )
@@ -19664,12 +19998,12 @@ defparam dedicated_io_cell_u237_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0574 (
 	. dx ( \ii0574|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[7]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[7]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[11]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[11]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0574.PLACE_LOCATION = "C33R18.le_tile.le_guts.lp3.lut0";
-defparam ii0574.PCK_LOCATION = "C33R18.lp3.lut0";
+defparam ii0574.PLACE_LOCATION = "C29R20.le_tile.le_guts.lp0.lut0";
+defparam ii0574.PCK_LOCATION = "C29R20.lp0.lut0";
 defparam ii0574.config_data = "D8D8";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27]|qx_net  ),
@@ -19698,9 +20032,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27] .PLACE_LOCATION = "C49R6.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27] .PCK_LOCATION = "C47R4.lp0.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27] .PCK_LOCATION = "C49R6.lp0.reg1";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[27] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[10]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[10]|qx_net  ),
@@ -19729,16 +20063,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[10] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[10] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[10] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[10] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[10] .PLACE_LOCATION = "C33R17.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[10] .PLACE_LOCATION = "C33R17.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[10] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[10] .PCK_LOCATION = "C33R17.lp2.reg1";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[10] .PCK_LOCATION = "C33R17.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[10] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_addr_wr__reg[3]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr__reg[3]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0553|dx_net  ),
+	. di ( \ii0564|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
 	. mclk_b ( ),
@@ -19760,18 +20094,18 @@ defparam \u_sdram_to_RGB_emb_addr_wr__reg[3] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[3] .PLACE_LOCATION = "C35R17.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[3] .PLACE_LOCATION = "C19R16.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[3] .PCK_LOCATION = "C35R17.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[3] .PCK_LOCATION = "C19R16.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[3] .is_en_used = "true";
 REG \u_colorgen_v_cnt__reg[9]  (
 	. qx ( \u_colorgen_v_cnt__reg[9]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0493|dx_net  ),
+	. di ( \ii0499|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0480|dx_net  ),
+	. en ( \ii0486|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_lvds_pll_u0|clkout0_net  ),
 	. shift ( ),
@@ -19791,29 +20125,29 @@ defparam \u_colorgen_v_cnt__reg[9] .le_sh0_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[9] .le_sh1_always_en = "false";
 defparam \u_colorgen_v_cnt__reg[9] .use_reg_fdbk = "false";
 defparam \u_colorgen_v_cnt__reg[9] .is_le_clk_inv = "false";
-defparam \u_colorgen_v_cnt__reg[9] .PLACE_LOCATION = "C13R16.le_tile.le_guts.lp0.reg1";
+defparam \u_colorgen_v_cnt__reg[9] .PLACE_LOCATION = "C27R19.le_tile.le_guts.lp0.reg0";
 defparam \u_colorgen_v_cnt__reg[9] .is_le_sh1_en_not_inv = "true";
-defparam \u_colorgen_v_cnt__reg[9] .PCK_LOCATION = "C13R16.lp0.reg1";
+defparam \u_colorgen_v_cnt__reg[9] .PCK_LOCATION = "C27R19.lp0.reg0";
 defparam \u_colorgen_v_cnt__reg[9] .is_en_used = "true";
 LUT4 ii0575 (
 	. dx ( \ii0575|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[8]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[8]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[12]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[12]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0575.PLACE_LOCATION = "C29R18.le_tile.le_guts.lp0.lut0";
-defparam ii0575.PCK_LOCATION = "C29R18.lp0.lut0";
+defparam ii0575.PLACE_LOCATION = "C29R19.le_tile.le_guts.lp0.lut41";
+defparam ii0575.PCK_LOCATION = "C29R19.lp0.lut41";
 defparam ii0575.config_data = "D8D8";
 LUT4 ii0576 (
 	. dx ( \ii0576|dx_net  ),
 	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[9]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[9]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[13]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[13]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0576.PLACE_LOCATION = "C33R20.le_tile.le_guts.lp0.lut0";
-defparam ii0576.PCK_LOCATION = "C33R20.lp0.lut0";
+defparam ii0576.PLACE_LOCATION = "C29R18.le_tile.le_guts.lp2.lut41";
+defparam ii0576.PCK_LOCATION = "C29R18.lp2.lut41";
 defparam ii0576.config_data = "D8D8";
 M7S_IO_PCISG io_cell_clk_i_inst (
 	. id ( \io_cell_clk_i_inst|id_q_net  ),
@@ -19860,9 +20194,9 @@ REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30]  (
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0730|dx_net  ),
+	. di ( \ii0745|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -19882,18 +20216,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30] .PLACE_LOCATION = "C37R15.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30] .PLACE_LOCATION = "C45R16.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30] .PCK_LOCATION = "C37R15.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30] .PCK_LOCATION = "C45R16.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[30] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0728|dx_net  ),
+	. di ( \ii0743|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -19913,16 +20247,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29] .PLACE_LOCATION = "C29R15.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29] .PLACE_LOCATION = "C27R13.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29] .PCK_LOCATION = "C29R15.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29] .PCK_LOCATION = "C27R13.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[29] .is_en_used = "true";
 REG u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0638|dx_net  ),
+	. di ( \ii0651|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -19944,9 +20278,9 @@ defparam u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg.le_sh0_always_en = "false"
 defparam u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg.le_sh1_always_en = "false";
 defparam u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg.use_reg_fdbk = "false";
 defparam u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg.is_le_clk_inv = "false";
-defparam u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg.PLACE_LOCATION = "C37R12.le_tile.le_guts.lp2.reg1";
+defparam u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg.PLACE_LOCATION = "C37R13.le_tile.le_guts.lp2.reg0";
 defparam u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg.is_le_sh1_en_not_inv = "true";
-defparam u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg.PCK_LOCATION = "C37R12.lp2.reg1";
+defparam u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg.PCK_LOCATION = "C37R13.lp2.reg0";
 defparam u_sdram_to_RGB_u_ahb_master_dma_eof_get__reg.is_en_used = "false";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17]|qx_net  ),
@@ -19955,7 +20289,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[17]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -19975,9 +20309,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17] .PLACE_LOCATION = "C37R9.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17] .PLACE_LOCATION = "C37R9.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17] .PCK_LOCATION = "C37R9.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17] .PCK_LOCATION = "C37R9.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[17] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0]|qx_net  ),
@@ -19986,7 +20320,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[0]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -20006,18 +20340,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0] .le_sh0_always_en = "f
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0] .PLACE_LOCATION = "C33R7.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0] .PLACE_LOCATION = "C39R11.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0] .PCK_LOCATION = "C33R7.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0] .PCK_LOCATION = "C39R11.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[0] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0608|dx_net  ),
+	. di ( \ii0622|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0589|dx_net  ),
+	. en ( \ii0603|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -20037,9 +20371,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7] .PLACE_LOCATION = "C23R12.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7] .PLACE_LOCATION = "C35R11.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7] .PCK_LOCATION = "C23R12.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7] .PCK_LOCATION = "C35R11.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_addr_count__reg[7] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[13]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[13]|qx_net  ),
@@ -20068,28 +20402,28 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[13] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[13] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[13] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[13] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[13] .PLACE_LOCATION = "C29R19.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[13] .PLACE_LOCATION = "C29R18.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[13] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[13] .PCK_LOCATION = "C29R19.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[13] .PCK_LOCATION = "C29R18.lp1.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[13] .is_en_used = "false";
 LUT4 ii0577 (
 	. dx ( \ii0577|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_other_1_beat_valid__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg|qx_net  ),
-	. f1 ( ),
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[14]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[14]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0577.PLACE_LOCATION = "C45R14.le_tile.le_guts.lp0.lut0";
-defparam ii0577.PCK_LOCATION = "C45R14.lp0.lut0";
-defparam ii0577.config_data = "8888";
+defparam ii0577.PLACE_LOCATION = "C33R20.le_tile.le_guts.lp0.lut0";
+defparam ii0577.PCK_LOCATION = "C33R20.lp0.lut0";
+defparam ii0577.config_data = "D8D8";
 REG \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0766|dx_net  ),
+	. di ( \ii0781|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0742|dx_net  ),
+	. en ( \ii0757|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -20109,9 +20443,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6] .PLACE_LOCATION = "C35R12.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6] .PLACE_LOCATION = "C43R19.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6] .PCK_LOCATION = "C35R12.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6] .PCK_LOCATION = "C43R19.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6] .is_en_used = "true";
 REG \u_sdram_to_RGB_dma_addr__reg[26]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[26]|qx_net  ),
@@ -20140,48 +20474,48 @@ defparam \u_sdram_to_RGB_dma_addr__reg[26] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[26] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[26] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[26] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[26] .PLACE_LOCATION = "C39R15.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_dma_addr__reg[26] .PLACE_LOCATION = "C35R14.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_dma_addr__reg[26] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[26] .PCK_LOCATION = "C39R15.lp2.reg1";
+defparam \u_sdram_to_RGB_dma_addr__reg[26] .PCK_LOCATION = "C35R14.lp0.reg1";
 defparam \u_sdram_to_RGB_dma_addr__reg[26] .is_en_used = "false";
 LUT4 ii0578 (
 	. dx ( \ii0578|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_de_i_start_pulse__reg|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_other_1_beat_valid__reg|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg|qx_net  ),
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[15]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[15]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0578.PLACE_LOCATION = "C45R13.le_tile.le_guts.lp2.lut0";
-defparam ii0578.PCK_LOCATION = "C45R13.lp2.lut0";
-defparam ii0578.config_data = "AEAE";
+defparam ii0578.PLACE_LOCATION = "C33R20.le_tile.le_guts.lp1.lut0";
+defparam ii0578.PCK_LOCATION = "C33R20.lp1.lut0";
+defparam ii0578.config_data = "D8D8";
 LUT4 ii0579 (
 	. dx ( \ii0579|dx_net  ),
-	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[0]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[1]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[1]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0579.PLACE_LOCATION = "C33R10.le_tile.le_guts.lp1.lut40";
-defparam ii0579.PCK_LOCATION = "C33R10.lp1.lut40";
-defparam ii0579.config_data = "0008";
+defparam ii0579.PLACE_LOCATION = "C33R18.le_tile.le_guts.lp3.lut0";
+defparam ii0579.PCK_LOCATION = "C33R18.lp3.lut0";
+defparam ii0579.config_data = "D8D8";
 LUT4 ii0580 (
 	. dx ( \ii0580|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[6]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[7]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[8]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[9]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[2]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[2]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0580.PLACE_LOCATION = "C29R13.le_tile.le_guts.lp0.lut0";
-defparam ii0580.PCK_LOCATION = "C29R13.lp0.lut0";
-defparam ii0580.config_data = "8000";
+defparam ii0580.PLACE_LOCATION = "C29R18.le_tile.le_guts.lp3.lut41";
+defparam ii0580.PCK_LOCATION = "C29R18.lp3.lut41";
+defparam ii0580.config_data = "D8D8";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0669|dx_net  ),
+	. di ( \ii0682|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -20201,18 +20535,18 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20] .PLACE_LOCATION = "C39R14.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20] .PLACE_LOCATION = "C39R14.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20] .PCK_LOCATION = "C39R14.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20] .PCK_LOCATION = "C39R14.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[20] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0666|dx_net  ),
+	. di ( \ii0679|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0642|dx_net  ),
+	. en ( \ii0655|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -20232,16 +20566,16 @@ defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19] .PLACE_LOCATION = "C29R11.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19] .PLACE_LOCATION = "C33R9.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19] .PCK_LOCATION = "C29R11.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19] .PCK_LOCATION = "C33R9.lp3.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_haddr_hi__reg[19] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_addr_rd__reg[3]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_rd__reg[3]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0540|dx_net  ),
+	. di ( \ii0550|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -20263,9 +20597,9 @@ defparam \u_sdram_to_RGB_emb_addr_rd__reg[3] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[3] .PLACE_LOCATION = "C27R16.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[3] .PLACE_LOCATION = "C29R14.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_rd__reg[3] .PCK_LOCATION = "C27R16.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_addr_rd__reg[3] .PCK_LOCATION = "C29R14.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_addr_rd__reg[3] .is_en_used = "false";
 REG \u_sdram_to_RGB_bmp_fig_chg__reg[1]  (
 	. qx ( \u_sdram_to_RGB_bmp_fig_chg__reg[1]|qx_net  ),
@@ -20294,20 +20628,20 @@ defparam \u_sdram_to_RGB_bmp_fig_chg__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_bmp_fig_chg__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_bmp_fig_chg__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_bmp_fig_chg__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_bmp_fig_chg__reg[1] .PLACE_LOCATION = "C39R21.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_bmp_fig_chg__reg[1] .PLACE_LOCATION = "C37R21.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_bmp_fig_chg__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_bmp_fig_chg__reg[1] .PCK_LOCATION = "C39R21.lp2.reg0";
+defparam \u_sdram_to_RGB_bmp_fig_chg__reg[1] .PCK_LOCATION = "C37R21.lp0.reg0";
 defparam \u_sdram_to_RGB_bmp_fig_chg__reg[1] .is_en_used = "false";
 LUT4 ii0581 (
 	. dx ( \ii0581|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[3]|qx_net  ),
-	. f1 ( ),
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[3]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[3]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0581.PLACE_LOCATION = "C33R13.le_tile.le_guts.lp2.lut41";
-defparam ii0581.PCK_LOCATION = "C33R13.lp2.lut41";
-defparam ii0581.config_data = "1111";
+defparam ii0581.PLACE_LOCATION = "C33R19.le_tile.le_guts.lp1.lut41";
+defparam ii0581.PCK_LOCATION = "C33R19.lp1.lut41";
+defparam ii0581.config_data = "D8D8";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[0]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[0]|qx_net  ),
 	. qs ( ),
@@ -20335,27 +20669,27 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[0] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[0] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[0] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[0] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[0] .PLACE_LOCATION = "C35R21.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[0] .PLACE_LOCATION = "C33R16.le_tile.le_guts.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[0] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[0] .PCK_LOCATION = "C35R21.lp0.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[0] .PCK_LOCATION = "C33R16.lp3.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[0] .is_en_used = "false";
 LUT4 ii0582 (
 	. dx ( \ii0582|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[5]|qx_net  ),
-	. f1 ( \ii0580|dx_net  ),
-	. f0 ( \ii0581|dx_net  )
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[4]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[4]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0582.PLACE_LOCATION = "C29R13.le_tile.le_guts.lp1.lut41";
-defparam ii0582.PCK_LOCATION = "C29R13.lp1.lut41";
-defparam ii0582.config_data = "0080";
+defparam ii0582.PLACE_LOCATION = "C33R19.le_tile.le_guts.lp3.lut0";
+defparam ii0582.PCK_LOCATION = "C33R19.lp3.lut0";
+defparam ii0582.config_data = "D8D8";
 M7S_IO_LVDS io_cell_rstn_i_inst (
 	. id_1 ( ),
 	. id_0 ( ),
 	. id_q_1 ( {
-		/* id_q_1 [3] (nc) */ nc127 ,
-		/* id_q_1 [2] (nc) */ nc128 ,
-		/* id_q_1 [1] (nc) */ nc129 ,
+		/* id_q_1 [3] (nc) */ nc133 ,
+		/* id_q_1 [2] (nc) */ nc134 ,
+		/* id_q_1 [1] (nc) */ nc135 ,
 		/* id_q_1 [0] */ \io_cell_rstn_i_inst|id_q_net 
 	} ),
 	. id_q_0 ( )
@@ -20475,20 +20809,20 @@ defparam io_cell_rstn_i_inst.cfg_userio_en_0 = 1'b0;
 defparam io_cell_rstn_i_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0583 (
 	. dx ( \ii0583|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[4]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[5]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[6]|qx_net  ),
-	. f0 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7]|qx_net  )
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[5]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[5]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0583.PLACE_LOCATION = "C35R12.le_tile.le_guts.lp0.lut40";
-defparam ii0583.PCK_LOCATION = "C35R12.lp0.lut40";
-defparam ii0583.config_data = "0001";
+defparam ii0583.PLACE_LOCATION = "C29R19.le_tile.le_guts.lp1.lut0";
+defparam ii0583.PCK_LOCATION = "C29R19.lp1.lut0";
+defparam ii0583.config_data = "D8D8";
 REG \u_sdram_to_RGB_emb_rdata_r__reg[1]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_r__reg[1]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0568|dx_net  ),
+	. di ( \ii0579|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( ),
 	. mclk_b ( ),
@@ -20510,9 +20844,9 @@ defparam \u_sdram_to_RGB_emb_rdata_r__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[1] .PLACE_LOCATION = "C35R30.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[1] .PLACE_LOCATION = "C33R29.le_tile.le_guts.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_r__reg[1] .PCK_LOCATION = "C35R30.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_r__reg[1] .PCK_LOCATION = "C33R29.lp0.reg1";
 defparam \u_sdram_to_RGB_emb_rdata_r__reg[1] .is_en_used = "false";
 REG \u_sdram_to_RGB_de_i_r_sclk__reg[3]  (
 	. qx ( \u_sdram_to_RGB_de_i_r_sclk__reg[3]|qx_net  ),
@@ -20541,18 +20875,18 @@ defparam \u_sdram_to_RGB_de_i_r_sclk__reg[3] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[3] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[3] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[3] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_de_i_r_sclk__reg[3] .PLACE_LOCATION = "C33R23.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_de_i_r_sclk__reg[3] .PLACE_LOCATION = "C35R21.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[3] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_de_i_r_sclk__reg[3] .PCK_LOCATION = "C33R23.lp0.reg0";
+defparam \u_sdram_to_RGB_de_i_r_sclk__reg[3] .PCK_LOCATION = "C35R21.lp0.reg0";
 defparam \u_sdram_to_RGB_de_i_r_sclk__reg[3] .is_en_used = "false";
 REG \u_sdram_to_RGB_bmp_fig_cnt__reg[1]  (
 	. qx ( \u_sdram_to_RGB_bmp_fig_cnt__reg[1]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0515|dx_net  ),
+	. di ( \ii0524|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0514|dx_net  ),
+	. en ( \ii0523|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -20572,28 +20906,28 @@ defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[1] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[1] .PLACE_LOCATION = "C37R22.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[1] .PLACE_LOCATION = "C37R24.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[1] .PCK_LOCATION = "C37R22.lp0.reg0";
+defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[1] .PCK_LOCATION = "C37R24.lp2.reg0";
 defparam \u_sdram_to_RGB_bmp_fig_cnt__reg[1] .is_en_used = "true";
 LUT4 ii0584 (
 	. dx ( \ii0584|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[0]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[1]|qx_net  ),
-	. f1 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[3]|qx_net  ),
-	. f0 ( \ii0583|dx_net  )
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[6]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[6]|qx_net  ),
+	. f0 ( )
 );
-defparam ii0584.PLACE_LOCATION = "C35R15.le_tile.le_guts.lp1.lut41";
-defparam ii0584.PCK_LOCATION = "C35R15.lp1.lut41";
-defparam ii0584.config_data = "0700";
+defparam ii0584.PLACE_LOCATION = "C29R19.le_tile.le_guts.lp2.lut41";
+defparam ii0584.PCK_LOCATION = "C29R19.lp2.lut41";
+defparam ii0584.config_data = "D8D8";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0729|dx_net  ),
+	. di ( \ii0744|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -20613,9 +20947,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2] .le_sh0_always_en = "false
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2] .PLACE_LOCATION = "C33R13.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2] .PLACE_LOCATION = "C45R15.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2] .PCK_LOCATION = "C33R13.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2] .PCK_LOCATION = "C45R15.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[2] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28]|qx_net  ),
@@ -20644,9 +20978,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28] .le_sh0_always_en = "fal
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28] .PLACE_LOCATION = "C47R4.le_tile.le_guts.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28] .PLACE_LOCATION = "C49R3.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28] .PCK_LOCATION = "C47R4.lp1.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28] .PCK_LOCATION = "C49R3.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_hwdata_o__reg[28] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_rdata_1_r__reg[11]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_1_r__reg[11]|qx_net  ),
@@ -20675,16 +21009,16 @@ defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[11] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[11] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[11] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[11] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[11] .PLACE_LOCATION = "C29R21.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[11] .PLACE_LOCATION = "C29R20.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[11] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[11] .PCK_LOCATION = "C29R21.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[11] .PCK_LOCATION = "C29R20.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_1_r__reg[11] .is_en_used = "false";
 REG \u_sdram_to_RGB_emb_addr_wr__reg[4]  (
 	. qx ( \u_sdram_to_RGB_emb_addr_wr__reg[4]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0555|dx_net  ),
+	. di ( \ii0566|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
 	. en ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_push__reg|qx_net  ),
 	. mclk_b ( ),
@@ -20706,9 +21040,9 @@ defparam \u_sdram_to_RGB_emb_addr_wr__reg[4] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[4] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[4] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[4] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[4] .PLACE_LOCATION = "C35R16.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[4] .PLACE_LOCATION = "C25R17.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[4] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_addr_wr__reg[4] .PCK_LOCATION = "C35R16.lp2.reg1";
+defparam \u_sdram_to_RGB_emb_addr_wr__reg[4] .PCK_LOCATION = "C25R17.lp2.reg0";
 defparam \u_sdram_to_RGB_emb_addr_wr__reg[4] .is_en_used = "true";
 M7S_SOC u_arm_u_soc (
 	. c2r1_dll_clk ( \u_arm_dll_u0|clkout0_net  ),
@@ -20718,36 +21052,36 @@ M7S_SOC u_arm_u_soc (
 	. fp_lvds_sclk ( ),
 	. fp_clk_usb ( ),
 	. gpio_0_out_o ( {
-		/* gpio_0_out_o [31] (nc) */ nc130 ,
-		/* gpio_0_out_o [30] (nc) */ nc131 ,
-		/* gpio_0_out_o [29] (nc) */ nc132 ,
-		/* gpio_0_out_o [28] (nc) */ nc133 ,
-		/* gpio_0_out_o [27] (nc) */ nc134 ,
-		/* gpio_0_out_o [26] (nc) */ nc135 ,
-		/* gpio_0_out_o [25] (nc) */ nc136 ,
-		/* gpio_0_out_o [24] (nc) */ nc137 ,
-		/* gpio_0_out_o [23] (nc) */ nc138 ,
-		/* gpio_0_out_o [22] (nc) */ nc139 ,
-		/* gpio_0_out_o [21] (nc) */ nc140 ,
-		/* gpio_0_out_o [20] (nc) */ nc141 ,
-		/* gpio_0_out_o [19] (nc) */ nc142 ,
-		/* gpio_0_out_o [18] (nc) */ nc143 ,
-		/* gpio_0_out_o [17] (nc) */ nc144 ,
-		/* gpio_0_out_o [16] (nc) */ nc145 ,
-		/* gpio_0_out_o [15] (nc) */ nc146 ,
-		/* gpio_0_out_o [14] (nc) */ nc147 ,
-		/* gpio_0_out_o [13] (nc) */ nc148 ,
-		/* gpio_0_out_o [12] (nc) */ nc149 ,
-		/* gpio_0_out_o [11] (nc) */ nc150 ,
-		/* gpio_0_out_o [10] (nc) */ nc151 ,
-		/* gpio_0_out_o [9] (nc) */ nc152 ,
-		/* gpio_0_out_o [8] (nc) */ nc153 ,
-		/* gpio_0_out_o [7] (nc) */ nc154 ,
-		/* gpio_0_out_o [6] (nc) */ nc155 ,
-		/* gpio_0_out_o [5] (nc) */ nc156 ,
-		/* gpio_0_out_o [4] (nc) */ nc157 ,
-		/* gpio_0_out_o [3] (nc) */ nc158 ,
-		/* gpio_0_out_o [2] (nc) */ nc159 ,
+		/* gpio_0_out_o [31] (nc) */ nc136 ,
+		/* gpio_0_out_o [30] (nc) */ nc137 ,
+		/* gpio_0_out_o [29] (nc) */ nc138 ,
+		/* gpio_0_out_o [28] (nc) */ nc139 ,
+		/* gpio_0_out_o [27] (nc) */ nc140 ,
+		/* gpio_0_out_o [26] (nc) */ nc141 ,
+		/* gpio_0_out_o [25] (nc) */ nc142 ,
+		/* gpio_0_out_o [24] (nc) */ nc143 ,
+		/* gpio_0_out_o [23] (nc) */ nc144 ,
+		/* gpio_0_out_o [22] (nc) */ nc145 ,
+		/* gpio_0_out_o [21] (nc) */ nc146 ,
+		/* gpio_0_out_o [20] (nc) */ nc147 ,
+		/* gpio_0_out_o [19] (nc) */ nc148 ,
+		/* gpio_0_out_o [18] (nc) */ nc149 ,
+		/* gpio_0_out_o [17] (nc) */ nc150 ,
+		/* gpio_0_out_o [16] (nc) */ nc151 ,
+		/* gpio_0_out_o [15] (nc) */ nc152 ,
+		/* gpio_0_out_o [14] (nc) */ nc153 ,
+		/* gpio_0_out_o [13] (nc) */ nc154 ,
+		/* gpio_0_out_o [12] (nc) */ nc155 ,
+		/* gpio_0_out_o [11] (nc) */ nc156 ,
+		/* gpio_0_out_o [10] (nc) */ nc157 ,
+		/* gpio_0_out_o [9] (nc) */ nc158 ,
+		/* gpio_0_out_o [8] (nc) */ nc159 ,
+		/* gpio_0_out_o [7] (nc) */ nc160 ,
+		/* gpio_0_out_o [6] (nc) */ nc161 ,
+		/* gpio_0_out_o [5] (nc) */ nc162 ,
+		/* gpio_0_out_o [4] (nc) */ nc163 ,
+		/* gpio_0_out_o [3] (nc) */ nc164 ,
+		/* gpio_0_out_o [2] (nc) */ nc165 ,
 		/* gpio_0_out_o [1] */ \u_arm_u_soc|gpio_0_out_o[1]_net ,
 		/* gpio_0_out_o [0] */ \u_arm_u_soc|gpio_0_out_o[0]_net 
 	} ),
@@ -21140,32 +21474,32 @@ defparam dedicated_io_cell_u231_inst.cfg_gsclk_inv_1 = 0;
 defparam dedicated_io_cell_u231_inst.cfg_id_setn_en_1 = 0;
 LUT4 ii0585 (
 	. dx ( \ii0585|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[2]|qx_net  ),
-	. f2 ( \ii0582|dx_net  ),
-	. f1 ( \ii0584|dx_net  ),
-	. f0 ( \ii0579|dx_net  )
-);
-defparam ii0585.PLACE_LOCATION = "C29R13.le_tile.le_guts.lp1.lut40";
-defparam ii0585.PCK_LOCATION = "C29R13.lp1.lut40";
-defparam ii0585.config_data = "DC00";
-LUT4 ii0586 (
-	. dx ( \ii0586|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_addr_count__reg[0]|qx_net  ),
-	. f2 ( \ii0579|dx_net  ),
-	. f1 ( \ii0585|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[7]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[7]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0586.PLACE_LOCATION = "C23R11.le_tile.le_guts.lp0.lut0";
-defparam ii0586.PCK_LOCATION = "C23R11.lp0.lut0";
-defparam ii0586.config_data = "F1F1";
+defparam ii0585.PLACE_LOCATION = "C29R19.le_tile.le_guts.lp3.lut0";
+defparam ii0585.PCK_LOCATION = "C29R19.lp3.lut0";
+defparam ii0585.config_data = "D8D8";
+LUT4 ii0586 (
+	. dx ( \ii0586|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[8]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[8]|qx_net  ),
+	. f0 ( )
+);
+defparam ii0586.PLACE_LOCATION = "C29R20.le_tile.le_guts.lp3.lut0";
+defparam ii0586.PCK_LOCATION = "C29R20.lp3.lut0";
+defparam ii0586.config_data = "D8D8";
 REG \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0731|dx_net  ),
+	. di ( \ii0746|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0709|dx_net  ),
+	. en ( \ii0724|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -21185,9 +21519,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31] .le_sh0_always_en = "fals
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31] .PLACE_LOCATION = "C33R14.le_tile.le_guts.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31] .PLACE_LOCATION = "C45R15.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31] .PCK_LOCATION = "C33R14.lp2.reg1";
+defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31] .PCK_LOCATION = "C45R15.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_mx_addr__reg[31] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1]|qx_net  ),
@@ -21196,7 +21530,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[1]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -21216,9 +21550,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1] .le_sh0_always_en = "f
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1] .PLACE_LOCATION = "C35R7.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1] .PLACE_LOCATION = "C43R10.le_tile.le_guts.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1] .PCK_LOCATION = "C35R7.lp0.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1] .PCK_LOCATION = "C43R10.lp1.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[1] .is_en_used = "true";
 REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18]|qx_net  ),
@@ -21227,7 +21561,7 @@ REG \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18]  (
 	. down_o ( ),
 	. di ( \u_arm_u_soc|fp0_m_ahb_rdata[18]_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0633|dx_net  ),
+	. en ( \ii0646|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -21247,9 +21581,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18] .le_sh0_always_en = "
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18] .PLACE_LOCATION = "C37R7.le_tile.le_guts.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18] .PLACE_LOCATION = "C43R10.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18] .PCK_LOCATION = "C37R7.lp2.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18] .PCK_LOCATION = "C43R10.lp0.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_ahm_rdata_r__reg[18] .is_en_used = "true";
 REG \u_sdram_to_RGB_emb_rdata_0_r__reg[14]  (
 	. qx ( \u_sdram_to_RGB_emb_rdata_0_r__reg[14]|qx_net  ),
@@ -21278,28 +21612,28 @@ defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[14] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[14] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[14] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[14] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[14] .PLACE_LOCATION = "C35R19.le_tile.le_guts.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[14] .PLACE_LOCATION = "C33R20.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[14] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[14] .PCK_LOCATION = "C35R19.lp1.reg0";
+defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[14] .PCK_LOCATION = "C33R20.lp0.reg0";
 defparam \u_sdram_to_RGB_emb_rdata_0_r__reg[14] .is_en_used = "false";
 LUT4 ii0587 (
 	. dx ( \ii0587|dx_net  ),
-	. f3 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[1]|qx_net  ),
-	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahb_cs__reg[2]|qx_net  ),
-	. f1 ( ),
+	. f3 ( \u_sdram_to_RGB_buffer_rd_sel_r__reg[1]|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_emb_rdata_0_r__reg[9]|qx_net  ),
+	. f1 ( \u_sdram_to_RGB_emb_rdata_1_r__reg[9]|qx_net  ),
 	. f0 ( )
 );
-defparam ii0587.PLACE_LOCATION = "C35R9.le_tile.le_guts.lp0.lut0";
-defparam ii0587.PCK_LOCATION = "C35R9.lp0.lut0";
-defparam ii0587.config_data = "2222";
+defparam ii0587.PLACE_LOCATION = "C33R20.le_tile.le_guts.lp2.lut0";
+defparam ii0587.PCK_LOCATION = "C33R20.lp2.lut0";
+defparam ii0587.config_data = "D8D8";
 REG \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7]  (
 	. qx ( \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7]|qx_net  ),
 	. qs ( ),
 	. up_o ( ),
 	. down_o ( ),
-	. di ( \ii0767|dx_net  ),
+	. di ( \ii0782|dx_net  ),
 	. a_sr ( \rstn_final__reg|qx_net  ),
-	. en ( \ii0742|dx_net  ),
+	. en ( \ii0757|dx_net  ),
 	. mclk_b ( ),
 	. sclk ( \u_pll_pll_u0|clkout1_net  ),
 	. shift ( ),
@@ -21319,9 +21653,9 @@ defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7] .le_sh0_always_en = "fa
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7] .PLACE_LOCATION = "C35R12.le_tile.le_guts.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7] .PLACE_LOCATION = "C39R20.le_tile.le_guts.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7] .PCK_LOCATION = "C35R12.lp3.reg0";
+defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7] .PCK_LOCATION = "C39R20.lp2.reg0";
 defparam \u_sdram_to_RGB_u_ahb_master_xfer_count__reg[7] .is_en_used = "true";
 REG \u_sdram_to_RGB_dma_addr__reg[27]  (
 	. qx ( \u_sdram_to_RGB_dma_addr__reg[27]|qx_net  ),
@@ -21350,18 +21684,18 @@ defparam \u_sdram_to_RGB_dma_addr__reg[27] .le_sh0_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[27] .le_sh1_always_en = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[27] .use_reg_fdbk = "false";
 defparam \u_sdram_to_RGB_dma_addr__reg[27] .is_le_clk_inv = "false";
-defparam \u_sdram_to_RGB_dma_addr__reg[27] .PLACE_LOCATION = "C33R15.le_tile.le_guts.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[27] .PLACE_LOCATION = "C35R14.le_tile.le_guts.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[27] .is_le_sh1_en_not_inv = "true";
-defparam \u_sdram_to_RGB_dma_addr__reg[27] .PCK_LOCATION = "C33R15.lp0.reg0";
+defparam \u_sdram_to_RGB_dma_addr__reg[27] .PCK_LOCATION = "C35R14.lp0.reg0";
 defparam \u_sdram_to_RGB_dma_addr__reg[27] .is_en_used = "false";
 LUT4 ii0588 (
 	. dx ( \ii0588|dx_net  ),
-	. f3 ( \u_arm_u_soc|fp0_m_ahb_ready_net  ),
-	. f2 ( \ii0587|dx_net  ),
+	. f3 ( \u_sdram_to_RGB_other_1_beat_valid__reg|qx_net  ),
+	. f2 ( \u_sdram_to_RGB_u_ahb_master_ahm_xfer_done__reg|qx_net  ),
 	. f1 ( ),
 	. f0 ( )
 );
-defparam ii0588.PLACE_LOCATION = "C35R10.le_tile.le_guts.lp2.lut0";
-defparam ii0588.PCK_LOCATION = "C35R10.lp2.lut0";
+defparam ii0588.PLACE_LOCATION = "C35R16.le_tile.le_guts.lp1.lut40";
+defparam ii0588.PCK_LOCATION = "C35R16.lp1.lut40";
 defparam ii0588.config_data = "8888";
 endmodule // demo_sd_to_lcd

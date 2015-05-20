@@ -1,0 +1,171 @@
+#This file is produced by Cstimer
+
+****************************************
+
+                  Clock setup                 
+
+****************************************
+
+
+788 out of 788 registers are not clocked by a user defined clock.
+****************************************
+	 cs_report_timing
+	 -path_type clock_expanded
+	 -nworst 1 
+	 -max_paths 10000000 
+	 total paths found 0 
+	 from clock domain u_pll_pll_u0/clkout1 
+****************************************
+1
+****************************************
+
+                  Clock hold                   
+
+****************************************
+
+
+788 out of 788 registers are not clocked by a user defined clock.
+****************************************
+	 cs_report_timing
+	 -path_type clock_expanded
+	 -nworst 1 
+	 -max_paths 10000000 
+	 total paths found 0 
+	 from clock domain u_pll_pll_u0/clkout1 
+****************************************
+1
+****************************************
+
+                  tsu                   
+
+****************************************
+
+
+788 out of 788 registers are not clocked by a user defined clock.
+****************************************
+	 cs_report_timing
+	 -path_type clock_expanded
+	 -nworst 1 
+	 -max_paths 10000000 
+	 total paths found 0 
+	 from clock domain u_pll_pll_u0/clkout1 
+****************************************
+1
+****************************************
+
+                  th                   
+
+****************************************
+
+
+788 out of 788 registers are not clocked by a user defined clock.
+****************************************
+	 cs_report_timing
+	 -path_type clock_expanded
+	 -nworst 1 
+	 -max_paths 10000000 
+	 total paths found 0 
+	 from clock domain u_pll_pll_u0/clkout1 
+****************************************
+1
+****************************************
+
+                  tco                   
+
+****************************************
+
+
+788 out of 788 registers are not clocked by a user defined clock.
+****************************************
+	 cs_report_timing
+	 -path_type clock_expanded
+	 -nworst 1 
+	 -max_paths 10000000 
+	 total paths found 0 
+	 from clock domain u_pll_pll_u0/clkout1 
+****************************************
+1
+****************************************
+
+                  tco min               
+
+****************************************
+
+
+788 out of 788 registers are not clocked by a user defined clock.
+****************************************
+	 cs_report_timing
+	 -path_type clock_expanded
+	 -nworst 1 
+	 -max_paths 10000000 
+	 total paths found 0 
+	 from clock domain u_pll_pll_u0/clkout1 
+****************************************
+1
+****************************************
+
+                  tpd                   
+
+****************************************
+
+
+788 out of 788 registers are not clocked by a user defined clock.
+****************************************
+	 cs_report_timing
+	 -path_type clock_expanded
+	 -nworst 1 
+	 -max_paths 10000000 
+	 total paths found 0 
+	 from clock domain u_pll_pll_u0/clkout1 
+****************************************
+1
+****************************************
+
+         datasheet setup               
+
+****************************************
+
+1
+****************************************
+
+         datasheet hold                 
+
+****************************************
+
+1
+****************************************
+
+         datasheet output max           
+
+****************************************
+
+1
+****************************************
+
+         datasheet output min           
+
+****************************************
+
+1
+****************************************
+
+         datasheet propagated max       
+
+****************************************
+
+****************************************
+	 cs_report_datasheet_timing
+	 from clock domain u_pll_pll_u0/clkout1 
+****************************************
+1
+****************************************
+
+         datasheet propagated min       
+
+****************************************
+
+****************************************
+	 cs_report_datasheet_timing
+	 from clock domain u_pll_pll_u0/clkout1 
+****************************************
+1

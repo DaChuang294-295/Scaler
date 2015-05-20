@@ -46,7 +46,7 @@
         </tr>
         <tr>
           <td>Total LUT4(s)</td>
-          <td>307</td>
+          <td>316</td>
         </tr>
         <tr>
           <td>Total LUT4C(s)</td>
@@ -54,11 +54,11 @@
         </tr>
         <tr>
           <td>Total REG(s)</td>
-          <td>356</td>
+          <td>359</td>
         </tr>
         <tr>
           <td>Total I/O pins</td>
-          <td>7</td>
+          <td>10</td>
         </tr>
         <tr>
           <td>Total EMB(s)</td>

@@ -2,14 +2,14 @@
 <annotation version="1.0">
 
   <critical_path>
-    <path path_name="u_sdram_to_RGB_emb_addr_rd__reg[0]">
-      <src_node block_name="u_sdram_to_RGB_emb_addr_rd__reg[0]" output_port_name="qx"/>
-      <middle_node block_name="ii0539" input_port_name="f3" output_port_name="dx"/>
-      <middle_node block_name="ii0542" input_port_name="f1" output_port_name="dx"/>
-      <middle_node block_name="ii0545" input_port_name="f2" output_port_name="dx"/>
-      <middle_node block_name="ii0547" input_port_name="f1" output_port_name="dx"/>
-      <middle_node block_name="ii0548" input_port_name="f1" output_port_name="dx"/>
-      <dst_node block_name="u_sdram_to_RGB_emb_addr_rd__reg[8]" input_port_name="di"/>
+    <path path_name="u_colorgen_h_cnt__reg[0]">
+      <src_node block_name="u_colorgen_h_cnt__reg[0]" output_port_name="qx"/>
+      <middle_node block_name="ii0463" input_port_name="f3" output_port_name="dx"/>
+      <middle_node block_name="ii0464" input_port_name="f2" output_port_name="dx"/>
+      <middle_node block_name="ii0465" input_port_name="f1" output_port_name="dx"/>
+      <middle_node block_name="ii0466" input_port_name="f0" output_port_name="dx"/>
+      <middle_node block_name="ii0467" input_port_name="f0" output_port_name="dx"/>
+      <dst_node block_name="u_colorgen_h_cnt__reg[10]" input_port_name="di"/>
     </path>
   </critical_path>
 

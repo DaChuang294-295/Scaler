@@ -2,6 +2,9 @@
 <designinfo>
 
   <topmodule>
+    <port direction="input" name="buttonIn2" pmname="buttonIn2"/>
+    <port direction="input" name="buttonIn3" pmname="buttonIn3"/>
+    <port direction="input" name="buttonIn4" pmname="buttonIn4"/>
     <port direction="input" name="clk_i" pmname="clk_i"/>
     <port direction="output" name="clk_out_n" pmname="clk_out_n"/>
     <port direction="output" name="clk_out_p" pmname="clk_out_p"/>

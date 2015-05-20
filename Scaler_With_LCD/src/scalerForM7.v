@@ -11,8 +11,8 @@ module scalerForM7#(
 	input wire								clkb,		//输出时钟
 	input wire 								rst,
 	input wire								en,			//coefCal的使能
-	input wire								iHsyn,		//输入行同步
-	input wire								iVsyn,		//输入场同步
+	output wire								h_valid,		//输入行同步
+	output wire								v_valid,		//输入场同步
 	
 	//视频信号
 	input wire	[DATA_WIDTH-1:0]   			dIn,		//输入像素
@@ -21,6 +21,8 @@ module scalerForM7#(
 	output wire 							dOutEn,		//数据输出使能
 	output wire 							HS,				//行同步信号，上升沿代表即将输出新的一行
 	output wire								VS,				//场同步信号，上升沿代表即将输出新的一帧
+	
+	input wire	[INPUT_RES_WIDTH-1:0]		yEnd,	//输入信号的结束下边界减1，在此边界下边的像素点不会被输入
 	
 	//button change
 	input wire								button2,
@@ -33,7 +35,7 @@ module scalerForM7#(
 	reg	[INPUT_RES_WIDTH-1:0] 		xBgn = 0;		//输入信号的起始左边界减1，在此边界左边的像素点不会被输入
 	reg	[INPUT_RES_WIDTH-1:0] 		xEnd = 1024-1;	//输入信号的结束右边界减1，在此边界右边的像素点不会被输入
 	reg	[INPUT_RES_WIDTH-1:0]		yBgn = 0;		//输入信号的起始上边界减1，在此边界上边的像素点不会被输入
-	reg	[INPUT_RES_WIDTH-1:0]		yEnd = 768-1;	//输入信号的结束下边界减1，在此边界下边的像素点不会被输入
+	
 	reg	[INPUT_RES_WIDTH-1:0] 		inXRes = 1024;	//X输入分辨率
 	reg	[INPUT_RES_WIDTH-1:0] 		inYRes = 768;	//Y输入分辨率
 	reg	[OUTPUT_RES_WIDTH:0] 		outXRes = 1024;	//X输出分辨率
@@ -42,25 +44,21 @@ module scalerForM7#(
 	always @(posedge rst, posedge button2, posedge button3, posedge button4) begin
 		if(rst) begin
 			xEnd <= 1024-1;
-			yEnd <= 768-1;
 			outXRes <= 1024;
 			outYRes <= 768;
 		end
 		else if(button2) begin
 			xEnd <= 768-1;
-			yEnd <= 768-1;
 			outXRes <= 1024;
 			outYRes <= 768;
 		end
 		else if(button3) begin
 			xEnd <= 512-1;
-			yEnd <= 768-1;
 			outXRes <= 1024;
 			outYRes <= 768;
 		end	
 		else if(button4) begin
 			xEnd <= 1024-1;
-			yEnd <= 768-1;
 			outXRes <= 512;
 			outYRes <= 384;
 		end
@@ -72,8 +70,8 @@ module scalerForM7#(
 		.clka(clka),
 		.clkb(clkb),
 		.rst(rst),
-		.iHsyn(iHsyn),
-		.iVsyn(iVsyn),
+		.h_valid(h_valid),
+		.v_valid(v_valid),
 		.en(en), 
 		.dIn(dIn), 
 		.dInEn(dInEn), 

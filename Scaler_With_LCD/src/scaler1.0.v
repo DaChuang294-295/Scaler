@@ -18,8 +18,8 @@ module scaler#(
 	input wire								clkb,		//输出时钟
 	input wire 								rst,
 	input wire								en,			//coefCal的使能
-	input wire								iHsyn,		//输入行同步
-	input wire								iVsyn,		//输入场同步
+	output wire								h_valid,		//输入行同步
+	output wire								v_valid,		//输入场同步
 	
 	//视频信号
 	input wire	[DATA_WIDTH-1:0]   			dIn,		//输入像素
@@ -77,7 +77,6 @@ coefCal #(
    .inYRes(inYRes),
    .outXRes(outXRes),
    .outYRes(outYRes),
-   .iVsyn(iVsyn),
    //输出到Cal和inputCtrl
    .kX(kX),
    .kY(kY),
@@ -95,8 +94,8 @@ inputCtrl #(
 	//外部输入的时钟与重置
 	.clk(clka),
 	.rst(rst),
-	.iHsyn(iHsyn),			//行同步信号
-	.iVsyn(iVsyn),			//场同步信号
+	.h_valid(h_valid),
+	.v_valid(v_valid),
 	.dIn(dIn),
 	.xBgn(xBgn),
 	.xEnd(xEnd),
@@ -111,7 +110,8 @@ inputCtrl #(
 	.ramWrtAddr(ramWrtAddr),
 	.ramWrtEn(ramWrtEn),
 	.dataOut(ramData),
-	.jmp(jmp)
+	.jmp(jmp),
+	.fifoNum(fifoNum)
 	);
 
 ramFifo #(
