@@ -146,8 +146,9 @@ scalerForM7  scaler1(
 		.HS(HS), 
 		.VS(VS), 
 	);
+//------------------------- ahb to scaler --------------------\
 
-//------------------------- Buffer Write part ----------------\
+//------------------------- scaler to buffer  ----------------\
 always@(posedge clk_ahb, negedge rst_ahb_n) begin
     if(!rst_ahb_n)
         v_valid_r <= 0;
