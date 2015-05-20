@@ -31,15 +31,15 @@
   </topmodule>
 
   <modulelist>
-    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="ahb_master"/>
-    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="colorbar_gen"/>
-    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" isTop="top" lineno="0" name="demo_sd_to_lcd"/>
-    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="emb_v1_1"/>
-    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="emb_v1_2"/>
-    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="lvds_tx_v1"/>
-    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="mcu_armcm3"/>
-    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="pll_v1"/>
-    <module fileloc="/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz" lineno="0" name="sdram_to_RGB"/>
+    <module fileloc="/cygdrive/g/澶у垱/Scaler/Scaler_With_LCD/outputs/../src/ahb_master.v" lineno="1" name="ahb_master"/>
+    <module fileloc="/cygdrive/g/澶у垱/Scaler/Scaler_With_LCD/outputs/../src/colorbar_gen.v" lineno="1" name="colorbar_gen"/>
+    <module fileloc="/cygdrive/g/澶у垱/Scaler/Scaler_With_LCD/outputs/../src/demo_sd_to_lcd.v" isTop="top" lineno="3" name="demo_sd_to_lcd"/>
+    <module fileloc="/cygdrive/g/澶у垱/Scaler/Scaler_With_LCD/outputs/../src/emb_v1.v" lineno="15" name="emb_v1_1"/>
+    <module fileloc="/cygdrive/g/澶у垱/Scaler/Scaler_With_LCD/outputs/../src/emb_v1.v" lineno="15" name="emb_v1_2"/>
+    <module fileloc="/cygdrive/g/澶у垱/Scaler/Scaler_With_LCD/outputs/../src/lvds_tx_v1.v" lineno="15" name="lvds_tx_v1"/>
+    <module fileloc="/cygdrive/g/澶у垱/Scaler/Scaler_With_LCD/outputs/../src/mcu_armcm3.v" lineno="15" name="mcu_armcm3"/>
+    <module fileloc="/cygdrive/g/澶у垱/Scaler/Scaler_With_LCD/outputs/../src/pll_v1.v" lineno="14" name="pll_v1"/>
+    <module fileloc="/cygdrive/g/澶у垱/Scaler/Scaler_With_LCD/outputs/../src/sdram_to_RGB.v" lineno="1" name="sdram_to_RGB"/>
   </modulelist>
 
 </designinfo>

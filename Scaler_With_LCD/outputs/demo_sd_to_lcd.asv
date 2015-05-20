@@ -1,5 +1,5 @@
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:81",
+  agate_file_name = "/cygdrive/F/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:81",
   agate_format    = "VLOG"
 *)
 module M7S_PLL(clkin0, clkin1, fbclkin, pwrdown, pllrst, fp_pll_rst, ACTIVECK,
@@ -10,7 +10,7 @@ output ACTIVECK, CKBAD0, CKBAD1, clkout0, clkout1, clkout2, clkout3, locked;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:781",
+  agate_file_name = "/cygdrive/F/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:781",
   agate_format    = "VLOG"
 *)
 module M7S_IO_LVDS(id_1, id_0, id_q_1, id_q_0, align_rstn, alignwd, clk_en_1,
@@ -28,7 +28,7 @@ output [3:0] id_q_0;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:263",
+  agate_file_name = "/cygdrive/F/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:263",
   agate_format    = "VLOG"
 *)
 module M7S_EMB5K(clka, clkb, rstna, rstnb, cea, ceb, wea, web, aa, ab, da, db,
@@ -150,7 +150,7 @@ wire n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n28, n29,
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:54",
+  agate_file_name = "/cygdrive/F/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:54",
   agate_format    = "VLOG"
 *)
 module M7S_DLL(clkin, pwrdown, dllrst, fp_dll_rst, clkout0, clkout1, clkout2,
@@ -162,7 +162,7 @@ input  [3:0] dll_msel0_user;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:958",
+  agate_file_name = "/cygdrive/F/capital_micro/primace7.3/ast_frontend//../data/lib/syn_black_box_m7s.v:958",
   agate_format    = "VLOG"
 *)
 module M7S_SOC(c2r1_dll_clk, fp_clk_sys, fp_clk_adc, fp_clk_arm, fp_lvds_sclk,
@@ -238,7 +238,7 @@ output [31:0] fp1_s_ahb_wdata;
 endmodule
 
 (*
-  agate_file_name = "/cygdrive/f/capital_micro/primace7.3/bin/dachuang/demo_sd_to_lcd_in_M7_blue_EVB100MHz:0",
+  agate_file_name = "/cygdrive/g/大创/Scaler/Scaler_With_LCD/outputs/../src/demo_sd_to_lcd.v:3",
   agate_format    = "VLOG"
 *)
 module demo_sd_to_lcd(clk_i, rstn_i, display_sel, spi_ssn, spi_sck, spi_mosi,
@@ -338,7 +338,7 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
      \u_sdram_to_RGB.n2369 , \u_sdram_to_RGB.n2368 , \u_sdram_to_RGB.n2367 ,
      \u_sdram_to_RGB.other_1_beat_start_pulse ,
      \u_sdram_to_RGB.other_1_beat_valid , \u_sdram_to_RGB.n2384 ,
-     \u_sdram_to_RGB.n2383 , \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.n50 ,
+     \u_sdram_to_RGB.n2383 , \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.n50 ,
      \u_sdram_to_RGB.n120 , \u_sdram_to_RGB.n223 , \u_sdram_to_RGB.n397 ,
      \u_sdram_to_RGB.n496 , \u_sdram_to_RGB.n531 , \u_sdram_to_RGB.n857 ,
      \u_sdram_to_RGB.n923 , \u_sdram_to_RGB.n924 , \u_sdram_to_RGB.n925 ,
@@ -489,7 +489,7 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
      \u_sdram_to_RGB.u_ahb_master.n2460 , \u_sdram_to_RGB.u_ahb_master.n2459 ,
      \u_sdram_to_RGB.u_ahb_master.n2458 , \u_sdram_to_RGB.u_ahb_master.n2457 ,
      \u_sdram_to_RGB.u_ahb_master.n2456 , \u_sdram_to_RGB.u_ahb_master.n2455 ,
-     \u_sdram_to_RGB.u_ahb_master.N79 , \u_sdram_to_RGB.u_ahb_master.n65 ,
+     \u_sdram_to_RGB.u_ahb_master.N84 , \u_sdram_to_RGB.u_ahb_master.n65 ,
      \u_sdram_to_RGB.u_ahb_master.n378 , \u_sdram_to_RGB.u_ahb_master.n380 ,
      \u_sdram_to_RGB.u_ahb_master.n381 , \u_sdram_to_RGB.u_ahb_master.n1257 ,
      \u_sdram_to_RGB.u_ahb_master.n1258 , \u_sdram_to_RGB.u_ahb_master.n1259 ,
@@ -686,7 +686,7 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_lvds.pll_u0 .amux_sel = 0;
     defparam \u_lvds.pll_u0 .cfg_nc = 0;
     defparam \u_lvds.pll_u0 .cfg_ldo_cfg = 0;
-    M7S_IO_LVDS \u_lvds.u_lvds_tx_clk  (.align_rstn(rstn_final), .alignwd(\u_sdram_to_RGB.N96 ),
+    M7S_IO_LVDS \u_lvds.u_lvds_tx_clk  (.align_rstn(rstn_final), .alignwd(\u_sdram_to_RGB.N101 ),
         .geclk(\u_lvds.pll_clkout1 ), .clk_0(tx_sclk), .clk_1(tx_sclk), .PAD1(clk_out_n),
         .PAD0(clk_out_p));
     defparam \u_lvds.u_lvds_tx_clk .ldr_cfg = 15;
@@ -722,9 +722,9 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_lvds.u_lvds_tx_clk .cfg_txd2_inv_1 = 1;
     defparam \u_lvds.u_lvds_tx_clk .cfg_txd3_inv_1 = 0;
     M7S_IO_LVDS \u_lvds.u_lvds_tx_0  (.align_rstn(rstn_final), .geclk(\u_lvds.pll_clkout1 ),
-        .od_d_1({\u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 }), .od_d_0({\u_sdram_to_RGB.n2371 , \u_sdram_to_RGB.n2370 ,
-        \u_sdram_to_RGB.n2369 , \u_sdram_to_RGB.N96 }), .clk_0(tx_sclk),
+        .od_d_1({\u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 }), .od_d_0({\u_sdram_to_RGB.n2371 , \u_sdram_to_RGB.n2370 ,
+        \u_sdram_to_RGB.n2369 , \u_sdram_to_RGB.N101 }), .clk_0(tx_sclk),
         .clk_1(tx_sclk), .PAD1(tx_out_n[0]), .PAD0(tx_out_p[0]));
     defparam \u_lvds.u_lvds_tx_0 .ldr_cfg = 15;
     defparam \u_lvds.u_lvds_tx_0 .td_cfg = 8;
@@ -751,10 +751,10 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_lvds.u_lvds_tx_0 .cfg_slave_en_1 = 1;
     defparam \u_lvds.u_lvds_tx_0 .cfg_gear_mode7 = 1;
     M7S_IO_LVDS \u_lvds.u_lvds_tx_1  (.align_rstn(rstn_final), .geclk(\u_lvds.pll_clkout1 ),
-        .od_d_1({\u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.n2377 ,
+        .od_d_1({\u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.n2377 ,
         \u_sdram_to_RGB.n2376 }), .od_d_0({\u_sdram_to_RGB.n2375 , \u_sdram_to_RGB.n2374 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .clk_0(tx_sclk), .clk_1(tx_sclk),
-        .PAD1(tx_out_n[1]), .PAD0(tx_out_p[1]));
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .clk_0(tx_sclk),
+        .clk_1(tx_sclk), .PAD1(tx_out_n[1]), .PAD0(tx_out_p[1]));
     defparam \u_lvds.u_lvds_tx_1 .ldr_cfg = 15;
     defparam \u_lvds.u_lvds_tx_1 .td_cfg = 8;
     defparam \u_lvds.u_lvds_tx_1 .term_diff_en_cfg = 1;
@@ -780,9 +780,9 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_lvds.u_lvds_tx_1 .cfg_slave_en_1 = 1;
     defparam \u_lvds.u_lvds_tx_1 .cfg_gear_mode7 = 1;
     M7S_IO_LVDS \u_lvds.u_lvds_tx_2  (.align_rstn(rstn_final), .geclk(\u_lvds.pll_clkout1 ),
-        .od_d_1({\u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.n2382 ,
-        \u_sdram_to_RGB.n2381 }), .od_d_0({\u_sdram_to_RGB.n2380 , \u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , de}), .clk_0(tx_sclk), .clk_1(tx_sclk), .PAD1(tx_out_n[2]),
+        .od_d_1({\u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.n2382 ,
+        \u_sdram_to_RGB.n2381 }), .od_d_0({\u_sdram_to_RGB.n2380 , \u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , de}), .clk_0(tx_sclk), .clk_1(tx_sclk), .PAD1(tx_out_n[2]),
         .PAD0(tx_out_p[2]));
     defparam \u_lvds.u_lvds_tx_2 .ldr_cfg = 15;
     defparam \u_lvds.u_lvds_tx_2 .td_cfg = 8;
@@ -809,9 +809,9 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_lvds.u_lvds_tx_2 .cfg_slave_en_1 = 1;
     defparam \u_lvds.u_lvds_tx_2 .cfg_gear_mode7 = 1;
     M7S_IO_LVDS \u_lvds.u_lvds_tx_3  (.align_rstn(rstn_final), .geclk(\u_lvds.pll_clkout1 ),
-        .od_d_1({\u_sdram_to_RGB.N96 , \u_sdram_to_RGB.n2368 , \u_sdram_to_RGB.n2367 ,
+        .od_d_1({\u_sdram_to_RGB.N101 , \u_sdram_to_RGB.n2368 , \u_sdram_to_RGB.n2367 ,
         \u_sdram_to_RGB.n2373 }), .od_d_0({\u_sdram_to_RGB.n2372 , \u_sdram_to_RGB.n2379 ,
-        \u_sdram_to_RGB.n2378 , \u_sdram_to_RGB.N96 }), .clk_0(tx_sclk),
+        \u_sdram_to_RGB.n2378 , \u_sdram_to_RGB.N101 }), .clk_0(tx_sclk),
         .clk_1(tx_sclk), .PAD1(tx_out_n[3]), .PAD0(tx_out_p[3]));
     defparam \u_lvds.u_lvds_tx_3 .ldr_cfg = 15;
     defparam \u_lvds.u_lvds_tx_3 .td_cfg = 8;
@@ -839,16 +839,16 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_lvds.u_lvds_tx_3 .cfg_gear_mode7 = 1;
     M7S_EMB5K \u_sdram_to_RGB.u_1kx16_1.u_emb5k_0  (.clka(tx_sclk), .clkb(clk_150M),
         .rstna(n1367), .rstnb(n1367), .cea(\u_sdram_to_RGB.n1094 ), .ceb(\u_sdram_to_RGB.ahm_rdata_push_wr1 ),
-        .wea(\u_sdram_to_RGB.N96 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
+        .wea(\u_sdram_to_RGB.N101 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
         \u_sdram_to_RGB.n2276 , \u_sdram_to_RGB.n2277 , \u_sdram_to_RGB.n2278 ,
         \u_sdram_to_RGB.n2279 , \u_sdram_to_RGB.n2280 , \u_sdram_to_RGB.n2281 ,
         \u_sdram_to_RGB.n2282 , \u_sdram_to_RGB.n2283 , \u_sdram_to_RGB.n2284 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .ab({\u_sdram_to_RGB.n2294 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .ab({\u_sdram_to_RGB.n2294 ,
         \u_sdram_to_RGB.n2295 , \u_sdram_to_RGB.n2296 , \u_sdram_to_RGB.n2297 ,
         \u_sdram_to_RGB.n2298 , \u_sdram_to_RGB.n2299 , \u_sdram_to_RGB.n2300 ,
-        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .db({\u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.n2200 , \u_sdram_to_RGB.n2204 ,
+        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .db({\u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.n2200 , \u_sdram_to_RGB.n2204 ,
         \u_sdram_to_RGB.n2208 , \u_sdram_to_RGB.n2212 , \u_sdram_to_RGB.n2216 ,
         \u_sdram_to_RGB.n2220 , \u_sdram_to_RGB.n2224 , \u_sdram_to_RGB.n2228 ,
         \u_sdram_to_RGB.n2200 , \u_sdram_to_RGB.n2204 , \u_sdram_to_RGB.n2208 ,
@@ -878,16 +878,16 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_sdram_to_RGB.u_1kx16_1.u_emb5k_0 .portb_prog = 15;
     M7S_EMB5K \u_sdram_to_RGB.u_1kx16_1.u_emb5k_1  (.clka(tx_sclk), .clkb(clk_150M),
         .rstna(n1367), .rstnb(n1367), .cea(\u_sdram_to_RGB.n1094 ), .ceb(\u_sdram_to_RGB.ahm_rdata_push_wr1 ),
-        .wea(\u_sdram_to_RGB.N96 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
+        .wea(\u_sdram_to_RGB.N101 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
         \u_sdram_to_RGB.n2276 , \u_sdram_to_RGB.n2277 , \u_sdram_to_RGB.n2278 ,
         \u_sdram_to_RGB.n2279 , \u_sdram_to_RGB.n2280 , \u_sdram_to_RGB.n2281 ,
         \u_sdram_to_RGB.n2282 , \u_sdram_to_RGB.n2283 , \u_sdram_to_RGB.n2284 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .ab({\u_sdram_to_RGB.n2294 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .ab({\u_sdram_to_RGB.n2294 ,
         \u_sdram_to_RGB.n2295 , \u_sdram_to_RGB.n2296 , \u_sdram_to_RGB.n2297 ,
         \u_sdram_to_RGB.n2298 , \u_sdram_to_RGB.n2299 , \u_sdram_to_RGB.n2300 ,
-        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .db({\u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.n2199 , \u_sdram_to_RGB.n2203 ,
+        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .db({\u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.n2199 , \u_sdram_to_RGB.n2203 ,
         \u_sdram_to_RGB.n2207 , \u_sdram_to_RGB.n2211 , \u_sdram_to_RGB.n2215 ,
         \u_sdram_to_RGB.n2219 , \u_sdram_to_RGB.n2223 , \u_sdram_to_RGB.n2227 ,
         \u_sdram_to_RGB.n2199 , \u_sdram_to_RGB.n2203 , \u_sdram_to_RGB.n2207 ,
@@ -917,16 +917,16 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_sdram_to_RGB.u_1kx16_1.u_emb5k_1 .portb_prog = 15;
     M7S_EMB5K \u_sdram_to_RGB.u_1kx16_1.u_emb5k_2  (.clka(tx_sclk), .clkb(clk_150M),
         .rstna(n1367), .rstnb(n1367), .cea(\u_sdram_to_RGB.n1094 ), .ceb(\u_sdram_to_RGB.ahm_rdata_push_wr1 ),
-        .wea(\u_sdram_to_RGB.N96 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
+        .wea(\u_sdram_to_RGB.N101 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
         \u_sdram_to_RGB.n2276 , \u_sdram_to_RGB.n2277 , \u_sdram_to_RGB.n2278 ,
         \u_sdram_to_RGB.n2279 , \u_sdram_to_RGB.n2280 , \u_sdram_to_RGB.n2281 ,
         \u_sdram_to_RGB.n2282 , \u_sdram_to_RGB.n2283 , \u_sdram_to_RGB.n2284 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .ab({\u_sdram_to_RGB.n2294 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .ab({\u_sdram_to_RGB.n2294 ,
         \u_sdram_to_RGB.n2295 , \u_sdram_to_RGB.n2296 , \u_sdram_to_RGB.n2297 ,
         \u_sdram_to_RGB.n2298 , \u_sdram_to_RGB.n2299 , \u_sdram_to_RGB.n2300 ,
-        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .db({\u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.n2198 , \u_sdram_to_RGB.n2202 ,
+        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .db({\u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.n2198 , \u_sdram_to_RGB.n2202 ,
         \u_sdram_to_RGB.n2206 , \u_sdram_to_RGB.n2210 , \u_sdram_to_RGB.n2214 ,
         \u_sdram_to_RGB.n2218 , \u_sdram_to_RGB.n2222 , \u_sdram_to_RGB.n2226 ,
         \u_sdram_to_RGB.n2198 , \u_sdram_to_RGB.n2202 , \u_sdram_to_RGB.n2206 ,
@@ -956,16 +956,16 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_sdram_to_RGB.u_1kx16_1.u_emb5k_2 .portb_prog = 15;
     M7S_EMB5K \u_sdram_to_RGB.u_1kx16_1.u_emb5k_3  (.clka(tx_sclk), .clkb(clk_150M),
         .rstna(n1367), .rstnb(n1367), .cea(\u_sdram_to_RGB.n1094 ), .ceb(\u_sdram_to_RGB.ahm_rdata_push_wr1 ),
-        .wea(\u_sdram_to_RGB.N96 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
+        .wea(\u_sdram_to_RGB.N101 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
         \u_sdram_to_RGB.n2276 , \u_sdram_to_RGB.n2277 , \u_sdram_to_RGB.n2278 ,
         \u_sdram_to_RGB.n2279 , \u_sdram_to_RGB.n2280 , \u_sdram_to_RGB.n2281 ,
         \u_sdram_to_RGB.n2282 , \u_sdram_to_RGB.n2283 , \u_sdram_to_RGB.n2284 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .ab({\u_sdram_to_RGB.n2294 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .ab({\u_sdram_to_RGB.n2294 ,
         \u_sdram_to_RGB.n2295 , \u_sdram_to_RGB.n2296 , \u_sdram_to_RGB.n2297 ,
         \u_sdram_to_RGB.n2298 , \u_sdram_to_RGB.n2299 , \u_sdram_to_RGB.n2300 ,
-        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .db({\u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.n2197 , \u_sdram_to_RGB.n2201 ,
+        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .db({\u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.n2197 , \u_sdram_to_RGB.n2201 ,
         \u_sdram_to_RGB.n2205 , \u_sdram_to_RGB.n2209 , \u_sdram_to_RGB.n2213 ,
         \u_sdram_to_RGB.n2217 , \u_sdram_to_RGB.n2221 , \u_sdram_to_RGB.n2225 ,
         \u_sdram_to_RGB.n2197 , \u_sdram_to_RGB.n2201 , \u_sdram_to_RGB.n2205 ,
@@ -995,16 +995,16 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_sdram_to_RGB.u_1kx16_1.u_emb5k_3 .portb_prog = 15;
     M7S_EMB5K \u_sdram_to_RGB.u_1kx16_0.u_emb5k_0  (.clka(tx_sclk), .clkb(clk_150M),
         .rstna(n1367), .rstnb(n1367), .cea(\u_sdram_to_RGB.n1092 ), .ceb(\u_sdram_to_RGB.ahm_rdata_push_wr0 ),
-        .wea(\u_sdram_to_RGB.N96 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
+        .wea(\u_sdram_to_RGB.N101 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
         \u_sdram_to_RGB.n2276 , \u_sdram_to_RGB.n2277 , \u_sdram_to_RGB.n2278 ,
         \u_sdram_to_RGB.n2279 , \u_sdram_to_RGB.n2280 , \u_sdram_to_RGB.n2281 ,
         \u_sdram_to_RGB.n2282 , \u_sdram_to_RGB.n2283 , \u_sdram_to_RGB.n2284 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .ab({\u_sdram_to_RGB.n2294 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .ab({\u_sdram_to_RGB.n2294 ,
         \u_sdram_to_RGB.n2295 , \u_sdram_to_RGB.n2296 , \u_sdram_to_RGB.n2297 ,
         \u_sdram_to_RGB.n2298 , \u_sdram_to_RGB.n2299 , \u_sdram_to_RGB.n2300 ,
-        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .db({\u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.n2200 , \u_sdram_to_RGB.n2204 ,
+        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .db({\u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.n2200 , \u_sdram_to_RGB.n2204 ,
         \u_sdram_to_RGB.n2208 , \u_sdram_to_RGB.n2212 , \u_sdram_to_RGB.n2216 ,
         \u_sdram_to_RGB.n2220 , \u_sdram_to_RGB.n2224 , \u_sdram_to_RGB.n2228 ,
         \u_sdram_to_RGB.n2200 , \u_sdram_to_RGB.n2204 , \u_sdram_to_RGB.n2208 ,
@@ -1034,16 +1034,16 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_sdram_to_RGB.u_1kx16_0.u_emb5k_0 .portb_prog = 15;
     M7S_EMB5K \u_sdram_to_RGB.u_1kx16_0.u_emb5k_1  (.clka(tx_sclk), .clkb(clk_150M),
         .rstna(n1367), .rstnb(n1367), .cea(\u_sdram_to_RGB.n1092 ), .ceb(\u_sdram_to_RGB.ahm_rdata_push_wr0 ),
-        .wea(\u_sdram_to_RGB.N96 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
+        .wea(\u_sdram_to_RGB.N101 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
         \u_sdram_to_RGB.n2276 , \u_sdram_to_RGB.n2277 , \u_sdram_to_RGB.n2278 ,
         \u_sdram_to_RGB.n2279 , \u_sdram_to_RGB.n2280 , \u_sdram_to_RGB.n2281 ,
         \u_sdram_to_RGB.n2282 , \u_sdram_to_RGB.n2283 , \u_sdram_to_RGB.n2284 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .ab({\u_sdram_to_RGB.n2294 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .ab({\u_sdram_to_RGB.n2294 ,
         \u_sdram_to_RGB.n2295 , \u_sdram_to_RGB.n2296 , \u_sdram_to_RGB.n2297 ,
         \u_sdram_to_RGB.n2298 , \u_sdram_to_RGB.n2299 , \u_sdram_to_RGB.n2300 ,
-        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .db({\u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.n2199 , \u_sdram_to_RGB.n2203 ,
+        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .db({\u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.n2199 , \u_sdram_to_RGB.n2203 ,
         \u_sdram_to_RGB.n2207 , \u_sdram_to_RGB.n2211 , \u_sdram_to_RGB.n2215 ,
         \u_sdram_to_RGB.n2219 , \u_sdram_to_RGB.n2223 , \u_sdram_to_RGB.n2227 ,
         \u_sdram_to_RGB.n2199 , \u_sdram_to_RGB.n2203 , \u_sdram_to_RGB.n2207 ,
@@ -1073,16 +1073,16 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_sdram_to_RGB.u_1kx16_0.u_emb5k_1 .portb_prog = 15;
     M7S_EMB5K \u_sdram_to_RGB.u_1kx16_0.u_emb5k_2  (.clka(tx_sclk), .clkb(clk_150M),
         .rstna(n1367), .rstnb(n1367), .cea(\u_sdram_to_RGB.n1092 ), .ceb(\u_sdram_to_RGB.ahm_rdata_push_wr0 ),
-        .wea(\u_sdram_to_RGB.N96 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
+        .wea(\u_sdram_to_RGB.N101 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
         \u_sdram_to_RGB.n2276 , \u_sdram_to_RGB.n2277 , \u_sdram_to_RGB.n2278 ,
         \u_sdram_to_RGB.n2279 , \u_sdram_to_RGB.n2280 , \u_sdram_to_RGB.n2281 ,
         \u_sdram_to_RGB.n2282 , \u_sdram_to_RGB.n2283 , \u_sdram_to_RGB.n2284 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .ab({\u_sdram_to_RGB.n2294 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .ab({\u_sdram_to_RGB.n2294 ,
         \u_sdram_to_RGB.n2295 , \u_sdram_to_RGB.n2296 , \u_sdram_to_RGB.n2297 ,
         \u_sdram_to_RGB.n2298 , \u_sdram_to_RGB.n2299 , \u_sdram_to_RGB.n2300 ,
-        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .db({\u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.n2198 , \u_sdram_to_RGB.n2202 ,
+        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .db({\u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.n2198 , \u_sdram_to_RGB.n2202 ,
         \u_sdram_to_RGB.n2206 , \u_sdram_to_RGB.n2210 , \u_sdram_to_RGB.n2214 ,
         \u_sdram_to_RGB.n2218 , \u_sdram_to_RGB.n2222 , \u_sdram_to_RGB.n2226 ,
         \u_sdram_to_RGB.n2198 , \u_sdram_to_RGB.n2202 , \u_sdram_to_RGB.n2206 ,
@@ -1112,16 +1112,16 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     defparam \u_sdram_to_RGB.u_1kx16_0.u_emb5k_2 .portb_prog = 15;
     M7S_EMB5K \u_sdram_to_RGB.u_1kx16_0.u_emb5k_3  (.clka(tx_sclk), .clkb(clk_150M),
         .rstna(n1367), .rstnb(n1367), .cea(\u_sdram_to_RGB.n1092 ), .ceb(\u_sdram_to_RGB.ahm_rdata_push_wr0 ),
-        .wea(\u_sdram_to_RGB.N96 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
+        .wea(\u_sdram_to_RGB.N101 ), .web(n1367), .aa({\u_sdram_to_RGB.n2275 ,
         \u_sdram_to_RGB.n2276 , \u_sdram_to_RGB.n2277 , \u_sdram_to_RGB.n2278 ,
         \u_sdram_to_RGB.n2279 , \u_sdram_to_RGB.n2280 , \u_sdram_to_RGB.n2281 ,
         \u_sdram_to_RGB.n2282 , \u_sdram_to_RGB.n2283 , \u_sdram_to_RGB.n2284 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .ab({\u_sdram_to_RGB.n2294 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .ab({\u_sdram_to_RGB.n2294 ,
         \u_sdram_to_RGB.n2295 , \u_sdram_to_RGB.n2296 , \u_sdram_to_RGB.n2297 ,
         \u_sdram_to_RGB.n2298 , \u_sdram_to_RGB.n2299 , \u_sdram_to_RGB.n2300 ,
-        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .db({\u_sdram_to_RGB.N96 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.n2197 , \u_sdram_to_RGB.n2201 ,
+        \u_sdram_to_RGB.n2301 , \u_sdram_to_RGB.n2302 , \u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .db({\u_sdram_to_RGB.N101 ,
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.n2197 , \u_sdram_to_RGB.n2201 ,
         \u_sdram_to_RGB.n2205 , \u_sdram_to_RGB.n2209 , \u_sdram_to_RGB.n2213 ,
         \u_sdram_to_RGB.n2217 , \u_sdram_to_RGB.n2221 , \u_sdram_to_RGB.n2225 ,
         \u_sdram_to_RGB.n2197 , \u_sdram_to_RGB.n2201 , \u_sdram_to_RGB.n2205 ,
@@ -1161,7 +1161,7 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
         \u_sdram_to_RGB.u_ahb_master.n2454 }), .B({n1367, n1367, n1367, n1367,
         \u_sdram_to_RGB.u_ahb_master.n381 , \u_sdram_to_RGB.u_ahb_master.n380 ,
         \u_sdram_to_RGB.u_ahb_master.n378 , \u_sdram_to_RGB.u_ahb_master.n378 }),
-        .CI(\u_sdram_to_RGB.N96 ));
+        .CI(\u_sdram_to_RGB.N101 ));
     M7S_DLL \u_arm.dll_u0  (.clkin(clk_200M), .clkout0(\u_arm.dll_clkout0 ));
     defparam \u_arm.dll_u0 .cfg_dllphase0_ctrl = 0;
     defparam \u_arm.dll_u0 .cfg_dllpd_sel = 1;
@@ -1190,9 +1190,9 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     M7S_SOC \u_arm.u_soc  (.c2r1_dll_clk(\u_arm.dll_clkout0 ), .fp_clk_sys(clk_200M),
         .fp_clk_arm(clk_200M), .gpio_0_out_o({gpio_out[31:0]}), .spi0_mosi(spi_mosi),
         .spi0_sck(spi_sck), .spi0_ssn(spi_ssn), .spi0_miso(spi_miso), .clk_ahb_fp0(clk_150M),
-        .rst_ahb_fp0_n(rstn_final), .fp0_m_ahb_mastlock(\u_sdram_to_RGB.N96 ),
-        .fp0_m_ahb_prot({\u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 ,
-        n1367}), .fp0_m_ahb_size({\u_sdram_to_RGB.N96 , n1367, \u_sdram_to_RGB.N96 }),
+        .rst_ahb_fp0_n(rstn_final), .fp0_m_ahb_mastlock(\u_sdram_to_RGB.N101 ),
+        .fp0_m_ahb_prot({\u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 ,
+        n1367}), .fp0_m_ahb_size({\u_sdram_to_RGB.N101 , n1367, \u_sdram_to_RGB.N101 }),
         .fp0_m_ahb_addr({\u_sdram_to_RGB.u_ahb_master.n2251 , \u_sdram_to_RGB.u_ahb_master.n2252 ,
         \u_sdram_to_RGB.u_ahb_master.n2253 , \u_sdram_to_RGB.u_ahb_master.n2254 ,
         \u_sdram_to_RGB.u_ahb_master.n2255 , \u_sdram_to_RGB.u_ahb_master.n2256 ,
@@ -1208,7 +1208,7 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
         \u_sdram_to_RGB.u_ahb_master.n2275 , \u_sdram_to_RGB.u_ahb_master.n2276 ,
         \u_sdram_to_RGB.u_ahb_master.n2277 , \u_sdram_to_RGB.u_ahb_master.n2278 ,
         \u_sdram_to_RGB.u_ahb_master.n2279 , \u_sdram_to_RGB.u_ahb_master.n2280 ,
-        \u_sdram_to_RGB.N96 , \u_sdram_to_RGB.N96 }), .fp0_m_ahb_write(m_ahb_write),
+        \u_sdram_to_RGB.N101 , \u_sdram_to_RGB.N101 }), .fp0_m_ahb_write(m_ahb_write),
         .fp0_m_ahb_burst({m_ahb_burst[2:0]}), .fp0_m_ahb_trans({m_ahb_trans[1:0]}),
         .fp0_m_ahb_wdata({m_ahb_wdata[31:0]}), .fp0_m_ahb_ready(m_ahb_ready),
         .fp0_m_ahb_resp(m_ahb_resp), .fp0_m_ahb_rdata({\u_sdram_to_RGB.u_ahb_master.n2319 ,
@@ -1430,21 +1430,21 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     CS_REGA_SE_PRIM \u_sdram_to_RGB.display_before_bmp__reg  (.SET(\u_sdram_to_RGB.n50 ),
         .CLK(clk_150M), .D(gpio_out[0]), .CE(\u_sdram_to_RGB.n120 ), .Q(\u_sdram_to_RGB.display_before_bmp ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[2]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
-        .D(\u_sdram_to_RGB.N96 ), .Q(\u_sdram_to_RGB.n2272 ));
+        .D(\u_sdram_to_RGB.N101 ), .Q(\u_sdram_to_RGB.n2272 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[3]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
-        .D(\u_sdram_to_RGB.N96 ), .Q(\u_sdram_to_RGB.n2271 ));
+        .D(\u_sdram_to_RGB.N101 ), .Q(\u_sdram_to_RGB.n2271 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[4]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
-        .D(\u_sdram_to_RGB.N96 ), .Q(\u_sdram_to_RGB.n2270 ));
+        .D(\u_sdram_to_RGB.N101 ), .Q(\u_sdram_to_RGB.n2270 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[5]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
-        .D(\u_sdram_to_RGB.N96 ), .Q(\u_sdram_to_RGB.n2269 ));
+        .D(\u_sdram_to_RGB.N101 ), .Q(\u_sdram_to_RGB.n2269 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[6]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
-        .D(\u_sdram_to_RGB.N96 ), .Q(\u_sdram_to_RGB.n2268 ));
+        .D(\u_sdram_to_RGB.N101 ), .Q(\u_sdram_to_RGB.n2268 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[7]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
-        .D(\u_sdram_to_RGB.N96 ), .Q(\u_sdram_to_RGB.n2267 ));
+        .D(\u_sdram_to_RGB.N101 ), .Q(\u_sdram_to_RGB.n2267 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[8]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
-        .D(\u_sdram_to_RGB.N96 ), .Q(\u_sdram_to_RGB.n2266 ));
+        .D(\u_sdram_to_RGB.N101 ), .Q(\u_sdram_to_RGB.n2266 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[9]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
-        .D(\u_sdram_to_RGB.N96 ), .Q(\u_sdram_to_RGB.n2265 ));
+        .D(\u_sdram_to_RGB.N101 ), .Q(\u_sdram_to_RGB.n2265 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[10]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
         .D(\u_sdram_to_RGB.n2164 ), .Q(\u_sdram_to_RGB.n2264 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[11]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
@@ -1478,17 +1478,17 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[25]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
         .D(\u_sdram_to_RGB.n1665 ), .Q(\u_sdram_to_RGB.n2249 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[26]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
-        .D(\u_sdram_to_RGB.N96 ), .Q(\u_sdram_to_RGB.n2248 ));
+        .D(\u_sdram_to_RGB.N101 ), .Q(\u_sdram_to_RGB.n2248 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[27]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
-        .D(\u_sdram_to_RGB.N96 ), .Q(\u_sdram_to_RGB.n2247 ));
+        .D(\u_sdram_to_RGB.N101 ), .Q(\u_sdram_to_RGB.n2247 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[28]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
-        .D(\u_sdram_to_RGB.N96 ), .Q(\u_sdram_to_RGB.n2246 ));
+        .D(\u_sdram_to_RGB.N101 ), .Q(\u_sdram_to_RGB.n2246 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[29]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
         .D(n1367), .Q(\u_sdram_to_RGB.n2245 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[30]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
         .D(display_sel), .Q(\u_sdram_to_RGB.n2244 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_addr__reg[31]  (.CLK(clk_150M), .RST(\u_sdram_to_RGB.n50 ),
-        .D(\u_sdram_to_RGB.N96 ), .Q(\u_sdram_to_RGB.n2243 ));
+        .D(\u_sdram_to_RGB.N101 ), .Q(\u_sdram_to_RGB.n2243 ));
     CS_REGA_R_PRIM \u_sdram_to_RGB.dma_start_xfer__reg  (.CLK(clk_150M),
         .RST(\u_sdram_to_RGB.n50 ), .D(\u_sdram_to_RGB.dma_start_xfer_prev ),
         .Q(\u_sdram_to_RGB.dma_start_xfer ));
@@ -2121,7 +2121,7 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     NAND2 \u_sdram_to_RGB.u_ahb_master.I493_u23  (.I0(\u_sdram_to_RGB.u_ahb_master.I493_n29 ),
         .I1(\u_sdram_to_RGB.u_ahb_master.I493_n30 ), .O(\u_sdram_to_RGB.u_ahb_master.I493_n31 ));
     NOR2 \u_sdram_to_RGB.u_ahb_master.I493_u24  (.I0(\u_sdram_to_RGB.u_ahb_master.I493_n26 ),
-        .I1(\u_sdram_to_RGB.u_ahb_master.I493_n31 ), .O(\u_sdram_to_RGB.u_ahb_master.N79 ));
+        .I1(\u_sdram_to_RGB.u_ahb_master.I493_n31 ), .O(\u_sdram_to_RGB.u_ahb_master.N84 ));
     AND2 u1231 (.I0(h_valid), .I1(v_valid), .O(\u_sdram_to_RGB.de_i ));
     CS_INV_PRIM u1234 (.IN(\u_sdram_to_RGB.n2383 ), .OUT(n2018));
     AND2 u1235 (.I0(n2018), .I1(\u_sdram_to_RGB.n2384 ), .O(\u_sdram_to_RGB.n120 ));
@@ -2359,7 +2359,7 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     AND2 u1478 (.I0(n2189), .I1(m_ahb_resp), .O(n2190));
     AND2 u1479 (.I0(\u_sdram_to_RGB.u_ahb_master.n2193 ), .I1(m_ahb_ready),
         .O(n2191));
-    NOR2 u1480 (.I0(\u_sdram_to_RGB.u_ahb_master.dma_eof_get ), .I1(\u_sdram_to_RGB.u_ahb_master.N79 ),
+    NOR2 u1480 (.I0(\u_sdram_to_RGB.u_ahb_master.dma_eof_get ), .I1(\u_sdram_to_RGB.u_ahb_master.N84 ),
         .O(n2192));
     NAND2 u1481 (.I0(n2191), .I1(n2192), .O(n2193));
     OR2 u1483 (.I0(n2193), .I1(n2184), .O(n2195));
@@ -2494,7 +2494,7 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     CS_INV_PRIM u1593 (.IN(\u_sdram_to_RGB.u_ahb_master.n2462 ), .OUT(n2290));
     NOR2 u1594 (.I0(n2235), .I1(n2290), .O(n2291));
     OR2 u1595 (.I0(n2291), .I1(\u_sdram_to_RGB.dma_start_xfer ), .O(n2292));
-    CS_INV_PRIM u1596 (.IN(\u_sdram_to_RGB.u_ahb_master.N79 ), .OUT(n2293));
+    CS_INV_PRIM u1596 (.IN(\u_sdram_to_RGB.u_ahb_master.N84 ), .OUT(n2293));
     OR2 u1597 (.I0(n2293), .I1(n2218), .O(n2294));
     AND2 u1598 (.I0(n2294), .I1(\u_sdram_to_RGB.u_ahb_master.n2462 ), .O(n2295));
     OR2 u1599 (.I0(n2292), .I1(n2295), .O(\u_sdram_to_RGB.u_ahb_master.n1257 ));
@@ -3182,7 +3182,7 @@ wire clk_150M, clk_200M, de, h_valid, locked, m_ahb_ready, m_ahb_resp,
     NAND2 u2287 (.I0(\u_sdram_to_RGB.u_ahb_master.mx_done ), .I1(n2235),
         .O(n2868));
     NAND2 u2288 (.I0(n2868), .I1(n2223), .O(n2017));
-    CS_GND_PRIM u1232 (.OUT(\u_sdram_to_RGB.N96 ));
+    CS_GND_PRIM u1232 (.OUT(\u_sdram_to_RGB.N101 ));
     CS_VCC_PRIM u2245 (.OUT(n1367));
     CS_REGA_R_PRIM \u_sdram_to_RGB.emb_addr_rd__reg[1]  (.CLK(tx_sclk), .RST(\u_sdram_to_RGB.n50 ),
         .D(\u_sdram_to_RGB.n1842 ), .Q(\u_sdram_to_RGB.n2283 ));

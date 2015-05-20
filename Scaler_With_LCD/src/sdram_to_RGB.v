@@ -25,7 +25,10 @@ module sdram_to_RGB(
     de_o,
     pixel_r,
     pixel_g,
-    pixel_b
+    pixel_b,
+	buttonIn2,
+	buttonIn3,
+	buttonIn4
 );
 input           clk_ahb;
 input           rst_ahb_n;
@@ -52,6 +55,9 @@ output [7:0]    pixel_r;
 output [7:0]    pixel_g;
 output [7:0]    pixel_b;
 
+input			buttonIn2;
+input			buttonIn3;
+input			buttonIn
 //--------------------------------
 
 reg             dma_start_xfer;
@@ -124,6 +130,22 @@ ahb_master u_ahb_master(
     .ahm_xfer_done      (ahm_xfer_done      ),
     .ahm_error          ()
     );
+
+//----------------------scaler-------------------------------\\
+scalerForM7  scaler1(
+		.clka(clk_ahb),
+		.clkb(clk_ahb ),
+		.rst(rst_ahb_n),
+		.iHsyn(iHsyn),
+		.iVsyn(iVsyn),
+		.en(en), 
+		.dIn(ahm_rdata_r), 
+		.dInEn(dInEn), 
+		.dOut(dOut), 
+		.dOutEn(dOutEn), 
+		.HS(HS), 
+		.VS(VS), 
+	);
 
 //------------------------- Buffer Write part ----------------\
 always@(posedge clk_ahb, negedge rst_ahb_n) begin
